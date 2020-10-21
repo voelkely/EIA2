@@ -30,7 +30,3 @@ body {
     grid-gap: 10px;
   
 }
-
-.info {
-    grid-column: 1 / -1;
-    display: flex;
