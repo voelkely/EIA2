@@ -14,5 +14,18 @@ body {
     font-weight: normal;
     text-align: center;
     font-size: 6em;
+}
 
+.spielkarte {
+    background-color: black;
+    height: 175px;
+    width: 125px;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4 auto);
+    grid-gap: 10px;
+    grid-column: 1 / -1;
 }
