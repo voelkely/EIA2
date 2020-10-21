@@ -27,5 +27,8 @@ body {
     display: grid;
     grid-template-columns: repeat(4 auto);
     grid-gap: 10px;
+}
+
+.info {
     grid-column: 1 / -1;
 }
