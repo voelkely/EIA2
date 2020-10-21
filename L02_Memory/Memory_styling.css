@@ -32,5 +32,4 @@ body {
 
 .info {
     grid-column: 1 / -1;
-    align-items: center;
-}
+    display: flex;
