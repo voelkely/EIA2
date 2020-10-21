@@ -1,4 +1,18 @@
 @font-face {
-    font-family: "Halloweek";
-    src: url
+    font-family: "halloweek";
+    src: url("halloweek.ttf") format("ttf");
+}
+
+body {
+    margin: 0;
+    background-color: #9d5900;
+}
+
+.titel {
+    color: black;
+    font-family: halloweek, serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 6em;
+
 }
