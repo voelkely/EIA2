@@ -10,7 +10,7 @@ namespace Boxes {
         switch (i) {
             case 0:
                 color = "#ff0000";
-                break;
+                break;  
             case 1:
             case 4:
                 color = "#00ff00";
