@@ -1,6 +1,6 @@
 @font-face {
     font-family: "halloweek";
-    src: url("halloweek.ttf") format("ttf");
+    src: url("halloweek.woff") format("woff");
 }
 
 body {
