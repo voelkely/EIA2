@@ -32,7 +32,8 @@ body {
 }
 
 .spieler {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: halloweek, serif;
     font-size: 3em;
     color: black;
+    text-align: center;
 }
