@@ -20,7 +20,8 @@ body {
     background-color: black;
     height: 175px;
     width: 125px;
-    text-align: center;
+    align-items: center;
+    
 
 }
 
