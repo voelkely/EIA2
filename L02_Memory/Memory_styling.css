@@ -37,3 +37,7 @@ body {
     color: black;
     text-align: center;
 }
+
+.info {
+    grid-column: 1 / -1;
+}
