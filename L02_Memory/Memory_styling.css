@@ -20,20 +20,27 @@ body {
     background-color: black;
     width: 125px;
     height: 175px;
-    justify-content: center;
 
 }
 
-.spieler {
+.player {
     font-family: halloweek, serif;
     font-size: 3em;
     color: black;
-    text-align: center;
+    text-align: left;
 }
 
-.box {
+.points {
+    font-family: halloweek, serif;
+    font-size: 3em;
+    color: black;
+    text-align: right;
+}
+
+.box-container {
     grid-template-columns: repeat(4, auto);
     display: grid;
+    justify-content: center;
     margin: 50px;
 }
 
