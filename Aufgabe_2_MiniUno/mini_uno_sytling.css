@@ -12,7 +12,7 @@
 
 .untertitel {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     color: black;
 }
@@ -24,6 +24,6 @@ body {
 .start {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
-    font-size: 3em;
+    font-size: 2em;
     text-align: left;
 }
