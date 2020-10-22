@@ -55,6 +55,7 @@ h3 {
     height: 175px;
     width: 125px;
     background-color: black;
+    overflow: hidden;
 }
 .stapel-rückseite {
     height: 100%;
