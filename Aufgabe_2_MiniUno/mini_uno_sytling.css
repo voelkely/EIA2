@@ -27,3 +27,9 @@ body {
     font-size: 2em;
     text-align: left;
 }
+
+#spieltisch {
+    padding: 40px 20px;
+    border: 10px solid black;
+    background-color: #966e39;
+}
