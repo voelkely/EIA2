@@ -28,5 +28,12 @@ h3 {
     color: black;
 }
 
-
+.spieltisch {
+    margin-top: 50px;
+	margin-bottom: 100px;
+	background-color: #cacaca;
+	height: 300px;
+	width: 100%;
+	margin-bottom: 100px;
+}
 
