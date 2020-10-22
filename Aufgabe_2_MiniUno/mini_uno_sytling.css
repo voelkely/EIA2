@@ -65,3 +65,10 @@ h3 {
     width: 125px;
     background-color: black;
 }
+
+.spinnennetz {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    
+}
