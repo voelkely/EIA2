@@ -64,3 +64,9 @@ h3 {
 	float: left;
 	margin: 12px 2em;
 }
+
+#playarea {
+    text-align: center;
+    padding-top: 50px;
+    height: 125px;
+}
