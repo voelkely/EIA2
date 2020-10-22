@@ -55,8 +55,8 @@ h3 {
     height: 175px;
     width: 125px;
     background-color: black;
-    overflow: hidden;
 }
+  
 .stapel-rückseite {
     height: 100%;
     width: 100%;
@@ -65,6 +65,8 @@ h3 {
     justify-content: center;
     align-items: center;
     margin-top: -580px;
+    overflow: hidden;
+
 }
 
 .spinnennetz {
