@@ -50,6 +50,12 @@ h3 {
     height: 125px;
 }
 
+#stapel {
+    position: relative;
+    height: 175px;
+    width: 125px;
+    background-color: black;
+}
 .stapel-rückseite {
     height: 100%;
     width: 100%;
@@ -57,13 +63,6 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#stapel {
-    position: relative;
-    height: 175px;
-    width: 125px;
-    background-color: black;
 }
 
 .spinnennetz {
