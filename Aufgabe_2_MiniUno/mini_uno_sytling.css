@@ -39,6 +39,7 @@ h3 {
 
 #card-table {
     padding: 40px 20px;
-    border: 10px solid #4A2E30;
-    background-color: #03C91E;
+    border: 10px solid black;
+    background-color: #966e39;
+    width: 65%;
 }
