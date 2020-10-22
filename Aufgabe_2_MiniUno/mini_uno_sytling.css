@@ -36,3 +36,9 @@ h3 {
 .card-collection {
     text-align: center;
 }
+
+#card-table {
+    padding: 40px 20px;
+    border: 10px solid #4A2E30;
+    background-color: #03C91E;
+}
