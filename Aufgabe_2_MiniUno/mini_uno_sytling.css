@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "halloweek";
+    src: url("halloweek.woff") format("woff");
+}
+
+.titel {
+    font-family: halloweek, serif;
+    font-size: 6em;
+    text-align: center; 
+    color: black;
+}
+
+.untertitel {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    color: black;
+}
+
+body {
+    background-color: #9d5900;
+}
+
+.start {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 3em;
+    text-align: left;
+}
