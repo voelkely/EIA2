@@ -26,3 +26,13 @@ h3 {
     font-size: 24px;
     font-family: sans-serif;
     color: black;
+}
+
+#current-card {
+    padding-top: 50px;
+    height: 125px;
+}
+  
+.card-collection {
+    text-align: center;
+}
