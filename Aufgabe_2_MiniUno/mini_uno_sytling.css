@@ -41,5 +41,6 @@ h3 {
     padding: 40px 20px;
     border: 10px solid black;
     background-color: #966e39;
-    width: 65%;
+    width: 100%;
+    height: 100%;
 }
