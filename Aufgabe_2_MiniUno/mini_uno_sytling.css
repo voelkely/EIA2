@@ -33,3 +33,7 @@ body {
     border: 10px solid black;
     background-color: #966e39;
 }
+
+.box {
+    width: 35%;
+}
