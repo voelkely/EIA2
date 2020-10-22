@@ -18,8 +18,9 @@ body {
 
 .spielkarte {
     background-color: black;
-    width: 90%;
-    height: 50%;
+    width: 125px;
+    height: 175px;
+    justify-content: center;
 
 }
 
@@ -33,6 +34,5 @@ body {
 .box {
     grid-template-columns: repeat(4, auto);
     display: grid;
-    justify-content: center;
     margin: 50px;
 }
