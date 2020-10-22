@@ -56,7 +56,7 @@ h3 {
     width: 125px;
     background-color: black;
 }
-  
+
 .stapel-rückseite {
     height: 100%;
     width: 100%;
@@ -65,7 +65,6 @@ h3 {
     justify-content: center;
     align-items: center;
     margin-top: -580px;
-    overflow: hidden;
 
 }
 
@@ -75,8 +74,7 @@ h3 {
     height: 175px;
 
 }
-
 .spinne {
     align-self: flex-start;
-    transform: translateY(280px);
+    transform: translateY(290px);
 }
