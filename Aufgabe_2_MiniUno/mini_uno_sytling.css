@@ -75,5 +75,5 @@ h3 {
 
 .spinne {
     align-self: flex-start;
-    transform: translateY(-1px);
+    transform: translateY(10px);
 }
