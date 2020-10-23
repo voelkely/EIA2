@@ -2,6 +2,7 @@ let meinekarten = [];
 let gegnerkarten = []; 
 let ablage = []; 
 let stapel = [];
+let weristdran = "player";
 
 // FUNKTION UM ZUFAELLIGE ZAHLEN ZU GENERIEREN ZWISCHEN MIN/MAX
   function randomBetween(min, max) {
@@ -10,6 +11,23 @@ let stapel = [];
 var i = prompt("Wie viele Karten sollen ausgeteilt werden?");
 var counter = Number(i);
 
+window.onload = function () {
+    letsGo();
+};
+function letsGo() {
+    meinekarten = [];
+    gegnerkarten = [];
+    ablage = [];
+    stapel = [];
+    weristdran = "player";
+    spielSetup();
+    // Karten im Html erzeugen
+    updateHtml(meinekarten);
+    updateHtml(gegnerkarten);
+    updateHtml(ablage);
+    updateHtml(stapel);
+    document.getElementById("stapel").addEventListener("click", karteNehmen, false);
+}
 
 //Karten definieren
 //rot
