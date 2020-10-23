@@ -46,8 +46,8 @@ h3 {
 
 #stapel {
     float: left;
-    height: 150px;
-    width:100px;
+    height: 275px;
+    width:150px;
     background-color: hsl(350, 39%, 36%);
     border: 3px solid black;
     border-radius: 11px;
@@ -58,8 +58,8 @@ h3 {
 
 #ablage {
     float: left;
-    height: 150px;
-    width:100px;
+    height: 275px;
+    width:150px;
     background-color: #7a466d;
     border-radius: 11px;
     border: 3px solid black;
