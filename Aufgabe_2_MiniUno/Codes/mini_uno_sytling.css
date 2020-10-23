@@ -1,72 +1,80 @@
 .titel {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 6em;
-    text-align: center;
+    text-align: center; 
+    color: black;
+}
+
+body {
+    background-color: #9d5900;
 }
 
 #start {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
     font-size: 1em;
-    text-align: center;
+    text-align: left;
 }
 
 #passen {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
     font-size: 1em;
-    text-align: center;
+    text-align: left;
 }
 
 h3 {
     text-align: center;
     font-size: 24px;
     font-family: sans-serif;
-    color: #fff;
-}
-
-body {
-    background-color: burlywood;
-    
+    color: black;
 }
 
 .spielfeld_pc {
     margin-top: 50px;
 	margin-bottom: 100px;
-	background-color: #cacaca;
+	background-color: #978968;
 	height: 300px;
 	width: 100%;
 	margin-bottom: 100px;
 }
 
 .spielfeld_user {
-    margin-top: 50px;
-	margin-bottom: 100px;
-	background-color: #cacaca;
+	background-color: #978968;
 	height: 300px;
 	width: 100%;
 	margin-bottom: 100px;
 }
 
 #play-area {
-    padding: 80px 60px;
+    padding: 40px 20px;
+    text-align: center;
+    height: 125px;
 }
 
 #stapel {
-    background-color: #343434;
-	width: 195px;
-	height: 275px;
-	float: right;
-	margin-top: -130px;
-	margin-bottom: 100px;
-	margin-right: 10em;
-
+    padding-top: 50px;
+    height: 125px;
 }
 
 #ablage {
-    background-color: #640b0b;
+    background-color: black;
 	width: 195px;
 	height: 275px;
+	color: white;
 	float: left;
-    margin: 12px 10em;
-    margin-top: -130px;
+	margin: 5px 2em;
+
 }
 
+#handcards {
+    background-color: black;
+	width: 195px;
+	height: 275px;
+	color: white;
+	float: left;
+	margin: 15px 2em;
+	font-size: 32px;
+	text-align: center;
+
+}
