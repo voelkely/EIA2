@@ -88,12 +88,12 @@ h3 {
 }
 
 #ablage {
-    background-color: #343434;
+    background-color: black;
 	width: 195px;
 	height: 275px;
 	color: white;
 	float: left;
-	margin: 12px 2em;
+	margin: 50px 2em;
 
 }
 
