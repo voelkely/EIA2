@@ -39,8 +39,10 @@ h3 {
     background-color: #9bdddd;
     height: 190px;
     width: 90%;
-    border-right: 0.2em solid #999844;
-    border-bottom: 0.2em solid #999844;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 4.3%;
+
 }
 
 
