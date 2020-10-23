@@ -45,3 +45,9 @@ body {
 	width: 100%;
 	margin-bottom: 100px;
 }
+
+#play-area {
+    padding: 40px 20px;
+  border: 10px solid #4A2E30;
+  background-color: #03C91E;
+}
