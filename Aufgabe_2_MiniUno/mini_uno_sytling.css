@@ -98,6 +98,13 @@ h3 {
 }
 
 #handcards {
-
+    background-color: #343434;
+	width: 195px;
+	height: 275px;
+	color: white;
+	float: left;
+	margin: 15px 2em;
+	font-size: 32px;
+	text-align: center;
 
 }
