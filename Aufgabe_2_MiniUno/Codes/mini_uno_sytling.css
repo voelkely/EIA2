@@ -9,12 +9,6 @@ body {
     background-color: #a7947c;
 }
 
-main{
-    clear:both;
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
 #passen {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
@@ -38,6 +32,7 @@ h3 {
     width: 90%;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
+    margin-left: 1%;
 }
 
 
