@@ -20,14 +20,42 @@ function letsGo() {
     ablage = [];
     stapel = [];
     weristdran = "player";
-    spielSetup();
-    // Karten im Html erzeugen
+    Setupgame();
+
+    // Karten werden im Html erzeugt
     updateHtml(meinekarten);
     updateHtml(gegnerkarten);
     updateHtml(ablage);
     updateHtml(stapel);
     document.getElementById("stapel").addEventListener("click", karteNehmen, false);
 }
+function Setupgame() {
+    
+    for (let i = 0; i < 4; i++) {
+        let color = "";
+        if (i == 0)
+            color = "green";
+        else if (i == 1)
+            color = "blue";
+        else if (i == 2)
+            color = "red";
+        else if (i == 3)
+            color = "yellow";
+        for (let j = 0; j <= 9; j++) {
+            let newCard = {
+                Farbe: color,
+                Wert: j
+            };
+            stapel.push(newCard);
+        }
+        for (let j = 1; j <= 9; j++) {
+            let newCard = {
+                farbe: color,
+                zahl: j
+            };
+            stapel.push(newCard);
+        }
+    }
 
 //Karten definieren
 //rot
