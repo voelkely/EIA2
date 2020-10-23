@@ -63,10 +63,10 @@ body {
 }
 
 #ablage {
-    background-color: #343434;
+    background-color: #640b0b;
 	width: 195px;
 	height: 275px;
 	color: white;
-	float: center;
+	float: left;
 	margin: 12px 2em;
 }
