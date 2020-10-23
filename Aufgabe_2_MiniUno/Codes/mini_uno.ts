@@ -6,16 +6,19 @@ namespace Mini Uno {
         Bild: string;
 
     }
-
 }
 
 let farbe: string []: ["Rot", "Gelb", "Blau", "Green"];
 let zahl: number []: ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 
-// Alert! mit wie vielen Karten soll gespielt werden?
-let n: number = Number(window.prompt("Wie viele Karten sollen verteilt werden?", ""));
+// FUNKTION UM ZUFAELLIGE ZAHLEN ZU GENERIEREN ZWISCHEN MIN/MAX
+  function randomBetween(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
+var i: string = prompt("Wie viele Karten sollen ausgeteilt werden?");
+var counter: number = Number(i);
 
 //Variablen 
 //rot

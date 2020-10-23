@@ -49,8 +49,8 @@ h3 {
     float: left;
     height: 150px;
     width:100px;
-    background-color: #009999;
-    border: 3px solid #b97242;
+    background-color: hsl(350, 39%, 36%);
+    border: 3px solid black;
     border-radius: 11px;
     margin: 2%;
     margin-left: 4.3%;
@@ -61,9 +61,9 @@ h3 {
     float: left;
     height: 150px;
     width:100px;
-    background-color: #009999;
+    background-color: #7a466d;
     border-radius: 11px;
-    border: 3px solid #2c8d5d;
+    border: 3px solid black;
     margin: 2%;
     position: absolute;
 }
