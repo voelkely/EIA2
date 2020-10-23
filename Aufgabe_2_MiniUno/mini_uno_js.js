@@ -185,16 +185,16 @@ window.onload = function () {
 function createNewDeck() {
     let deck = [
         {
-            id: 1,
-            rank: 'Two',
-            suit: 'hearts',
-            image: 'img/cards/2H.png'
+            id: rot1,
+            rank: '1',
+            suit: 'rot',
+            image: 'img/rot1.jpg'
         },
         {
-            id: 2,
-            rank: 'Three',
-            suit: 'hearts',
-            image: 'img/cards/3H.png'
+            id: rot2,
+            rank: '2',
+            suit: 'rot',
+            image: 'img/rot2.jpg'
         },
         {
             id: 3,
