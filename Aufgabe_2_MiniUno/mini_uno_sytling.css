@@ -86,23 +86,3 @@ h3 {
     transform: translateY(311px);
 
 }
-
-#ablage {
-    position: relative;
-    height: 175px;
-    width: 125px;
-    background-color: black;
-
-}
-
-.ablagen-vorderseite {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -580px;
-    margin-right: 200px;
-
-}
