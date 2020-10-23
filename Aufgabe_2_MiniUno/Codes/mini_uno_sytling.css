@@ -47,16 +47,22 @@ h3 {
 
 
 #stapel {
-    padding-top: 50px;
-    height: 125px;
+    float:left;
+    height: 150px;
+    width:100px;
+    background-color: #009999;
+    border: 3px solid #b97242;
+    border-radius: 11px;
+    margin: 2%;
+    margin-left: 4.3%;
 }
 
 #ablage {
-    background-color: black;
-	width: 195px;
-	height: 275px;
-	color: white;
-	float: left;
-	margin: 5px 2em;
-
+    float:left;
+    height: 150px;
+    width:100px;
+    background-color: #009999;
+    border-radius: 11px;
+    border: 3px solid #2c8d5d;
+    margin: 2%;
 }
