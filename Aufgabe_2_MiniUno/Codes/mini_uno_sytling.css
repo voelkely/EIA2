@@ -39,7 +39,7 @@ body {
 #stapel {
     float: left;
     height: 275px;
-    width:150px;
+    width:195px;
     background-color: hsl(350, 39%, 36%);
     border: 3px solid black;
     border-radius: 11px;
@@ -51,7 +51,7 @@ body {
 #ablage {
     float: left;
     height: 275px;
-    width:150px;
+    width:195px;
     background-color: #7a466d;
     border-radius: 11px;
     border: 3px solid black;
