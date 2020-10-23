@@ -1,9 +1,9 @@
 namespace Mini Uno {
 
-    interface Card {
-        farbe: string;
-        zahl: number;
-        Bild:string;
+    interface Karten {
+        farbe: string; // Farbe der Karte 
+        zahl: number;  // Nummer auf der Karte 
+        Bild: string;
 
     }
 
@@ -12,6 +12,9 @@ namespace Mini Uno {
 let farbe: string []: ["Rot", "Gelb", "Blau", "Green"];
 let zahl: number []: ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
+
+// Alert! mit wie vielen Karten soll gespielt werden?
+let n: number = Number(window.prompt("Wie viele Karten sollen verteilt werden?", ""));
 
 
 //Variablen 
