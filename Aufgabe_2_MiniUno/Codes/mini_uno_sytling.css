@@ -36,7 +36,9 @@ h3 {
 
 
 .spielfeld_user {
-    background-color: #cace90;
+    background-color: #9bdddd;
+    height: 190px;
+    width: 90%;
     border-right: 0.2em solid #999844;
     border-bottom: 0.2em solid #999844;
 }
