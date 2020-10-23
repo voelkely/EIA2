@@ -1,10 +1,5 @@
-@font-face {
-    font-family: "halloweek";
-    src: url("halloweek.woff") format("woff");
-}
-
 .titel {
-    font-family: halloweek, serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
     font-size: 6em;
     text-align: center; 
     color: black;
@@ -98,7 +93,7 @@ h3 {
 }
 
 #handcards {
-    background-color: #343434;
+    background-color: black;
 	width: 195px;
 	height: 275px;
 	color: white;
