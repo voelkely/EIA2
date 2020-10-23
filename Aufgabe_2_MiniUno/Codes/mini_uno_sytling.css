@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #9d5900;
+    background-color: #a7947c;
 }
 
 #passen {
@@ -25,23 +25,20 @@ h3 {
 
 .spielfeld_pc {
     clear:both;
-    background-color: #90ceca;
+    background-color: #8c6f95;
     margin-left: 4.3%;
     padding: 10px;
     height: 190px;
     width: 90%;
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
-    border-right: 0.2em solid #3e8a8a;
-    border-bottom: 0.2em solid #3e8a8a;
 }
 
 
 .spielfeld_user {
-	background-color: #978968;
-	height: 300px;
-	width: 100%;
-	margin-bottom: 100px;
+    background-color: #cace90;
+    border-right: 0.2em solid #999844;
+    border-bottom: 0.2em solid #999844;
 }
 
 
