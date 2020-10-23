@@ -47,15 +47,14 @@ h3 {
 }
 
 #play-area {
+    padding: 40px 20px;
     text-align: center;
-    padding-top: 70px;
     height: 125px;
 }
 
 #stapel {
-    position: relative;
-    height: 175px;
-    width: 125px;
+    padding-top: 50px;
+    height: 125px;
 }
 
 .stapel-rückseite {
@@ -67,18 +66,6 @@ h3 {
     align-items: center;
     margin-top: -580px;
     margin-left: -200px;
-
-}
-
-.spinnennetz {
-    position: absolute;
-    width: 195px;
-    height: 275px;
-
-}
-.spinne {
-    align-self: flex-start;
-    transform: translateY(311px);
 
 }
 
