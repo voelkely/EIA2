@@ -88,21 +88,16 @@ h3 {
 }
 
 #ablage {
-    position: relative;
-    height: 175px;
-    width: 125px;
-    background-color: black;
+    background-color: #343434;
+	width: 195px;
+	height: 275px;
+	color: white;
+	float: left;
+	margin: 12px 2em;
 
 }
 
-.ablagen-vorderseite {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -580px;
-    margin-right: 200px;
+#handcards {
+
 
 }
