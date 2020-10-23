@@ -1,3 +1,16 @@
+let meinekarten = []; 
+let gegnerkarten = []; 
+let ablage = []; 
+let stapel = [];
+
+// FUNKTION UM ZUFAELLIGE ZAHLEN ZU GENERIEREN ZWISCHEN MIN/MAX
+  function randomBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+var i = prompt("Wie viele Karten sollen ausgeteilt werden?");
+var counter = Number(i);
+
+
 //Karten definieren
 //rot
 let rot1 = {
@@ -189,7 +202,3 @@ let green9 = {
     Bild: "img/green9.jpg"
 };
 
-let stapelArray: Karten[] = [gelb1, gelb2, gelb3, gelb4, gelb5, gelb5, gelb7, gelb8, gelb9, rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, green1, green2, green3, green4, green5, green6, green7, green8, green9, blau1, blau2, blau3, blau4, blau5, blau6, blau7, blau8, blau9];
-let spieler1Array: Karten[] = [];
-let spieler2Array: Karten[] = [];
-let playareaArray: Karten[] = [];
