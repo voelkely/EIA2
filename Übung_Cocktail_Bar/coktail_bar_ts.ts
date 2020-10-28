@@ -11,9 +11,9 @@ namespace L03_CocktailBar {
     }
 
     function handleChange(_event: Event): void {
-        //console.log(_event);
-        //let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
-        //console.log(drink.value);
+        console.log(_event);
+        let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        console.log(drink.value);
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         console.log(inputs);
