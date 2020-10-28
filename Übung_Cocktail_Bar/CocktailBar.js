@@ -11,16 +11,14 @@ var L03_CocktailBar;
     }
     function handleChange(_event) {
         console.log(_event);
-        let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
-        console.log(drink.value);
-
-        let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-        console.log(inputs);
-
+        // let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        // console.log(drink.value);
+        // let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        // console.log(inputs);
+        
         let order = document.querySelector("div#order");
         order.innerHTML = "";
         let formData = new FormData(document.forms[0]);
-
         for (let entry of formData) {
             let item = document.querySelector("[value='" + entry[1] + "']");
             let price = Number(item.getAttribute("price"));
