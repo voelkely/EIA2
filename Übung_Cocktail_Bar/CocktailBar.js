@@ -13,9 +13,9 @@ var L03_CocktailBar;
         console.log(_event);
         let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
         console.log(drink.value);
-        
-        // let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-        // console.log(inputs);
+
+        let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        console.log(inputs);
         let order = document.querySelector("div#order");
         order.innerHTML = "";
         let formData = new FormData(document.forms[0]);
