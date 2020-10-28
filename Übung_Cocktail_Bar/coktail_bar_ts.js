@@ -10,7 +10,7 @@ var L03_CocktailBar;
         slider.addEventListener("input", displayAmount);
     }
     function handleChange(_event) {
-        console.log(_event);
+        //console.log(_event);
         let drink = document.querySelector("select");
         console.log(drink.value);
         let inputs = document.querySelectorAll("input");
