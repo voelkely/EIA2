@@ -21,7 +21,11 @@ var L03_CocktailBar;
         for (let entry of formData) {
             let item = document.querySelector("[value='" + entry[1] + "']");
             let price = Number(item.getAttribute("price"));
-            order.innerHTML += item.name + "  € " + price;
+            if (entry[0] == "Drink")
+                order.innerHTML += entry[1];
+            else
+                order.innerHTML += item.name;
+            order.innerHTML += " € " + price + "<br/>";
         }
     }
     function displayAmount(_event) {
