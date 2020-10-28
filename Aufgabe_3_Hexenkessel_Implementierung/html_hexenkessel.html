@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>ZaubertrankEditor</title>
+	<link rel="stylesheet" href="styling_cocktail_bar.css" type="text/css" media="screen" />
+	<script src="CocktailBar.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Professor Snapes potion editor</h1>
+		<p>Choose a potion and the extras. Select the ingredients of your potion. Verify your potion recepie on the right.</p>
+	</header>
+
+    <form>
+		<div id="form">
+			<h2>Choose here</h2>
+			<fieldset>
+				<legend>Potion Name</legend>
+				<select name="Potion" id="potion">
+					<option value="Amortentia" price="15">Amortentia</option>
+					<option value="Elixir of Life" price="20">Elixir of Life</option>
+                    <option value="Strength Potion" price="13">Strength Potion</option>
+                    <option value="Veritaserum" price="6">Veritaserum</option>
+				</select>
+            </fieldset>
+            <fieldset>
+				<legend>Wirkung</legend>
+				<input type="radio" name="Wirkung" id="liebestrank" value="Liebestrank" price="3.50" checked />
+				<label for="liebestrank">Liebestrank</label>
+				<input type="radio" name="Wirkung" id="unsterblichkeit" value="Unsterblichkeit" price="4.00" />
+				<label for="unsterblichkeit">Unsterblichkeit</label>
+				<input type="radio" name="Wirkung" id="stärkungstrank" value="Stärkungstrank" price="0.20" />
+				<label for="stärkungstrank">Stärkungstrank</label>
+				<input type="radio" name="Wirkung" id="wahrheitsserum" value="Wahrheitsserum" price="0.05" />
+				<label for="wahrheitsserum">Wahrheitsserum</label>
+            </fieldset>
+            <fieldset>
+				<legend>Dauer</legend>
+				<input type="radio" name="Dauer" id="3h" value="3h" time="3h" checked />
+				<label for="3h">3h</label>
+				<input type="radio" name="Dauer" id="ewig" value="ewig" time="ewig" />
+				<label for="ewig">Ewig</label>
+				<input type="radio" name="Dauer" id="bis Mitternacht" value="bis Mitternacht" time="bis Mitternacht" />
+				<label for="bis Mitternacht">Bis Mitternacht</label>
+				<input type="radio" name="Dauer" id="bis Vollmond" value="Bis Vollmond" time="Bis Vollmond" />
+				<label for="bis Vollmond">Bis Vollmond</label>
+            </fieldset>
+            <fieldset>
+				<legend>Zutaten</legend>
+				<input type="checkbox" name="Zutaten" id="rosendornen" value="Rosendornen" price="0.50">
+				<label for="rosendornen">Rosendornen</label>
+				<input type="checkbox" name="Zutaten" id="perlenstaub" value="Perlenstaub" price="0.20">
+				<label for="perlenstaub">Perlenstaub</label>
+				<input type="checkbox" name="Zutaten" id="holzläuse" value="Holzläuse" price="0.15">
+				<label for="holzläuse">Holzläuse/label>
+				<input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+                <label for="mint">Pfefferminz</label>
+                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+                <label for="mint">Mondstaub</label>
+                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+                <label for="mint">Flubberwurmschleim</label>
+                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+                <label for="mint">Jobberknoll Federn</label>
+                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+                <label for="mint">Armknochen</label>
+                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+                <label for="mint">Schlangengift</label>
+                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
+				<label for="mint">Stein der Weisen</label>
+            </fieldset>
+            <fieldset>
+				<legend>Rühren</legend>
+				<span id="slider">
+					<span>
+						Stufe 1
+						<input type="range" name="Rühren" id="rühren" min="stufe 1" max="stufe 5" step="0.1" value="0.1">
+						Stufe 5
+					</span>
+					<progress max="1.0" value="0.1" />
+				</span>
+			</fieldset>
