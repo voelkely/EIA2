@@ -1,63 +1,20 @@
-let meinekarten = []; 
-let gegnerkarten = []; 
-let ablage = []; 
-let stapel = [];
-let weristdran = "player";
-
+"use strict";
+Uno;
+{
+}
+let farbe, [];
+"Rot", "Gelb", "Blau", "Green";
+;
+let zahl, [];
+"1", "2", "3", "4", "5", "6", "7", "8", "9";
+;
 // FUNKTION UM ZUFAELLIGE ZAHLEN ZU GENERIEREN ZWISCHEN MIN/MAX
-  function randomBetween(min, max) {
+function randomBetween(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 var i = prompt("Wie viele Karten sollen ausgeteilt werden?");
 var counter = Number(i);
-
-window.onload = function () {
-    letsGo();
-};
-function letsGo() {
-    meinekarten = [];
-    gegnerkarten = [];
-    ablage = [];
-    stapel = [];
-    weristdran = "player";
-    Setupgame();
-
-    // Karten werden im Html erzeugt
-    updateHtml(meinekarten);
-    updateHtml(gegnerkarten);
-    updateHtml(ablage);
-    updateHtml(stapel);
-    document.getElementById("stapel").addEventListener("click", karteNehmen, false);
-}
-function Setupgame() {
-    
-    for (let i = 0; i < 4; i++) {
-        let color = "";
-        if (i == 0)
-            color = "green";
-        else if (i == 1)
-            color = "blau";
-        else if (i == 2)
-            color = "rot";
-        else if (i == 3)
-            color = "gelb";
-        for (let j = 0; j <= 9; j++) {
-            let newCard = {
-                farbe: color,
-                zahl: j
-            };
-            stapel.push(newCard);
-        }
-        for (let j = 1; j <= 9; j++) {
-            let newCard = {
-                farbe: color,
-                zahl: j
-            };
-            stapel.push(newCard);
-        }
-    }
-
-//Karten definieren
+//Variablen 
 //rot
 let rot1 = {
     farbe: "rot",
@@ -104,9 +61,7 @@ let rot9 = {
     zahl: 9,
     Bild: "img/rot9.jpg"
 };
-
 //blau
-
 let blau1 = {
     farbe: "blau",
     zahl: 1,
@@ -152,7 +107,6 @@ let blau9 = {
     zahl: 9,
     Bild: "img/blau9.jpg"
 };
-
 //gelb
 let gelb1 = {
     farbe: "gelb",
@@ -199,7 +153,6 @@ let gelb9 = {
     zahl: 9,
     Bild: "img/gelb9.jpg"
 };
-
 //green
 let green1 = {
     farbe: "green",
@@ -211,7 +164,6 @@ let green2 = {
     zahl: 2,
     Bild: "img/green2.jpg"
 };
-
 let green3 = {
     farbe: "green",
     zahl: 3,
@@ -247,4 +199,8 @@ let green9 = {
     zahl: 9,
     Bild: "img/green9.jpg"
 };
-
+let stapelArray = [gelb1, gelb2, gelb3, gelb4, gelb5, gelb5, gelb7, gelb8, gelb9, rot1, rot2, rot3, rot4, rot5, rot6, rot7, rot8, rot9, green1, green2, green3, green4, green5, green6, green7, green8, green9, blau1, blau2, blau3, blau4, blau5, blau6, blau7, blau8, blau9];
+let spieler1Array = [];
+let spieler2Array = [];
+let playareaArray = [];
+//# sourceMappingURL=mini_uno.js.map
