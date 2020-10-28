@@ -10,9 +10,10 @@ var L03_CocktailBar;
         slider.addEventListener("input", displayAmount);
     }
     function handleChange(_event) {
-        // console.log(_event);
-        // let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
-        // console.log(drink.value);
+        console.log(_event);
+        let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        console.log(drink.value);
+        
         // let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         // console.log(inputs);
         let order = document.querySelector("div#order");
