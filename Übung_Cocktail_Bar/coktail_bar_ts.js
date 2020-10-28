@@ -11,8 +11,8 @@ var L03_CocktailBar;
     }
     function handleChange(_event) {
         //console.log(_event);
-        let drink = document.querySelector("select");
-        console.log(drink.value);
+        //let drink: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        //console.log(drink.value);
         let inputs = document.querySelectorAll("input");
         console.log(inputs);
         let order = document.querySelector("div#order");
