@@ -10,7 +10,7 @@
 
 <body>
 	<header>
-		<h1>Professor Snapes potion editor</h1>
+		<h1>Professor Snapes Potion Editor</h1>
 		<p>Choose a potion and the extras. Select the ingredients of your potion. Verify your potion recepie on the right.</p>
 	</header>
 
@@ -18,7 +18,7 @@
 		<div id="form">
 			<h2>Choose here</h2>
 			<fieldset>
-				<legend>Potion Name</legend>
+				<legend>?</legend>
 				<select name="Potion" id="potion">
 					<option value="Amortentia" price="15">Amortentia</option>
 					<option value="Elixir of Life" price="20">Elixir of Life</option>
@@ -27,7 +27,7 @@
 				</select>
             </fieldset>
             <fieldset>
-				<legend>Wirkung</legend>
+				<legend>Effect</legend>
 				<input type="radio" name="Wirkung" id="liebestrank" value="Liebestrank" price="3.50" checked />
 				<label for="liebestrank">Liebestrank</label>
 				<input type="radio" name="Wirkung" id="unsterblichkeit" value="Unsterblichkeit" price="4.00" />
@@ -38,46 +38,43 @@
 				<label for="wahrheitsserum">Wahrheitsserum</label>
             </fieldset>
             <fieldset>
-				<legend>Dauer</legend>
+				<legend>Period</legend>
 				<input type="radio" name="Dauer" id="3h" value="3h" time="3h" checked />
 				<label for="3h">3h</label>
-				<input type="radio" name="Dauer" id="ewig" value="ewig" time="ewig" />
-				<label for="ewig">Ewig</label>
 				<input type="radio" name="Dauer" id="bis Mitternacht" value="bis Mitternacht" time="bis Mitternacht" />
 				<label for="bis Mitternacht">Bis Mitternacht</label>
 				<input type="radio" name="Dauer" id="bis Vollmond" value="Bis Vollmond" time="Bis Vollmond" />
 				<label for="bis Vollmond">Bis Vollmond</label>
             </fieldset>
             <fieldset>
-				<legend>Zutaten</legend>
-				<input type="checkbox" name="Zutaten" id="rosendornen" value="Rosendornen" price="0.50">
-				<label for="rosendornen">Rosendornen</label>
-				<input type="checkbox" name="Zutaten" id="perlenstaub" value="Perlenstaub" price="0.20">
-				<label for="perlenstaub">Perlenstaub</label>
-				<input type="checkbox" name="Zutaten" id="holzläuse" value="Holzläuse" price="0.15">
-				<label for="holzläuse">Holzläuse/label>
-				<input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-                <label for="mint">Pfefferminz</label>
-                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-                <label for="mint">Mondstaub</label>
-                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-                <label for="mint">Flubberwurmschleim</label>
-                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-                <label for="mint">Jobberknoll Federn</label>
-                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-                <label for="mint">Armknochen</label>
-                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-                <label for="mint">Schlangengift</label>
-                <input type="checkbox" name="Zutaten" id="mint" value="Mint" price="0.30">
-				<label for="mint">Stein der Weisen</label>
+				<legend>Ingredients</legend>
+				<input type="checkbox" name="Ingredients" id="spiderlegs" value="Spiderlegs" price="0.50">
+				<label for="spiderlegs">Spiderlegs</label>
+				<fieldset>
+					<legend>Amount Siderlegs</legend>
+					<span id="slider">
+						<span>
+							1
+							<input type="range" name="Amount Spiderlegs" id="amout spiderlegs" min="1" max="5" step="1" value="1">
+							5
+						</span>
+						<progress max="1.0" value="1" />
+					</span>
+				</fieldset>
+				<input type="checkbox" name="Ingredients" id="peppermints" value="Peppermints" price="0.50">
+				<label for="spiderlegs">Peppermints</label>
+				<input type="checkbox" name="Ingredients" id="toenails" value="Toenails" price="0.50">
+				<label for="toenails">Toenails</label>
+				
+                
             </fieldset>
             <fieldset>
-				<legend>Rühren</legend>
+				<legend>Mixing</legend>
 				<span id="slider">
 					<span>
-						Stufe 1
-						<input type="range" name="Rühren" id="rühren" min="stufe 1" max="stufe 5" step="0.1" value="0.1">
-						Stufe 5
+						Step 1
+						<input type="range" name="Mixing" id="mixing" min="step 1" max="step 5" step="1" value="1">
+						Step 5
 					</span>
 					<progress max="1.0" value="0.1" />
 				</span>
