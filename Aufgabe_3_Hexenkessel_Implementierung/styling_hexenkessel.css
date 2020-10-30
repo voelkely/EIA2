@@ -42,16 +42,6 @@ h3 {
 label {
     
    display:block; 
-   font-family: Helvetica,sans-serif;
-   font-size: 12px;
-   color: #333;
-   font-weight: normal;
    margin-left: 20px;
    margin-bottom: 5px;
-}
-
-label:hover 
-{
-   background:#eee;
-   cursor:pointer;
 }
