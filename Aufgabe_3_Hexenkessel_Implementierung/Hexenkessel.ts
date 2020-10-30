@@ -25,12 +25,12 @@ namespace L03_Hexenkessel {
             let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
             let price: number = Number(item.getAttribute("price"));
 
-        if (entry [0] == "Potion")
-            order.innerHTML += entry [1];
+            if (entry [0] == "Potion")
+            potion.innerHTML += entry [1];
         else 
-            order.innerHTML += item.name;
+            potion.innerHTML += item.name;
         
-        order.innerHTML +=  "  € " +  price;
+            potion.innerHTML +=  "  € " +  price;
         
         }
     }
