@@ -4,17 +4,15 @@ body {
 	grid-template-rows: auto auto
 }
 
-header {
-	grid-column: span 2;
-	text-align: center;
-}
-
 div {
 	border: thin solid black;
 	margin: 1em;
 }
 h2 {
-	text-align: center;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
 }
 
 progress {
@@ -31,6 +29,6 @@ progress {
 h1 {
     text-align: center;
     color: black;
-    font-size: 1em;
+    font-size: 3em;
     font-family: 'Times New Roman', Times, serif;
 }
