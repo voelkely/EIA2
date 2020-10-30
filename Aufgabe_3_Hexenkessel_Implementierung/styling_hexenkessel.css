@@ -12,7 +12,7 @@ h2 {
     font-size: 1em;
     font-family: 'Times New Roman', Times, serif;
     color: black;
-    text-align: center;
+    text-align: left;
 }
 
 progress {
@@ -31,4 +31,10 @@ h1 {
     color: black;
     font-size: 3em;
     font-family: 'Times New Roman', Times, serif;
+}
+h3 {
+    font-size: 1em;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    text-align: center;
 }
