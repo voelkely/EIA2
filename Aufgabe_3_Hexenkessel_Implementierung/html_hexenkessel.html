@@ -11,7 +11,7 @@
 <body>
 		<h1>Professor Snapes Potion Editor</h1>
 
-<h3>Choose a name for your potion. Select the ingredients and extras. Verify your potion recepie on the right.</h3>
+<p>Choose a name for your potion. Select the ingredients and extras. Verify your potion recepie on the right.</p>
 
 
     <form>
@@ -29,13 +29,13 @@
 			
             <fieldset>
 				<legend>Effect</legend>
-				<input type="radio" name="Wirkung" id="liebestrank" value="Liebestrank" price="3.50" checked />
+				<input type="radio" name="Effect" id="liebestrank" value="Liebestrank" price="3.50" checked />
 				<label for="liebestrank">Lovepotion</label>
-				<input type="radio" name="Wirkung" id="unsterblichkeit" value="Unsterblichkeit" price="4.00" />
+				<input type="radio" name="Effect" id="unsterblichkeit" value="Unsterblichkeit" price="4.00" />
 				<label for="unsterblichkeit">Immortality Potion</label>
-				<input type="radio" name="Wirkung" id="stärkungstrank" value="Stärkungstrank" price="0.20" />
+				<input type="radio" name="Effect" id="stärkungstrank" value="Stärkungstrank" price="0.20" />
 				<label for="stärkungstrank">Strengthening Potion</label>
-				<input type="radio" name="Wirkung" id="wahrheitsserum" value="Wahrheitsserum" price="0.05" />
+				<input type="radio" name="Effect" id="wahrheitsserum" value="Wahrheitsserum" price="0.05" />
 				<label for="wahrheitsserum">Truth Serum</label>
 			</fieldset>
 			
@@ -122,4 +122,12 @@
 			</fieldset>
 
 		</form>
+
+	<div>
+		<h2>Your Potion</h2>
+		<div id="potion">
+				...
+		</div>
+		</div>
+
 </body>
