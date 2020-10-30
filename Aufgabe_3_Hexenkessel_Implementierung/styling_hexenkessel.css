@@ -5,6 +5,10 @@ body {
     
 }
 
+header {
+    text-align: center;
+}
+
 div {
 	border: thin solid black;
     margin: 1em;
@@ -47,9 +51,4 @@ input[type="checkbox"]:checked + label + .reveal{
     max-height: max-content;
     opacity: 1;
     overflow: visible;
-}
-#potion {
-    display: grid;
-	grid-template-columns: 40% auto;
-    grid-template-rows: auto auto;
 }
