@@ -2,13 +2,14 @@ body {
 	display: grid;
 	grid-template-columns: 70% auto;
     grid-template-rows: auto auto;
-    background-color: beige;
     
 }
 
 div {
 	border: thin solid black;
-	margin: 1em;
+    margin: 1em;
+    padding-left: 2cm;
+    padding-right: 5cm;
 }
 h2 {
     font-size: 1em;
