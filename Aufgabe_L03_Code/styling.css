@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'harry_pregular';
+    font-family: "harrypotter";
     src: url('harryp__-webfont.woff2') format('woff2'),
          url('harryp__-webfont.woff') format('woff');
     font-weight: normal;
@@ -16,12 +16,8 @@ body {
 header {
 	grid-column: span 2;
     text-align: center;
+    font-family: "harrypotter";
    
-}
-
-h1 {
-    font-size: 2em;
-    font-family: "harry_pregular";
 }
 
 div {
@@ -31,7 +27,6 @@ div {
 }
 h2 {
     text-align: center;
-    font-family: "harry_pregular";
 }
 
 progress {
