@@ -14,11 +14,11 @@ namespace L03_CocktailBar {
         let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
         console.log(effect.value);
 
-        //let potionDescription: HTMLInputElement = [HTMLInputElement] document.querySelector("description");
-        //form.innerHTML += potionDescription.value;
+        let Description: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
+        potion.innerHTML += Description.value;
 
-        //let potionName: HTMLInputElement = [HTMLInputElement] document.querySelector("name");
-        //form.innerHTML += potionName.value;
+        let Name: HTMLInputElement = [HTMLInputElement] document.querySelector("text");
+        form.innerHTML += Name.value;
         
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
