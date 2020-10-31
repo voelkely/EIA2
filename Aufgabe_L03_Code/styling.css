@@ -54,6 +54,6 @@ legend {
 
 @font-face {
     font-family: "Harry Potter";
-    src: url("/font/harryp__-webfont.woff"),
-         url("/font/harryp__-webfont.woff2") format("woff");
+    src: url("/font/harryp__-webfont.woff") format("woff"),
+         url("/font/harryp__-webfont.woff2") format("woff2");
   }
