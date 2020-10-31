@@ -14,6 +14,10 @@ namespace L03_CocktailBar {
         let effect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
         console.log(effect.value);
 
+        let describe: HTMLInputElement = [HTMLInputElement] document.querySelector("description");
+        potion.innerHTML += RTCSessionDescription.value;
+        
+
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         console.log(inputs);
 
