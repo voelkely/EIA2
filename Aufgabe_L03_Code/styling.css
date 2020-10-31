@@ -37,5 +37,6 @@ input[type="checkbox"]:checked + label + .reveal{
 }
 
 fieldset {
-    background-color: beige;
+    background-color: rgb(85, 85, 68);
+    border-radius: thin solid black;
 }
