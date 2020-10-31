@@ -12,7 +12,8 @@ header {
 
 div {
 	border: thin solid black;
-	margin: 1em;
+    margin: 1em;
+    background-color: cornsilk;
 }
 h2 {
     text-align: center;
@@ -38,7 +39,7 @@ input[type="checkbox"]:checked + label + .reveal{
 
 fieldset {
     background-color: white;
-    border: thin solid rgb(3, 247, 64);
+    border: thin solid black;
 }
 
 legend {
