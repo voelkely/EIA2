@@ -15,10 +15,10 @@ namespace L03_CocktailBar {
         console.log(effect.value);
 
         let potionDescription: HTMLInputElement = [HTMLInputElement] document.querySelector("description");
-        potion.innerHTML += potionDescription.value;
+        form.innerHTML += potionDescription.value;
 
         let potionName: HTMLInputElement = [HTMLInputElement] document.querySelector("name");
-        potion.innerHTML += potionName.value;
+        form.innerHTML += potionName.value;
         
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
