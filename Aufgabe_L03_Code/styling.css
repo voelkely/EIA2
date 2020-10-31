@@ -1,11 +1,3 @@
-@font-face {
-    font-family: "harrypotter";
-    src: url('harryp__-webfont.woff2') format('woff2'),
-         url('harryp__-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
 	display: grid;
 	grid-template-columns: 50% auto;
@@ -15,7 +7,6 @@ body {
 header {
 	grid-column: span 2;
     text-align: center;
-    font-family: "harrypotter";
    
 }
 
@@ -40,6 +31,7 @@ progress {
     margin: 0;
     overflow: hidden;
 }
+
 input[type="checkbox"]:checked + label + .reveal{
     max-height: max-content;
     opacity: 1;
