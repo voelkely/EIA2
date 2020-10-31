@@ -11,17 +11,16 @@ namespace L03_CocktailBar {
 
     function handleChange(_event: Event): void {
         console.log(_event);
+
         let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
+        potion.innerHTML += effect.value;
         console.log(effect.value);
 
-        let slider: HTMLSelectElement = <HTMLSelectElement> document.querySelectorAll("slider");
-        potion.innerHTML += slider.value;
+        //let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
+        //potion.innerHTML += textarea.value;
 
-        let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
-        potion.innerHTML += textarea.value;
-
-        let text: HTMLInputElement = [HTMLInputElement] document.querySelector("text");
-        potion.innerHTML += text.value;
+        //let text: HTMLInputElement = [HTMLInputElement] document.querySelector("text");
+        //potion.innerHTML += text.value;
         
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
