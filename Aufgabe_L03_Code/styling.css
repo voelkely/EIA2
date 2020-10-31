@@ -40,3 +40,8 @@ fieldset {
     background-color: rgb(197, 195, 195);
     border: thin solid black;
 }
+
+legend {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
