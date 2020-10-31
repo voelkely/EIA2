@@ -7,7 +7,7 @@ body {
 header {
 	grid-column: span 2;
     text-align: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: harryp__;
 }
 
 div {
@@ -25,7 +25,7 @@ progress {
 	transform: rotate(-90deg);
 }
 
-.reveal{
+.reveal{ 
     opacity: 0;
     max-height: 0px;
     margin: 0;
@@ -46,3 +46,9 @@ legend {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 1em;
 }
+
+@font-face {
+    font-family: "Harry Potter";
+    src: url("/font/harryp__-webfont.woff"),
+         url("/font/harryp__-webfont.woff2") format("woff");
+  }
