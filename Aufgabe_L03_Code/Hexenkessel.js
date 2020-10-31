@@ -9,8 +9,9 @@ var L03_CocktailBar;
     }
     function handleChange(_event) {
         console.log(_event);
+        var ausgabe = document.querySelector("div#ausgabe");
         var effect = document.querySelector("select");
-        potion.innerHTML += effect.value;
+        ausgabe.innerHTML += effect.value;
         console.log(effect.value);
         //let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
         //potion.innerHTML += textarea.value;
@@ -18,7 +19,7 @@ var L03_CocktailBar;
         //potion.innerHTML += text.value;
         var inputs = document.querySelectorAll("input");
         console.log(inputs);
-        var potion = document.querySelector("div#potion");
+        var potion = document.querySelector("div#ausgabe");
         potion.innerHTML = "";
         var formData = new FormData(document.forms[0]);
         for (var _i = 0, formData_1 = formData; _i < formData_1.length; _i++) {
