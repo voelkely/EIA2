@@ -14,8 +14,8 @@ namespace L03_CocktailBar {
         let effect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
         console.log(effect.value);
 
-        let potionName: HTMLInputElement= [HTMLInputElement] document.querySelector("input");
-        potion.innerHTML += potionName.value
+        let form: HTMLInputElement= [HTMLInputElement] document.querySelector("input");
+        potion.innerHTML += form.value
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         console.log(inputs);
