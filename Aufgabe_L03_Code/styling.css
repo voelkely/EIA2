@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Harry Potter";
+    src: url("/font/harryp__-webfont.woff") format(".woff"),
+         url("/font/harryp__-webfont.woff2") format(".woff2");
+  }
+
+
 body {
 	display: grid;
 	grid-template-columns: 50% auto;
@@ -52,8 +59,3 @@ legend {
     font-size: 1em;
 }
 
-@font-face {
-    font-family: "Harry Potter";
-    src: url("/font/harryp__-webfont.woff") format("woff"),
-         url("/font/harryp__-webfont.woff2") format("woff2");
-  }
