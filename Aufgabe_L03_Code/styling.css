@@ -6,7 +6,8 @@ body {
 
 header {
 	grid-column: span 2;
-	text-align: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 div {
@@ -14,7 +15,7 @@ div {
 	margin: 1em;
 }
 h2 {
-	text-align: center;
+    text-align: center;
 }
 
 progress {
