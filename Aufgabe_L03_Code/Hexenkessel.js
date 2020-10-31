@@ -11,15 +11,13 @@ var L03_CocktailBar;
         console.log(_event);
         var effect = document.querySelector("select");
         console.log(effect.value);
-        //let form: HTMLInputElement= [HTMLInputElement] document.querySelector("input");
-        //potion.innerHTML += form.value
-        var inputs = document.querySelectorAll("input");
-        console.log(inputs);
-        //let potion: HTMLDivElement = <HTMLDivElement>document.querySelector("div#potion");
-        //potion.innerHTML = "";
-        var potion = [HTMLInputElement], document, querySelector;
+        var name = [HTMLInputElement], document, querySelector;
         ("input");
         potion.innerHTML += potion.value;
+        var inputs = document.querySelectorAll("input");
+        console.log(inputs);
+        var potion = document.querySelector("div#potion");
+        potion.innerHTML = "";
         var formData = new FormData(document.forms[0]);
         for (var _i = 0, formData_1 = formData; _i < formData_1.length; _i++) {
             var entry = formData_1[_i];
