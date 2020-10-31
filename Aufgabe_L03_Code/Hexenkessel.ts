@@ -1,6 +1,8 @@
 namespace L03_CocktailBar {
     window.addEventListener("load", handleLoad);
 
+    let ausgabe: string [];
+
     function handleLoad(_event: Event): void {
         console.log("Start");
         let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");

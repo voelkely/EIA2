@@ -2,6 +2,7 @@
 var L03_CocktailBar;
 (function (L03_CocktailBar) {
     window.addEventListener("load", handleLoad);
+    var ausgabe;
     function handleLoad(_event) {
         console.log("Start");
         var form = document.querySelector("div#form");
