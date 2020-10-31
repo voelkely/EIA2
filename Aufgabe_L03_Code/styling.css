@@ -35,3 +35,7 @@ input[type="checkbox"]:checked + label + .reveal{
     opacity: 1;
     overflow: visible;
 }
+
+fieldset {
+    background-color: beige;
+}
