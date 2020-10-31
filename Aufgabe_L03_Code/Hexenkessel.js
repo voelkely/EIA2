@@ -26,7 +26,7 @@ var L03_CocktailBar;
             var entry = formData_1[_i];
             var item = document.querySelector("[value='" + entry[1] + "']");
             var price = Number(item.getAttribute("price"));
-            if (entry[0] == "Effect")
+            if (entry[0] == "Potion")
                 potion.innerHTML += entry[1];
             else
                 potion.innerHTML += item.name;
