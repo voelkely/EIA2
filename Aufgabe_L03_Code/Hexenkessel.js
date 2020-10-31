@@ -12,6 +12,7 @@ var L03_CocktailBar;
         var effect = document.querySelector("select");
         console.log(effect.value);
         var slider = document.querySelectorAll("slider");
+        potion.innerHTML += slider.value;
         var textarea = [HTMLInputElement], document, querySelector;
         ("textarea");
         potion.innerHTML += textarea.value;

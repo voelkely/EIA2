@@ -15,6 +15,7 @@ namespace L03_CocktailBar {
         console.log(effect.value);
 
         let slider: HTMLSelectElement = <HTMLSelectElement> document.querySelectorAll("slider");
+        potion.innerHTML += slider.value;
 
         let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
         potion.innerHTML += textarea.value;
