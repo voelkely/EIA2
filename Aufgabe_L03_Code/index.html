@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Hexenkessel</title>
+	<link rel="stylesheet" href="CocktailBar.css" type="text/css" media="screen" />
+	<script src="CocktailBar.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+	<header>
+		<h1>Professor Snapes Potion Editor</h1>
+		<p>Name your Potion and describe it. Select all ingredients and the steps. Verify your potion on the right.</p>
+	</header>
+
+	<form>
+		<div id="form">
+			<h2>Choose here</h2>
+			<fieldset>
+                <legend>Name</legend>
+                <input type="text" name="Potion name">
+            </fieldset>
+
+            <fieldset>
+                <legend>Description</legend>
+                <textarea></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Effect</legend>
+                <select name="Effect" id="effect">
+					<option value="Lovepotion" price="25">Lovepotion</option>
+					<option value="Truth Potion" price="30">Truth Potion</option>
+					<option value="Immortality Potion" price="21">Immortality Potion</option>
+				</select>
+            </fieldset>
+            
+			<fieldset>
+				<legend>Period</legend>
+				<input type="radio" name="Period" id="3h" value="3h" checked />
+				<label for="3h">3h</label>
+				<input type="radio" name="Period" id="until fullmoon" value="until fullmoon" />
+				<label for="until fullmoon">Until Fullmoon</label>
+				<input type="radio" name="Period" id="24h" value="24h" />
+				<label for="24h">24h</label>
+				<input type="radio" name="Period" id="for ever" value="for ever" />
+				<label for="for ever">For ever</label>
+            </fieldset>
+            
+            <fieldset>
+				<legend>Ingredients</legend>
+				<input type="checkbox" name="Ingredients" id="spiderlegs" value="Spiderlegs" price="10">
+				<label for="spiderlegs">Spiderlegs</label>
+                <p class="reveal"><input id="legs_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
+	
+				<input type="checkbox" name="Ingredients" id="peppermints" value="Peppermints" price="5">
+				<label for="spiderlegs">Peppermints</label>
+				<p class="reveal"><input id="mints_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
+
+				<input type="checkbox" name="Ingredients" id="toenails" value="Toenails" price="3">
+				<label for="toenails">Toenails</label>
+				<p class="reveal"><input id="nails_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
+
+				<input type="checkbox" name="Ingredients" id="ashwinder egg" value="Ashwinder Egg" price="0.50">
+				<label for="ashwinder egg">Ashwinder Egg</label>
+				<p class="reveal"><input id="eggs_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
+
+				<input type="checkbox" name="Ingredients" id="bat wing" value="Bat wing" price="0.50">
+				<label for="bat wing">Bat Wing</label>
+				<p class="reveal"><input id="wings_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
+
+				<input type="checkbox" name="Ingredients" id="beetle eye" value="Beetle eye" price="0.50">
+				<label for="beetle eye">Beetle Eye</label>
+				<p class="reveal"><input id="eyes_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
+						
+			</fieldset>
+
+			<fieldset>
+				<legend>Temperature</legend>
+                    <span id="slider">
+                        <span>
+                            -10 Grad Celcius
+                            <input type="range" name="Temerature" id="temperature" min="-10 Grad Celcius" max="100 Grad Celcius" step="10" value="10">
+                            100 Grad Celsius
+                        </span>
+            </fieldset>
+            
+            <fieldset>
+                <legend>Consitency</legend>
+                <input type="radio" name="Consitency" id="thick" value="Thick"/>
+                <label for="thick">Thick</label>
+                <input type="radio" name="Consistency" id="slimy" value="Slimy" />
+                <label for="slimy">Slimy</label>
+                <input type="radio" name="Consistency" id="aqueous" value="Aqueous"/>
+                <label for="aqueous">Aqueous</label>
+                <input type="radio" name="Consistency" id="gaseous" value="Gaseous"/>
+                <label for="gaseous">Gaseous</label>
+            </fieldset>
+				
+		</div>
+	</form>
+	
+	<div>
+		<h2>Your order</h2>
+		<div id="order">
+			...
+		</div>
+	</div>
+
+</body>
+
+</html>
