@@ -11,11 +11,14 @@ namespace L03_CocktailBar {
 
     function handleChange(_event: Event): void {
         console.log(_event);
-        let effect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
         console.log(effect.value);
 
-        let describe: HTMLInputElement = [HTMLInputElement] document.querySelector("description");
-        potion.innerHTML += RTCSessionDescription.value;
+        let potionDescription: HTMLInputElement = [HTMLInputElement] document.querySelector("description");
+        potion.innerHTML += potionDescription.value;
+
+        let potionName: HTMLInputElement = [HTMLInputElement] document.querySelector("name");
+        potion.innerHTML += potionName.value;
         
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
