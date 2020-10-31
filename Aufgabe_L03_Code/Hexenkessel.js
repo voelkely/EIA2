@@ -17,8 +17,9 @@ var L03_CocktailBar;
         console.log(inputs);
         //let potion: HTMLDivElement = <HTMLDivElement>document.querySelector("div#potion");
         //potion.innerHTML = "";
-        var potion = document.querySelector("input");
-        potion.innerHTML = "";
+        var potion = [HTMLInputElement], document, querySelector;
+        ("input");
+        potion.innerHTML += potion.value;
         var formData = new FormData(document.forms[0]);
         for (var _i = 0, formData_1 = formData; _i < formData_1.length; _i++) {
             var entry = formData_1[_i];

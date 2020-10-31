@@ -23,8 +23,8 @@ namespace L03_CocktailBar {
         //let potion: HTMLDivElement = <HTMLDivElement>document.querySelector("div#potion");
         //potion.innerHTML = "";
 
-        let potion: HTMLInputElement = <HTMLInputElement>document.querySelector("input");
-        potion.innerHTML = "";
+        let potion: HTMLInputElement = [HTMLInputElement] document.querySelector("input");
+        potion.innerHTML += potion.value;
 
         let formData: FormData = new FormData(document.forms[0]);
         for (let entry of formData) {
