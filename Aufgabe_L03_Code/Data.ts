@@ -7,6 +7,8 @@ namespace L04_Hexenkessel {
 
     inteface: Data {
         [category: string]: Item [];
-        
+
     }
+
+    let data: Data 
 }

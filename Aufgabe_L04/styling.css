@@ -1,0 +1,49 @@
+body {
+	display: grid;
+	grid-template-columns: 50% auto;
+	grid-template-rows: auto auto;
+}
+
+header {
+	grid-column: span 2;
+    text-align: center;
+   
+}
+
+div {
+	border: thin solid black;
+    margin: 1em;
+    background-color: rgb(134, 132, 119);
+}
+h2 {
+    text-align: center;
+}
+
+progress {
+	height:4em;
+	width: 4em;
+	transform: rotate(-90deg);
+}
+
+.reveal{ 
+    opacity: 0;
+    max-height: 0px;
+    margin: 0;
+    overflow: hidden;
+}
+
+input[type="checkbox"]:checked + label + .reveal{
+    max-height: max-content;
+    opacity: 1;
+    overflow: visible;
+}
+
+fieldset {
+    background-color: rgba(205, 211, 188, 0.746);
+    border: thin solid black;
+}
+
+legend {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1em;
+}
