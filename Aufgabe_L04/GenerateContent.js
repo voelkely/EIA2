@@ -28,6 +28,12 @@ var L04_Hexenkessel;
             checkbox.setAttribute("price", item.price.toFixed(2));
             checkbox.value = item.name;
             checkbox.name = _category;
+            checkbox.id = item.name;
+            var label = document.createElement("label");
+            label.textContent = item.name;
+            label.htmlFor = item.name;
+            group.appendChild(checkbox);
+            group.appendChild(label);
         }
         return group;
     }

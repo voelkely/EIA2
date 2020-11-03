@@ -34,6 +34,14 @@ namespace L04_Hexenkessel {
             checkbox.setAttribute("price", item.price.toFixed(2));
             checkbox.value = item.name;
             checkbox.name = _category;
+            checkbox.id = item.name;
+
+            let label: HTMLLabelElement = document.createElement("label");
+            label.textContent = item.name;
+            label.htmlFor = item.name;
+
+            group.appendChild(checkbox);
+            group.appendChild(label);    
         }
         return group;
     }
