@@ -7,7 +7,7 @@ var L04_Hexenkessel;
         console.log("Start");
         var form = document.querySelector("div#form");
         form.addEventListener("change", handleChange);
-        L04_Hexenkessel.generateContent(data);
+        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
     }
     function handleChange(_event) {
         console.log(_event);

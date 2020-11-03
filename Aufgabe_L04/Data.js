@@ -1,17 +1,7 @@
 "use strict";
 var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
-    interface: Item;
-    {
-        name: string;
-        price: number;
-    }
-    interface: Data;
-    {
-        [category, string];
-        Item[];
-    }
-    var data = {
+    L04_Hexenkessel.data = {
         Ingredients: [
             { name: "Spiderlegs", price: 10.00 },
             { name: "Peppermints", price: 5.00 },

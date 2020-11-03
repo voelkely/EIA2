@@ -1,15 +1,15 @@
 namespace L04_Hexenkessel {
 
-    interface: Item {
+    export interface Item {
         name: string;
         price: number;
     }
 
-    export interface: Data {
+    export interface Data {
         [category: string]: Item [];
     }
 
-    let data: Data = {
+    export let data: Data = {
         Ingredients: [
             { name: "Spiderlegs", price: 10.00 },
             { name: "Peppermints", price: 5.00 },
