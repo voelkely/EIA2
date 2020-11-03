@@ -9,7 +9,7 @@ namespace L04_Hexenkessel {
             let group: HTMLElement | null = null;
             switch (category) {
                 case "Ingredients":
-                    group = createMultiple(items);
+                    group = createMultiple(items, category);
                     
                     break;
             
@@ -26,8 +26,16 @@ namespace L04_Hexenkessel {
 
     }
 
-    function createMultiple(_items: Item[]): HTMLElement | null {
-        return null;
+    function createMultiple(_items: Item[], _category: string): HTMLElement | null {
+        let group: HTMLDivElement = document.createElement("div");                    // dieses group aus createMultiple befindet sich in einem namespace und hat nichts mit dem group oben zu tun, das gilt für generateContent!!
+        for (let item of _items) {
+            let checkbox: HTMLInputElement = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.setAttribute("price", item.price.toFixed(2));
+            checkbox.value = item.name;
+            checkbox.name = _category;
+        }
+        return group;
     }
 
 }

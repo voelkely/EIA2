@@ -8,7 +8,7 @@ var L04_Hexenkessel;
             var group = null;
             switch (category) {
                 case "Ingredients":
-                    group = createMultiple(items);
+                    group = createMultiple(items, category);
                     break;
                 default:
                     break;
@@ -19,7 +19,16 @@ var L04_Hexenkessel;
         }
     }
     L04_Hexenkessel.generateContent = generateContent;
-    function createMultiple(_items) {
-        return null;
+    function createMultiple(_items, _category) {
+        var group = document.createElement("div"); // dieses group aus createMultiple befindet sich in einem namespace und hat nichts mit dem group oben zu tun, das gilt für generateContent!!
+        for (var _i = 0, _items_1 = _items; _i < _items_1.length; _i++) {
+            var item = _items_1[_i];
+            var checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.setAttribute("price", item.price.toFixed(2));
+            checkbox.value = item.name;
+            checkbox.name = _category;
+        }
+        return group;
     }
 })(L04_Hexenkessel || (L04_Hexenkessel = {}));
