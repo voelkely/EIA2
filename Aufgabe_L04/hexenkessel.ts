@@ -9,6 +9,8 @@ namespace L04_Hexenkessel {
        
         form.addEventListener("change", handleChange);
 
+        generateContent(data);
+
     }
 
     function handleChange(_event: Event): void {
