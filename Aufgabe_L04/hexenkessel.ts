@@ -5,12 +5,9 @@ namespace L04_Hexenkessel {
 
     function handleLoad(_event: Event): void {
         console.log("Start");
-        let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");
-       
-        form.addEventListener("change", handleChange);
-
         generateContent(data);
-
+        let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");
+        form.addEventListener("change", handleChange);
     }
 
     function handleChange(_event: Event): void {

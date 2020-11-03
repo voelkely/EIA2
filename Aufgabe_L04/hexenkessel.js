@@ -5,9 +5,9 @@ var L04_Hexenkessel;
     var ausgabe;
     function handleLoad(_event) {
         console.log("Start");
+        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
         var form = document.querySelector("div#form");
         form.addEventListener("change", handleChange);
-        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
     }
     function handleChange(_event) {
         console.log(_event);
