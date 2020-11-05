@@ -52,6 +52,7 @@ input[type="checkbox"]:checked + label + .reveal{
     max-height: max-content;
     opacity: 1;
     overflow: visible;
+    border-radius: 15px;
 }
 
 fieldset {
@@ -70,3 +71,4 @@ legend {
     border-radius: 25px;
 
 }
+
