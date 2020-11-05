@@ -2,10 +2,13 @@ namespace L04_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
     let ausgabe: string [];
+    let formData: string [];
 
     function handleLoad(_event: Event): void {
-        console.log("Start");
+        //console.log("Start");
+
         generateContent(data);
+
         let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#form");
         form.addEventListener("change", handleChange);
     }
@@ -13,12 +16,9 @@ namespace L04_Hexenkessel {
     function handleChange(_event: Event): void {
         console.log(_event);
 
-        let ausgabe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
-
         let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
-        ausgabe.innerHTML += effect.value;
-        console.log(effect.value);
-
+        effect.innerHTML += effect.value;
+    
         //let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
         //potion.innerHTML += textarea.value;
 
@@ -29,8 +29,8 @@ namespace L04_Hexenkessel {
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         console.log(inputs);
 
-        let potion: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
-        potion.innerHTML = "";
+        let ausgabe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
+        ausgabe.innerHTML = "";
 
 
         let formData: FormData = new FormData(document.forms[0]);
@@ -38,12 +38,12 @@ namespace L04_Hexenkessel {
             let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
             let price: number = Number(item.getAttribute("price"));
 
-            if (entry [0] == "Potion")
-                potion.innerHTML += entry [1];
+            if (entry [0] == "Your Potion")
+                ausgabe.innerHTML += entry [1];
             else 
-                potion.innerHTML += item.name;
+                ausgabe.innerHTML += item.name;
 
-            potion.innerHTML += item.name + "  € " + price + "</br>";
+            ausgabe.innerHTML += item.name + "  GAL " + price + "</br>";
         }
     }
 
