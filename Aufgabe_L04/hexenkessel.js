@@ -7,7 +7,7 @@ var L04_Hexenkessel;
     function handleLoad(_event) {
         L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
         var form = document.querySelector("div#form");
-        form.addEventListener("change", handleChange);
+        form.addEventListener("change", createPotion);
     }
     function createPotion(_event) {
         var spider = (document.querySelector("#spiderlegs"));
