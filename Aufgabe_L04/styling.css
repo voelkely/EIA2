@@ -66,9 +66,3 @@ legend {
     padding: 10px;
     height: calc(100vh - 190px);
 }
-#eingabe {
-    position: relative;
-    margin: 10px;
-    padding: 10px;
-    float: left;
-  }
