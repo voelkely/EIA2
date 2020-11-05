@@ -1,7 +1,7 @@
 body {
 	display: grid;
 	grid-template-columns: 40% auto;
-	grid-template-rows: 3;
+	grid-template-rows: auto auto;
 }
 
 header {
