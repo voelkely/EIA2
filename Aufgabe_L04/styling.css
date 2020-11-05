@@ -42,7 +42,7 @@ input[type="checkbox"]:checked + label + .reveal{
 }
 
 fieldset {
-    background-color: rgba(82, 115, 146, 0.911);
+    background-color: rgb(56, 123, 161);
     border: thin solid white;
 }
 
