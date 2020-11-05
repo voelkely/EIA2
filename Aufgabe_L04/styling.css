@@ -41,8 +41,8 @@ input[type="checkbox"]:checked + label + .reveal{
 }
 
 fieldset {
-    background-color: rgba(205, 211, 188, 0.746);
-    border: thin solid black;
+    background-color: rgba(0, 0, 0, 0.746);
+    border: thin solid white;
 }
 
 legend {
