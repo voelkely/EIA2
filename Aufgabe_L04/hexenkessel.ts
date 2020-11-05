@@ -70,33 +70,39 @@ namespace L04_Hexenkessel {
         let color: HTMLFormElement = <HTMLFormElement>(
             document.querySelector("#color")
         );
+        let intensity: boolean = false;
        
+        let ausgabe: HTMLDivElement = <HTMLDivElement>(
+            document.querySelector("#ausgabe")
+          );
+        ausgabe.innerHTML = "";
+        let formData: FormData = new FormData(document.forms[0]);
     }
 
-    function handleChange(_event: Event): void {
-        console.log(_event);
+    //function handleChange(_event: Event): void {
+        //console.log(_event);
 
-        let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
-        effect.innerHTML += effect.value;    
+        //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
+        //effect.innerHTML += effect.value;    
 
-        let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-        console.log(inputs);
+        //let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        //console.log(inputs);
 
-        let ausgabe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
-        ausgabe.innerHTML = "";
+        //let ausgabe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
+        //ausgabe.innerHTML = "";
 
 
-        let formData: FormData = new FormData(document.forms[0]);
-        for (let entry of formData) {
-            let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
-            let price: number = Number(item.getAttribute("price"));
+        //let formData: FormData = new FormData(document.forms[0]);
+        //for (let entry of formData) {
+            //let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
+            //let price: number = Number(item.getAttribute("price"));
 
-            if (entry [0] == "Your Potion")
-                ausgabe.innerHTML += entry [1];
-            else 
-                ausgabe.innerHTML += item.name;
+            //if (entry [0] == "Your Potion")
+                //ausgabe.innerHTML += entry [1];
+            //else 
+               // ausgabe.innerHTML += item.name;
 
-            ausgabe.innerHTML += item.name + "  GAL " + price + "</br>";
+            //ausgabe.innerHTML += item.name + "  GAL " + price + "</br>";
         }
     }
 
