@@ -53,3 +53,7 @@ legend {
     font-size: 1em;
     color: white;
 }
+
+form {
+    grid-template-columns: 40% auto;
+}
