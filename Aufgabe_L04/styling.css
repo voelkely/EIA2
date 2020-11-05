@@ -9,6 +9,7 @@ header {
 	grid-column: span 2;
     text-align: center;
     font-family: fantasy;
+    color:rgb(56, 123, 161); 
 }
 
 div {
