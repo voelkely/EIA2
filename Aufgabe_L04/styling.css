@@ -3,7 +3,7 @@ body {
 	grid-template-columns: 40% auto;
     grid-template-rows: auto auto;
     color: white;
-    background-image: url(hogwarts-4843724_1920.jpg) no-repeat to cal right;
+    background-image: url(hogwarts-4843724_1920.jpg);
     height: 1100px;
     background-position: center;
     background-repeat: no-repeat;
