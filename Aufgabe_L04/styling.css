@@ -66,3 +66,7 @@ legend {
     padding: 10px;
     height: calc(100vh - 190px);
 }
+
+ul {
+    list-style-type: none;
+  }
