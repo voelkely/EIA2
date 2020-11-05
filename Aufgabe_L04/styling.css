@@ -21,7 +21,7 @@ header {
 div {
 	border: thin solid white;
     margin: 1em;
-    background-color: rgb(80, 70, 60);
+    background-color: rgba(80, 70, 60, 0.185);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
