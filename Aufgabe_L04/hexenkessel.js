@@ -10,7 +10,25 @@ var L04_Hexenkessel;
         form.addEventListener("change", handleChange);
     }
     function createPotion(_event) {
-        var potion = document.querySelector("div");
+        var spider = (document.querySelector("#spiderlegs"));
+        var mints = (document.querySelector("#peppermints"));
+        var nails = (document.querySelector("#toenails"));
+        var egg = (document.querySelector("#ashwinder egg"));
+        var bat = (document.querySelector("#bat wing"));
+        var eye = (document.querySelector("#beetle eye"));
+        var fairy = (document.querySelector("#fairy wing)));
+        var feather = (document.querySelector("#jobberknoll feather"));
+        var moonstone = (document.querySelector("#moonstone"));
+        var temperature = (document.querySelector("#celsius"));
+        var stir = (document.querySelector("#stir"));
+        var slow = (document.querySelector("#slow"));
+        var fast = (document.querySelector("#fast"));
+        var thick = (document.querySelector("#thick"));
+        var slimy = (document.querySelector("#slimy"));
+        var aqueous = (document.querySelector("#aqueous"));
+        var gaseous = (document.querySelector("#gaseous"));
+        var steamy = (document.querySelector("#steamy"));
+        var color = (document.querySelector("#color"));
     }
     function handleChange(_event) {
         console.log(_event);

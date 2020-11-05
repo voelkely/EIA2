@@ -12,8 +12,65 @@ namespace L04_Hexenkessel {
         form.addEventListener("change", handleChange);
     }
 
-    function createPotion(_event: MouseEvent): void {
-        let potion: HTMLDivElement = <HTMLDivElement>document.querySelector("div")
+    function createPotion(_event: Event): void {
+            let spider: HTMLFormElement = <HTMLFormElement>(
+              document.querySelector("#spiderlegs")
+            );
+            let mints: HTMLFormElement = <HTMLFormElement>(
+              document.querySelector("#peppermints")
+            );
+            let nails: HTMLFormElement = <HTMLFormElement>(
+              document.querySelector("#toenails")
+            );
+            let egg: HTMLFormElement = <HTMLFormElement>(
+              document.querySelector("#ashwinder egg")
+            );
+            let bat: HTMLFormElement = <HTMLFormElement>(
+              document.querySelector("#bat wing")
+            );
+            let eye: HTMLFormElement = <HTMLFormElement>(
+              document.querySelector("#beetle eye")
+            );
+            let fairy: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#fairy wing)
+            );
+            let feather: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#jobberknoll feather")
+            );
+            let moonstone: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#moonstone")
+            );
+            let temperature: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#celsius")
+            );
+            let stir: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#stir")
+            );
+            let slow: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#slow")
+            );
+            let fast: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#fast")
+            );
+            let thick: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#thick")
+            );
+            let slimy: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#slimy")
+            );
+            let aqueous: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#aqueous")
+            );
+            let gaseous: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#gaseous")
+            );
+            let steamy: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#steamy")
+            );
+            let color: HTMLFormElement = <HTMLFormElement>(
+                document.querySelector("#color")
+            );
+       
     }
 
     function handleChange(_event: Event): void {
