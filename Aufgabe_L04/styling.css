@@ -57,6 +57,7 @@ input[type="checkbox"]:checked + label + .reveal{
 fieldset {
     background-color: rgba(80, 70, 60, 0.550);
     border: thin solid white;
+    border-radius: 25px;
 }
 
 legend {
@@ -65,3 +66,7 @@ legend {
     color: white;
 }
 
+#send {
+    border-radius: 25px;
+
+}
