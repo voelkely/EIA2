@@ -31,6 +31,10 @@ h2 {
     color: white;
 }
 
+p {
+    font-size: 3em;
+}
+
 progress {
 	height:4em;
 	width: 4em;
