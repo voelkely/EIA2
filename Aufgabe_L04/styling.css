@@ -11,9 +11,9 @@ header {
 }
 
 div {
-	border: thin solid black;
+	border: thin solid white;
     margin: 1em;
-    background-color: rgb(134, 132, 119);
+    background-color: rgb(0, 0, 0);
 }
 
 h2 {
