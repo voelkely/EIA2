@@ -4,7 +4,7 @@ body {
     grid-template-rows: auto auto;
     color: black;
     border: rgb(0, 5, 29);
-    border-radius: 1em;
+    border-radius: 1cm;
 }
 
 header {
