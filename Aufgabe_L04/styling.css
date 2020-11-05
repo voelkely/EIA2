@@ -2,7 +2,7 @@ body {
 	display: grid;
 	grid-template-columns: 40% auto;
     grid-template-rows: auto auto;
-    color: black;
+    color: white;
     background-image: url(hogwarts-4843724_1920.jpg);
     height: 1100px;
     background-position: center;
@@ -21,7 +21,7 @@ header {
 div {
 	border: thin solid white;
     margin: 1em;
-    background-color: rgb(56, 123, 161);
+    background-color: rgb(80, 70, 60);
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -50,7 +50,7 @@ input[type="checkbox"]:checked + label + .reveal{
 }
 
 fieldset {
-    background-color: rgb(56, 123, 161);
+    background-color: rgb(80, 70, 60);
     border: thin solid white;
 }
 
