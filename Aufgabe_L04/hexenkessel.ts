@@ -5,7 +5,6 @@ namespace L04_Hexenkessel {
     let formData: string [];
 
     function handleLoad(_event: Event): void {
-        //console.log("Start");
 
         generateContent(data);
 
@@ -13,18 +12,15 @@ namespace L04_Hexenkessel {
         form.addEventListener("change", handleChange);
     }
 
+    function createPotion(_event: MouseEvent): void {
+        let potion: HTMLDivElement = <HTMLDivElement>document.querySelector("div")
+    }
+
     function handleChange(_event: Event): void {
         console.log(_event);
 
         let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
-        effect.innerHTML += effect.value;
-    
-        //let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
-        //potion.innerHTML += textarea.value;
-
-        //let text: HTMLInputElement = [HTMLInputElement] document.querySelector("text");
-        //potion.innerHTML += text.value;
-        
+        effect.innerHTML += effect.value;    
 
         let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
         console.log(inputs);

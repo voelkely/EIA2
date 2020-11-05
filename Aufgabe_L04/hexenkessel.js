@@ -5,19 +5,17 @@ var L04_Hexenkessel;
     var ausgabe;
     var formData;
     function handleLoad(_event) {
-        //console.log("Start");
         L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
         var form = document.querySelector("div#form");
         form.addEventListener("change", handleChange);
+    }
+    function createPotion(_event) {
+        var potion = document.querySelector("div");
     }
     function handleChange(_event) {
         console.log(_event);
         var effect = document.querySelector("select");
         effect.innerHTML += effect.value;
-        //let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
-        //potion.innerHTML += textarea.value;
-        //let text: HTMLInputElement = [HTMLInputElement] document.querySelector("text");
-        //potion.innerHTML += text.value;
         var inputs = document.querySelectorAll("input");
         console.log(inputs);
         var ausgabe = document.querySelector("div#ausgabe");
