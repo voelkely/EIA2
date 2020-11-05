@@ -8,7 +8,7 @@ body {
 header {
 	grid-column: span 2;
     text-align: center;
-   
+    font-family: fantasy;
 }
 
 div {
