@@ -2,7 +2,7 @@
 var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     function generateContent(_data) {
-        console.log(_data);
+        //console.log(_data);
         for (var category in _data) {
             var items = _data[category];
             var group = null;

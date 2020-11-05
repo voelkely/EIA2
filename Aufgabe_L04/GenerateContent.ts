@@ -1,7 +1,7 @@
 namespace L04_Hexenkessel {
 
-    export function generateContent (_data: Data) {
-        console.log(_data);
+    export function generateContent(_data: Data): void {
+        //console.log(_data);
 
         for (let category in _data) {
             let items: Item [] = _data[category];
