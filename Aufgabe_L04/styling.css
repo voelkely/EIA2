@@ -19,7 +19,7 @@ header {
 }
 
 div {
-    border: 5px thin solid white;
+    border: thin solid white;
     border-radius: 25px;
     margin: 1em;
     background-color: rgba(80, 70, 60, 0.550);
