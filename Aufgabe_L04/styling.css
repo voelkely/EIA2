@@ -8,7 +8,7 @@ body {
 header {
 	grid-column: span 2;
     text-align: center;
-    font-family: fantasy;
+    font-family: 'Times New Roman', Times, serif;
     color:rgb(56, 123, 161); 
 }
 
