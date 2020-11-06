@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Hexenkessel</title>
+	<link rel="stylesheet" href="styling.css" type="text/css" media="screen" />
+	<script src="Data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
+	<script src="hexenkessel.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+
+<body>
+
+	<header>
+		<h1>Professor Snapes Zaubertrank Editor</h1>
+		<p>Bennene den Zaubertrank und beschreibe ihn. Wähle deine Zutaten aus und bestätige dein Rezept.</p>
+    </header>
+    
+    <form>
+        <div id="eingabe">
+            <h2>Basics</h2>
+			<fieldset>
+				<legend>Zaubertrank Name</legend>
+                <input type="text" name="Trank Name" id="name">
+            </fieldset>
+            <p></p>
+
+            <fieldset>
+                <legend>Beschreibung der Risken und Nebenwirkungen</legend>
+                <textarea type="textarea" id="beschreibung"></textarea>
+            </fieldset>
+            <p></p>
+
+            <fieldset>
+                <legend>Wirkung des Tranks</legend>
+                <select name="Wirkung" id="wirkung">
+					<option value="Müdigkeitstrank" >Müdigkeitstrank</option>
+					<option value="Liebestrank" >Liebestrank</option>
+					<option value="Wahrheitstrank" >Wahrheitstrank</option>
+                    <option value="Unsterblichkeitstrank" >Unsterblichkeitstrank</option>
+                    <option value="Stärkungstrank" >Stärkungstrank</option>
+                    <option value="Todestrank" >Todestrank</option>
+                </select>
+            <p></p>
+
+				<legend>Wirkungsdauer</legend>
+				<input type="radio" name="Dauer" id="3h" value="3h" />
+				<label for="3h">3h</label>
+				<input type="radio" name="Dauer" id="vollmond" value="vollmond" />
+				<label for="vollmond">Bis Vollmond</label>
+				<input type="radio" name="Dauer" id="24h" value="24h" />
+				<label for="24h">24h</label>
+				<input type="radio" name="Dauer" id="ewig" value="ewig" />
+				<label for="ewig">Ewig</label>
+			</fieldset>
+		</div>
+
+        
