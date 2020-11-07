@@ -65,7 +65,7 @@
         </form>
 
         <p></p>
-        
+
         <form id= "Anweisungen">
 			<h2>Anweisungen</h2>
 
@@ -108,6 +108,21 @@
                 <p class="reveal"><input id="stone_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p> 
                 
                 <button type="button" id="Zutaten">Hinzufügen</button>
-			</fieldset>
+            </fieldset>
+            
+            <fieldset>
+				<legend>Erhitzen</legend>
+                    <input type="text" name="temperature" id="celsius">°C</input>
+                    <input type="checkbox" id="stirColor" name="stiring" value="stirColor">
+                    <label for="stirColor">Erhitzen is zu dieser Farbe</label>
+                    <p class="reveal"><input type="color" id="ColorStiring" name="color"></p>
+            <p></p>
+                <legend>Abkühlen</legend>
+                    <input type="text" name="temperature" id="celsius">°C</input>
+                    <input type="checkbox" id="stirColor" name="stiring" value="stirColor">
+                    <label for="stirColor">Abkühlen is zu dieser Farbe</label>
+                    <p class="reveal"><input type="color" id="ColorStiring" name="color"></p>
+            </fieldset>
+
 
         
