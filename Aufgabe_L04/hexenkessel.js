@@ -2,58 +2,36 @@
 var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     window.addEventListener("load", handleLoad);
-    var ausgabe;
-    var formData;
     function handleLoad(_event) {
-        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
-        var form = document.querySelector("div#form");
-        form.addEventListener("change", createPotion);
+        //generateContent(data);
+        var form = document.querySelector("form#basic");
+        //form.addEventListener("change", createPotion);
+        //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
+        function createRezept(_event) {
+            console.log(_event);
+            var input = form.elements["name"].value;
+            console.log(input);
+        }
+        var addBasics = document.querySelector("button#add_basics");
+        addBasics.addEventListener("click", createRezept);
+        //let add_ingredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");  //?? WHY RED?
+        //add_ingredients.addEventListener("click", add_ingredients);
+        //function handleChange(_event: Event): void {   //WHAT IS THIS??
+        //console.log(_event);
+        //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
+        //effect.innerHTML += effect.value;    
+        //let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        //console.log(inputs);
+        //let rezept: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
+        //rezept.innerHTML = "";
+        //let formData: FormData = new FormData(document.forms[0]);
+        //for (let entry of formData) {
+        //let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
+        //let price: number = Number(item.getAttribute("price"));
+        //if (entry [0] == "Rezept")
+        //rezept.innerHTML += entry [1];
+        // else 
+        //rezept.innerHTML += item.name;
+        //rezept.innerHTML += item.name + "  GAL " + price + "</br>";
     }
-    function createPotion(_event) {
-        var spider = (document.querySelector("#spiderlegs"));
-        var mints = (document.querySelector("#peppermints"));
-        var nails = (document.querySelector("#toenails"));
-        var egg = (document.querySelector("#ashwinder egg"));
-        var bat = (document.querySelector("#bat wing"));
-        var eye = (document.querySelector("#beetle eye"));
-        var fairy = (document.querySelector("#fairy wing)));
-        var feather = (document.querySelector("#jobberknoll feather"));
-        var moonstone = (document.querySelector("#moonstone"));
-        var temperature = (document.querySelector("#celsius"));
-        var stir = (document.querySelector("#stir"));
-        var slow = (document.querySelector("#slow"));
-        var fast = (document.querySelector("#fast"));
-        var thick = (document.querySelector("#thick"));
-        var slimy = (document.querySelector("#slimy"));
-        var aqueous = (document.querySelector("#aqueous"));
-        var gaseous = (document.querySelector("#gaseous"));
-        var steamy = (document.querySelector("#steamy"));
-        var color = (document.querySelector("#color"));
-        var intensity = false;
-        var ausgabe = (document.querySelector("#ausgabe"));
-        ausgabe.innerHTML = "";
-        var formData = new FormData(document.forms[0]);
-    }
-    //function handleChange(_event: Event): void {
-    //console.log(_event);
-    //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
-    //effect.innerHTML += effect.value;    
-    //let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-    //console.log(inputs);
-    //let ausgabe: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
-    //ausgabe.innerHTML = "";
-    //let formData: FormData = new FormData(document.forms[0]);
-    //for (let entry of formData) {
-    //let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
-    //let price: number = Number(item.getAttribute("price"));
-    //if (entry [0] == "Your Potion")
-    //ausgabe.innerHTML += entry [1];
-    //else 
-    // ausgabe.innerHTML += item.name;
-    //ausgabe.innerHTML += item.name + "  GAL " + price + "</br>";
 })(L04_Hexenkessel || (L04_Hexenkessel = {}));
-function displayAmount(_event) {
-    var progress = document.querySelector("progress");
-    var amount = _event.target.value;
-    progress.value = parseFloat(amount);
-}
