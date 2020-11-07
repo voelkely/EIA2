@@ -19,7 +19,7 @@ namespace L04_Hexenkessel {
             let select: string = form.elements["wirkung"].value;
             let radio: string = form.elements["dauer"].value;
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");
-            display.innerHTML += input + "</br>" + textarea + select + radio + "</br>";
+            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>"+ radio + "</br>";
 
         }
 
