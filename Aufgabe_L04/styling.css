@@ -10,7 +10,8 @@
 body {
 	display: grid;
     grid-template-columns: 40% auto auto auto;
-    grid-template-rows: 100px 300px;
+    float: none;
+    grid-template-rows: 200px 400px;
     grid-gap: 10px;
     color: white;
     background-image: url(Potions.webp);
