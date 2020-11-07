@@ -13,7 +13,7 @@ var L04_Hexenkessel;
             console.log(input);
             var textarea = form.elements["beschreibung"].value;
             var display = document.querySelector("#display_basic");
-            display.innerHTML = input + textarea;
+            display.innerHTML = input + textarea + "</br>";
         }
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
