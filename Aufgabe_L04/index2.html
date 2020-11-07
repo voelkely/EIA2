@@ -107,18 +107,24 @@
             </fieldset>
             
             <fieldset>
-				<legend>Temperatur</legend>
-                    <input type="text" name="temperature" id="celsius">°C</input>
-                    <input type="checkbox" id="stirColor" name="stiring" value="stirColor">
-                    <label for="stirColor">Erhitzen is zu dieser Farbe</label>
-                    <p class="reveal"><input type="color" id="ColorStiring" name="color"></p>
-
+                <legend>Temperatur</legend>
+                <div>
+                    <input type="range" name="heat" id="heat_slider" min="0°C" max="100°C" step="1" value="20">
+                    <input type="text" id="heat_input" value="20" class="time" disabled>°C <br>
+                    <input type="checkbox" id="heat_consitency" name="heating" value="Consitency">
+                    <label for="heat_consitency">Erhitzen/Abkühlen is zu dieser Konsitenz</label>
+                    <p class="reveal">
+                        <select id="Consitency_value">
+                            <option value="zäh">Zäh</option>
+                            <option value="slimy">Schleimig</option>
+                            <option value="steamy">Dampfig</option>
+                            <option value="clear">Durchsichtig</option>
+                            <option value="cream">Cremig</option>
+                        </select>
+                    </p>
             <p></p>
-            
-                    <input type="text" name="temperature" id="celsius">°C</input>
-                    <input type="checkbox" id="stirColor" name="stiring" value="stirColor">
-                    <label for="stirColor">Abkühlen is zu dieser Farbe</label>
-                    <p class="reveal"><input type="color" id="ColorStiring" name="color"></p>
+
+        
             </fieldset>
 
 
