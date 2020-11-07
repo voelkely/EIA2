@@ -88,3 +88,8 @@ fieldset {
     border: 2px thin solid white;
     border-radius: 25px;
 }
+
+#Anweisungen{
+    display: grid;
+	grid-template-columns: 40% auto;
+}
