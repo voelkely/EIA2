@@ -20,7 +20,7 @@ body {
 }
 
 header {
-	grid-column: span 3;
+	grid-column: span 4;
     text-align: center;
     font-family: "Harry Potter";
     color: #d0b98f; 
