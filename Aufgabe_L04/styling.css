@@ -4,8 +4,7 @@ body {
     grid-template-rows: auto auto;
     color: white;
     background-image: url(the-first-lesson.jpg);
-    height: 850px;
-    width: 1960px;
+    height: 1100px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
