@@ -25,7 +25,6 @@ header {
     font-family: "Harry Potter";
     color: #d0b98f; 
     font-size: 2em;
-    margin: -10px;
 }
 
 div {
@@ -33,7 +32,7 @@ div {
     border-radius: 25px;
     margin: 1em;
     background-color: #817667ab;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Harry Potter";
 }
 
 h2 {
