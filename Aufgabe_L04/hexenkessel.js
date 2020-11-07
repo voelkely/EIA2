@@ -11,6 +11,8 @@ var L04_Hexenkessel;
             console.log(_event);
             var input = form.elements["name"].value;
             console.log(input);
+            var display = document.querySelector("#display_basic");
+            display.innerHTML = input;
         }
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);

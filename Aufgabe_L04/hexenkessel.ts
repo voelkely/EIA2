@@ -14,7 +14,9 @@ namespace L04_Hexenkessel {
             let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#basic");
             console.log(_event);
             let input: string = form.elements["name"].value; 
-            console.log(input);    
+            console.log(input);
+            let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");
+            display.innerHTML = input;     
         }
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
