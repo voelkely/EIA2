@@ -58,18 +58,22 @@
                 <label for="ewig">Ewig</label>
 
             <p></p>    
-                <button type="button" id="basic_button">Hinzufügen</button>
+                <button type="button" id="add">Hinzufügen</button>
 
             </fieldset>
         </div>
     </form>
 
     <form>
-        <div id= "Anweisungen">
+        <div id= "anweisungen">
 			<h2>Anweisungen</h2>
 
-            <fieldset id="Ingredients">
-				<legend>Wähle die Zutaten</legend>
+            <fieldset id="ingredients">
+                <legend>Wähle die Zutaten</legend>
+                <input type="radio" name="Zutaten" id="Schlangenzähne" value="schlangenzähne" />
+                <label for="Schlangenzähne">Schlangenzähne</label>
+                <p class="reveal"><input id="teeth_value" type="number" min="1" max="10" step="1" value="1"></input>Stück</p>
+
 				<input type="checkbox" name="Ingredients" id="spiderlegs" value="Spiderlegs" price="10">
 				<label for="spiderlegs">Spinnenbeine</label>
                 <p class="reveal"><input id="legs_value" type="number" min="1" max="10" step="1" value="1"></input>Amount</p>
@@ -108,7 +112,7 @@
 
                 <p></p>
                 
-                <button type="button" id="Zutaten">Hinzufügen</button>
+                <button type="button" id="add">Hinzufügen</button>
 
             </fieldset>
 
@@ -141,7 +145,7 @@
                 </p>
                 <p></p>
                 
-                <button type="button" id="heat_button">Hinzufügen</button>
+                <button type="button" id="add">Hinzufügen</button>
             </fieldset>
 
             <fieldset>
