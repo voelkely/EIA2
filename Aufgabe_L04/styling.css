@@ -52,7 +52,8 @@ p {
     text-shadow: 2px 2px #d0b98f;
 }
 
-#headline {
+p, #headline {
+
     font-size: 28pt;
     color: black;
     text-shadow: 2px 2px #d0b98f;
