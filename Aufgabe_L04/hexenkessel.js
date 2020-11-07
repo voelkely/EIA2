@@ -13,8 +13,9 @@ var L04_Hexenkessel;
             console.log(input);
             var textarea = form.elements["beschreibung"].value;
             var select = form.elements["wirkung"].value;
+            var radio = form.elements["dauer"].value;
             var display = document.querySelector("#display_basic");
-            display.innerHTML += input + textarea + select + "</br>";
+            display.innerHTML += input + textarea + select + radio + "</br>";
         }
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
