@@ -3,25 +3,30 @@ var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        //generateContent(data);
+        //generateContent(data);   
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
         function createRezept(_event) {
-            var form = document.querySelector("#basic");
+            var form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
             console.log(_event);
-            var input = form.elements["name"].value;
+            var input = form.elements["name"].value; //Text 
             console.log(input);
-            var textarea = form.elements["beschreibung"].value;
-            var select = form.elements["wirkung"].value;
-            var radio = form.elements["dauer"].value;
-            var display = document.querySelector("#display_basic");
-            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>";
+            var textarea = form.elements["beschreibung"].value; //Textarea
+            var select = form.elements["wirkung"].value; //Select
+            var radio = form.elements["dauer"].value; //RadioButtons
+            var display = document.querySelector("#display_basic"); //Button hinzugefügt
+            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept   
         }
-        var addBasics = document.querySelector("button#add_basics");
-        addBasics.addEventListener("click", createRezept);
-        //let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");  //?? WHY RED?
+        function createAction(_event) {
+            var form = document.querySelector("#action");
+            console.log(_event);
+            var input = form.elements["ingredients"].value;
+            var anweisungen = document.querySelector("#anweisungen");
+            anweisungen.innerHTML = "";
+        }
         //addIngredients.addEventListener("click", add_ingredients);
-        //function handleChange(_event: Event): void {   //WHAT IS THIS??
+        //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+        //function handleChange(_event: Event): void {   
         //console.log(_event);
         //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
         //effect.innerHTML += effect.value;    
