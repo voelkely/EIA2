@@ -14,9 +14,7 @@ body {
     color: white;
     background-image: url(Potions.webp);
     height: 1500px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-attachment: fixed;
 }
 
 header {
