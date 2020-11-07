@@ -25,6 +25,8 @@ header {
     font-family: "Harry Potter";
     color: #d0b98f; 
     font-size: 2em;
+    text-shadow: 2px 2px black;
+    
 }
 
 div {
@@ -46,6 +48,7 @@ h2 {
 p {
     font-size: 28pt;
     color: black;
+    text-shadow: 2px 2px #d0b98f;
 }
 
 .reveal{ 
