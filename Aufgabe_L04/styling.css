@@ -20,7 +20,6 @@ body {
 }
 
 header {
-	grid-column: span 2;
     text-align: center;
     font-family: "Harry Potter";
     color: #d0b98f; 
@@ -72,11 +71,6 @@ legend {
     font-family: "Harry Potter";
     font-size: 16pt;
     color: white;
-}
-
-#send {
-    border-radius: 25px;
-
 }
 
 button {
