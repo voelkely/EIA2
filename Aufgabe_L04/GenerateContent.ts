@@ -7,19 +7,10 @@ namespace L04_Hexenkessel {
             let items: Item [] = _data[category];
 
             let group: HTMLElement | null = null;
-            switch (category) {
-                case "Ingredients":
-                    group = createMultiple(items, category);
-                    
-                    break;
-            
-                default:
-                    break;
-            
-            }        
-            
+            group = createMultiple(items, category);
+
             let fieldset: HTMLFieldSetElement | null = document.querySelector("fieldset#" + category);
-            if (fieldset && group) 
+            if (fieldset && group)
                 fieldset.appendChild(group);           
 
         }
@@ -40,8 +31,16 @@ namespace L04_Hexenkessel {
             label.textContent = item.name;
             label.htmlFor = item.name;
 
+            let stepper: HTMLInputElement = document.createElement("input");
+            stepper.type = "number";
+            stepper.name = "amount";
+            stepper.id = item.name + "_amount";
+            stepper.step = "1";
+            stepper.value = "0";
+
             group.appendChild(checkbox);
-            group.appendChild(label);    
+            group.appendChild(label); 
+            group.appendChild(stepper);   
         }
         return group;
     }

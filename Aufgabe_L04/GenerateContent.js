@@ -6,13 +6,7 @@ var L04_Hexenkessel;
         for (var category in _data) {
             var items = _data[category];
             var group = null;
-            switch (category) {
-                case "Ingredients":
-                    group = createMultiple(items, category);
-                    break;
-                default:
-                    break;
-            }
+            group = createMultiple(items, category);
             var fieldset = document.querySelector("fieldset#" + category);
             if (fieldset && group)
                 fieldset.appendChild(group);
@@ -32,8 +26,15 @@ var L04_Hexenkessel;
             var label = document.createElement("label");
             label.textContent = item.name;
             label.htmlFor = item.name;
+            var stepper = document.createElement("input");
+            stepper.type = "number";
+            stepper.name = "amount";
+            stepper.id = item.name + "_amount";
+            stepper.step = "1";
+            stepper.value = "0";
             group.appendChild(checkbox);
             group.appendChild(label);
+            group.appendChild(stepper);
         }
         return group;
     }
