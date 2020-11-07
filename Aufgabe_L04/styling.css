@@ -56,7 +56,7 @@ input[type="checkbox"]:checked + label + .reveal{
 }
 
 fieldset {
-    background-color: #d0b98fc5;
+    background-color: #4b392586;
     border: 2px thin solid white;
     border-radius: 25px;
 }
