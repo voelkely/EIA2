@@ -59,12 +59,14 @@ fieldset {
     background-color: rgba(80, 70, 60, 0.550);
     border: 2px thin solid white;
     border-radius: 25px;
+    text-align: center;
 }
 
 legend {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1,5em;
     color: white;
+    text-align: center;
 }
 
 #send {
