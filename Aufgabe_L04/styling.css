@@ -13,7 +13,7 @@ body {
     grid-template-rows: auto auto;
     color: white;
     background-image: url(Potions.webp);
-    height: 1300px;
+    height: 1400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -86,5 +86,6 @@ legend {
 
 button {
     font-family: "Harry Potter";
+    font-size: 14pt;
 }
 
