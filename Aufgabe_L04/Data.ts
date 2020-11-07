@@ -2,7 +2,7 @@ namespace L04_Hexenkessel {
 
     export interface Item {
         name: string;
-        price: number;
+        price?: number;
     }
 
     export interface Data {
@@ -21,5 +21,5 @@ namespace L04_Hexenkessel {
             { name: "Jobberknoll Feather", price: 110.00 },
             { name: "Moonstone", price: 110.00 }
         ]
-    };
+    }
 }

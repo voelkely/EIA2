@@ -3,7 +3,7 @@ var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        //generateContent(data);   
+        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
         function createRezept(_event) {
@@ -17,13 +17,6 @@ var L04_Hexenkessel;
             var display = document.querySelector("#display_basic"); //Button hinzugefügt
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept   
         }
-        //function createAction(_event: Event): void {
-        //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action"); 
-        //console.log(_event);
-        //let input: string = form.elements["ingredients"].value;
-        //let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-        // anweisungen.innerHTML = "";
-        //}
         //addIngredients.addEventListener("click", add_ingredients);
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
         //function handleChange(_event: Event): void {   
