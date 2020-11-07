@@ -44,7 +44,6 @@ h2 {
     color: white;
     font-family: "Harry Potter";
     font-size: 24pt;
-    text-align: center;
 }
 
 p {
@@ -72,7 +71,6 @@ legend {
     font-family: "Harry Potter";
     font-size: 16pt;
     color: white;
-    text-align: center;
 }
 
 button {
@@ -87,9 +85,4 @@ button {
 fieldset {
     border: 2px thin solid white;
     border-radius: 25px;
-}
-
-#Anweisungen{
-    display: grid;
-	grid-template-columns: 40% auto;
 }
