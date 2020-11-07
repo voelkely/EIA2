@@ -84,3 +84,7 @@ button {
     font-size: 14pt;
 }
 
+fieldset {
+    border: 2px thin solid white;
+    border-radius: 25px;
+}
