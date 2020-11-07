@@ -47,6 +47,12 @@ h2 {
 }
 
 p {
+    font-size: 16pt;
+    color: black;
+    text-shadow: 2px 2px #d0b98f;
+}
+
+#headline {
     font-size: 28pt;
     color: black;
     text-shadow: 2px 2px #d0b98f;
