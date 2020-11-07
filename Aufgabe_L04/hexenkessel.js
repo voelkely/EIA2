@@ -15,12 +15,12 @@ var L04_Hexenkessel;
             var select = form.elements["wirkung"].value;
             var radio = form.elements["dauer"].value;
             var display = document.querySelector("#display_basic");
-            display.innerHTML += input + textarea + select + radio + "</br>";
+            display.innerHTML += input + "</br>" + textarea + select + radio + "</br>";
         }
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
-        //let add_ingredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");  //?? WHY RED?
-        //add_ingredients.addEventListener("click", add_ingredients);
+        //let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");  //?? WHY RED?
+        //addIngredients.addEventListener("click", add_ingredients);
         //function handleChange(_event: Event): void {   //WHAT IS THIS??
         //console.log(_event);
         //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");

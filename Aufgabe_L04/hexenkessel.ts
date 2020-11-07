@@ -19,15 +19,15 @@ namespace L04_Hexenkessel {
             let select: string = form.elements["wirkung"].value;
             let radio: string = form.elements["dauer"].value;
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");
-            display.innerHTML += input + textarea + select + radio + "</br>";
+            display.innerHTML += input + "</br>" + textarea + select + radio + "</br>";
 
         }
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
 
-        //let add_ingredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");  //?? WHY RED?
-        //add_ingredients.addEventListener("click", add_ingredients);
+        //let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");  //?? WHY RED?
+        //addIngredients.addEventListener("click", add_ingredients);
 
         
 
