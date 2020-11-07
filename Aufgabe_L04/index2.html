@@ -6,7 +6,7 @@
 	<title>Hexenkessel</title>
 	<link rel="stylesheet" href="styling.css" type="text/css" media="screen" />
 	<script src="Data.js" type="text/javascript" charset="utf-8"></script>
-	<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="hexenkessel.js" type="text/javascript" charset="utf-8"></script>
 	
 </head>
@@ -18,25 +18,25 @@
 		<p>Bennene den Zaubertrank und beschreibe ihn. Wähle deine Zutaten aus und bestätige dein Rezept.</p>
     </header>
     
-    <form>
-        <div id="basic">
+    <form id="basic">
+        <div>
             <h2>Basics</h2>
 			<fieldset>
 				<legend>Zaubertrank Name</legend>
-                <input type="text" name="Trank Name" id="name">
+                <input type="text" name="name" id="name">
             </fieldset>
             <p></p>
 
             <fieldset>
                 <legend>Beschreibung der Risken und Nebenwirkungen</legend>
-                <textarea type="textarea" id="beschreibung"></textarea>
+                <textarea type="textarea" id="beschreibung" name="beschreibung"></textarea>
             </fieldset>
             <p></p>
 
             <fieldset>
                 <legend>Wirkung des Tranks</legend>
         
-                <select name="Wirkung" id="wirkung">
+                <select name="wirkung" id="wirkung">
 					<option value="Müdigkeitstrank" >Müdigkeitstrank</option>
 					<option value="Liebestrank" >Liebestrank</option>
 					<option value="Wahrheitstrank" >Wahrheitstrank</option>
@@ -48,13 +48,13 @@
 
                 <legend>Wirkungsdauer</legend>
                 <p></p>
-				<input type="radio" name="Dauer" id="3h" value="3h" />
+				<input type="radio" name="dauer" id="3h" value="3h" />
 				<label for="3h">3h</label>
-				<input type="radio" name="Dauer" id="vollmond" value="vollmond" />
+				<input type="radio" name="dauer" id="vollmond" value="vollmond" />
 				<label for="vollmond">Bis Vollmond</label>
-				<input type="radio" name="Dauer" id="24h" value="24h" />
+				<input type="radio" name="dauer" id="24h" value="24h" />
 				<label for="24h">24h</label>
-				<input type="radio" name="Dauer" id="ewig" value="ewig" />
+				<input type="radio" name="dauer" id="ewig" value="ewig" />
                 <label for="ewig">Ewig</label>
 
             <p></p>    
