@@ -28,8 +28,7 @@ header {
 }
 
 div {
-    border: thin solid white;
-    border-radius: 25px;
+    
     margin: 1em;
     background-color: #817667ab;
     font-family: "Harry Potter";
