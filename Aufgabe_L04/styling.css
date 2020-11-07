@@ -82,6 +82,9 @@ legend {
 button {
     font-family: "Harry Potter";
     font-size: 14pt;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
 }
 
 fieldset {
