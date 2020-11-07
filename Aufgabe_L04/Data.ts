@@ -21,5 +21,5 @@ namespace L04_Hexenkessel {
             { name: "Jobberknoll Feather", price: 110.00 },
             { name: "Moonstone", price: 110.00 }
         ]
-    }
+    };
 }

@@ -3,7 +3,7 @@ namespace L04_Hexenkessel {
 
     function handleLoad(_event: Event): void {
 
-        generateContent(data);   
+        //generateContent(data);   
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
 
@@ -16,11 +16,14 @@ namespace L04_Hexenkessel {
             let select: string = form.elements["wirkung"].value; //Select
             let radio: string = form.elements["dauer"].value; //RadioButtons
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   //Button hinzugefügt
-            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>"+ radio + "</br>";   //Ausgabe im Rezept   
+            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>"+ radio + "</br>";   //Ausgabe im Rezept
         }
 
+        let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
+        addBasics.addEventListener("click", createRezept);
 
 
+        let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
         //addIngredients.addEventListener("click", add_ingredients);
 
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
