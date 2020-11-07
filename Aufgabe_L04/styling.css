@@ -9,7 +9,7 @@
 
 body {
 	display: grid;
-    grid-template-columns: 40% auto auto auto;
+    grid-column: span 3;
     color: white;
     background-image: url(Potions.webp);
     height: 1400px;
