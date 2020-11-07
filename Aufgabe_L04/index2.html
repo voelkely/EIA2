@@ -116,7 +116,7 @@
                 <input type="text" id="heat_input" value="20" class="time" disabled>°C <br>
                 <p></p>
                 <input type="checkbox" id="heat_consitency" name="heating" value="Consitency">
-                <label for="heat_consitency">Erhitzen/Abkühlen is zu dieser Konsitenz</label>
+                <label for="heat_consitency">Erhitzen/Abkühlen is zu dieser Konsistenz</label>
                 <p class="reveal">
                     <select id="Consitency_value">
                         <option value="zäh">Zäh</option>
@@ -141,8 +141,25 @@
 
             <fieldset>
                 <legend>Rühren</legend>
+                <select name="rühren" id="select_rühren">
+					<option value="leicht rühren" >leicht rühren</option>
+					<option value="langsam rühren" >langsam rühren</option>
+					<option value="gar nicht rühren" >gar nicht rühren</option>
+                    <option value="schnell rühren" >schnell rühren</option>
+                </select>
+                <input type="checkbox" id="stir_action" name="stiring" value="Stir">
+                <label for="stir_action">Rühren is zu dieser Konsistenz</label>
+                <p class="reveal">
+                    <select id="Consitency_value">
+                        <option value="zäh">Zäh</option>
+                        <option value="slimy">Schleimig</option>
+                        <option value="steamy">Dampfig</option>
+                        <option value="clear">Durchsichtig</option>
+                        <option value="cream">Cremig</option>
+                    </select>
+                
 
-                <input 
+                
             </fieldset>
             
 
