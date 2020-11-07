@@ -5,15 +5,17 @@ namespace L04_Hexenkessel {
 
         //generateContent(data);
 
-        let form: HTMLFormElement = <HTMLFormElement>document.querySelector("form#basic");
+        
 
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
 
         function createRezept(_event: Event): void {
+            let form: HTMLFormElement = <HTMLFormElement>document.querySelector("form#basic");
             console.log(_event);
             let input: string = form.elements["name"].value; 
             console.log(input);
+            
         }
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");

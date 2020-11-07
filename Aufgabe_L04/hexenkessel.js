@@ -4,10 +4,10 @@ var L04_Hexenkessel;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         //generateContent(data);
-        var form = document.querySelector("form#basic");
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
         function createRezept(_event) {
+            var form = document.querySelector("form#basic");
             console.log(_event);
             var input = form.elements["name"].value;
             console.log(input);
