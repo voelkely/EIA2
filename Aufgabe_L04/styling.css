@@ -58,7 +58,8 @@ p {
     color: black;
     text-shadow: 2px 2px #d0b98f;
     font-family: "Harry Potter";
-    margin-bottom: -150px;
+    margin-bottom: -120px;
+    margin-top: -100px;
 }
 
 .reveal{ 
