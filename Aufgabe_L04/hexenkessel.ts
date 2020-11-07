@@ -16,7 +16,7 @@ namespace L04_Hexenkessel {
             let input: string = form.elements["name"].value; 
             console.log(input);
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");
-            display.innerHTML = input;
+            display.innerHTML = input + "textarea";
             let textarea: string = form.elements["beschreibung"].value;
             console.log(textarea);
 

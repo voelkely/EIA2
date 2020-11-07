@@ -12,7 +12,7 @@ var L04_Hexenkessel;
             var input = form.elements["name"].value;
             console.log(input);
             var display = document.querySelector("#display_basic");
-            display.innerHTML = input;
+            display.innerHTML = input + "textarea";
             var textarea = form.elements["beschreibung"].value;
             console.log(textarea);
         }
