@@ -28,7 +28,8 @@ header {
 }
 
 div {
-    
+    border: thin solid white;
+    border-radius: 25px;
     margin: 1em;
     background-color: #817667ab;
     font-family: "Harry Potter";
@@ -66,11 +67,6 @@ input[type="checkbox"]:checked + label + .reveal{
     border-radius: 15px;
 }
 
-fieldset {
-    background-color: #4b392586;
-    border: 2px thin solid white;
-    border-radius: 25px;
-}
 
 legend {
     font-family: "Harry Potter";
