@@ -17,13 +17,13 @@ var L04_Hexenkessel;
             var display = document.querySelector("#display_basic"); //Button hinzugefügt
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept   
         }
-        function createAction(_event) {
-            var form = document.querySelector("#action");
-            console.log(_event);
-            var input = form.elements["ingredients"].value;
-            var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML = "";
-        }
+        //function createAction(_event: Event): void {
+        //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action"); 
+        //console.log(_event);
+        //let input: string = form.elements["ingredients"].value;
+        //let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
+        // anweisungen.innerHTML = "";
+        //}
         //addIngredients.addEventListener("click", add_ingredients);
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
         //function handleChange(_event: Event): void {   

@@ -19,14 +19,14 @@ namespace L04_Hexenkessel {
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>"+ radio + "</br>";   //Ausgabe im Rezept   
         }
 
-        function createAction(_event: Event): void {
-            let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action"); 
-            console.log(_event);
-            let input: string = form.elements["ingredients"].value;
-            let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML = "";
+        //function createAction(_event: Event): void {
+            //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action"); 
+            //console.log(_event);
+            //let input: string = form.elements["ingredients"].value;
+            //let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
+           // anweisungen.innerHTML = "";
           
-        }
+        //}
 
 
         //addIngredients.addEventListener("click", add_ingredients);
