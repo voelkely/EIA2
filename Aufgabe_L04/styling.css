@@ -10,7 +10,6 @@
 body {
 	display: grid;
     grid-template-columns: 40% auto auto auto;
-    grid-template-rows: 100px 300px;
     grid-gap: 10px;
     grid-template-rows: auto auto auto;
     color: white;
