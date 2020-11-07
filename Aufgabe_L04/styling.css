@@ -22,7 +22,7 @@ div {
     border: thin solid white;
     border-radius: 25px;
     margin: 1em;
-    background-color: rgba(129, 118, 103, 0.671);
+    background-color: #817667ab;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -56,7 +56,7 @@ input[type="checkbox"]:checked + label + .reveal{
 }
 
 fieldset {
-    background-color:rgba(66, 99, 107, 0.842);
+    background-color: #4b3925;
     border: 2px thin solid white;
     border-radius: 25px;
 }
