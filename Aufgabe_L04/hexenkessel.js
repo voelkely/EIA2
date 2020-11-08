@@ -42,7 +42,7 @@ var L04_Hexenkessel;
             var tempRange = form.elements["heat"].value;
             var tempText = form.elements["heat_input"].value;
             var heatConsistency = form.elements["heating"].value;
-            var slider = document.getElementById("heat_slider");
+            var slider = document.getElementById("myRange");
             var output = document.getElementById("demo");
             output.innerHTML = slider.value;
             slider.oninput = function () {

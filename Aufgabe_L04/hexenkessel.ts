@@ -48,7 +48,7 @@ namespace L04_Hexenkessel {
             let tempText: string = form.elements["heat_input"].value;
             let heatConsistency: string = form.elements["heating"].value;
 
-            let slider = document.getElementById("heat_slider");
+            let slider = document.getElementById("myRange");
             let output = document.getElementById("demo");
             output.innerHTML = slider.value;
 
