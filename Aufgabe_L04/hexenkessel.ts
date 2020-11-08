@@ -4,6 +4,7 @@ namespace L04_Hexenkessel {
     function handleLoad(_event: Event): void {
 
         //generateContent(data);   
+
         let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); 
 
         function createRezept(_event: Event): void {
@@ -60,6 +61,14 @@ namespace L04_Hexenkessel {
 
         let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
         addTemperature.addEventListener("click", createAnweisungen);
+
+        let slider = document.getElementById("myRange");
+        let output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+        output.innerHTML = this.value;
+    }       
 
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
 

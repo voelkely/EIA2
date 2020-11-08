@@ -52,6 +52,12 @@ var L04_Hexenkessel;
         addIngredients.addEventListener("click", createAnweisungen);
         var addTemperature = document.querySelector("button#add_temperature");
         addTemperature.addEventListener("click", createAnweisungen);
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        };
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
         //function handleChange(_event: Event): void {   
         //console.log(_event);
