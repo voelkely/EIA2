@@ -98,10 +98,10 @@ fieldset {
 }
 
 .hot {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.472);
 
 }
 
 .cold {
-    background-color: blue;
+    background-color: rgba(0, 0, 255, 0.472);
 }
