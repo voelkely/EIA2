@@ -22,12 +22,6 @@ namespace L04_Hexenkessel {
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
 
-        let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
-        addIngredients.addEventListener("click", createAnweisungen);
-
-        let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
-        addTemperature.addEventListener("click", createAnweisungen);
-
         function createAnweisungen(_event: Event): void {
             let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
             console.log(_event);
@@ -50,22 +44,24 @@ namespace L04_Hexenkessel {
             let stone: string = form.elements["mondstein"].value;
             let stoneValue: number =  form.elements["stone_value"].value;
 
-            let tempRange: number = form.elements["heat"].value;
-            let tempText: string = form.elements["heat_input"].value;
-            let heatConsistency: string = form.elements["heating"].value;
-
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," +  mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail + 
             "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy + 
             "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "&nbsp" + "zusammen in einen Zaubertopf." + "&nbsp" +
-            "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
+            "Bringe deinen Trank auf eine Temperatur von";
         }
+
+        let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
+        addIngredients.addEventListener("click", createAnweisungen);
+
+        let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
+        addTemperature.addEventListener("click", createAnweisungen);
 
         let deleteOne: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#delete");
         deleteOne.addEventListener("click", createDelete);
 
         function createDelete(_event: Event): void {
-            let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+           for ()
         }
 
        
