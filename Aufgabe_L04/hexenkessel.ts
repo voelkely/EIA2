@@ -16,7 +16,7 @@ namespace L04_Hexenkessel {
             let select: string = form.elements["wirkung"].value; //Select
             let radio: string = form.elements["dauer"].value; //RadioButtons   
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   //Button hinzugefügt
-            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>";   //Ausgabe im Rezept   
+            display.innerHTML += "Name:" + input + "</br>" + "Beschreibung:" + textarea + "</br>" + "Wirkung:" + select + "</br>" + "Dauer:" + radio + "</br>";   //Ausgabe im Rezept   
         }
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
@@ -43,6 +43,8 @@ namespace L04_Hexenkessel {
             let featherValue: number =  form.elements["feather_value"].value;
             let stone: string = form.elements["mondstein"].value;
             let stoneValue: number =  form.elements["stone_value"].value;
+
+
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Füge deinem Trank" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" +  mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail + 
             "</br>" + eggValue + "&nbsp" + egg + "</br>" + wingValue + "&nbsp" + wing + "</br>" + eyeValue + "&nbsp" + eye + "</br>" + fairyValue + "&nbsp" + fairy + 
