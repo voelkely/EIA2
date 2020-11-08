@@ -27,8 +27,9 @@ namespace L04_Hexenkessel {
             console.log(_event);
             let zutaten: string = form.elements["ingredients"].value;
             let spider: string = form.elements["spiderlegs"].value;
+            let spiderValue: number =  form.elements["legs_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML = zutaten + spider;
+            anweisungen.innerHTML = zutaten + spider + spiderValue;
         }
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
