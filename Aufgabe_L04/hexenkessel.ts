@@ -17,15 +17,11 @@ namespace L04_Hexenkessel {
             let radio: string = form.elements["dauer"].value; //RadioButtons   
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   //Button hinzugefügt
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>"+ radio + "</br>";   //Ausgabe im Rezept
-        }
-
-        function createAnwesiungen(_event: Event): void {
-            let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+            let secondForm: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
             console.log(_event);
             let spider: string = form.elements["spiderlegs"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML = spider;
-            
         }
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");

@@ -13,9 +13,14 @@ var L04_Hexenkessel;
             console.log(input);
             var textarea = form.elements["beschreibung"].value; //Textarea
             var select = form.elements["wirkung"].value; //Select
-            var radio = form.elements["dauer"].value; //RadioButtons
+            var radio = form.elements["dauer"].value; //RadioButtons   
             var display = document.querySelector("#display_basic"); //Button hinzugefügt
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept
+            var secondForm = document.querySelector("#action");
+            console.log(_event);
+            var spider = form.elements["spiderlegs"].value;
+            var anweisungen = document.querySelector("#anweisungen");
+            anweisungen.innerHTML = spider;
         }
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
