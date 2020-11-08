@@ -50,7 +50,7 @@ namespace L04_Hexenkessel {
 
 
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Packe" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" +  mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail + 
+            anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," +  mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail + 
             "</br>" + eggValue + "&nbsp" + egg + "</br>" + wingValue + "&nbsp" + wing + "</br>" + eyeValue + "&nbsp" + eye + "</br>" + fairyValue + "&nbsp" + fairy + 
             "</br>" + featherValue + "&nbsp" + feather + "</br>" + stoneValue + "&nbsp" + stone + "</br>" + "zusammen in einen Zaubertopf." + 
             "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
