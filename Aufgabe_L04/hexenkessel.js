@@ -41,7 +41,7 @@ var L04_Hexenkessel;
             var stone = form.elements["mondstein"].value;
             var stoneValue = form.elements["stone_value"].value;
             var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Füge deinem Trank" + "</br>" + spiderValue + spider + "</br>" + mintValue + mint + "</br>" + nailValue + nail +
+            anweisungen.innerHTML += "Füge deinem Trank" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" + mintValue + mint + "</br>" + nailValue + nail +
                 "</br>" + eggValue + egg + "</br>" + wingValue + wing + "</br>" + eyeValue + eye + "</br>" + fairyValue + fairy +
                 "</br>" + featherValue + feather + "</br>" + stoneValue + stone + "</br>" + "hinzu";
         }
