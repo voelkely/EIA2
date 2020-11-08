@@ -5,7 +5,7 @@ namespace L04_Hexenkessel {
 
         //generateContent(data);   
 
-        let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); 
+        //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); 
 
         function createRezept(_event: Event): void {
             let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
@@ -21,6 +21,12 @@ namespace L04_Hexenkessel {
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
+
+        let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
+        addIngredients.addEventListener("click", createAnweisungen);
+
+        let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
+        addTemperature.addEventListener("click", createAnweisungen);
 
         function createAnweisungen(_event: Event): void {
             let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
@@ -48,15 +54,6 @@ namespace L04_Hexenkessel {
             let tempText: string = form.elements["heat_input"].value;
             let heatConsistency: string = form.elements["heating"].value;
 
-            let slider = document.getElementById("myRange");
-            let output = document.getElementById("demo");
-            output.innerHTML = slider.value;
-
-            slider.oninput = function() {
-            output.innerHTML = this.value;
-        } 
-
-
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," +  mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail + 
             "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy + 
@@ -64,21 +61,11 @@ namespace L04_Hexenkessel {
             "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
 
-        let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
-        addIngredients.addEventListener("click", createAnweisungen);
+       
 
-        let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
-        addTemperature.addEventListener("click", createAnweisungen);
-
-        let slider = document.getElementById("heat_slider");
-        let output = document.getElementById("demo");
-        output.innerHTML = slider.value;
-
-        slider.oninput = function() {
-        output.innerHTML = this.value;
-    }       
-
-        //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+        
+        
+    
 
         
 
