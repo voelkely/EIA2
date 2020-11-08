@@ -3,7 +3,7 @@ var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        //generateContent(data);   
+        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
         function createRezept(_event) {
@@ -46,7 +46,7 @@ var L04_Hexenkessel;
             var anweisungen = document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," + mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail +
                 "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy +
-                "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "," + "zusammen in einen Zaubertopf." +
+                "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "&nbsp" + "zusammen in einen Zaubertopf." + "&nbsp" +
                 "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
         var addIngredients = document.querySelector("button#add_ingredients");

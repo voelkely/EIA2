@@ -3,7 +3,7 @@ namespace L04_Hexenkessel {
 
     function handleLoad(_event: Event): void {
 
-        //generateContent(data);   
+        generateContent(data);   
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
 
@@ -52,7 +52,7 @@ namespace L04_Hexenkessel {
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," +  mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail + 
             "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy + 
-            "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "," + "zusammen in einen Zaubertopf." + 
+            "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "&nbsp" + "zusammen in einen Zaubertopf." + "&nbsp" +
             "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
 
