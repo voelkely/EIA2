@@ -44,7 +44,7 @@ namespace L04_Hexenkessel {
             let stone: string = form.elements["mondstein"].value;
             let stoneValue: number =  form.elements["stone_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Füge deinem Trank" + spider + spiderValue + "</br>" +  mint + mintValue + "</br>" + nail + nailValue + 
+            anweisungen.innerHTML += "Füge deinem Trank" + spiderValue + spider + "</br>" +  mint + mintValue + "</br>" + nail + nailValue + 
             "</br>" + egg + eggValue + "</br>" + wing + wingValue + "</br>" + eye + eyeValue + "</br>" + fairy + fairyValue + 
             "</br>" + feather + featherValue + "</br>" + stone + stoneValue + "hinzu";
         }
