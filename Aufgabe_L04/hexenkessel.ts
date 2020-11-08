@@ -3,7 +3,7 @@ namespace L04_Hexenkessel {
 
     function handleLoad(_event: Event): void {
 
-        generateContent(data);   
+        //generateContent(data);   
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
 

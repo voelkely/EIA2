@@ -3,7 +3,7 @@ var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
+        //generateContent(data);   
         //form.addEventListener("change", createPotion);
         //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
         function createRezept(_event) {
