@@ -22,13 +22,13 @@ var L04_Hexenkessel;
         function createAnweisungen(_event) {
             var form = document.querySelector("#action");
             console.log(_event);
-            var spider = form.elements["spiderlegs"].value;
+            var spider = form.elements["spinnenbeine"].value;
             var spiderValue = form.elements["legs_value"].value;
-            var mint = form.elements["peppermints"].value;
+            var mint = form.elements["pfefferminz"].value;
             var mintValue = form.elements["mints_value"].value;
-            var nail = form.elements["toenails"].value;
+            var nail = form.elements["zehennägel"].value;
             var nailValue = form.elements["nails_value"].value;
-            var egg = form.elements["ashwinder_egg"].value;
+            var egg = form.elements["ashwinder_eier"].value;
             var eggValue = form.elements["eggs_value"].value;
             var anweisungen = document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Füge deinem Trank" + spider + spiderValue + "</br>" + mint + mintValue + "</br>" + nail + nailValue +

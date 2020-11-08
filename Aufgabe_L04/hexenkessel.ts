@@ -25,13 +25,13 @@ namespace L04_Hexenkessel {
         function createAnweisungen(_event: Event): void {
             let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
             console.log(_event);
-            let spider: string = form.elements["spiderlegs"].value;
+            let spider: string = form.elements["spinnenbeine"].value;
             let spiderValue: number =  form.elements["legs_value"].value;
-            let mint: string = form.elements["peppermints"].value;
+            let mint: string = form.elements["pfefferminz"].value;
             let mintValue: number =  form.elements["mints_value"].value;
-            let nail: string = form.elements["toenails"].value;
+            let nail: string = form.elements["zehennägel"].value;
             let nailValue: number =  form.elements["nails_value"].value;
-            let egg: string = form.elements["ashwinder_egg"].value;
+            let egg: string = form.elements["ashwinder_eier"].value;
             let eggValue: number =  form.elements["eggs_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Füge deinem Trank" + spider + spiderValue + "</br>" +  mint + mintValue + "</br>" + nail + nailValue + 
