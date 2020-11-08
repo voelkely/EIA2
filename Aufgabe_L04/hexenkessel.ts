@@ -44,15 +44,23 @@ namespace L04_Hexenkessel {
             let stone: string = form.elements["mondstein"].value;
             let stoneValue: number =  form.elements["stone_value"].value;
 
+            let tempRange: number = form.elements["heat"].value;
+            let tempText: string = form.elements["heat_input"].value;
+            let heatConsistency: string = form.elements["heating"].value;
+
 
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Füge deinem Trank" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" +  mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail + 
+            anweisungen.innerHTML += "Packe" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" +  mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail + 
             "</br>" + eggValue + "&nbsp" + egg + "</br>" + wingValue + "&nbsp" + wing + "</br>" + eyeValue + "&nbsp" + eye + "</br>" + fairyValue + "&nbsp" + fairy + 
-            "</br>" + featherValue + "&nbsp" + feather + "</br>" + stoneValue + "&nbsp" + stone + "</br>" + "hinzu";
+            "</br>" + featherValue + "&nbsp" + feather + "</br>" + stoneValue + "&nbsp" + stone + "</br>" + "zusammen in einen Zaubertopf." + 
+            "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
         addIngredients.addEventListener("click", createAnweisungen);
+
+        let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
+        addTemperature.addEventListener("click", createAnweisungen);
 
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
 

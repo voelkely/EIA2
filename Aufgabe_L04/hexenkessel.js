@@ -40,13 +40,19 @@ var L04_Hexenkessel;
             var featherValue = form.elements["feather_value"].value;
             var stone = form.elements["mondstein"].value;
             var stoneValue = form.elements["stone_value"].value;
+            var tempRange = form.elements["heat"].value;
+            var tempText = form.elements["heat_input"].value;
+            var heatConsistency = form.elements["heating"].value;
             var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Füge deinem Trank" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" + mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail +
+            anweisungen.innerHTML += "Packe" + "</br>" + spiderValue + "&nbsp" + spider + "</br>" + mintValue + "&nbsp" + mint + "</br>" + nailValue + "&nbsp" + nail +
                 "</br>" + eggValue + "&nbsp" + egg + "</br>" + wingValue + "&nbsp" + wing + "</br>" + eyeValue + "&nbsp" + eye + "</br>" + fairyValue + "&nbsp" + fairy +
-                "</br>" + featherValue + "&nbsp" + feather + "</br>" + stoneValue + "&nbsp" + stone + "</br>" + "hinzu";
+                "</br>" + featherValue + "&nbsp" + feather + "</br>" + stoneValue + "&nbsp" + stone + "</br>" + "zusammen in einen Zaubertopf." +
+                "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
         var addIngredients = document.querySelector("button#add_ingredients");
         addIngredients.addEventListener("click", createAnweisungen);
+        var addTemperature = document.querySelector("button#add_temperature");
+        addTemperature.addEventListener("click", createAnweisungen);
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
         //function handleChange(_event: Event): void {   
         //console.log(_event);
