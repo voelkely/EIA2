@@ -30,7 +30,7 @@ namespace L04_Hexenkessel {
             let mint: string = form.elements["peppermints"].value;
             let mintValue: number =  form.elements["mints_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Füge" + spider + spiderValue + "</br>" +  mint + mintValue + "hinzu";
+            anweisungen.innerHTML += "Füge" + "<pre>" + spider + spiderValue + "</br>" +  mint + mintValue + "hinzu";
         }
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
