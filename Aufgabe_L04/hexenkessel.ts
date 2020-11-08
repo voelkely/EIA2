@@ -4,8 +4,7 @@ namespace L04_Hexenkessel {
     function handleLoad(_event: Event): void {
 
         //generateContent(data);   
-        //form.addEventListener("change", createPotion);
-        //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); //??
+        let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); 
 
         function createRezept(_event: Event): void {
             let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
