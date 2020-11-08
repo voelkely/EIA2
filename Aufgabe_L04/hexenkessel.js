@@ -4,7 +4,7 @@ var L04_Hexenkessel;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         //generateContent(data);   
-        var slider = document.querySelector("slider");
+        //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); 
         function createRezept(_event) {
             var form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
             console.log(_event);
@@ -18,6 +18,10 @@ var L04_Hexenkessel;
         }
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
+        var addIngredients = document.querySelector("button#add_ingredients");
+        addIngredients.addEventListener("click", createAnweisungen);
+        var addTemperature = document.querySelector("button#add_temperature");
+        addTemperature.addEventListener("click", createAnweisungen);
         function createAnweisungen(_event) {
             var form = document.querySelector("#action");
             console.log(_event);
@@ -42,29 +46,17 @@ var L04_Hexenkessel;
             var tempRange = form.elements["heat"].value;
             var tempText = form.elements["heat_input"].value;
             var heatConsistency = form.elements["heating"].value;
-            var slider = document.getElementById("myRange");
-            var output = document.getElementById("demo");
-            output.innerHTML = slider.value;
-            slider.oninput = function () {
-                output.innerHTML = this.value;
-            };
             var anweisungen = document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," + mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail +
                 "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy +
                 "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "&nbsp" + "zusammen in einen Zaubertopf." + "&nbsp" +
                 "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
-        var addIngredients = document.querySelector("button#add_ingredients");
-        addIngredients.addEventListener("click", createAnweisungen);
-        var addTemperature = document.querySelector("button#add_temperature");
-        addTemperature.addEventListener("click", createAnweisungen);
-        var slider = document.getElementById("heat_slider");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
-        slider.oninput = function () {
-            output.innerHTML = this.value;
-        };
-        //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+        var deleteOne = document.querySelector("button#delete");
+        deleteOne.addEventListener("click", createDelete);
+        function createDelete(_event) {
+            var form = document.querySelector("#action");
+        }
         //function handleChange(_event: Event): void {   
         //console.log(_event);
         //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");

@@ -61,6 +61,13 @@ namespace L04_Hexenkessel {
             "Bringe deinen Trank auf eine Temperatur von" + tempRange + tempText + heatConsistency;
         }
 
+        let deleteOne: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#delete");
+        deleteOne.addEventListener("click", createDelete);
+
+        function createDelete(_event: Event): void {
+            let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+        }
+
        
 
         
