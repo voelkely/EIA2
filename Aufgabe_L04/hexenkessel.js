@@ -17,8 +17,8 @@ var L04_Hexenkessel;
             var display = document.querySelector("#display_basic"); //Button hinzugefügt
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept
         }
-        //let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
-        //addBasics.addEventListener("click", createRezept);
+        var addBasics = document.querySelector("button#add_basics");
+        addBasics.addEventListener("click", createRezept);
         //let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
         //addIngredients.addEventListener("click", add_ingredients);
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
