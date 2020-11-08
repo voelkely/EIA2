@@ -16,12 +16,6 @@ var L04_Hexenkessel;
             var radio = form.elements["dauer"].value; //RadioButtons   
             var display = document.querySelector("#display_basic"); //Button hinzugefügt
             display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept
-            var secondForm = document.querySelector("#action");
-            console.log(_event);
-            var zutaten = form.elements["ingredients"].value;
-            var spider = form.elements["spiderlegs"].value;
-            var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML = zutaten + spider;
         }
         //let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
         //addBasics.addEventListener("click", createRezept);
