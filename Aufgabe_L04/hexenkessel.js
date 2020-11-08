@@ -26,7 +26,7 @@ var L04_Hexenkessel;
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
         var addIngredients = document.querySelector("button#add_ingredients");
-        addIngredients.addEventListener("click", add_ingredients);
+        addIngredients.addEventListener("click", createRezept);
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
         //function handleChange(_event: Event): void {   
         //console.log(_event);

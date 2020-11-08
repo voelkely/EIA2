@@ -31,7 +31,7 @@ namespace L04_Hexenkessel {
 
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
-        addIngredients.addEventListener("click", add_ingredients);
+        addIngredients.addEventListener("click", createRezept);
 
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
 
