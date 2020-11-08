@@ -27,7 +27,7 @@ var L04_Hexenkessel;
             var mint = form.elements["peppermints"].value;
             var mintValue = form.elements["mints_value"].value;
             var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML += spider + spiderValue + "</br>" + mint + mintValue;
+            anweisungen.innerHTML += "Füge" + spider + spiderValue + "</br>" + mint + mintValue + "hinzu";
         }
         var addIngredients = document.querySelector("button#add_ingredients");
         addIngredients.addEventListener("click", createAnweisungen);
