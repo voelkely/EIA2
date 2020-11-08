@@ -30,9 +30,20 @@ var L04_Hexenkessel;
             var nailValue = form.elements["nails_value"].value;
             var egg = form.elements["ashwinder_eier"].value;
             var eggValue = form.elements["eggs_value"].value;
+            var wing = form.elements["fledermausflügel"].value;
+            var wingValue = form.elements["wings_value"].value;
+            var eye = form.elements["beetle_augen"].value;
+            var eyeValue = form.elements["eyes_value"].value;
+            var fairy = form.elements["feenflügel"].value;
+            var fairyValue = form.elements["fairy_value"].value;
+            var feather = form.elements["jobberknoll_federn"].value;
+            var featherValue = form.elements["feather_value"].value;
+            var stone = form.elements["mondstein"].value;
+            var stoneValue = form.elements["stone_value"].value;
             var anweisungen = document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Füge deinem Trank" + spider + spiderValue + "</br>" + mint + mintValue + "</br>" + nail + nailValue +
-                "</br>" + egg + eggValue + "hinzu";
+                "</br>" + egg + eggValue + "</br>" + wing + wingValue + "</br>" + eye + eyeValue + "</br>" + fairy + fairyValue +
+                "</br>" + feather + featherValue + "</br>" + stone + stoneValue + "hinzu";
         }
         var addIngredients = document.querySelector("button#add_ingredients");
         addIngredients.addEventListener("click", createAnweisungen);

@@ -33,9 +33,20 @@ namespace L04_Hexenkessel {
             let nailValue: number =  form.elements["nails_value"].value;
             let egg: string = form.elements["ashwinder_eier"].value;
             let eggValue: number =  form.elements["eggs_value"].value;
+            let wing: string = form.elements["fledermausflügel"].value;
+            let wingValue: number =  form.elements["wings_value"].value;
+            let eye: string = form.elements["beetle_augen"].value;
+            let eyeValue: number =  form.elements["eyes_value"].value;
+            let fairy: string = form.elements["feenflügel"].value;
+            let fairyValue: number =  form.elements["fairy_value"].value;
+            let feather: string = form.elements["jobberknoll_federn"].value;
+            let featherValue: number =  form.elements["feather_value"].value;
+            let stone: string = form.elements["mondstein"].value;
+            let stoneValue: number =  form.elements["stone_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Füge deinem Trank" + spider + spiderValue + "</br>" +  mint + mintValue + "</br>" + nail + nailValue + 
-            "</br>" + egg + eggValue + "hinzu";
+            "</br>" + egg + eggValue + "</br>" + wing + wingValue + "</br>" + eye + eyeValue + "</br>" + fairy + fairyValue + 
+            "</br>" + feather + featherValue + "</br>" + stone + stoneValue + "hinzu";
         }
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
