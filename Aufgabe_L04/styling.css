@@ -96,3 +96,12 @@ fieldset {
     border: 2px thin solid white;
     border-radius: 25px;
 }
+
+.hot {
+    background-color: red;
+
+}
+
+.cold {
+    background-color: blue;
+}
