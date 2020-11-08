@@ -29,8 +29,12 @@ namespace L04_Hexenkessel {
             let spiderValue: number =  form.elements["legs_value"].value;
             let mint: string = form.elements["peppermints"].value;
             let mintValue: number =  form.elements["mints_value"].value;
+            let nail: string = form.elements["toenails"].value;
+            let nailValue: number =  form.elements["nails_value"].value;
+            let mint: string = form.elements["peppermints"].value;
+            let mintValue: number =  form.elements["mints_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Füge" + "s=s" + spider + spiderValue + "</br>" +  mint + mintValue + "hinzu";
+            anweisungen.innerHTML += "Füge" + spider + spiderValue + "</br>" +  mint + mintValue + "</br>" + nail + nailValue + "hinzu";
         }
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
