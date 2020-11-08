@@ -16,8 +16,13 @@ namespace L04_Hexenkessel {
             let select: string = form.elements["wirkung"].value; //Select
             let radio: string = form.elements["dauer"].value; //RadioButtons   
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   //Button hinzugefügt
-            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>";   //Ausgabe im Rezept
+            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>";   //Ausgabe im Rezept   
+        }
 
+        let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
+        addBasics.addEventListener("click", createRezept);
+
+        function createAnweisungen(_event: Event): void {
             let secondForm: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
             console.log(_event);
             let zutaten: string = form.elements["ingredients"].value;
@@ -25,13 +30,9 @@ namespace L04_Hexenkessel {
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML = zutaten + spider;
         }
-
-        let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
-        addBasics.addEventListener("click", createRezept);
-
-
+        
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
-        addIngredients.addEventListener("click", createRezept);
+        addIngredients.addEventListener("click", createAnweisungen);
 
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
 

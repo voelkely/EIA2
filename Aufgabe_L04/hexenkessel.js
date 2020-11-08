@@ -15,7 +15,11 @@ var L04_Hexenkessel;
             var select = form.elements["wirkung"].value; //Select
             var radio = form.elements["dauer"].value; //RadioButtons   
             var display = document.querySelector("#display_basic"); //Button hinzugefügt
-            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept
+            display.innerHTML += input + "</br>" + textarea + "</br>" + select + "</br>" + radio + "</br>"; //Ausgabe im Rezept   
+        }
+        var addBasics = document.querySelector("button#add_basics");
+        addBasics.addEventListener("click", createRezept);
+        function createAnweisungen(_event) {
             var secondForm = document.querySelector("#action");
             console.log(_event);
             var zutaten = form.elements["ingredients"].value;
@@ -23,10 +27,8 @@ var L04_Hexenkessel;
             var anweisungen = document.querySelector("#anweisungen");
             anweisungen.innerHTML = zutaten + spider;
         }
-        var addBasics = document.querySelector("button#add_basics");
-        addBasics.addEventListener("click", createRezept);
         var addIngredients = document.querySelector("button#add_ingredients");
-        addIngredients.addEventListener("click", createRezept);
+        addIngredients.addEventListener("click", createAnweisungen);
         //let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
         //function handleChange(_event: Event): void {   
         //console.log(_event);
