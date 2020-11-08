@@ -16,7 +16,7 @@ namespace L04_Hexenkessel {
             let select: string = form.elements["wirkung"].value; //Select
             let radio: string = form.elements["dauer"].value; //RadioButtons   
             let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   //Button hinzugefügt
-            display.innerHTML += "Name:" + input + "</br>" + "Beschreibung:" + textarea + "</br>" + "Wirkung:" + select + "</br>" + "Dauer:" + radio + "</br>";   //Ausgabe im Rezept   
+            display.innerHTML += "Name:" + "&nbsp" + input + "</br>" + "Beschreibung:" + "&nbsp" + textarea + "</br>" + "Wirkung:" + "&nbsp" + select + "</br>" + "Dauer:" + "&nbsp" + radio + "</br>";   //Ausgabe im Rezept   
         }
 
         let addBasics: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_basics");
