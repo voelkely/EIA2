@@ -22,11 +22,11 @@ var L04_Hexenkessel;
         function createAnweisungen(_event) {
             var form = document.querySelector("#action");
             console.log(_event);
-            var zutaten = form.elements["ingredients"].value;
+            //let zutaten: string = form.elements["ingredients"].value;
             var spider = form.elements["spiderlegs"].value;
             var spiderValue = form.elements["legs_value"].value;
             var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML = zutaten + spider + spiderValue;
+            anweisungen.innerHTML += spider + "</br>" + spiderValue;
         }
         var addIngredients = document.querySelector("button#add_ingredients");
         addIngredients.addEventListener("click", createAnweisungen);
