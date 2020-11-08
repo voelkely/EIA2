@@ -26,7 +26,7 @@ var L04_Hexenkessel;
             var spider = form.elements["spiderlegs"].value;
             var spiderValue = form.elements["legs_value"].value;
             var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML += spider + "</br>" + spiderValue;
+            anweisungen.innerHTML += spider + "</p>" + spiderValue;
         }
         var addIngredients = document.querySelector("button#add_ingredients");
         addIngredients.addEventListener("click", createAnweisungen);

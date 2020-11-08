@@ -29,7 +29,7 @@ namespace L04_Hexenkessel {
             let spider: string = form.elements["spiderlegs"].value;
             let spiderValue: number =  form.elements["legs_value"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
-            anweisungen.innerHTML += spider + "</br>" + spiderValue;
+            anweisungen.innerHTML += spider + "</p>" + spiderValue;
         }
 
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
