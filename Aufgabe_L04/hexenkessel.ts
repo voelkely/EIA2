@@ -23,14 +23,14 @@ namespace L04_Hexenkessel {
         addBasics.addEventListener("click", createRezept);
 
         function createAnweisungen(_event: Event): void {
-            let secondForm: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+            let form: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
             console.log(_event);
             let zutaten: string = form.elements["ingredients"].value;
             let spider: string = form.elements["spiderlegs"].value;
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML = zutaten + spider;
         }
-        
+
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients"); 
         addIngredients.addEventListener("click", createAnweisungen);
 

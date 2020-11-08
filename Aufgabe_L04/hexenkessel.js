@@ -20,7 +20,7 @@ var L04_Hexenkessel;
         var addBasics = document.querySelector("button#add_basics");
         addBasics.addEventListener("click", createRezept);
         function createAnweisungen(_event) {
-            var secondForm = document.querySelector("#action");
+            var form = document.querySelector("#action");
             console.log(_event);
             var zutaten = form.elements["ingredients"].value;
             var spider = form.elements["spiderlegs"].value;
