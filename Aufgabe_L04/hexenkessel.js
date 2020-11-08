@@ -42,6 +42,12 @@ var L04_Hexenkessel;
             var tempRange = form.elements["heat"].value;
             var tempText = form.elements["heat_input"].value;
             var heatConsistency = form.elements["heating"].value;
+            var slider = document.getElementById("heat_slider");
+            var output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+            slider.oninput = function () {
+                output.innerHTML = this.value;
+            };
             var anweisungen = document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," + mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail +
                 "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy +
@@ -52,7 +58,7 @@ var L04_Hexenkessel;
         addIngredients.addEventListener("click", createAnweisungen);
         var addTemperature = document.querySelector("button#add_temperature");
         addTemperature.addEventListener("click", createAnweisungen);
-        var slider = document.getElementById("myRange");
+        var slider = document.getElementById("heat_slider");
         var output = document.getElementById("demo");
         output.innerHTML = slider.value;
         slider.oninput = function () {

@@ -48,6 +48,14 @@ namespace L04_Hexenkessel {
             let tempText: string = form.elements["heat_input"].value;
             let heatConsistency: string = form.elements["heating"].value;
 
+            let slider = document.getElementById("heat_slider");
+            let output = document.getElementById("demo");
+            output.innerHTML = slider.value;
+
+            slider.oninput = function() {
+            output.innerHTML = this.value;
+        } 
+
 
             let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
             anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," +  mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail + 
@@ -62,7 +70,7 @@ namespace L04_Hexenkessel {
         let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
         addTemperature.addEventListener("click", createAnweisungen);
 
-        let slider = document.getElementById("myRange");
+        let slider = document.getElementById("heat_slider");
         let output = document.getElementById("demo");
         output.innerHTML = slider.value;
 
