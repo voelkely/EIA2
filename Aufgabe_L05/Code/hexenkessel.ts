@@ -19,7 +19,7 @@ namespace L04_Hexenkessel {
         let textarea: string = form.elements["beschreibung"].value; //Textarea
         let select: string = form.elements["wirkung"].value; //Select
         let radio: string = form.elements["dauer"].value; //RadioButtons   
-        let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   //Button hinzugefügt
+        let display: HTMLElement = <HTMLElement>document.querySelector("#display_basic");   
         display.innerHTML += "Name:" + "&nbsp" + input + "</br>" + "Beschreibung:" + "&nbsp" + textarea + "</br>" + "Wirkung:" + "&nbsp" + select + "</br>" + "Dauer:" + "&nbsp" + radio + "</br>";   //Ausgabe im Rezept   
     }
 
@@ -72,33 +72,7 @@ namespace L04_Hexenkessel {
             
 
    // }
-    function convertCurrency(_total: number): string {
-        let adjustedPrice: string = "";
-        let knut: string;
-        let sickel: string;
-        let galleonen: string;
-        let remainder: number;
 
-        galleonen = (Math.floor(_total / 493)).toString();
-        remainder = _total % 493;
-        sickel = (Math.floor(remainder / 29)).toString();
-        remainder = remainder % 29;
-        knut = remainder.toString();
-
-        if (galleonen != "0") {
-            adjustedPrice = galleonen + " Galleonen, " + sickel + " Sickel und " + knut + " Knut";
-        }
-
-        else if (sickel != "0") {
-            adjustedPrice = sickel + " Sickel und " + knut + " Knut";
-        }
-
-        else {
-            adjustedPrice = knut + " Knut";
-        }
-
-        return adjustedPrice;
-    }
 
        
 

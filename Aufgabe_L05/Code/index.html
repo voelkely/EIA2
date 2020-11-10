@@ -63,6 +63,14 @@
 
             </fieldset>
 
+            <p></p>
+
+            <fieldset>
+                <button type="button" id="delete">Letzte Eingabe löschen</button> <br>   
+                <p></p>
+                <button type="button" id="deleteAll">Alles löschen</button>    
+            </fieldset>
+
         </div>
     </form>
 
@@ -150,7 +158,7 @@
                 <input type="checkbox" id="heat_time" name="time" value="heat_time">
                 <label for="heat_time">Für einen Zeitraum von:</label>
                 <p class="reveal">
-                    <input id="dauer2" type="number" min="1" max="60" step="1" value="0">
+                    <input id="dauer1" type="number" min="1" max="60" step="1" value="0">
                     Minuten
                 </p>
                 <p></p>
@@ -217,11 +225,11 @@
             <fieldset id="display_basic"></fieldset>
                 <legend>Anweisungen</legend>
             <fieldset id="anweisungen"></fieldset>
-                <span id="total">
+            <span id="total">
             <p>
                 <strong>Preis: 0 Galleonen</strong>
             </p>
-                </span>
+            </span>
             <p></p>
             <button type="submit" id="sendPotion">An Snape senden</button>
             <button type="button" form="basic" id="reset">Reset</button>

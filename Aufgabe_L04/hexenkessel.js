@@ -4,7 +4,9 @@ var L04_Hexenkessel;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         //generateContent(data);   
-        //let slider: HTMLInputElement = <HTMLInputElement>document.querySelector("slider"); 
+        //let send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#sendPotion");
+        //send.addEventListener("click", sendPotion);
+        //displayOrder();   
         function createRezept(_event) {
             var form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
             console.log(_event);
@@ -53,34 +55,37 @@ var L04_Hexenkessel;
         deleteOne.addEventListener("click", createDelete);
         function createDelete(_event) {
             for (;;
-            //function handleChange(_event: Event): void {   
-            //console.log(_event);
-            //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
-            //effect.innerHTML += effect.value;    
-            //let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-            //console.log(inputs);
-            //let rezept: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
-            //rezept.innerHTML = "";
-            //let formData: FormData = new FormData(document.forms[0]);
-            //for (let entry of formData) {
-            //let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
-            //let price: number = Number(item.getAttribute("price"));
-            //if (entry [0] == "Rezept")
-            //rezept.innerHTML += entry [1];
-            // else 
-            //rezept.innerHTML += item.name;
-            //rezept.innerHTML += item.name + "  GAL " + price + "</br>";
+            //function sendPotion(_event: Event): void {
+            // }
             )
                 ;
         }
+        //function sendPotion(_event: Event): void {
+        // }
+        function convertCurrency(_total) {
+            var adjustedPrice = "";
+            var knut;
+            var sickel;
+            var galleonen;
+            var remainder;
+            galleonen = (Math.floor(_total / 493)).toString();
+            remainder = _total % 493;
+            sickel = (Math.floor(remainder / 29)).toString();
+            remainder = remainder % 29;
+            knut = remainder.toString();
+            if (galleonen != "0") {
+                adjustedPrice = galleonen + " Galleonen, " + sickel + " Sickel und " + knut + " Knut";
+            }
+            else if (sickel != "0") {
+                adjustedPrice = sickel + " Sickel und " + knut + " Knut";
+            }
+            else {
+                adjustedPrice = knut + " Knut";
+            }
+            return adjustedPrice;
+        }
         //function handleChange(_event: Event): void {   
         //console.log(_event);
-        //let effect: HTMLSelectElement = <HTMLSelectElement> document.querySelector("select");
-        //effect.innerHTML += effect.value;    
-        //let inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
-        //console.log(inputs);
-        //let rezept: HTMLDivElement = <HTMLDivElement>document.querySelector("div#ausgabe");
-        //rezept.innerHTML = "";
         //let formData: FormData = new FormData(document.forms[0]);
         //for (let entry of formData) {
         //let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[value='" +  entry[1] + "']");
