@@ -61,6 +61,15 @@
                 <button type="button" id="add_basics">Hinzufügen</button>
 
             </fieldset>
+
+            <p></p>
+
+            <fieldset>
+                <button type="button" id="delete">Letzte Eingabe löschen</button> <br>   
+                <p></p>
+                <button type="button" id="deleteAll">Alles löschen</button>    
+            </fieldset>
+
         </div>
     </form>
 
@@ -73,44 +82,43 @@
 
 				<input type="checkbox" name="Ingredients" id="spinnenbeine" value="Spinnenbeine" price="120">
 				<label for="spinnenbeine">Spinnenbeine</label>
-                <p class="reveal"><input id="legs_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+                <p class="reveal"><input id="legs_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
 	
 				<input type="checkbox" name="Ingredients" id="pfefferminz" value="Pfefferminz" price="328">
 				<label for="pfefferminz">Pfefferminz</label>
-				<p class="reveal"><input id="mints_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+				<p class="reveal"><input id="mints_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
 
 				<input type="checkbox" name="Ingredients" id="zehennägel" value="Zehennägel" price="111">
 				<label for="zehennägel">Zehennägel</label>
-				<p class="reveal"><input id="nails_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+				<p class="reveal"><input id="nails_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
 
 				<input type="checkbox" name="Ingredients" id="ashwinder_eier" value="Ashwinder Eier" price="981">
 				<label for="ashwinder_eier">Ashwinder Ei</label>
-				<p class="reveal"><input id="eggs_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+				<p class="reveal"><input id="eggs_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
 
 				<input type="checkbox" name="Ingredients" id="fledermausflügel" value="Fledermausflügel" price="376">
 				<label for="fledermausflügel">Fledermausflügel</label>
-				<p class="reveal"><input id="wings_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+				<p class="reveal"><input id="wings_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
 
 				<input type="checkbox" name="Ingredients" id="beetle_augen" value="Beetle_Augen" price="110">
 				<label for="beetle_augen">Beetle Auge</label>
-                <p class="reveal"><input id="eyes_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+                <p class="reveal"><input id="eyes_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
                 
                 <input type="checkbox" name="Ingredients" id="feenflügel" value="Feenflügel" price="643">
 				<label for="feenflügel">Feenflügel</label>
-                <p class="reveal"><input id="fairy_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+                <p class="reveal"><input id="fairy_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
                 
                 <input type="checkbox" name="Ingredients" id="jobberknoll_federn" value="Jobberknoll Federn" price="435">
 				<label for="jobberknoll_federn">Jobberknoll Feder</label>
-                <p class="reveal"><input id="feather_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p>
+                <p class="reveal"><input id="feather_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
                 
                 <input type="checkbox" name="Ingredients" id="mondstein" value="Mondstein" price="3025">
 				<label for="mondstein">Mondstein</label>
-                <p class="reveal"><input id="stone_value" type="number" min="0" max="10" step="1" value="1"></input>Stück</p> 
+                <p class="reveal"><input id="stone_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
 
                 <p></p>
                 
                 <button type="button" id="add_ingredients">Hinzufügen</button>
-            </div>
 
             </fieldset>
 
@@ -119,8 +127,8 @@
                 0°C
                 <input type="range" name="heat" id="heat_slider" class="slider" min="0°C" max="100°C" step="1" value="0">
                 100°C
-
                 <p></p>
+
                 <input type="checkbox" id="heat_consitency" name="heating" value="Consitency">
                 <label for="heat_consitency">Erhitzen/Abkühlen is zu dieser Konsistenz...</label>
                 <p class="reveal">
@@ -135,10 +143,10 @@
                 <p></p>
 
                 <input type="checkbox" id="heat_time" name="time" value="heat_time">
-                <label for="heat_time">Dauer...</label>
+                <label for="heat_time">Für einen Zeitraum von...</label>
                 <p class="reveal">
                     <input id="heat_time_value" type="range" min="1" max="200" step="1" value="1">
-                    <input type="text" id="heat_input_value" value="20" class="time" disabled> min <br> <!--//HOW DO I GET THIS MIN not as p?-->
+                    <input type="text" id="heat_input_value" value="" class="time" disabled> min <br>
                 </p>
                 <p></p>
                 
@@ -178,11 +186,7 @@
                 
             </fieldset>
 
-            <fieldset>
-                <button type="button" id="delete">Letzte Eingabe löschen</button> <br>   
-                <p></p>
-                <button type="button" id="deleteAll">Alles löschen</button>    
-            </fieldset>
+          
         </div>   
     </form>
 
@@ -200,7 +204,7 @@
             <button type= button id="send">An Snape senden</button>
         </div>
     </form>
-
+ 
 </body>    
 </html>
         
