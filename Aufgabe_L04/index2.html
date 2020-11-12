@@ -51,7 +51,7 @@
                 <p></p>
 				<input type="radio" name="dauer" id="3h" value="3h" />
 				<label for="3h">3h</label>
-				<input type="radio" name="dauer" id="bis vollmond" value="bis vollmond" />
+				<input type="radio" name="dauer" id="bis vollmond" value="Bis Vollmond" />
 				<label for="bis vollmond">Bis Vollmond</label>
 				<input type="radio" name="dauer" id="24h" value="24h" />
 				<label for="24h">24h</label>
@@ -166,7 +166,7 @@
 
             <fieldset id="rühren">
                 <legend>Rührintensität</legend>
-                <select name="rühren" id="select_rühren">
+                <select name="stir_intensity" id="stir_intensity">
                     <option value="wähle">Wähle...</option>
 					<option value="leicht rühren" >leicht rühren</option>
 					<option value="langsam rühren" >langsam rühren</option>
@@ -174,16 +174,16 @@
                 </select>
                 <p></p>
 
-                <input type="checkbox" id="heat_time" name="time" value="heat_time">
-                <label for="heat_time">Rühre für einen Zeitraum von:</label>
+                <input type="checkbox" id="stir_time" name="time" value="stir_time">
+                <label for="stir_time">Rühre für einen Zeitraum von:</label>
                 <p class="reveal">
                     <input id="dauer1" type="number" min="1" max="60" step="1" value="0">
                     Minuten
                 </p>
                 <p></p>
 
-                <input type="checkbox" id="stir_action" name="stiring" value="Stir">
-                <label for="stir_action">Rühre bis zu dieser Konsistenz:</label>
+                <input type="checkbox" id="stir_consistency" name="stir_consistency" value="stir_consitency">
+                <label for="stir_consistency">Rühre bis zu dieser Konsistenz:</label>
                 <p class="reveal">
                     <select id="Consitency_value">
                         <option value="wähle">Wähle...</option>
@@ -196,7 +196,7 @@
                 </p>
                 <p></p>
 
-                <input type="checkbox" id="stir_color" name="endcolor" value="Stircolor">
+                <input type="checkbox" id="stir_color" name="endcolor" value="stir_color">
                 <label for="stir_color">Und bis zu dieser Farbe:</label>
                 <p class="reveal"><input type="color" id="color" name="color"></p>
 
@@ -224,7 +224,7 @@
                 </span>
             <p></p>
             <button type="submit" id="sendPotion">An Snape senden</button>
-            <button type="button" form="basic" id="reset">Reset</button>
+            <button type="button" id="reset">Reset</button>
 
         </div>
     </form>

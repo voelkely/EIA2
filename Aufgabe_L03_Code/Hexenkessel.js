@@ -2,31 +2,30 @@
 var L03_CocktailBar;
 (function (L03_CocktailBar) {
     window.addEventListener("load", handleLoad);
-    var ausgabe;
+    let ausgabe;
     function handleLoad(_event) {
         console.log("Start");
-        var form = document.querySelector("div#form");
+        let form = document.querySelector("div#form");
         form.addEventListener("change", handleChange);
     }
     function handleChange(_event) {
         console.log(_event);
-        var ausgabe = document.querySelector("div#ausgabe");
-        var effect = document.querySelector("select");
+        let ausgabe = document.querySelector("div#ausgabe");
+        let effect = document.querySelector("select");
         ausgabe.innerHTML += effect.value;
         console.log(effect.value);
         //let textarea: HTMLInputElement = [HTMLInputElement] document.querySelector("textarea");
         //potion.innerHTML += textarea.value;
         //let text: HTMLInputElement = [HTMLInputElement] document.querySelector("text");
         //potion.innerHTML += text.value;
-        var inputs = document.querySelectorAll("input");
+        let inputs = document.querySelectorAll("input");
         console.log(inputs);
-        var potion = document.querySelector("div#ausgabe");
+        let potion = document.querySelector("div#ausgabe");
         potion.innerHTML = "";
-        var formData = new FormData(document.forms[0]);
-        for (var _i = 0, formData_1 = formData; _i < formData_1.length; _i++) {
-            var entry = formData_1[_i];
-            var item = document.querySelector("[value='" + entry[1] + "']");
-            var price = Number(item.getAttribute("price"));
+        let formData = new FormData(document.forms[0]);
+        for (let entry of formData) {
+            let item = document.querySelector("[value='" + entry[1] + "']");
+            let price = Number(item.getAttribute("price"));
             if (entry[0] == "Potion")
                 potion.innerHTML += entry[1];
             else
@@ -35,8 +34,9 @@ var L03_CocktailBar;
         }
     }
     function displayAmount(_event) {
-        var progress = document.querySelector("progress");
-        var amount = _event.target.value;
+        let progress = document.querySelector("progress");
+        let amount = _event.target.value;
         progress.value = parseFloat(amount);
     }
 })(L03_CocktailBar || (L03_CocktailBar = {}));
+//# sourceMappingURL=Hexenkessel.js.map

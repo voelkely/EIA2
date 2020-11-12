@@ -3,71 +3,105 @@ var L04_Hexenkessel;
 (function (L04_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        //generateContent(data);   
-        //let send: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#sendPotion");
-        //send.addEventListener("click", sendPotion);
-        //displayOrder();   
+        L04_Hexenkessel.generateContent(L04_Hexenkessel.data);
+        let addBasics = document.querySelector("button#add_basics");
+        let addIngredients = document.querySelector("button#add_ingredients");
+        let addTemperature = document.querySelector("button#add_temperature");
+        let addStiring = document.querySelector("button#add_stiring");
+        let sendSnape = document.querySelector("button#sendPotion");
+        let reset = document.querySelector("button#reset");
+        addBasics.addEventListener("click", createRezept);
+        addIngredients.addEventListener("click", createAnweisungen);
+        //addTemperature.addEventListener("click", displayTemperature);
+        addStiring.addEventListener("click", displayStir);
+        //sendSnape.addEventListener("click", sendPotion);
+        //reset.addEventListener("click", createReset) ;  
         function createRezept(_event) {
-            var form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
-            console.log(_event);
-            var input = form.elements["name"].value; //Text 
-            console.log(input);
-            var textarea = form.elements["beschreibung"].value; //Textarea
-            var select = form.elements["wirkung"].value; //Select
-            var radio = form.elements["dauer"].value; //RadioButtons   
-            var display = document.querySelector("#display_basic"); //Button hinzugefügt
+            let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
+            //console.log(_event);
+            let input = form.elements["name"].value; //Text 
+            //console.log(input);
+            let textarea = form.elements["beschreibung"].value; //Textarea
+            let select = form.elements["wirkung"].value; //Select
+            let radio = form.elements["dauer"].value; //RadioButtons   
+            let display = document.querySelector("#display_basic"); //Button hinzugefügt
+            display.innerHTML = ""; //leert das Array sodass sich die Ausgabe nicht wiederholt, wenn man button erneut klickt!
             display.innerHTML += "Name:" + "&nbsp" + input + "</br>" + "Beschreibung:" + "&nbsp" + textarea + "</br>" + "Wirkung:" + "&nbsp" + select + "</br>" + "Dauer:" + "&nbsp" + radio + "</br>"; //Ausgabe im Rezept   
         }
-        var addBasics = document.querySelector("button#add_basics");
-        addBasics.addEventListener("click", createRezept);
         function createAnweisungen(_event) {
-            var form = document.querySelector("#action");
-            console.log(_event);
-            var spider = form.elements["spinnenbeine"].value;
-            var spiderValue = form.elements["legs_value"].value;
-            var mint = form.elements["pfefferminz"].value;
-            var mintValue = form.elements["mints_value"].value;
-            var nail = form.elements["zehennägel"].value;
-            var nailValue = form.elements["nails_value"].value;
-            var egg = form.elements["ashwinder_eier"].value;
-            var eggValue = form.elements["eggs_value"].value;
-            var wing = form.elements["fledermausflügel"].value;
-            var wingValue = form.elements["wings_value"].value;
-            var eye = form.elements["beetle_augen"].value;
-            var eyeValue = form.elements["eyes_value"].value;
-            var fairy = form.elements["feenflügel"].value;
-            var fairyValue = form.elements["fairy_value"].value;
-            var feather = form.elements["jobberknoll_federn"].value;
-            var featherValue = form.elements["feather_value"].value;
-            var stone = form.elements["mondstein"].value;
-            var stoneValue = form.elements["stone_value"].value;
-            var anweisungen = document.querySelector("#anweisungen");
-            anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," + mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail +
-                "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy +
-                "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "&nbsp" + "zusammen in einen Zaubertopf." + "&nbsp" +
-                "Bringe deinen Trank auf eine Temperatur von";
-        }
-        var addIngredients = document.querySelector("button#add_ingredients");
-        addIngredients.addEventListener("click", createAnweisungen);
-        var addTemperature = document.querySelector("button#add_temperature");
-        addTemperature.addEventListener("click", createAnweisungen);
-        var deleteOne = document.querySelector("button#delete");
-        deleteOne.addEventListener("click", createDelete);
-        function createDelete(_event) {
-            for (;;
-            //function sendPotion(_event: Event): void {
+            //let form2: HTMLFormElement = <HTMLFormElement>document.querySelector("#action");
+            //let anweisungen: HTMLElement = <HTMLElement>document.querySelector("anweisungen");
+            //let formData: FormData = new FormData(<HTMLFormElement>document.querySelector("form#action"));
+            //console.log(_event);
+            // let formData = FormData: new FormData(document.forms[0]);
+            //anweisungen.innerHTML = "Packe";
+            //for (let entry of formData) {
+            // let item: HTMLInputElement = <HTMLInputElement>document.querySelector("[name='" + entry[0] + "']");
+            // if (entry [0] == "ingredients") {
+            //console.log(entry[0], entry[1]);
+            // anweisungen.innerHTML += entry[1] + " hinzu";
             // }
-            )
-                ;
+            //  }
+            // let spider: string = form.elements["spinnenbeine"].value;
+            // let spiderValue: number =  form.elements["legs_value"].value;
+            // let mint: string = form.elements["pfefferminz"].value;
+            // let mintValue: number =  form.elements["mints_value"].value;
+            // let nail: string = form.elements["zehennägel"].value;
+            // let nailValue: number =  form.elements["nails_value"].value;
+            // let egg: string = form.elements["ashwinder_eier"].value;
+            // let eggValue: number =  form.elements["eggs_value"].value;
+            // let wing: string = form.elements["fledermausflügel"].value;
+            // let wingValue: number =  form.elements["wings_value"].value;
+            // let eye: string = form.elements["beetle_augen"].value;
+            // let eyeValue: number =  form.elements["eyes_value"].value;
+            //  let fairy: string = form.elements["feenflügel"].value;
+            // let fairyValue: number =  form.elements["fairy_value"].value;
+            // let feather: string = form.elements["jobberknoll_federn"].value;
+            // let featherValue: number =  form.elements["feather_value"].value;
+            // let stone: string = form.elements["mondstein"].value;
+            // let stoneValue: number =  form.elements["stone_value"].value;
+            // let anweisungen: HTMLElement = <HTMLElement>document.querySelector("#anweisungen");
+            // anweisungen.innerHTML += "Packe" + "&nbsp" + spiderValue + "&nbsp" + spider + "," +  mintValue + "&nbsp" + mint + "," + nailValue + "&nbsp" + nail + 
+            // "</br>" + eggValue + "&nbsp" + egg + "," + wingValue + "&nbsp" + wing + "," + eyeValue + "&nbsp" + eye + "," + fairyValue + "&nbsp" + fairy + 
+            // "</br>" + featherValue + "&nbsp" + feather + "," + stoneValue + "&nbsp" + stone + "&nbsp" + "zusammen in einen Zaubertopf." + "&nbsp" +
+            // "Bringe deinen Trank auf eine Temperatur von";
         }
         //function sendPotion(_event: Event): void {
         // }
+        function displayStir() {
+            let anweisungen = document.querySelector("anweisungen");
+            let intensity = false;
+            let formData = new FormData(document.querySelector("#action"));
+            for (let entry of formData) {
+                switch (entry[0]) {
+                    case "stir_intesity":
+                        if (entry[1] != "0") {
+                            anweisungen.innerHTML += "Rühren mit einer Intensität von " + entry[1] + "<br>";
+                        }
+                        break;
+                    case "stir_time":
+                        if (entry[1] != "0" && intensity)
+                            anweisungen.innerHTML += "➔ Rühren bis " + entry[1] + " Minute(n) vergangen sind." + "<br>";
+                        break;
+                    case "stir_color":
+                        if (entry[1] != "keine Angabe" && intensity)
+                            anweisungen.innerHTML += "➔ Rühren bis die Trankfarbe " + entry[1] + " ist." + "<br>";
+                        break;
+                    case "stir_consistency":
+                        if (entry[1] != "keine Angabe" && intensity)
+                            anweisungen.innerHTML += "➔ Rühren bis die Konsistenz " + entry[1] + " ist." + "<br>";
+                        break;
+                    default:
+                }
+            }
+            anweisungen.innerHTML += "<br>";
+        }
         function convertCurrency(_total) {
-            var adjustedPrice = "";
-            var knut;
-            var sickel;
-            var galleonen;
-            var remainder;
+            let adjustedPrice = "";
+            let knut;
+            let sickel;
+            let galleonen;
+            let remainder;
             galleonen = (Math.floor(_total / 493)).toString();
             remainder = _total % 493;
             sickel = (Math.floor(remainder / 29)).toString();
@@ -97,3 +131,4 @@ var L04_Hexenkessel;
         //rezept.innerHTML += item.name + "  GAL " + price + "</br>";
     }
 })(L04_Hexenkessel || (L04_Hexenkessel = {}));
+//# sourceMappingURL=hexenkessel.js.map

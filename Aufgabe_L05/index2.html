@@ -51,7 +51,7 @@
                 <p></p>
 				<input type="radio" name="dauer" id="3h" value="3h" />
 				<label for="3h">3h</label>
-				<input type="radio" name="dauer" id="bis vollmond" value="bis vollmond" />
+				<input type="radio" name="dauer" id="bis vollmond" value="Bis Vollmond" />
 				<label for="bis vollmond">Bis Vollmond</label>
 				<input type="radio" name="dauer" id="24h" value="24h" />
 				<label for="24h">24h</label>
@@ -60,15 +60,8 @@
 
             <p></p>    
                 <button type="button" id="add_basics">Hinzufügen</button>
+                <button type="button" id="deleteBasic">Löschen</button>
 
-            </fieldset>
-
-            <p></p>
-
-            <fieldset>
-                <button type="button" id="delete">Letzte Eingabe löschen</button> <br>   
-                <p></p>
-                <button type="button" id="deleteAll">Alles löschen</button>    
             </fieldset>
 
         </div>
@@ -81,10 +74,10 @@
             <fieldset id="ingredients">
                 <legend>Wähle deine Zutaten</legend>
 
-				<input type="checkbox" name="Ingredients" id="spinnenbeine" value="Spinnenbeine" price="120">
+				<!--<input type="checkbox" name="Ingredients" id="spinnenbeine" value="Spinnenbeine" price="120">
 				<label for="spinnenbeine">Spinnenbeine</label>
                 <p class="reveal"><input id="legs_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
-	
+        
 				<input type="checkbox" name="Ingredients" id="pfefferminz" value="Pfefferminz" price="328">
 				<label for="pfefferminz">Pfefferminz</label>
 				<p class="reveal"><input id="mints_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
@@ -115,7 +108,7 @@
                 
                 <input type="checkbox" name="Ingredients" id="mondstein" value="Mondstein" price="3025">
 				<label for="mondstein">Mondstein</label>
-                <p class="reveal"><input id="stone_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+                <p class="reveal"><input id="stone_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>-->
 
                 <p></p>
                 
@@ -135,7 +128,7 @@
                 </label>
                 <label for="temperatur">
                     bis auf die Temperatur von:
-                    <input type="number" name="Grad" min="-10" max="100" step="1" id="temperatur">
+                    <input type="number" name="temperatur" min="-10" max="100" step="1" id="grad">
                     ℃
                 </label>
 
@@ -158,7 +151,7 @@
                 <input type="checkbox" id="heat_time" name="time" value="heat_time">
                 <label for="heat_time">Für einen Zeitraum von:</label>
                 <p class="reveal">
-                    <input id="dauer1" type="number" min="1" max="60" step="1" value="0">
+                    <input id="dauer2" type="number" min="1" max="60" step="1" value="0">
                     Minuten
                 </p>
                 <p></p>
@@ -224,16 +217,16 @@
                 <legend>Basics</legend>
             <fieldset id="display_basic"></fieldset>
                 <legend>Anweisungen</legend>
-            <fieldset id="anweisungen"></fieldset>
-            <span id="total">
+            <fieldset id="display_anweisungen"></fieldset>
+                <span id="total">
             <p>
                 <strong>Preis: 0 Galleonen</strong>
             </p>
-            </span>
+                </span>
             <p></p>
-            <button type="submit" id="sendPotion">An Snape senden</button>
-            <button type="button" form="basic" id="reset">Reset</button>
-
+                <button type="reset" form="basic" form="action" id="reset">Reset</button>
+                <button type="submit"  form="basic" form="action" id="sendPotion">An Snape senden</button>
+                
         </div>
     </form>
  

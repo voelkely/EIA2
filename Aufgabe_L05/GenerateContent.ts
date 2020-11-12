@@ -1,18 +1,27 @@
-namespace L04_Hexenkessel {
+namespace L05_Hexenkessel {
 
     export function generateContent(_data: Data): void {
         //console.log(_data);
 
         for (let category in _data) {
             let items: Item [] = _data[category];
+            createMultiple(items, category);
+            console.log(items);
+
 
             let group: HTMLElement | null = null;
-            group = createMultiple(items, category);
+            switch (category) {
+                    case "Ingredients":
+                        group = createMultiple(items, category);
 
-            let fieldset: HTMLFieldSetElement | null = document.querySelector("fieldset#" + category);
-            if (fieldset && group)
-                fieldset.appendChild(group);           
+                        let fieldset: HTMLFieldSetElement | null = document.querySelector("#ingredients");
+                        if (fieldset && group)
+                            fieldset.insertBefore(group, document.getElementById("add_ingredients")); 
+                        break;
+                
+                        default: 
 
+                }           
         }
 
     }
@@ -22,7 +31,7 @@ namespace L04_Hexenkessel {
         for (let item of _items) {
             let checkbox: HTMLInputElement = document.createElement("input");
             checkbox.type = "checkbox";
-            checkbox.setAttribute("price", item.price.toFixed(2));
+            checkbox.setAttribute("price", (item.price)!.toFixed(2));
             checkbox.value = item.name;
             checkbox.name = _category;
             checkbox.id = item.name;
@@ -40,7 +49,8 @@ namespace L04_Hexenkessel {
 
             group.appendChild(checkbox);
             group.appendChild(label); 
-            group.appendChild(stepper);   
+            group.appendChild(stepper);  
+            group.innerHTML += "</br>";
         }
         return group;
     }
