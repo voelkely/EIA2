@@ -5,7 +5,7 @@
 	<meta charset="utf-8" />
 	<title>Hexenkessel</title>
 	<link rel="stylesheet" href="styling.css" type="text/css" media="screen" />
-	<script src="Data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="Data2.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
 	<script src="hexenkessel.js" type="text/javascript" charset="utf-8"></script>
 	
@@ -117,27 +117,30 @@
             </fieldset>
 
             <fieldset id="temperatur">
-                <legend>Definiere die Temperatur</legend>
-                <label for="erhitzen">
+                <legend>Definiere die Temperatur</legend>  
                     <input type="radio" name="temperatur" id="erhitzen" value="erhitzen"> 
                 erhitzen
-                </label>
-                <label for="abkühlen">
                     <input type="radio" name="temperatur" id="abkühlen" value="abkühlen">
                 abkühlen
-                </label>
-                <label for="temperatur">
-                    bis auf die Temperatur von:
-                    <input type="number" name="temperatur" min="-10" max="100" step="1" id="grad">
-                    ℃
-                </label>
+            
+                bis auf die Temperatur von:
+                    <input type="number" name="temperaturGrad" min="-10" max="100" step="5" id="temperatur">
+                ℃
 
                 <p></p>
 
-                <input type="checkbox" id="heat_consitency" name="heating" value="Consitency">
-                <label for="heat_consitency">Erhitzen/Abkühlen bis zu dieser Konsistenz:</label>
+                <input type="checkbox"  name="temperaturDauer">
+                <label for="temperaturDauer">Für einen Zeitraum von:</label>
                 <p class="reveal">
-                    <select id="Consitency_value">
+                    <input id="dauer1" type="number" min="1" max="60" step="1">
+                    Minuten
+                </p>
+                <p></p>
+
+                <input type="checkbox" name="temperaturKonsistenz">
+                <label for="temperaturKonsistenz">Erhitzen/Abkühlen bis zu dieser Konsistenz:</label>
+                <p class="reveal">
+                    <select id="TemperaturKonsistenz">
                         <option value="wähle">Wähle...</option>
                         <option value="zäh">Zäh</option>
                         <option value="slimy">Schleimig</option>
@@ -146,19 +149,13 @@
                         <option value="cream">Cremig</option>
                     </select>
                 </p>
-                <p></p>
+                <p></p> 
 
-                <input type="checkbox" id="heat_time" name="time" value="heat_time">
-                <label for="heat_time">Für einen Zeitraum von:</label>
+                <input type="checkbox" id="temperaturFarbe" name="temperaturFarbe" value="temperaturFarbe">
+                <label for="temperaturFarbe">Und bis zu dieser Farbe:</label>
                 <p class="reveal">
-                    <input id="dauer2" type="number" min="1" max="60" step="1" value="0">
-                    Minuten
+                    <input type="color" id="color" name="color">
                 </p>
-                <p></p>
-
-                <input type="checkbox" id="stir_color" name="endcolor" value="Stircolor">
-                <label for="stir_color">Und bis zu dieser Farbe:</label>
-                <p class="reveal"><input type="color" id="color" name="color"></p>
 
                 <p></p>
                 
@@ -167,26 +164,25 @@
 
             <fieldset id="rühren">
                 <legend>Rührintensität</legend>
-                <select name="rühren" id="select_rühren">
-                    <option value="wähle">Wähle...</option>
-					<option value="leicht rühren" >leicht rühren</option>
-					<option value="langsam rühren" >langsam rühren</option>
-                    <option value="schnell rühren" >schnell rühren</option>
-                </select>
+                    <span>
+                        0
+                        <input type="range" name="rührIntensität" id="rührIntensität" min="0" max="10" step="1" value="0">
+                        10 (Stufe)
+                    </span>
                 <p></p>
 
-                <input type="checkbox" id="heat_time" name="time" value="heat_time">
-                <label for="heat_time">Rühre für einen Zeitraum von:</label>
+                <input type="checkbox" id="rührDauer" name="rührDauer">
+                <label for="rührDauer">Rühre für einen Zeitraum von:</label>
                 <p class="reveal">
-                    <input id="dauer1" type="number" min="1" max="60" step="1" value="0">
+                    <input id="dauer2" type="number" min="1" max="60" step="1" value="0">
                     Minuten
                 </p>
                 <p></p>
 
-                <input type="checkbox" id="stir_action" name="stiring" value="Stir">
-                <label for="stir_action">Rühre bis zu dieser Konsistenz:</label>
+                <input type="checkbox" id="rührKonsistenz" name="rührKonsistenz">
+                <label for="rührKonsistenz">Rühre bis zu dieser Konsistenz:</label>
                 <p class="reveal">
-                    <select id="Consitency_value">
+                    <select id="RührKonsistenz">
                         <option value="wähle">Wähle...</option>
                         <option value="zäh">Zäh</option>
                         <option value="slimy">Schleimig</option>
@@ -197,8 +193,8 @@
                 </p>
                 <p></p>
 
-                <input type="checkbox" id="stir_color" name="endcolor" value="Stircolor">
-                <label for="stir_color">Und bis zu dieser Farbe:</label>
+                <input type="checkbox" id="rührFarbe" name="rührFarbe">
+                <label for="rührFarbe">Und bis zu dieser Farbe:</label>
                 <p class="reveal"><input type="color" id="color" name="color"></p>
 
                 <p></p>
@@ -220,12 +216,12 @@
             <fieldset id="display_anweisungen"></fieldset>
                 <span id="total">
             <p>
-                <strong>Preis: 0 Galleonen</strong>
+                <strong>Preis:  Galleonen</strong>
             </p>
                 </span>
             <p></p>
                 <button type="reset" form="basic" form="action" id="reset">Reset</button>
-                <button type="submit"  form="basic" form="action" id="sendPotion">An Snape senden</button>
+                <button type="button"  form="basic" form="action" id="sendPotion">An Snape senden</button>
                 
         </div>
     </form>

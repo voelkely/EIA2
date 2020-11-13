@@ -25,7 +25,7 @@ var L05_Hexenkessel;
         for (let item of _items) {
             let checkbox = document.createElement("input");
             checkbox.type = "checkbox";
-            checkbox.setAttribute("price", (item.price).toFixed(2));
+            checkbox.setAttribute("price", (item.price).toFixed());
             checkbox.value = item.name;
             checkbox.name = _category;
             checkbox.id = item.name;

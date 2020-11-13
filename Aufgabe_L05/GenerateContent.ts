@@ -1,5 +1,14 @@
 namespace L05_Hexenkessel {
 
+    export interface Item {
+        name: string;
+        price?: number;
+    }
+
+    export interface Data {
+        [category: string]: Item [];
+    }
+
     export function generateContent(_data: Data): void {
         //console.log(_data);
 
@@ -31,7 +40,7 @@ namespace L05_Hexenkessel {
         for (let item of _items) {
             let checkbox: HTMLInputElement = document.createElement("input");
             checkbox.type = "checkbox";
-            checkbox.setAttribute("price", (item.price)!.toFixed(2));
+            checkbox.setAttribute("price", (item.price)!.toFixed());
             checkbox.value = item.name;
             checkbox.name = _category;
             checkbox.id = item.name;
