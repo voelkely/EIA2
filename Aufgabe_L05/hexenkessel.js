@@ -23,7 +23,7 @@ var L05_Hexenkessel;
     }
     async function sendPotion(_event) {
         console.log("send order");
-        let formData = new FormData(document.forms[3]);
+        let formData = new FormData(document.forms[2]);
         let query = new URLSearchParams(formData);
         await fetch("index2.html?" + query.toString());
         alert("Dein Zaubertrank wurde erfolgreich an Professor Snape gesendet!");
@@ -129,7 +129,7 @@ var L05_Hexenkessel;
                     if (entry[1] != "" && intensity) {
                         let stepper = document.getElementById("RührKonsistenz");
                         console.log(stepper.value);
-                        displayAnweisungen.innerHTML += "und dein Trank die Konsistenz " + stepper.value + " erreicht." + "<br>";
+                        displayAnweisungen.innerHTML += "und dein Trank die Konsistenz " + "'" + stepper.value + "'" + " erreicht." + "<br>";
                     }
                     break;
                 case "rührFarbe":

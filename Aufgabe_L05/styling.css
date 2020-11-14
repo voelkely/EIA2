@@ -97,11 +97,7 @@ fieldset {
     border-radius: 25px;
 }
 
-.hot {
-    background-color: rgba(255, 0, 0, 0.472);
-
-}
-
-.cold {
-    background-color: rgba(0, 0, 255, 0.472);
+input {
+    padding: 1px;
+    margin: 1px;
 }
