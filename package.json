@@ -18,6 +18,7 @@
   "homepage": "https://github.com/JirkaDellOro/EIA2-Inverted#readme",
   "dependencies": {
     "@types/mongodb": "^3.3.1",
+    "@types/node": "^14.14.7",
     "mongodb": "^3.3.2"
   }
 }

@@ -1,0 +1,103 @@
+@font-face {
+    font-family:"Harry Potter";
+    src: url("font/HARRYP__.TTF");
+    src:
+    url("font/harryp__-webfont.woff") format("woff"),
+    url("font/harryp__-webfont.woff2") format("woff2"),
+    url("font/HARRYP__.TTF") format("ttf");
+    }
+
+body {
+	display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 30% auto;
+    color: white;
+    background-image: url(Potions.webp);
+    height: 1550px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+	grid-column: span 4;
+    text-align: center;
+    font-family: "Harry Potter";
+    color: #d0b98f; 
+    font-size: 2em;
+    text-shadow: 2px 2px black;
+    margin: -120px;
+    
+}
+
+div {
+    border: thin solid white;
+    border-radius: 25px;
+    margin: 1em;
+    background-color: #817667ab;
+    font-family: "Harry Potter";
+    font-size: 16pt;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-family: "Harry Potter";
+    font-size: 24pt;
+}
+
+p {
+    font-size: 16pt;
+    color: white;
+    font-family: "Harry Potter";
+}
+
+#headline {
+
+    font-size: 32pt;
+    color: black;
+    text-shadow: 2px 2px #d0b98f;
+    font-family: "Harry Potter";
+    margin-bottom: -120px;
+    margin-top: -40px;
+}
+
+.reveal{ 
+    opacity: 0;
+    max-height: 0px;
+    margin: 0;
+    overflow: hidden;
+}
+
+input[type="checkbox"]:checked + label + .reveal{
+    max-height: max-content;
+    opacity: 1;
+    overflow: visible;
+    border-radius: 15px;
+}
+
+
+legend {
+    font-family: "Harry Potter";
+    font-size: 20pt;
+    color: white;
+}
+
+button {
+    font-family: "Harry Potter";
+    font-size: 24px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+fieldset {
+    border: 2px thin solid white;
+    border-radius: 25px;
+}
+
+input {
+    padding: 1px;
+    margin: 1px;
+}
