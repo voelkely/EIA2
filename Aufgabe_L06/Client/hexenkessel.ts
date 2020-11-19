@@ -4,8 +4,8 @@ namespace L06_Hexenkessel {
     let form: HTMLFormElement;
 
     //let url: string = "index2.html";
-    let url: string = "https://mycodingapp97.herokuapp.com";
-    //let url: string = "https://localhost:5001";
+    //let url: string = "https://mycodingapp97.herokuapp.com";
+    let url: string = "https://localhost:5001";
 
     function handleLoad(_event: Event): void {
 

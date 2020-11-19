@@ -25,7 +25,7 @@ var L06_Hexenkessel;
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
         }
-        _response.write("This is my response, ok");
+        _response.write("This is my response");
         _response.end();
     }
 })(L06_Hexenkessel = exports.L06_Hexenkessel || (exports.L06_Hexenkessel = {}));
