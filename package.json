@@ -1,16 +1,16 @@
 {
-  "name": "eia2-inverted",
+  "name": "hexenkessel_client_aufgabe",
   "version": "1.0.0",
   "description": "Control for the heroku implementation",
   "main": "",
   "scripts": {
-    "start": "node X01_Appendix/Code/L06_Server/CocktailBar/Server/Server.js"
+    "start": "node Aufgabe_L06/Server/Server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JirkaDellOro/EIA2-Inverted.git"
   },
-  "author": "Jirka R. Dell'Oro-Friedl",
+  "author": "Yvonne Voelkel",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JirkaDellOro/EIA2-Inverted/issues"

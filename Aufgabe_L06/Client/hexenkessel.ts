@@ -1,6 +1,8 @@
 namespace L06_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
+    let form: HTMLFormElement;
+
     //let url: string = "index2.html";
     let url: string = "http://localhost:5001";
 
@@ -31,9 +33,9 @@ namespace L06_Hexenkessel {
      
     async function sendPotion(_event: Event): Promise<void> {
         console.log("send order");
-        let formData: FormData = new FormData(document.forms[2]);   
+        let formData: FormData = new FormData(form);   
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let response: Response = await fetch(url + "?" + query.toString());
+        let response: Response = await fetch(url + "?" + "hahah");
         let responseText: string = await response.text();
         alert(responseText);
     }
@@ -68,13 +70,15 @@ namespace L06_Hexenkessel {
             if (entry [0] == "Ingredients") {
                     
                 let stepper: HTMLInputElement = <HTMLInputElement>document.getElementById(entry[1] + "_amount");
+                let amount: number = parseInt(stepper.value);
                 console.log(stepper.value);
 
-                let preis: HTMLLIElement = <HTMLLIElement>document.querySelector("[value='" + entry[1] + "']");
-                total += parseInt(<string>preis.getAttribute("price"));
+                let priceElement: HTMLLIElement = <HTMLLIElement>document.querySelector("[value='" + entry[1] + "']");
+                let price: number = parseInt(<string>priceElement.getAttribute("price"));
+                total += price;
 
-                let gesamtpreis: number = preis.getAttribute("price") * stepper.value; // keine ahnung warum mir das hier rot markiert wird...
-                console.log(preis.getAttribute("price")* stepper.value);
+                let gesamtpreis: number = price * amount; // keine ahnung warum mir das hier rot markiert wird...
+                console.log(price * amount);
 
                 displayAnweisungen.innerHTML += stepper.value + " " + entry[1] + " " + "(" + gesamtpreis + "&nbsp" + "GAL" + ")"  + "</br>";
                 

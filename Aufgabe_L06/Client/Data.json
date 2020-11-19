@@ -1,5 +1,5 @@
 {
-        "Ingredients": [
+        "Ingredients":[
             { "name": "Spinnenbeine", "price": 120 },
             { "name": "Pfefferminz", "price": 328 },
             { "name": "Zehennägel", "price": 111 },

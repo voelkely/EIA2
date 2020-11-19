@@ -14,13 +14,14 @@ export namespace L06_Hexenkessel {
     server.addListener("request", handleRequest);
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("Whats up?");
+        console.log("Whats up hahah?");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+            console.log(url.query);
             for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "</br>");
 
@@ -28,11 +29,9 @@ export namespace L06_Hexenkessel {
 
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);
-        }  
-        
-        
+        }     
 
-        _response.write("This is my response");
+        _response.write("This is my response, ok");
         _response.end();
     }
 }

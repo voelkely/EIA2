@@ -1,14 +1,14 @@
-namespace L04_Hexenkessel {
+// namespace L03_Hexenkessel {
 
-    interface: Item {
-        name: string;
-        price: number;
-    }
+//     interface: Item {
+//         name: string;
+//         price: number;
+//     }
 
-    inteface: Data {
-        [category: string]: Item [];
+//     inteface: Data {
+//         [category: string]: Item [];
 
-    }
+//     }
 
-    let data: Data 
-}
+//     let data: Data 
+// }

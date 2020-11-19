@@ -13,18 +13,19 @@ var L06_Hexenkessel;
     server.listen(port);
     server.addListener("request", handleRequest);
     function handleRequest(_request, _response) {
-        console.log("Whats up?");
+        console.log("Whats up hahah?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
+            console.log(url.query);
             for (let key in url.query) {
                 _response.write(key + ":" + url.query[key] + "</br>");
             }
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
         }
-        _response.write("This is my response");
+        _response.write("This is my response, ok");
         _response.end();
     }
 })(L06_Hexenkessel = exports.L06_Hexenkessel || (exports.L06_Hexenkessel = {}));

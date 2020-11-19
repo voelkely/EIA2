@@ -2,6 +2,7 @@
 var L06_Hexenkessel;
 (function (L06_Hexenkessel) {
     window.addEventListener("load", handleLoad);
+    let form;
     //let url: string = "index2.html";
     let url = "http://localhost:5001";
     function handleLoad(_event) {
@@ -25,9 +26,9 @@ var L06_Hexenkessel;
     }
     async function sendPotion(_event) {
         console.log("send order");
-        let formData = new FormData(document.forms[2]);
+        let formData = new FormData(form);
         let query = new URLSearchParams(formData);
-        let response = await fetch(url + "?" + query.toString());
+        let response = await fetch(url + "?" + "hahah");
         let responseText = await response.text();
         alert(responseText);
     }
@@ -53,11 +54,13 @@ var L06_Hexenkessel;
             //console.log(entry);
             if (entry[0] == "Ingredients") {
                 let stepper = document.getElementById(entry[1] + "_amount");
+                let amount = parseInt(stepper.value);
                 console.log(stepper.value);
-                let preis = document.querySelector("[value='" + entry[1] + "']");
-                total += parseInt(preis.getAttribute("price"));
-                let gesamtpreis = preis.getAttribute("price") * stepper.value; // keine ahnung warum mir das hier rot markiert wird...
-                console.log(preis.getAttribute("price") * stepper.value);
+                let priceElement = document.querySelector("[value='" + entry[1] + "']");
+                let price = parseInt(priceElement.getAttribute("price"));
+                total += price;
+                let gesamtpreis = price * amount; // keine ahnung warum mir das hier rot markiert wird...
+                console.log(price * amount);
                 displayAnweisungen.innerHTML += stepper.value + " " + entry[1] + " " + "(" + gesamtpreis + "&nbsp" + "GAL" + ")" + "</br>";
             }
         }
