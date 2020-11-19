@@ -31,7 +31,7 @@ export namespace L06_Hexenkessel {
             _response.write(jsonString);
         }     
 
-        _response.write("This is my response, ok");
+        _response.write("This is my response");
         _response.end();
     }
 }

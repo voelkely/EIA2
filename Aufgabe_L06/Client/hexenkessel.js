@@ -4,7 +4,8 @@ var L06_Hexenkessel;
     window.addEventListener("load", handleLoad);
     let form;
     //let url: string = "index2.html";
-    let url = "http://localhost:5001";
+    //let url: string = "https://mycodingapp97.herokuapp.com";
+    let url = "https://localhost:5001";
     function handleLoad(_event) {
         getData();
         let addBasics = document.querySelector("button#add_basics");
@@ -27,8 +28,9 @@ var L06_Hexenkessel;
     async function sendPotion(_event) {
         console.log("send order");
         let formData = new FormData(form);
+        console.log(url);
         let query = new URLSearchParams(formData);
-        let response = await fetch(url + "?" + "hahah");
+        let response = await fetch(url + "?" + "x=10");
         let responseText = await response.text();
         alert(responseText);
     }

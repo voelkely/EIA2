@@ -4,7 +4,8 @@ namespace L06_Hexenkessel {
     let form: HTMLFormElement;
 
     //let url: string = "index2.html";
-    let url: string = "https://mycodingapp97.herokuapp.com";
+    //let url: string = "https://mycodingapp97.herokuapp.com";
+    let url: string = "https://localhost:5001";
 
     function handleLoad(_event: Event): void {
 
@@ -33,9 +34,10 @@ namespace L06_Hexenkessel {
      
     async function sendPotion(_event: Event): Promise<void> {
         console.log("send order");
-        let formData: FormData = new FormData(form);   
+        let formData: FormData = new FormData(form); 
+        console.log(url); 
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let response: Response = await fetch(url + "?" + "hahah");
+        let response: Response = await fetch(url + "?" + "x=10");
         let responseText: string = await response.text();
         alert(responseText);
     }
