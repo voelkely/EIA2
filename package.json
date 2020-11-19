@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JirkaDellOro/EIA2-Inverted.git"
+    "url": "git+https://github.com/voelkely/EIA2.git"
   },
   "author": "Yvonne Voelkel",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JirkaDellOro/EIA2-Inverted/issues"
+    "url": "https://github.com/voelkely/EIA2/issues"
   },
-  "homepage": "https://github.com/JirkaDellOro/EIA2-Inverted#readme",
+  "homepage": "https://github.com/voelkely/EIA2#readme",
   "dependencies": {
     "@types/mongodb": "^3.3.1",
     "@types/node": "^14.14.7",
