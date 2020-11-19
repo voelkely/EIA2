@@ -5,7 +5,7 @@ var L06_Hexenkessel;
     let form;
     //let url: string = "index2.html";
     //let url: string = "https://mycodingapp97.herokuapp.com";
-    let url = "https://localhost:5001";
+    let url = "http://localhost:5001";
     function handleLoad(_event) {
         getData();
         let addBasics = document.querySelector("button#add_basics");
