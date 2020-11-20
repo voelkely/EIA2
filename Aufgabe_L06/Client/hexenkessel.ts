@@ -37,7 +37,7 @@ namespace L06_Hexenkessel {
         let formData: FormData = new FormData(form); 
         console.log(url); 
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        let response: Response = await fetch(url + "?" + "x=10");
+        let response: Response = await fetch(url + "?" + "warum geht meine Ausgabe nicht?");
         let responseText: string = await response.text();
         alert(responseText);
     }

@@ -30,7 +30,7 @@ var L06_Hexenkessel;
         let formData = new FormData(form);
         console.log(url);
         let query = new URLSearchParams(formData);
-        let response = await fetch(url + "?" + "x=10");
+        let response = await fetch(url + "?" + "warum geht meine Ausgabe nicht?");
         let responseText = await response.text();
         alert(responseText);
     }
