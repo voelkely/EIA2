@@ -2,10 +2,9 @@
 var L06_Hexenkessel;
 (function (L06_Hexenkessel) {
     window.addEventListener("load", handleLoad);
-    let form;
     //let url: string = "index2.html";
-    //let url: string = "https://mycodingapp97.herokuapp.com";
-    let url = "http://localhost:5001";
+    let url = "https://mycodingapp97.herokuapp.com";
+    //let url: string = "http://localhost:5001";
     function handleLoad(_event) {
         getData();
         let addBasics = document.querySelector("button#add_basics");
@@ -27,7 +26,8 @@ var L06_Hexenkessel;
     }
     async function sendPotion() {
         let form = new FormData(document.forms[0]);
-        let url = "http://localhost:5001/";
+        //let url: string = "http://localhost:5001/";
+        let url = "https://mycodingapp97.herokuapp.com";
         let query = new URLSearchParams(form);
         let select = document.querySelector("select"); // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
         url = url + "?" + query.toString() + "&wirkung=" + select.value;
@@ -37,15 +37,6 @@ var L06_Hexenkessel;
         console.log(reply);
         alert("Dein Zaubertrank wurde erfolgreich an Professor Snape gesendet!");
     }
-    //async function sendPotion(_event: Event): Promise<void> {
-    //console.log("send order");
-    //let formData: FormData = new FormData(form); 
-    //console.log(url); 
-    //let query: URLSearchParams = new URLSearchParams(<any>formData);
-    // let response: Response = await fetch(url + "?" + "warum geht meine Ausgabe nicht?");
-    // let responseText: string = await response.text();
-    //alert(responseText);
-    //}
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
         //console.log(_event);
