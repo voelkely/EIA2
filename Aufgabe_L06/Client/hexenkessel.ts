@@ -35,12 +35,13 @@ namespace L06_Hexenkessel {
         let url: string = "https://mycodingapp97.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let select: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");   // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
-        url = url + "?" + query.toString() + "&wirkung=" + select.value;
+        let textarea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector("textarea");
+        url = url + "?" + query.toString() + "&wirkung=" + "&beschreibung=" + select.value + textarea.value;
 
         let response: Response = await fetch(url);
         console.log(response);
 
-        let reply: string = await response.text();  // antwort vom text?
+        let reply: string = await response.text();  // Antwort vom Server im alert
         console.log(reply);
         alert("Dein Zaubertrank wurde erfolgreich an Professor Snape gesendet!");
     }

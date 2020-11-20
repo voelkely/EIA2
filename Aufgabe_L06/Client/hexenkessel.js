@@ -30,10 +30,11 @@ var L06_Hexenkessel;
         let url = "https://mycodingapp97.herokuapp.com";
         let query = new URLSearchParams(form);
         let select = document.querySelector("select"); // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
-        url = url + "?" + query.toString() + "&wirkung=" + select.value;
+        let textarea = document.querySelector("textarea");
+        url = url + "?" + query.toString() + "&wirkung=" + "&beschreibung=" + select.value + textarea.value;
         let response = await fetch(url);
         console.log(response);
-        let reply = await response.text(); // antwort vom text?
+        let reply = await response.text(); // Antwort vom Server im alert
         console.log(reply);
         alert("Dein Zaubertrank wurde erfolgreich an Professor Snape gesendet!");
     }
