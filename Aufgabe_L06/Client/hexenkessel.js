@@ -25,15 +25,27 @@ var L06_Hexenkessel;
         let data = JSON.parse(offer);
         L06_Hexenkessel.generateContent(data);
     }
-    async function sendPotion(_event) {
-        console.log("send order");
-        let formData = new FormData(form);
-        console.log(url);
-        let query = new URLSearchParams(formData);
-        let response = await fetch(url + "?" + "warum geht meine Ausgabe nicht?");
-        let responseText = await response.text();
-        alert(responseText);
+    async function sendPotion() {
+        let form = new FormData(document.forms[0]);
+        let url = "http://localhost:5001/";
+        let query = new URLSearchParams(form);
+        let select = document.querySelector("select"); // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
+        url = url + "?" + query.toString() + "&wirkung=" + select.value;
+        let response = await fetch(url);
+        console.log(response);
+        let reply = await response.text(); // antwort vom text?
+        console.log(reply);
+        alert("Dein Zaubertrank wurde erfolgreich an Professor Snape gesendet!");
     }
+    //async function sendPotion(_event: Event): Promise<void> {
+    //console.log("send order");
+    //let formData: FormData = new FormData(form); 
+    //console.log(url); 
+    //let query: URLSearchParams = new URLSearchParams(<any>formData);
+    // let response: Response = await fetch(url + "?" + "warum geht meine Ausgabe nicht?");
+    // let responseText: string = await response.text();
+    //alert(responseText);
+    //}
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
         //console.log(_event);
