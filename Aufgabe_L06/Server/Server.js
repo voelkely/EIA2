@@ -16,16 +16,12 @@ var L06_Hexenkessel;
         console.log("Whats up hahah?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
+        _response.write("Dein Rezept lautet:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            console.log(url.query);
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + "</br>");
-            }
         }
-        // _response.write("Dein Rezept lautet:");
         _response.end();
     }
 })(L06_Hexenkessel = exports.L06_Hexenkessel || (exports.L06_Hexenkessel = {}));
