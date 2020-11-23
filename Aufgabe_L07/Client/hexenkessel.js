@@ -1,6 +1,6 @@
 "use strict";
-var L06_Hexenkessel;
-(function (L06_Hexenkessel) {
+var L07_Hexenkessel;
+(function (L07_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     //let url: string = "index2.html";
     let url = "https://mycodingapp97.herokuapp.com";
@@ -22,7 +22,7 @@ var L06_Hexenkessel;
         let response = await fetch("Data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
-        L06_Hexenkessel.generateContent(data);
+        L07_Hexenkessel.generateContent(data);
     }
     async function sendPotion() {
         let form = new FormData(document.forms[0]);
@@ -38,7 +38,7 @@ var L06_Hexenkessel;
         console.log(response);
         let reply = await response.text(); // Antwort vom Server im alert
         console.log(reply);
-        alert(reply);
+        alert(url = url + "?" + query.toString() + query1.toString() + "&wirkung=" + "&beschreibung=" + select.value + textarea.value);
     }
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
@@ -180,5 +180,5 @@ var L06_Hexenkessel;
         }
         return adjustedPrice;
     }
-})(L06_Hexenkessel || (L06_Hexenkessel = {}));
+})(L07_Hexenkessel || (L07_Hexenkessel = {}));
 //# sourceMappingURL=hexenkessel.js.map

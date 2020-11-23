@@ -1,0 +1,13 @@
+{
+        "Ingredients":[
+            { "name": "Spinnenbeine", "price": 120 },
+            { "name": "Pfefferminz", "price": 328 },
+            { "name": "Zehennägel", "price": 111 },
+            { "name": "Ashwinder Eier", "price": 981 },
+            { "name": "Fledermausflügel", "price": 376 },
+            { "name": "Beetle Augen", "price": 110 },
+            { "name": "Feenflügel", "price": 643 },
+            { "name": "Jobberknoll Federn", "price": 435 },
+            { "name": "Mondsteine", "price": 3025 }
+        ]
+}

@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 
-export namespace L06_Hexenkessel {
+export namespace L07_Hexenkessel {
     let server: Http.Server = Http.createServer();
 
     let port: number | string | undefined = process.env.PORT;
@@ -32,7 +32,7 @@ export namespace L06_Hexenkessel {
             
         }     
 
-        _response.write("Dein Rezept lautet:");
+        //_response.write("This is my response, wie gehts?");
         _response.end();
     }
 }

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Hexenkessel</title>
+	<link rel="stylesheet" href="styling.css" type="text/css" media="screen" />
+	<script src="Data.json" type="text/javascript" charset="utf-8"></script>-->
+	<script src="GenerateContent.js" type="text/javascript" charset="utf-8"></script>
+	<script src="hexenkessel.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+
+<body>
+
+	<header>
+		<h1>Professor Snapes Zaubertrank Editor</h1>
+		<p id="headline">Bennene den Zaubertrank und beschreibe ihn. Wähle deine Zutaten aus und bestätige dein Rezept.</p>
+    </header>
+    
+    <form id="basic">
+        <div>
+            <h2>Basics</h2>
+			<fieldset>
+				<legend>Zaubertrank Name</legend>
+                <input type="text" name="name" id="name">
+            </fieldset>
+            <p></p>
+
+            <fieldset>
+                <legend>Beschreibung der Risken und Nebenwirkungen</legend>
+                <textarea type="textarea" id="beschreibung" name="beschreibung"></textarea>
+            </fieldset>
+            <p></p>
+
+            <fieldset>
+                <legend>Wirkung des Tranks</legend>
+        
+                <select name="wirkung" id="wirkung">
+                    <option value="Unbekannt">Unbekannt</option>
+					<option value="Müdigkeitstrank" >Müdigkeitstrank</option>
+					<option value="Liebestrank" >Liebestrank</option>
+					<option value="Wahrheitstrank" >Wahrheitstrank</option>
+                    <option value="Unsterblichkeitstrank" >Unsterblichkeitstrank</option>
+                    <option value="Stärkungstrank" >Stärkungstrank</option>
+                    <option value="Todestrank" >Todestrank</option>
+                </select>
+                <p></p>
+
+                <legend>Wirkungsdauer</legend>
+                <p></p>
+				<input type="radio" name="dauer" id="3h" value="3h" />
+				<label for="3h">3h</label>
+				<input type="radio" name="dauer" id="bis vollmond" value="Bis Vollmond" />
+				<label for="bis vollmond">Bis Vollmond</label>
+				<input type="radio" name="dauer" id="24h" value="24h" />
+				<label for="24h">24h</label>
+				<input type="radio" name="dauer" id="ewig" value="ewig" />
+                <label for="ewig">Ewig</label>
+
+            <p></p>    
+                <button type="button" id="add_basics">Hinzufügen</button>
+                <button type="button" id="deleteBasic">Löschen</button>
+
+            </fieldset>
+
+        </div>
+    </form>
+
+    <form id="action">
+        <div>
+			<h2>Anweisungen</h2>
+
+            <fieldset id="ingredients">
+                <legend>Wähle deine Zutaten</legend>
+
+				<!--<input type="checkbox" name="Ingredients" id="spinnenbeine" value="Spinnenbeine" price="120">
+				<label for="spinnenbeine">Spinnenbeine</label>
+                <p class="reveal"><input id="legs_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+        
+				<input type="checkbox" name="Ingredients" id="pfefferminz" value="Pfefferminz" price="328">
+				<label for="pfefferminz">Pfefferminz</label>
+				<p class="reveal"><input id="mints_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+
+				<input type="checkbox" name="Ingredients" id="zehennägel" value="Zehennägel" price="111">
+				<label for="zehennägel">Zehennägel</label>
+				<p class="reveal"><input id="nails_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+
+				<input type="checkbox" name="Ingredients" id="ashwinder_eier" value="Ashwinder Eier" price="981">
+				<label for="ashwinder_eier">Ashwinder Ei</label>
+				<p class="reveal"><input id="eggs_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+
+				<input type="checkbox" name="Ingredients" id="fledermausflügel" value="Fledermausflügel" price="376">
+				<label for="fledermausflügel">Fledermausflügel</label>
+				<p class="reveal"><input id="wings_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+
+				<input type="checkbox" name="Ingredients" id="beetle_augen" value="Beetle Augen" price="110">
+				<label for="beetle_augen">Beetle Auge</label>
+                <p class="reveal"><input id="eyes_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+                
+                <input type="checkbox" name="Ingredients" id="feenflügel" value="Feenflügel" price="643">
+				<label for="feenflügel">Feenflügel</label>
+                <p class="reveal"><input id="fairy_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+                
+                <input type="checkbox" name="Ingredients" id="jobberknoll_federn" value="Jobberknoll Federn" price="435">
+				<label for="jobberknoll_federn">Jobberknoll Feder</label>
+                <p class="reveal"><input id="feather_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>
+                
+                <input type="checkbox" name="Ingredients" id="mondstein" value="Mondstein" price="3025">
+				<label for="mondstein">Mondstein</label>
+                <p class="reveal"><input id="stone_value" type="number" min="0" max="10" step="1" value="0"></input>Stück</p>-->
+
+                <p></p>
+                
+                <button type="button" id="add_ingredients">Hinzufügen</button>
+
+            </fieldset>
+
+            <fieldset id="temperatur">
+                <legend>Definiere die Temperatur</legend>  
+                    <input type="radio" name="temperatur" id="erhitzen" value="erhitzen"> 
+                erhitzen
+                    <input type="radio" name="temperatur" id="abkühlen" value="abkühlen">
+                abkühlen
+            
+                bis auf die Temperatur von:
+                    <input type="number" name="temperaturGrad" min="-10" max="100" step="5" id="temperatur">
+                ℃
+
+                <p></p>
+
+                <input type="checkbox"  name="temperaturDauer">
+                <label for="temperaturDauer">Für einen Zeitraum von:</label>
+                <p class="reveal">
+                    <input id="dauer1" type="number" min="1" max="60" step="1">
+                    Minuten
+                </p>
+                <p></p>
+
+                <input type="checkbox" name="temperaturKonsistenz">
+                <label for="temperaturKonsistenz">Erhitzen/Abkühlen bis zu dieser Konsistenz:</label>
+                <p class="reveal">
+                    <select id="TemperaturKonsistenz">
+                        <option value="wähle">Wähle...</option>
+                        <option value="zäh">Zäh</option>
+                        <option value="schleimig">Schleimig</option>
+                        <option value="dampfig">Dampfig</option>
+                        <option value="durchsichtig">Durchsichtig</option>
+                        <option value="cremig">Cremig</option>
+                    </select>
+                </p>
+                <p></p> 
+
+                <input type="checkbox" id="temperaturFarbe" name="temperaturFarbe" value="temperaturFarbe">
+                <label for="temperaturFarbe">Und bis zu dieser Farbe:</label>
+                <p class="reveal">
+                    <input type="color" id="color" name="color">
+                </p>
+
+                <p></p>
+                
+                <button type="button" id="add_temperature">Hinzufügen</button>
+            </fieldset>
+
+            <fieldset id="rühren">
+                <legend>Rührintensität</legend>
+                    <span>
+                        0
+                        <input type="range" name="rührIntensität" id="rührIntensität" min="0" max="10" step="1" value="0">
+                        10 (Stufe)
+                    </span>
+                <p></p>
+
+                <input type="checkbox" id="rührDauer" name="rührDauer">
+                <label for="rührDauer">Rühre für einen Zeitraum von:</label>
+                <p class="reveal">
+                    <input id="dauer2" type="number" min="1" max="60" step="1" value="0">
+                    Minuten
+                </p>
+                <p></p>
+
+                <input type="checkbox" id="rührKonsistenz" name="rührKonsistenz">
+                <label for="rührKonsistenz">Rühre bis zu dieser Konsistenz:</label>
+                <p class="reveal">
+                    <select id="RührKonsistenz">
+                        <option value="wähle">Wähle...</option>
+                        <option value="zäh">Zäh</option>
+                        <option value="schleimig">Schleimig</option>
+                        <option value="dampfig">Dampfig</option>
+                        <option value="durchsichtig">Durchsichtig</option>
+                        <option value="cremig">Cremig</option>
+                    </select>
+                </p>
+                <p></p>
+
+                <input type="checkbox" id="rührFarbe" name="rührFarbe">
+                <label for="rührFarbe">Und bis zu dieser Farbe:</label>
+                <p class="reveal"><input type="color" id="color" name="color"></p>
+
+                <p></p>
+                
+                <button type="button" id="add_stiring">Hinzufügen</button>
+                
+            </fieldset>
+
+          
+        </div>   
+    </form>
+
+    <form id="rezept">
+        <div>
+            <h2>Dein Zaubertrank Rezept</h2>
+                <legend>Basics</legend>
+            <fieldset id="display_basic"></fieldset>
+                <legend>Anweisungen</legend>
+            <fieldset id="display_anweisungen"></fieldset>
+                <span id="total">
+            <p>
+                <strong>Preis:  Galleonen</strong>
+            </p>
+                </span>
+            <p></p>
+                <button type="reset" form="basic" id="reset">Reset</button>
+                <button type="button"  form="basic" form="action" id="sendPotion">An Snape senden</button>
+                
+        </div>
+    </form>
+ 
+</body>    
+</html>
+        
+
+
+        
