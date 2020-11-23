@@ -38,7 +38,7 @@ var L06_Hexenkessel;
         console.log(response);
         let reply = await response.text(); // Antwort vom Server im alert
         console.log(reply);
-        alert("Dein Rezept lautet:" + "&nbsp" + reply);
+        alert(reply);
     }
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
