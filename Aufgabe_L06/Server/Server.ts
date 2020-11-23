@@ -32,7 +32,7 @@ export namespace L06_Hexenkessel {
             
         }     
 
-        _response.write("Dein Rezept lautet:");
+       // _response.write("Dein Rezept lautet:");
         _response.end();
     }
 }

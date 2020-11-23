@@ -25,7 +25,7 @@ var L06_Hexenkessel;
                 _response.write(key + ":" + url.query[key] + "</br>");
             }
         }
-        _response.write("Dein Rezept lautet:");
+        // _response.write("Dein Rezept lautet:");
         _response.end();
     }
 })(L06_Hexenkessel = exports.L06_Hexenkessel || (exports.L06_Hexenkessel = {}));
