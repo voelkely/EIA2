@@ -2,7 +2,7 @@ namespace L06_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
     //let url: string = "index2.html";
-    let url: string = "https://mycodingapp97.herokuapp.com";
+    //let url: string = "https://mycodingapp97.herokuapp.com";
     //let url: string = "http://localhost:5001";
 
     function handleLoad(_event: Event): void {
