@@ -48,7 +48,7 @@ namespace L06_Hexenkessel {
 
         let reply: string = await response.text();  // Antwort vom Server im alert
         console.log(reply);
-        alert("Dein Rezept lautet:" + reply);
+        alert("Dein Rezept lautet:" + "&nbsp" + reply);
 
     }
 
