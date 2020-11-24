@@ -2,7 +2,7 @@ namespace L07_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
     //let url: string = "index2.html";
-    let url: string = "https://mycodingapp97.herokuapp.com";
+    //let url: string = "https://mycodingapp97.herokuapp.com";
     //let url: string = "http://localhost:5001";
 
     function handleLoad(_event: Event): void {
@@ -32,12 +32,15 @@ namespace L07_Hexenkessel {
     async function sendPotion(): Promise<void> {
         let form: FormData = new FormData(document.forms[0]);
         let form1: FormData = new FormData(document.forms[1]);
+
         //let url: string = "http://localhost:5001/";
         let url: string = "https://mycodingapp97.herokuapp.com";
+
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
         let select: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");   // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
         let textarea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector("textarea");
+        
         url = url + "?" + query.toString() + query1.toString()  + "&wirkung=" + "&beschreibung=" + select.value + textarea.value;
 
         let response: Response = await fetch(url);
@@ -45,7 +48,7 @@ namespace L07_Hexenkessel {
 
         let reply: string = await response.text();  // Antwort vom Server im alert
         console.log(reply);
-        alert(url = url + "?" + query.toString() + query1.toString()  + "&wirkung=" + "&beschreibung=" + select.value + textarea.value);
+        alert(reply);
     }
 
 

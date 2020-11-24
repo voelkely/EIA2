@@ -3,7 +3,7 @@ var L07_Hexenkessel;
 (function (L07_Hexenkessel) {
     window.addEventListener("load", handleLoad);
     //let url: string = "index2.html";
-    let url = "https://mycodingapp97.herokuapp.com";
+    //let url: string = "https://mycodingapp97.herokuapp.com";
     //let url: string = "http://localhost:5001";
     function handleLoad(_event) {
         getData();
@@ -38,7 +38,7 @@ var L07_Hexenkessel;
         console.log(response);
         let reply = await response.text(); // Antwort vom Server im alert
         console.log(reply);
-        alert(url = url + "?" + query.toString() + query1.toString() + "&wirkung=" + "&beschreibung=" + select.value + textarea.value);
+        alert(reply);
     }
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen

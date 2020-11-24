@@ -3,30 +3,46 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.L07_Hexenkessel = void 0;
 const Http = require("http");
 const Url = require("url");
+const Mongo = require("mongodb");
 var L07_Hexenkessel;
 (function (L07_Hexenkessel) {
-    let server = Http.createServer();
+    let orders;
     let port = process.env.PORT;
     if (port == undefined)
         port = 5001;
-    console.log("Server starting on port:" + port);
-    server.listen(port);
-    server.addListener("request", handleRequest);
+    //let databaseUrl: string = "mongodb://localhost:27017";
+    let databaseUrl = "<yvonne>:<mn%2357955>@eia2yvonne.32buz.mongodb.net/<Hexenkessel>?retryWrites=true&w=majority";
+    startServer(port);
+    connectToDatabase(databaseUrl);
+    function startServer(_port) {
+        let server = Http.createServer();
+        console.log("Server starting on port:" + _port);
+        server.listen(_port);
+        server.addListener("request", handleRequest);
+    }
+    async function connectToDatabase(_url) {
+        let options = { useNewUrlParser: true, useUnifiedTopology: true };
+        let mongoClient = new Mongo.MongoClient(_url, options);
+        await mongoClient.connect();
+        orders = mongoClient.db("Hexenkessel").collection("Orders");
+        console.log("Database connection", orders != undefined);
+    }
     function handleRequest(_request, _response) {
-        console.log("Whats up hahah?");
+        console.log("Whats up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
+        _response.write("Dein Rezept lautet:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            console.log(url.query);
             let jsonString = JSON.stringify(url.query);
             _response.write(jsonString);
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + "</br>");
-            }
+            storeOrder(url.query);
         }
-        //_response.write("This is my response, wie gehts?");
         _response.end();
     }
+    function storeOrder(_order) {
+        orders.insert(_order);
+    }
 })(L07_Hexenkessel = exports.L07_Hexenkessel || (exports.L07_Hexenkessel = {}));
+//mongodb+srv:<username>:<password>@eia2yvonne.32buz.mongodb.net/<dbname>?retryWrites=true&w=majority  // connect your application
 //# sourceMappingURL=Server.js.map
