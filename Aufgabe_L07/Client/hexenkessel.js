@@ -29,7 +29,6 @@ var L07_Hexenkessel;
         let form1 = new FormData(document.forms[1]);
         //let url: string = "http://localhost:5001/";
         let url = "https://mycodingapp97.herokuapp.com";
-        //let url: string = "<yvonne>:<mn%2357955>@eia2yvonne.32buz.mongodb.net/<Hexenkessel>?retryWrites=true&w=majority";
         let query = new URLSearchParams(form);
         let query1 = new URLSearchParams(form1);
         let select = document.querySelector("select"); // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht

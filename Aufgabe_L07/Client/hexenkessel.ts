@@ -35,7 +35,6 @@ namespace L07_Hexenkessel {
 
         //let url: string = "http://localhost:5001/";
         let url: string = "https://mycodingapp97.herokuapp.com";
-        //let url: string = "<yvonne>:<mn%2357955>@eia2yvonne.32buz.mongodb.net/<Hexenkessel>?retryWrites=true&w=majority";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
