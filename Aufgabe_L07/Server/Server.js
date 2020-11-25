@@ -27,6 +27,7 @@ var L07_Hexenkessel;
         orders = mongoClient.db("Hexenkessel").collection("Orders");
         console.log("Database connection", orders != undefined);
     }
+    //function retrieveOrders()
     function handleRequest(_request, _response) {
         console.log("Whats up?");
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -41,7 +42,7 @@ var L07_Hexenkessel;
         _response.end();
     }
     function storeOrder(_order) {
-        orders.insert(_order);
+        orders.insertOne(_order);
     }
 })(L07_Hexenkessel = exports.L07_Hexenkessel || (exports.L07_Hexenkessel = {}));
 //mongodb+srv:<username>:<password>@eia2yvonne.32buz.mongodb.net/<dbname>?retryWrites=true&w=majority  // connect your application

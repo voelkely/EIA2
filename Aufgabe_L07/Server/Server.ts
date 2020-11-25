@@ -39,6 +39,8 @@ export namespace L07_Hexenkessel {
         console.log("Database connection", orders != undefined);
     }
 
+    //function retrieveOrders()
+
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("Whats up?");
 
@@ -60,7 +62,7 @@ export namespace L07_Hexenkessel {
     }
 
     function storeOrder(_order: Order): void {
-        orders.insert(_order);
+        orders.insertOne(_order);
 
     }
 
