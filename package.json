@@ -4,7 +4,7 @@
   "description": "Control for the heroku implementation",
   "main": "",
   "scripts": {
-    "start": "node Aufgabe_L06/Server/Server.js remote"
+    "start": "node Aufgabe_L07/Server/Server.js remote"
   },
   "repository": {
     "type": "git",
