@@ -39,7 +39,11 @@ export namespace L07_Hexenkessel {
         console.log("Database connection", orders != undefined);
     }
 
-    //function retrieveOrders()
+    //async function retrieveOrders(_order: Order): Promise<void> {
+        //let allOrders = [];
+        //allOrders.insertOne(_order);
+        //return()
+    //}
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("wie gehts");
@@ -55,7 +59,7 @@ export namespace L07_Hexenkessel {
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);
 
-            storeOrder(url.query);
+            storeOrder(<Order>url.query);
         }
        
         _response.end();

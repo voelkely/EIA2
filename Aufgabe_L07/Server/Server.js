@@ -27,7 +27,11 @@ var L07_Hexenkessel;
         orders = mongoClient.db("Hexenkessel").collection("Orders");
         console.log("Database connection", orders != undefined);
     }
-    //function retrieveOrders()
+    //async function retrieveOrders(_order: Order): Promise<void> {
+    //let allOrders = [];
+    //allOrders.insertOne(_order);
+    //return()
+    //}
     function handleRequest(_request, _response) {
         console.log("wie gehts");
         _response.setHeader("content-type", "text/html; charset=utf-8");

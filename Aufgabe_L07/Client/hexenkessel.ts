@@ -34,14 +34,15 @@ namespace L07_Hexenkessel {
         let form1: FormData = new FormData(document.forms[1]);
 
         //let url: string = "http://localhost:5001/";
-        let url: string = "https://mycodingapp97.herokuapp.com";
+        let url: string = "https://mycodingapp97.herokuapp.com/";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
         let select: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");   // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
         let textarea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector("textarea");
         
-        url = url + "?" + query.toString() + query1.toString()  + "&wirkung=" + "&beschreibung=" + select.value + textarea.value;
+        url = url + "?" + query.toString() + query1.toString()  + "&wirkung=" + select.value + "&beschreibung=" + textarea.value;
+        console.log(query.toString);
 
         let response: Response = await fetch(url);
         console.log(response);
