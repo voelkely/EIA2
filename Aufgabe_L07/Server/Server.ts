@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
-import { receiveMessageOnPort } from "worker_threads";
+//import { receiveMessageOnPort } from "worker_threads";
 
 
 export namespace L07_Hexenkessel {
@@ -40,12 +40,6 @@ export namespace L07_Hexenkessel {
         console.log("Database connection", orders != undefined);
     }
 
-    //async function retrieveOrders(_order: Order): Promise<void> {
-        //let allOrders = [];
-        //allOrders.insertOne(_order);
-        //return()
-    //}
-
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log("wie gehts");
 
@@ -56,25 +50,21 @@ export namespace L07_Hexenkessel {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            let jsonString: string;
-            if (url.pathname == "/retrieve") {
-                jsonString = JSON.stringify(await recipe.find().toArray());
-                _response.write(jsonString);
-            } else if (url.pathname == "/submit") {
-                console.log(_request.url);
-                jsonString = JSON.stringify(url.query);
-                _response.write(jsonString);
-                storeOrder(<Order>url.query);
-            }
+            let jsonString: string = JSON.stringify(url.query);
+            _response.write(jsonString);
+
+            storeOrder(<Order>url.query);
+               
         }
-       
+        
         _response.end();
     }
 
     function storeOrder(_order: Order): void {
         orders.insertOne(_order);
-
     }
+       
+  
 
 }
 

@@ -13,13 +13,17 @@ namespace L07_Hexenkessel {
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");
         let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
         let addStiring: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_stiring");
-        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#sendPotion");    
-
+        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#sendPotion");  
+        //let show: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#showAll"); 
+        let deleteAll: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#delete");  
+ 
         addBasics.addEventListener("click", createRezept); // Hier werden die Basics ausgegeben 
         addIngredients.addEventListener("click", createAnweisungen); // Hier werden Zutaten, Temperatur und Rühren ausgegeben
         addTemperature.addEventListener("click", displayTemperature); 
         addStiring.addEventListener("click", displayStir);
         submit.addEventListener("click", sendPotion); // asynchrone Funktion, damit das Rezept an Server gesendet wird
+        //show.addEventListener("click", retrieveOrders); // Alle Rezepte sehen
+        deleteAll.addEventListener("click", askBeforeDelete); // Löschen des Rezepts
     }
 
     async function getData(): Promise<void> {
@@ -33,7 +37,7 @@ namespace L07_Hexenkessel {
         let form: FormData = new FormData(document.forms[0]);
         let form1: FormData = new FormData(document.forms[1]);
 
-        let url: string = "http://localhost:5001/retrieve";
+        let url: string = "http://localhost:5001/";
         //let url: string = "https://mycodingapp97.herokuapp.com/";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
@@ -50,6 +54,25 @@ namespace L07_Hexenkessel {
         let reply: string = await response.text();  // Antwort vom Server im alert
         console.log(reply);
         alert(reply);
+    }
+
+
+    function askBeforeDelete(): void {
+        let displayBasic: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_basic");
+        let displayAnweisungen: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_anweisungen");
+        if (displayBasic.innerHTML && displayAnweisungen.innerHTML != "" && confirm("Bist du sicher, dass du alles löschen möchtest?")) {
+            deleteAll();
+        }
+    }
+
+    function deleteAll(): void {
+        let displayBasic: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_basic");
+        let displayAnweisungen: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_anweisungen");
+        let total: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#total");
+        displayBasic.innerHTML = "...";
+        displayAnweisungen.innerHTML = "";
+        total.innerHTML = "";
+        //formDataSend = new FormData();
     }
 
 

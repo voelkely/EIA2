@@ -4,6 +4,7 @@ exports.L07_Hexenkessel = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
+//import { receiveMessageOnPort } from "worker_threads";
 var L07_Hexenkessel;
 (function (L07_Hexenkessel) {
     let orders;
@@ -27,11 +28,6 @@ var L07_Hexenkessel;
         orders = mongoClient.db("Hexenkessel").collection("Orders");
         console.log("Database connection", orders != undefined);
     }
-    //async function retrieveOrders(_order: Order): Promise<void> {
-    //let allOrders = [];
-    //allOrders.insertOne(_order);
-    //return()
-    //}
     function handleRequest(_request, _response) {
         console.log("wie gehts");
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -39,17 +35,9 @@ var L07_Hexenkessel;
         _response.write("Dein Rezept lautet:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let jsonString;
-            if (url.pathname == "/retrieve") {
-                jsonString = JSON.stringify(await recipe.find().toArray());
-                _response.write(jsonString);
-            }
-            else if (url.pathname == "/submit") {
-                console.log(_request.url);
-                jsonString = JSON.stringify(url.query);
-                _response.write(jsonString);
-                storeOrder(url.query);
-            }
+            let jsonString = JSON.stringify(url.query);
+            _response.write(jsonString);
+            storeOrder(url.query);
         }
         _response.end();
     }

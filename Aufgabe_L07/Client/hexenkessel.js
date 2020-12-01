@@ -12,11 +12,15 @@ var L07_Hexenkessel;
         let addTemperature = document.querySelector("button#add_temperature");
         let addStiring = document.querySelector("button#add_stiring");
         let submit = document.querySelector("button#sendPotion");
+        //let show: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#showAll"); 
+        let deleteAll = document.querySelector("button#delete");
         addBasics.addEventListener("click", createRezept); // Hier werden die Basics ausgegeben 
         addIngredients.addEventListener("click", createAnweisungen); // Hier werden Zutaten, Temperatur und Rühren ausgegeben
         addTemperature.addEventListener("click", displayTemperature);
         addStiring.addEventListener("click", displayStir);
         submit.addEventListener("click", sendPotion); // asynchrone Funktion, damit das Rezept an Server gesendet wird
+        //show.addEventListener("click", retrieveOrders); // Alle Rezepte sehen
+        deleteAll.addEventListener("click", askBeforeDelete); // Löschen des Rezepts
     }
     async function getData() {
         let response = await fetch("Data.json");
@@ -27,7 +31,7 @@ var L07_Hexenkessel;
     async function sendPotion() {
         let form = new FormData(document.forms[0]);
         let form1 = new FormData(document.forms[1]);
-        let url = "http://localhost:5001/retrieve";
+        let url = "http://localhost:5001/";
         //let url: string = "https://mycodingapp97.herokuapp.com/";
         let query = new URLSearchParams(form);
         let query1 = new URLSearchParams(form1);
@@ -40,6 +44,22 @@ var L07_Hexenkessel;
         let reply = await response.text(); // Antwort vom Server im alert
         console.log(reply);
         alert(reply);
+    }
+    function askBeforeDelete() {
+        let displayBasic = document.querySelector("#display_basic");
+        let displayAnweisungen = document.querySelector("#display_anweisungen");
+        if (displayBasic.innerHTML && displayAnweisungen.innerHTML != "" && confirm("Bist du sicher, dass du alles löschen möchtest?")) {
+            deleteAll();
+        }
+    }
+    function deleteAll() {
+        let displayBasic = document.querySelector("#display_basic");
+        let displayAnweisungen = document.querySelector("#display_anweisungen");
+        let total = document.querySelector("#total");
+        displayBasic.innerHTML = "...";
+        displayAnweisungen.innerHTML = "";
+        total.innerHTML = "";
+        //formDataSend = new FormData();
     }
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen
