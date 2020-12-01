@@ -39,9 +39,17 @@ var L07_Hexenkessel;
         _response.write("Dein Rezept lautet:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
-            storeOrder(url.query);
+            let jsonString;
+            if (url.pathname == "/retrieve") {
+                jsonString = JSON.stringify(await recipe.find().toArray());
+                _response.write(jsonString);
+            }
+            else if (url.pathname == "/submit") {
+                console.log(_request.url);
+                jsonString = JSON.stringify(url.query);
+                _response.write(jsonString);
+                storeOrder(url.query);
+            }
         }
         _response.end();
     }
