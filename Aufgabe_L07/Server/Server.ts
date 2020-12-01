@@ -50,13 +50,14 @@ export namespace L07_Hexenkessel {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+            
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);
 
             storeOrder(<Order>url.query);
                
         }
-        
+
         _response.end();
     }
 
