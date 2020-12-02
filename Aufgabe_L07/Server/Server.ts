@@ -17,8 +17,8 @@ export namespace L07_Hexenkessel {
     if (port == undefined)
         port = 5001;
 
-    //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Hexenkessel?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb://localhost:27017";
+    //let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Hexenkessel?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDatabase(databaseUrl);
@@ -52,11 +52,10 @@ export namespace L07_Hexenkessel {
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let jsonString: string;
-            if(url.pathname == "/retrieve") {
+            if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray);
-                /* jsonString += "<br>"; */
                 _response.write(jsonString);
-            } else if( url.pathname == "/send") {
+            } else if ( url.pathname == "/send") {
                 console.log(_request.url);
                 jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);

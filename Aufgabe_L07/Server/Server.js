@@ -12,8 +12,8 @@ var L07_Hexenkessel;
     let port = process.env.PORT;
     if (port == undefined)
         port = 5001;
-    //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Hexenkessel?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb://localhost:27017";
+    //let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Hexenkessel?retryWrites=true&w=majority";
     startServer(port);
     connectToDatabase(databaseUrl);
     function startServer(_port) {
@@ -39,7 +39,6 @@ var L07_Hexenkessel;
             let jsonString;
             if (url.pathname == "/retrieve") {
                 jsonString = JSON.stringify(await orders.find().toArray);
-                /* jsonString += "<br>"; */
                 _response.write(jsonString);
             }
             else if (url.pathname == "/send") {
