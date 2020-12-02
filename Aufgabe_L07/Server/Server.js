@@ -25,7 +25,7 @@ var L07_Hexenkessel;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        orders = mongoClient.db("Hexenkessel").collection("Orders");
+        orders = mongoClient.db("Hexenkessel").collection("Rezepte");
         console.log("Database connection", orders != undefined);
     }
     function handleRequest(_request, _response) {
