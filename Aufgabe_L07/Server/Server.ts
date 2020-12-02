@@ -2,6 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 //import { receiveMessageOnPort } from "worker_threads";
+//import { receiveMessageOnPort } from "worker_threads";
 
 
 export namespace L07_Hexenkessel {
@@ -40,7 +41,7 @@ export namespace L07_Hexenkessel {
         console.log("Database connection", orders != undefined);
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise <void> {
         console.log("wie gehts");
 
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -50,12 +51,18 @@ export namespace L07_Hexenkessel {
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            
-            let jsonString: string = JSON.stringify(url.query);
-            _response.write(jsonString);
+            let jsonString: string;
+            if(url.pathname == "/retrieve") {
+                jsonString = JSON.stringify(await orders.find().toArray);
+                /* jsonString += "<br>"; */
+                _response.write(jsonString);
+            } else if( url.pathname == "/send") {
+                console.log(_request.url);
+                jsonString = JSON.stringify(url.query);
+                _response.write(jsonString);
+                storeOrder(url.query);
 
-            storeOrder(url.query);
-               
+            }             
         }
 
         _response.end();

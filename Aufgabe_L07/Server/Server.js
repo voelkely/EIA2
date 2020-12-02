@@ -5,6 +5,7 @@ const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
 //import { receiveMessageOnPort } from "worker_threads";
+//import { receiveMessageOnPort } from "worker_threads";
 var L07_Hexenkessel;
 (function (L07_Hexenkessel) {
     let orders;
@@ -28,16 +29,25 @@ var L07_Hexenkessel;
         orders = mongoClient.db("Hexenkessel").collection("Orders");
         console.log("Database connection", orders != undefined);
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         console.log("wie gehts");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.write("Dein Rezept lautet:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let jsonString = JSON.stringify(url.query);
-            _response.write(jsonString);
-            storeOrder(url.query);
+            let jsonString;
+            if (url.pathname == "/retrieve") {
+                jsonString = JSON.stringify(await orders.find().toArray);
+                /* jsonString += "<br>"; */
+                _response.write(jsonString);
+            }
+            else if (url.pathname == "/send") {
+                console.log(_request.url);
+                jsonString = JSON.stringify(url.query);
+                _response.write(jsonString);
+                storeOrder(url.query);
+            }
         }
         _response.end();
     }

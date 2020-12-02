@@ -1,6 +1,10 @@
 namespace L07_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
+    interface Order {
+        [type: string]: string | string[] | undefined;
+    }
+
     function handleLoad(_event: Event): void {
 
         getData();
@@ -10,16 +14,14 @@ namespace L07_Hexenkessel {
         let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
         let addStiring: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_stiring");
         let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#submit");  
-        //let show: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#showAll"); 
-        //let deleteAll: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#delete");  
- 
+        let showAll: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#show"); 
+        
         addBasics.addEventListener("click", createRezept); // Hier werden die Basics ausgegeben 
         addIngredients.addEventListener("click", createAnweisungen); // Hier werden Zutaten, Temperatur und Rühren ausgegeben
         addTemperature.addEventListener("click", displayTemperature); 
         addStiring.addEventListener("click", displayStir);
         submit.addEventListener("click", sendPotion); // asynchrone Funktion, damit das Rezept an Server gesendet wird
-        //show.addEventListener("click", retrieveOrders); // Alle Rezepte sehen
-        //deleteAll.addEventListener("click", askBeforeDelete); // Löschen des Rezepts
+        showAll.addEventListener("click", getPotion); // Alle Rezepte sehen
     }
 
     async function getData(): Promise<void> {
@@ -29,12 +31,13 @@ namespace L07_Hexenkessel {
         generateContent(data);
 
     }
+
     async function sendPotion(): Promise<void> {
         let form: FormData = new FormData(document.forms[0]);
         let form1: FormData = new FormData(document.forms[1]);
 
-        //let url: string = "http://localhost:5001/";
-        let url: string = "https://mycodingapp97.herokuapp.com/";
+        let url: string = "http://localhost:5001/send";
+        //let url: string = "https://mycodingapp97.herokuapp.com/";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
@@ -52,24 +55,25 @@ namespace L07_Hexenkessel {
         alert(reply);
     }
 
+    async function getPotion(_event: Event): Promise<void> {
 
-    //function askBeforeDelete(): void {
-        //let displayBasic: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_basic");
-        //let displayAnweisungen: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_anweisungen");
-       // if (displayBasic.innerHTML && displayAnweisungen.innerHTML != "" && confirm("Bist du sicher, dass du alles löschen möchtest?")) {
-            //deleteAll();
-        //}
-   // }
+        let url: string = "http://localhost:5001/retrieve";
+        
+        let response: Response = await fetch(url);
+        let reply: Order[] = JSON.parse(await response.text());
+        for (let i: number = 0; i < reply.length; i++) {
+            let div: HTMLDivElement = document.createElement("div");
+            div.setAttribute("class", "vorschau");
+            let p: HTMLElement = document.createElement("p");
+            p.innerHTML += "Trankname:" + reply[i].Trankname + "<br>";
+            if (reply[i].Nebenwirkungen != undefined)
+            p.innerHTML += "Beschreibung, Nebenwirkungen:" + reply[i].Nebenwirkungen + "<br>" + "Wirkungsdauer:" + reply[i].Wirkungsdauer + "<br>";
+            p.innerHTML += "Wirkung:" + reply[i].Wirkung + "<br>";
+            if (reply[i].Nebenwirkungen != "" ) 
 
-    //function deleteAll(): void {
-       // let displayBasic: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_basic");
-       // let displayAnweisungen: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_anweisungen");
-        //let total: HTMLElement = <HTMLElement>document.querySelector("#total");
-        //displayBasic.innerHTML = "...";
-       // displayAnweisungen.innerHTML = "";
-        //total.innerHTML = "";
-        //formDataSend = new FormData();
-    //}
+        } 
+
+    }
 
 
     function createRezept(_event: Event): void {
