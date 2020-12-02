@@ -9,7 +9,7 @@ namespace L07_Hexenkessel {
         let addIngredients: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_ingredients");
         let addTemperature: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_temperature");
         let addStiring: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add_stiring");
-        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#sendPotion");  
+        let submit: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#submit");  
         //let show: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#showAll"); 
         //let deleteAll: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#delete");  
  

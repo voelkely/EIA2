@@ -8,7 +8,7 @@ var L07_Hexenkessel;
         let addIngredients = document.querySelector("button#add_ingredients");
         let addTemperature = document.querySelector("button#add_temperature");
         let addStiring = document.querySelector("button#add_stiring");
-        let submit = document.querySelector("button#sendPotion");
+        let submit = document.querySelector("button#submit");
         //let show: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#showAll"); 
         //let deleteAll: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#delete");  
         addBasics.addEventListener("click", createRezept); // Hier werden die Basics ausgegeben 
