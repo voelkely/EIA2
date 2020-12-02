@@ -53,7 +53,7 @@ export namespace L07_Hexenkessel {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let jsonString: string;
             if (url.pathname == "/retrieve") {
-                jsonString = JSON.stringify(await orders.find().toArray);
+                jsonString = JSON.stringify(await orders.find().toArray());
                 _response.write(jsonString);
             } else if ( url.pathname == "/send") {
                 console.log(_request.url);

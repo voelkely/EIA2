@@ -38,7 +38,7 @@ var L07_Hexenkessel;
             let url = Url.parse(_request.url, true);
             let jsonString;
             if (url.pathname == "/retrieve") {
-                jsonString = JSON.stringify(await orders.find().toArray);
+                jsonString = JSON.stringify(await orders.find().toArray());
                 _response.write(jsonString);
             }
             else if (url.pathname == "/send") {

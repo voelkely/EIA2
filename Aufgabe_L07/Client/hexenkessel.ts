@@ -58,6 +58,7 @@ namespace L07_Hexenkessel {
     async function getPotion(_event: Event): Promise<void> {
 
         let url: string = "http://localhost:5001/retrieve";
+         //let url: string = "https://mycodingapp97.herokuapp.com/retrieve";
         
         let response: Response = await fetch(url);
         let reply: Order[] = JSON.parse(await response.text());
@@ -69,7 +70,7 @@ namespace L07_Hexenkessel {
             if (reply[i].Nebenwirkungen != undefined)
             p.innerHTML += "Beschreibung, Nebenwirkungen:" + reply[i].Nebenwirkungen + "<br>" + "Wirkungsdauer:" + reply[i].Wirkungsdauer + "<br>";
             p.innerHTML += "Wirkung:" + reply[i].Wirkung + "<br>";
-            if (reply[i].Nebenwirkungen != "" ) 
+            if (reply[i].Nebenwirkungen != "" )
 
         } 
 
