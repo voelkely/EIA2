@@ -33,8 +33,8 @@ namespace L07_Hexenkessel {
         let form: FormData = new FormData(document.forms[0]);
         let form1: FormData = new FormData(document.forms[1]);
 
-        let url: string = "http://localhost:5001/";
-        //let url: string = "https://mycodingapp97.herokuapp.com/";
+        //let url: string = "http://localhost:5001/";
+        let url: string = "https://mycodingapp97.herokuapp.com/";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
@@ -42,7 +42,7 @@ namespace L07_Hexenkessel {
         let textarea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector("textarea");
         
         url = url + "?" + query.toString() + query1.toString()  + "&wirkung=" + select.value + "&beschreibung=" + textarea.value;
-        console.log(query.toString);
+        console.log("Ausgabe");
 
         let response: Response = await fetch(url);
         console.log(response);

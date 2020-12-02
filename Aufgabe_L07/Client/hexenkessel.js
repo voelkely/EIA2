@@ -28,14 +28,14 @@ var L07_Hexenkessel;
     async function sendPotion() {
         let form = new FormData(document.forms[0]);
         let form1 = new FormData(document.forms[1]);
-        let url = "http://localhost:5001/";
-        //let url: string = "https://mycodingapp97.herokuapp.com/";
+        //let url: string = "http://localhost:5001/";
+        let url = "https://mycodingapp97.herokuapp.com/";
         let query = new URLSearchParams(form);
         let query1 = new URLSearchParams(form1);
         let select = document.querySelector("select"); // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
         let textarea = document.querySelector("textarea");
         url = url + "?" + query.toString() + query1.toString() + "&wirkung=" + select.value + "&beschreibung=" + textarea.value;
-        console.log(query.toString);
+        console.log("Ausgabe");
         let response = await fetch(url);
         console.log(response);
         let reply = await response.text(); // Antwort vom Server im alert

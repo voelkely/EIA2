@@ -36,7 +36,7 @@ export namespace L07_Hexenkessel {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        orders = mongoClient.db("Hexenkessel").collection("Rezepte");
+        orders = mongoClient.db("Hexenkessel").collection("Orders");
         console.log("Database connection", orders != undefined);
     }
 
