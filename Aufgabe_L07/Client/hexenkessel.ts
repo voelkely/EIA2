@@ -1,10 +1,6 @@
 namespace L07_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
-    //let url: string = "index2.html";
-    //let url: string = "https://mycodingapp97.herokuapp.com";
-    //let url: string = "http://localhost:5001";
-
     function handleLoad(_event: Event): void {
 
         getData();
@@ -37,8 +33,8 @@ namespace L07_Hexenkessel {
         let form: FormData = new FormData(document.forms[0]);
         let form1: FormData = new FormData(document.forms[1]);
 
-        //let url: string = "http://localhost:5001/";
-        let url: string = "https://mycodingapp97.herokuapp.com/";
+        let url: string = "http://localhost:5001/";
+        //let url: string = "https://mycodingapp97.herokuapp.com/";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
@@ -68,7 +64,7 @@ namespace L07_Hexenkessel {
     //function deleteAll(): void {
        // let displayBasic: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_basic");
        // let displayAnweisungen: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_anweisungen");
-        //let total: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#total");
+        //let total: HTMLElement = <HTMLElement>document.querySelector("#total");
         //displayBasic.innerHTML = "...";
        // displayAnweisungen.innerHTML = "";
         //total.innerHTML = "";

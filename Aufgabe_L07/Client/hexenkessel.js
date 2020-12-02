@@ -2,9 +2,6 @@
 var L07_Hexenkessel;
 (function (L07_Hexenkessel) {
     window.addEventListener("load", handleLoad);
-    //let url: string = "index2.html";
-    //let url: string = "https://mycodingapp97.herokuapp.com";
-    //let url: string = "http://localhost:5001";
     function handleLoad(_event) {
         getData();
         let addBasics = document.querySelector("button#add_basics");
@@ -31,8 +28,8 @@ var L07_Hexenkessel;
     async function sendPotion() {
         let form = new FormData(document.forms[0]);
         let form1 = new FormData(document.forms[1]);
-        //let url: string = "http://localhost:5001/";
-        let url = "https://mycodingapp97.herokuapp.com/";
+        let url = "http://localhost:5001/";
+        //let url: string = "https://mycodingapp97.herokuapp.com/";
         let query = new URLSearchParams(form);
         let query1 = new URLSearchParams(form1);
         let select = document.querySelector("select"); // sortiert das Select Element aus dem HTML // bei Text area if schleife weil da auch nichts drin  steht
@@ -55,7 +52,7 @@ var L07_Hexenkessel;
     //function deleteAll(): void {
     // let displayBasic: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_basic");
     // let displayAnweisungen: HTMLDivElement = <HTMLDivElement>document.querySelector("#display_anweisungen");
-    //let total: HTMLSpanElement = <HTMLSpanElement>document.querySelector("#total");
+    //let total: HTMLElement = <HTMLElement>document.querySelector("#total");
     //displayBasic.innerHTML = "...";
     // displayAnweisungen.innerHTML = "";
     //total.innerHTML = "";
