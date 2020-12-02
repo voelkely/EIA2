@@ -44,18 +44,10 @@ var L07_Hexenkessel;
         let url = "http://localhost:5001/retrieve";
         //let url: string = "https://mycodingapp97.herokuapp.com/retrieve";
         let response = await fetch(url);
-        let reply = JSON.parse(await response.text());
-        for (let i = 0; i < reply.length; i++) {
-            let div = document.createElement("div");
-            div.setAttribute("class", "vorschau");
-            let p = document.createElement("p");
-            p.innerHTML += "Trankname:" + reply[i].Trankname + "<br>";
-            if (reply[i].Nebenwirkungen != undefined)
-                p.innerHTML += "Beschreibung, Nebenwirkungen:" + reply[i].Nebenwirkungen + "<br>" + "Wirkungsdauer:" + reply[i].Wirkungsdauer + "<br>";
-            p.innerHTML += "Wirkung:" + reply[i].Wirkung + "<br>";
-            if (reply[i].Nebenwirkungen != "")
-                ;
-        }
+        let reply = await response.text();
+        console.log(reply);
+        let div = document.getElementById("display_rezepte");
+        div.innerHTML = reply;
     }
     function createRezept(_event) {
         let form = document.querySelector("#basic"); //Form Element wird benutzt, um aus ihm Informationen zu ziehen

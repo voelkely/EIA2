@@ -1,10 +1,6 @@
 namespace L07_Hexenkessel {
     window.addEventListener("load", handleLoad);
 
-    interface Order {
-        [type: string]: string | string[] | undefined;
-    }
-
     function handleLoad(_event: Event): void {
 
         getData();
@@ -61,18 +57,10 @@ namespace L07_Hexenkessel {
          //let url: string = "https://mycodingapp97.herokuapp.com/retrieve";
         
         let response: Response = await fetch(url);
-        let reply: Order[] = JSON.parse(await response.text());
-        for (let i: number = 0; i < reply.length; i++) {
-            let div: HTMLDivElement = document.createElement("div");
-            div.setAttribute("class", "vorschau");
-            let p: HTMLElement = document.createElement("p");
-            p.innerHTML += "Trankname:" + reply[i].Trankname + "<br>";
-            if (reply[i].Nebenwirkungen != undefined)
-            p.innerHTML += "Beschreibung, Nebenwirkungen:" + reply[i].Nebenwirkungen + "<br>" + "Wirkungsdauer:" + reply[i].Wirkungsdauer + "<br>";
-            p.innerHTML += "Wirkung:" + reply[i].Wirkung + "<br>";
-            if (reply[i].Nebenwirkungen != "" )
-
-        } 
+        let reply: string = await response.text();
+        console.log(reply);
+        let div: HTMLDivElement = <HTMLDivElement>document.getElementById("display_rezepte");
+        div.innerHTML = reply; 
 
     }
 
