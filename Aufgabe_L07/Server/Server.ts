@@ -7,7 +7,7 @@ import * as Mongo from "mongodb";
 export namespace L07_Hexenkessel {
 
     interface Order {
-        [type: string]: string | string[];
+        [type: string]: string | string[] | undefined;
     }
 
     let orders: Mongo.Collection;
@@ -54,7 +54,7 @@ export namespace L07_Hexenkessel {
             let jsonString: string = JSON.stringify(url.query);
             _response.write(jsonString);
 
-            storeOrder(<Order>url.query);
+            storeOrder(url.query);
                
         }
 
