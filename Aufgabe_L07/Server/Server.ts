@@ -1,9 +1,6 @@
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
-//import { receiveMessageOnPort } from "worker_threads";
-//import { receiveMessageOnPort } from "worker_threads";
-
 
 export namespace L07_Hexenkessel {
 
@@ -17,8 +14,8 @@ export namespace L07_Hexenkessel {
     if (port == undefined)
         port = 5001;
 
-    let databaseUrl: string = "mongodb://localhost:27017";
-    //let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Hexenkessel?retryWrites=true&w=majority";
+    //let databaseUrl: string = "mongodb://localhost:27017";
+    let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Hexenkessel?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDatabase(databaseUrl);

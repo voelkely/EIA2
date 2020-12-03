@@ -78,7 +78,7 @@ var L07_Hexenkessel;
                 total += price;
                 let gesamtpreis = price * amount; // keine ahnung warum mir das hier rot markiert wird...
                 console.log(price * amount);
-                displayAnweisungen.innerHTML += stepper.value + " " + entry[1] + " " + "(" + gesamtpreis + "&nbsp" + "GAL" + ")" + "</br>";
+                displayAnweisungen.innerHTML += stepper.value + entry[1] + "(" + gesamtpreis + "&nbsp" + "GAL" + ")" + "</br>";
             }
         }
         displayAnweisungen.innerHTML += " in einen Zaubertopf." + "</br>";

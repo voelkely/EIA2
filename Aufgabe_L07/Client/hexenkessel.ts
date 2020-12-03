@@ -41,6 +41,7 @@ namespace L07_Hexenkessel {
         let textarea: HTMLTextAreaElement = <HTMLTextAreaElement>document.querySelector("textarea");
         
         url = url + "?" + query.toString() + query1.toString()  + "&wirkung=" + select.value + "&beschreibung=" + textarea.value;
+
         console.log("Ausgabe");
 
         let response: Response = await fetch(url);
@@ -105,7 +106,7 @@ namespace L07_Hexenkessel {
                 let gesamtpreis: number = price * amount; // keine ahnung warum mir das hier rot markiert wird...
                 console.log(price * amount);
 
-                displayAnweisungen.innerHTML += stepper.value + " " + entry[1] + " " + "(" + gesamtpreis + "&nbsp" + "GAL" + ")"  + "</br>";
+                displayAnweisungen.innerHTML += stepper.value + entry[1] + "(" + gesamtpreis + "&nbsp" + "GAL" + ")"  + "</br>";
                 
             }
             
