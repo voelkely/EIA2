@@ -32,8 +32,8 @@ namespace L07_Hexenkessel {
         let form: FormData = new FormData(document.forms[0]);
         let form1: FormData = new FormData(document.forms[1]);
 
-        let url: string = "http://localhost:5001/send";
-        //let url: string = "https://mycodingapp97.herokuapp.com/";
+        //let url: string = "http://localhost:5001/send";
+        let url: string = "https://mycodingapp97.herokuapp.com/";
 
         let query: URLSearchParams = new URLSearchParams(<any>form);
         let query1: URLSearchParams = new URLSearchParams(<any>form1);
