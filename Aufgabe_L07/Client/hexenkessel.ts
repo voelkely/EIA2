@@ -55,7 +55,7 @@ namespace L07_Hexenkessel {
     async function getPotion(_event: Event): Promise<void> {
 
         //let url: string = "http://localhost:5001/retrieve";
-        let url: string = "https://mycodingapp97.herokuapp.com/retrieve";
+        let url: string = "https://mycodingapp97.herokuapp.com";
         
         let response: Response = await fetch(url);
         let reply: string = await response.text();
