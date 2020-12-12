@@ -22,11 +22,15 @@ namespace L08_Canvas_skipiste {
         drawMountains({x: 0, y: horizon}, 75, 200, "lightgrey", "white");  //Das steht im AD im Kasten oben
         drawMountains({x: 0, y: horizon}, 50, 100, "#FFFAFA", "lightgrey"); 
         drawBottom({x: crc2.canvas.width, y: horizon}, 800, 800);
-        drawHouse({x: 50, y: 410});
-        //drawLift();
-        //drawPeople();
-        drawPipe({x: 50, y: 300}, {x: 100, y: 60}, "#FFFAFA"); // Hier stehen die Vectoren für _PipeStart und _PipeEnd
-
+        drawHill();
+        drawHouse(); 
+        drawLift({x: 700, y: 450}); //Hier drinnen steht die Position des Sitzes am Lift
+        drawTrees();
+        drawPeople({ x: 550, y: 150}, { x: 150, y: 150});
+        drawPeople({ x: 350, y: 350}, { x: 150, y: 150});
+        drawSnow();
+        
+        
     }
 
     function drawBottom(_position: Vector, _widthBack: number, _widthFront: number): void {
@@ -58,6 +62,23 @@ namespace L08_Canvas_skipiste {
 
         crc2.fillStyle = gradient;
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+    }
+
+    function drawHill(): void {
+
+        crc2.beginPath();
+        crc2.moveTo(800, 200);
+        crc2.stroke();
+        crc2.lineTo(800, 600);
+        crc2.lineTo(0, 600);
+        crc2.closePath();
+
+        crc2.save();
+
+        crc2.fillStyle = "white";
+        crc2.fill();
+
+        crc2.restore(); 
     }
 
     function drawSun(_position: Vector): void {
@@ -147,71 +168,13 @@ namespace L08_Canvas_skipiste {
 
     }
 
-    function drawTrees(_nTrees: number, _position: Vector, _size: Vector): void {
-        console.log("Trees");
-
-        //let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
-        //gradient.addColorStop(0, "white");
-        // gradient.addColorStop(0.5, "green");
-       // gradient.addColorStop(1, "darkgreen");
-        //crc2.fillStyle = gradient;
-        //crc2.fill();
-
-        //crc2.beginPath();
-        //crc2.moveTo(0, 0);
-        //crc2.lineTo(0, 0.6);
-
-    }
-
-    function drawPipe(_pipeStart: Vector, _pipeEnd: Vector, _colorPipe: string): void {
-        console.log("Pipe", _pipeStart, _pipeEnd);
-
-        crc2.save();
-        crc2.translate(60, 320); //Position der Piste 1
-        
-        //let controlX1: number = 950;
-        //let controlY1: number = 100;
-        //let controlX2: number = -10;
-        //let controlY2: number = 90;
-
-        crc2.lineWidth = 1; //Dicke der Piste
-
-        crc2.beginPath();
-        crc2.moveTo(_pipeStart.x, _pipeStart.y);
-        //crc2.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, _pipeEnd.x, _pipeEnd.y);
-       // crc2.stroke();
-       // crc2.closePath();
-
-        //Position der Piste 2
-
-        //let controlX3: number = 1000;
-        ///let controlY3: number = 170;
-        //let controlX4: number = -10;
-        //let controlY4: number = 100;
-
-        crc2.lineTo(_pipeEnd.x + 300 , _pipeEnd.y);
-        //crc2.bezierCurveTo(controlX3, controlY3, controlX4, controlY4, _pipeStart.x + 300, _pipeStart.y);
-        crc2.stroke();
-
-        let gradient: CanvasGradient = crc2.createLinearGradient(50, 300 , 400, 50); // Was muss ich hier eingeben, damit sich die Kurve einfärbt?
-
-        gradient.addColorStop(0, _colorPipe);
-
-        crc2.fillStyle = gradient;
-        crc2.fillStyle = "red";
-        crc2.fill();
-
-
-        crc2.restore();
-
-
-    }
-
-    function drawHouse(_position: Vector): void {
+    function drawHouse(): void {
         console.log("house");
+        
+        //Hütte
 
         crc2.beginPath();
-        crc2.rect(50, 410, 150, 180); //(verschriebung rechts X, verscheibung runter Y, länge des Rect, Höhe des Rect)
+        crc2.rect(450, 450, 150, 150); //(verschriebung rechts X, verscheibung runter Y, länge des Rect, Höhe des Rect)
         crc2.stroke();
 
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 50, 0, 390);
@@ -220,4 +183,257 @@ namespace L08_Canvas_skipiste {
         crc2.fillStyle = "#5c4411";
         crc2.fill();
 
+        crc2. save();
+
+        //Fenster
+        
+        crc2.fillStyle = "#c8cfcf";
+        crc2.fillRect(475, 475 , 100, 60);
+        crc2. save();
+        
+        //Dach
+
+        crc2.beginPath();
+        crc2.moveTo(450, 450); //(300, 250)
+        crc2.lineTo(525, 400); // (375, 175)
+        crc2.lineTo(600, 450); // (450, 240)
+        crc2.stroke();
+        crc2.closePath();
+
+        crc2.lineWidth = 15;
+        crc2.strokeStyle = "#ebfcfc";
+        crc2.stroke();
+
+        crc2.fillStyle = "white";
+        crc2.fill();
+
+        crc2.save();  
+        crc2.restore(); 
+    
     }
+
+    function drawTrees(): void {
+        console.log("Trees");
+
+        //Großer Baum
+
+        crc2.beginPath();
+        crc2.moveTo(575, 600);
+        crc2.lineTo(600, 425);
+        crc2.lineTo(625, 600);
+        crc2.closePath();
+
+        crc2.fillStyle = "green";
+        crc2.fill();
+        crc2.save();
+
+        crc2.lineWidth = 0;
+
+        // Kleiner Baum
+
+        crc2.beginPath();
+        crc2.moveTo(425, 600);
+        crc2.lineTo(450, 500);
+        crc2.lineTo(475, 600);
+        crc2.closePath();
+
+        crc2.fillStyle = "green";
+        crc2.fill();
+
+        crc2.save(); 
+
+        crc2.restore();
+
+    }
+         
+
+    function drawLift(_position: Vector): void {
+        console.log("lift", _position);
+
+        crc2.beginPath();
+        crc2.moveTo(600, 500);
+        crc2.lineTo(800, 400);
+        crc2.lineWidth = 3;
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+            
+        crc2.beginPath();
+        crc2.moveTo(0, 0);
+        crc2.lineTo(0, 75);
+        crc2.lineTo(50, 50);
+        crc2.lineTo(50, 75);
+        crc2.lineWidth = 2;
+        crc2.strokeStyle = "black";
+        
+        crc2.stroke();
+
+        crc2.restore();
+    }
+
+
+    function drawPeople(_position: Vector, _size: Vector): void {
+        console.log("skier");
+
+        crc2. save(); 
+        
+        for (let i: number = 0; i < 1; i++) {
+
+            let color: string[] = ["#f4f72f", "#bf3519", "#0e85cf", "#ae48d4", "#d16696", "#1cbd5a"];
+            let randomColor: string = color[Math.floor(Math.random() * color.length)];
+            let x: number = Math.random() * 350 + 50;
+            let y: number = Math.random() * 500 + 450;
+
+            crc2.save();
+            crc2.translate(x, y);
+            crc2.rotate(20 * Math.PI / 180);
+           
+
+            //Skifahrer
+ 
+            crc2.beginPath();
+            crc2.rect(250, 350, 25, 5);
+            crc2.closePath();
+           
+            crc2.fillStyle = "black";
+            crc2.fill();
+
+            crc2.restore();
+
+            // Body
+
+            crc2.fillStyle = randomColor;
+            crc2.strokeStyle = crc2.fillStyle;
+            crc2.beginPath();
+            crc2.ellipse(650, 350, 20, 10, 10, 10, 50);
+            crc2.closePath();
+            crc2.fill();
+            crc2.stroke();
+
+            crc2.save();
+
+            // Head
+
+            crc2.beginPath();
+            crc2.arc(627, 325, 10, 0, 2 * Math.PI);
+            crc2.closePath();
+            crc2.fillStyle = "#fce6ac";
+            crc2.fill();
+            crc2.lineWidth = 0;
+           
+            crc2.save();
+
+            // Arm1
+
+            crc2.beginPath();
+            crc2.rect(620, 345, 25, 5);   
+            crc2.closePath();
+           
+            crc2.fillStyle = randomColor;
+            crc2.fill(); 
+
+            // SkiStock1
+
+            crc2.save();
+            crc2.restore();
+
+            crc2.strokeStyle = "black";
+            crc2.lineWidth = 2;
+            crc2.lineCap = "round";
+            crc2.beginPath();
+            crc2.moveTo(620, 347);
+            crc2.lineTo(640, 380);
+            crc2.closePath();
+            crc2.stroke();
+
+            // SkiStock2
+
+            crc2.save();
+            crc2.restore();
+
+            crc2.strokeStyle = "black";
+            crc2.lineWidth = 2;
+            crc2.lineCap = "round";
+            crc2.beginPath();
+            crc2.moveTo(620, 347);
+            crc2.lineTo(660, 380);
+            crc2.closePath();
+            crc2.stroke();
+
+            // Arm2
+
+            crc2.save();
+
+            crc2.beginPath();
+            crc2.rect(620, 352, 25, 5);
+            crc2.closePath();
+           
+            crc2.fillStyle = randomColor;
+            crc2.fill();
+
+            // Leg1
+
+            crc2.restore();
+
+            crc2.strokeStyle = randomColor;
+            crc2.lineWidth = 4;
+            crc2.lineCap = "round";
+            crc2.beginPath();
+            crc2.moveTo(650, 340);
+            crc2.lineTo(670, 380); //Länge der Beine
+            crc2.closePath();
+            crc2.stroke();
+
+            // Leg2
+            crc2.save();
+            crc2.restore();
+    
+            crc2.beginPath();
+            crc2.moveTo(650, 340);
+            crc2.lineTo(680, 380); //Länge der Beine
+            crc2.closePath();
+
+            crc2.strokeStyle = randomColor;
+            crc2.lineWidth = 4;
+            crc2.lineCap = "round";
+            crc2.stroke();  
+            
+            //Ski
+            crc2.save();
+            crc2.restore();
+
+            crc2.beginPath();
+            crc2.moveTo(100, 35);
+            crc2.lineTo(40, 50);
+            crc2.moveTo(500, 450);
+            crc2.lineWidth = 4;
+            crc2.lineCap = "round";
+            crc2.strokeStyle = "black";
+            crc2.stroke();
+
+            //crc2.rect(640, 380, 60, 4);
+            crc2.closePath();
+            
+            
+
+        
+        }
+
+        crc2.restore();
+    }
+
+    function drawSnow(): void {
+        for (let i: number = 0; i < 300; i++) {
+            let x: number = Math.random() * window.innerWidth;
+            let y: number = Math.random() * window.innerHeight;
+            let radiusSnowflake: number = Math.random() * 2.5 + 1;
+            
+            crc2.beginPath();
+            crc2.arc(x, y, radiusSnowflake, 0, Math.PI * 2, false);
+            crc2.fillStyle = "white";
+            crc2.fill();
+        }
+    }
+}
