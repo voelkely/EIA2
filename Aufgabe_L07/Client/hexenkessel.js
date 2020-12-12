@@ -41,8 +41,8 @@ var L07_Hexenkessel;
         alert(reply);
     }
     async function getPotion(_event) {
-        let url = "http://localhost:5001/retrieve";
-        //let url: string = "https://mycodingapp97.herokuapp.com/retrieve";
+        //let url: string = "http://localhost:5001/retrieve";
+        let url = "https://mycodingapp97.herokuapp.com";
         let response = await fetch(url);
         let reply = await response.text();
         console.log(reply);
