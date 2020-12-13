@@ -22,9 +22,9 @@ namespace L08_Canvas_SkipisteNEU {
         drawMountains({x: 0, y: horizon}, 75, 200, "lightgrey", "white");  //Das steht im AD im Kasten oben
         drawMountains({x: 0, y: horizon}, 50, 100, "#FFFAFA", "lightgrey"); 
         drawHill();
-        drawPeople();
+        drawPeople();     
+        drawLift({x: -10, y: -40}); //Position des 
         drawHouse();
-        drawLift({x: 150, y: 475});
         drawTrees();
         drawSnow();
 
@@ -147,27 +147,82 @@ namespace L08_Canvas_SkipisteNEU {
 
         function drawLift(_position: Vector): void {
             console.log("lift", _position);
-    
+
+            //Haus
             crc2.beginPath();
-            crc2.moveTo(200, 500);
-            crc2.lineTo(0, 400);
+            crc2.rect(550, 340, 130, 90);
+            crc2.fillStyle = "#a9c9c9";
+            crc2.fill();
+            crc2.closePath();
+
+            crc2.fillStyle = "black";
+            crc2.font = "15px sans-serif";
+            crc2.fillText("SKI LIFT", 580, 415);
+
+            crc2.save();
+            crc2.restore();
+
+            // Verbindung 
+            crc2.beginPath();
+            crc2.rect(610, 300, 10, 40);
+            crc2.fillStyle = "grey";
+            crc2.fill();
+            crc2.closePath();
+
+            //LiftZug   
+            crc2.beginPath();
+            crc2.moveTo(250, 500);
+            crc2.lineTo(800, 200);
             crc2.closePath();
             crc2.lineWidth = 3;
             crc2.strokeStyle = "black";
             crc2.stroke();
 
-            crc2.save();
-            crc2.translate(_position.x, _position.y);
-            
+            //Rahmen
             crc2.beginPath();
-            crc2.moveTo(0, 0);
-            crc2.lineTo(0, 60);
-            crc2.lineTo(-45, 45);
-            crc2.lineWidth = 4;
-            crc2.strokeStyle = "black";
-        
-            crc2.stroke();
+            crc2.rect(570, 350, 30, 45);
+            crc2.fillStyle = "white";
+            crc2.fill();
+            crc2.closePath();
 
+            //Rahmen2
+            crc2.beginPath();
+            crc2.rect(610, 350, 30, 45);
+            crc2.fillStyle = "white";
+            crc2.fill();
+            crc2.closePath();
+
+            //Rahmen3
+            crc2.beginPath();
+            crc2.rect(558, 348, 114, 50);
+            crc2.lineWidth = 2;
+            crc2.fill();
+            crc2.closePath();
+
+            //Fenster1
+            crc2.beginPath();
+            crc2.rect(560, 350, 30, 45);
+            crc2.fillStyle = "lightgrey";
+            crc2.fill();
+            crc2.closePath();
+
+            //Fenster2
+            crc2.beginPath();
+            crc2.rect(600, 350, 30, 45);
+            crc2.fillStyle = "lightgrey";
+            crc2.fill();
+            crc2.closePath();
+
+             //Fenster3
+            crc2.beginPath();
+            crc2.rect(640, 350, 30, 45);
+            crc2.fillStyle = "lightgrey";
+            crc2.fill();
+            crc2.closePath();
+
+           
+
+            crc2.save();
             crc2.restore();
         }
 
@@ -176,7 +231,7 @@ namespace L08_Canvas_SkipisteNEU {
         function drawTrees(): void {
             console.log("Trees");
     
-            //Großer Baum
+            //Großer Baum rechts
             crc2.beginPath();
             crc2.moveTo(550, 600);
             crc2.lineTo(600, 425);
@@ -187,9 +242,18 @@ namespace L08_Canvas_SkipisteNEU {
             crc2.fill();
             crc2.save();
     
-            crc2.lineWidth = 0;
+            //Großer Baum links
+            crc2.beginPath();
+            crc2.moveTo(100, 600);
+            crc2.lineTo(135, 425);
+            crc2.lineTo(170, 600);
+            crc2.closePath();
     
-            // Kleiner Baum
+            crc2.fillStyle = "darkgreen";
+            crc2.fill();
+            crc2.save();
+
+            // Kleiner Baum rechts
             crc2.beginPath();
             crc2.moveTo(525, 600);
             crc2.lineTo(550, 500);
@@ -200,18 +264,7 @@ namespace L08_Canvas_SkipisteNEU {
             crc2.fill();
     
             crc2.save();     
-            
-            //Kleiner Baum am Haus 
-            crc2.beginPath();
-            crc2.moveTo(150, 500);
-            crc2.lineTo(200, 500);
-            crc2.lineTo(250, 500);
-            crc2.closePath();
      
-            crc2.fillStyle = "green";
-            crc2.fill();
-     
-            crc2.save();     
             crc2.restore();
     
         }
@@ -286,7 +339,6 @@ namespace L08_Canvas_SkipisteNEU {
     
             crc2.beginPath();
             crc2.rect(200, 450, 150, 150); //(verschriebung rechts X, verscheibung runter Y, länge des Rect, Höhe des Rect)
-            crc2.stroke();
     
             let gradient: CanvasGradient = crc2.createLinearGradient(0, 50, 0, 390);
             crc2.fillStyle = gradient;
@@ -385,7 +437,6 @@ namespace L08_Canvas_SkipisteNEU {
 
             crc2.restore();
 
-        
         }
 
         function drawSnow(): void {
