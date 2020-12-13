@@ -20,8 +20,8 @@ var L08_Canvas_skipiste;
         drawHouse();
         drawLift({ x: 700, y: 450 }); //Hier drinnen steht die Position des Sitzes am Lift
         drawTrees();
-        drawPeople({ x: 550, y: 150 }, { x: 150, y: 150 });
-        drawPeople({ x: 350, y: 350 }, { x: 150, y: 150 });
+        drawPerson({ x: 600, y: 350 });
+        //drawPeople();
         drawSnow();
     }
     function drawBottom(_position, _widthBack, _widthFront) {
@@ -191,112 +191,90 @@ var L08_Canvas_skipiste;
         crc2.stroke();
         crc2.restore();
     }
-    function drawPeople(_position, _size) {
-        console.log("skier");
+    function drawPerson(_position) {
+        console.log("single skier");
+        let color = ["#f4f72f", "#bf3519", "#0e85cf", "#ae48d4", "#d16696", "#1cbd5a"];
+        let randomColor = color[Math.floor(Math.random() * color.length)];
         crc2.save();
-        for (let i = 0; i < 1; i++) {
-            let color = ["#f4f72f", "#bf3519", "#0e85cf", "#ae48d4", "#d16696", "#1cbd5a"];
-            let randomColor = color[Math.floor(Math.random() * color.length)];
-            let x = Math.random() * 350 + 50;
-            let y = Math.random() * 500 + 450;
-            crc2.save();
-            crc2.translate(x, y);
-            crc2.rotate(20 * Math.PI / 180);
-            //Skifahrer
-            crc2.beginPath();
-            crc2.rect(250, 350, 25, 5);
-            crc2.closePath();
-            crc2.fillStyle = "black";
-            crc2.fill();
-            crc2.restore();
-            // Body
-            crc2.fillStyle = randomColor;
-            crc2.strokeStyle = crc2.fillStyle;
-            crc2.beginPath();
-            crc2.ellipse(650, 350, 20, 10, 10, 10, 50);
-            crc2.closePath();
-            crc2.fill();
-            crc2.stroke();
-            crc2.save();
-            // Head
-            crc2.beginPath();
-            crc2.arc(627, 325, 10, 0, 2 * Math.PI);
-            crc2.closePath();
-            crc2.fillStyle = "#fce6ac";
-            crc2.fill();
-            crc2.lineWidth = 0;
-            crc2.save();
-            // Arm1
-            crc2.beginPath();
-            crc2.rect(620, 345, 25, 5);
-            crc2.closePath();
-            crc2.fillStyle = randomColor;
-            crc2.fill();
-            // SkiStock1
-            crc2.save();
-            crc2.restore();
-            crc2.strokeStyle = "black";
-            crc2.lineWidth = 2;
-            crc2.lineCap = "round";
-            crc2.beginPath();
-            crc2.moveTo(620, 347);
-            crc2.lineTo(640, 380);
-            crc2.closePath();
-            crc2.stroke();
-            // SkiStock2
-            crc2.save();
-            crc2.restore();
-            crc2.strokeStyle = "black";
-            crc2.lineWidth = 2;
-            crc2.lineCap = "round";
-            crc2.beginPath();
-            crc2.moveTo(620, 347);
-            crc2.lineTo(660, 380);
-            crc2.closePath();
-            crc2.stroke();
-            // Arm2
-            crc2.save();
-            crc2.beginPath();
-            crc2.rect(620, 352, 25, 5);
-            crc2.closePath();
-            crc2.fillStyle = randomColor;
-            crc2.fill();
-            // Leg1
-            crc2.restore();
-            crc2.strokeStyle = randomColor;
-            crc2.lineWidth = 4;
-            crc2.lineCap = "round";
-            crc2.beginPath();
-            crc2.moveTo(650, 340);
-            crc2.lineTo(670, 380); //Länge der Beine
-            crc2.closePath();
-            crc2.stroke();
-            // Leg2
-            crc2.save();
-            crc2.restore();
-            crc2.beginPath();
-            crc2.moveTo(650, 340);
-            crc2.lineTo(680, 380); //Länge der Beine
-            crc2.closePath();
-            crc2.strokeStyle = randomColor;
-            crc2.lineWidth = 4;
-            crc2.lineCap = "round";
-            crc2.stroke();
-            //Ski
-            crc2.save();
-            crc2.restore();
-            crc2.beginPath();
-            crc2.moveTo(100, 35);
-            crc2.lineTo(40, 50);
-            crc2.moveTo(500, 450);
-            crc2.lineWidth = 4;
-            crc2.lineCap = "round";
-            crc2.strokeStyle = "black";
-            crc2.stroke();
-            //crc2.rect(640, 380, 60, 4);
-            crc2.closePath();
-        }
+        // crc2.translate(_position.x, _position.y);
+        //crc2.rotate(20 * Math.PI / 180);
+        // Head
+        crc2.beginPath();
+        crc2.arc(629, 325, 10, 0, 2 * Math.PI);
+        crc2.closePath();
+        crc2.fillStyle = "#fce6ac";
+        crc2.fill();
+        // Body  
+        crc2.beginPath();
+        crc2.ellipse(650, 350, 20, 10, 10, 10, 50);
+        crc2.closePath();
+        crc2.fillStyle = randomColor;
+        crc2.stroke();
+        crc2.fill();
+        // Arm1
+        crc2.beginPath();
+        crc2.rect(620, 345, 25, 5);
+        crc2.closePath();
+        crc2.fillStyle = randomColor;
+        crc2.fill();
+        // Arm2
+        crc2.beginPath();
+        crc2.rect(620, 352, 25, 5);
+        crc2.closePath();
+        crc2.fillStyle = randomColor;
+        crc2.fill();
+        // SkiStock1
+        crc2.strokeStyle = "black";
+        crc2.lineWidth = 2;
+        crc2.lineCap = "round";
+        crc2.beginPath();
+        crc2.moveTo(620, 347);
+        crc2.lineTo(640, 380);
+        crc2.closePath();
+        crc2.stroke();
+        // SkiStock
+        crc2.strokeStyle = "black";
+        crc2.lineWidth = 2;
+        crc2.lineCap = "round";
+        crc2.beginPath();
+        crc2.moveTo(620, 347);
+        crc2.lineTo(660, 380);
+        crc2.closePath();
+        crc2.stroke();
+        // Leg1
+        crc2.strokeStyle = randomColor;
+        crc2.lineWidth = 4;
+        crc2.lineCap = "round";
+        crc2.beginPath();
+        crc2.moveTo(650, 340);
+        crc2.lineTo(670, 380); //Länge der Beine
+        crc2.closePath();
+        crc2.stroke();
+        // Leg2           
+        crc2.beginPath();
+        crc2.moveTo(650, 340);
+        crc2.lineTo(680, 380); //Länge der Beine
+        crc2.closePath();
+        crc2.strokeStyle = randomColor;
+        crc2.lineWidth = 4;
+        crc2.lineCap = "round";
+        crc2.stroke();
+        //Ski        
+        crc2.beginPath();
+        crc2.moveTo(100, 35);
+        crc2.lineTo(40, 50); //Länge vom Ski
+        crc2.closePath();
+        crc2.lineWidth = 4;
+        crc2.lineCap = "round";
+        crc2.strokeStyle = "black";
+        crc2.stroke();
+        //crc2.rect(640, 380, 60, 4);
         crc2.restore();
+    }
+    function drawPeople() {
+        console.log("viele Skifahrer");
+        for (let i = 0; i < 10; i++)
+            ;
     }
     function drawSnow() {
         for (let i = 0; i < 300; i++) {
