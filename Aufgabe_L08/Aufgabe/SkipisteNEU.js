@@ -104,7 +104,7 @@ var L08_Canvas_SkipisteNEU;
         }
         function drawLift(_position) {
             console.log("lift", _position);
-            //Haus
+            //Wagon
             crc2.beginPath();
             crc2.rect(550, 340, 130, 90);
             crc2.fillStyle = "#a9c9c9";
@@ -330,15 +330,23 @@ var L08_Canvas_SkipisteNEU;
             crc2.fill();
             crc2.restore();
         }
+        function drawSnowflake(_position) {
+            console.log("draw single snowflake");
+            let radiusSnowflake = Math.random() * 2.5 + 1;
+            crc2.save();
+            crc2.translate(_position.x, _position.y);
+            crc2.beginPath();
+            crc2.arc(0, 0, radiusSnowflake, 0, Math.PI * 2, false);
+            crc2.fillStyle = "white";
+            crc2.fill();
+            crc2.restore();
+        }
         function drawSnow() {
-            for (let i = 0; i < 300; i++) {
+            console.log("let it snow");
+            for (let i = 0; i < 600; i++) {
                 let x = Math.random() * window.innerWidth;
                 let y = Math.random() * window.innerHeight;
-                let radiusSnowflake = Math.random() * 2.5 + 1;
-                crc2.beginPath();
-                crc2.arc(x, y, radiusSnowflake, 0, Math.PI * 2, false);
-                crc2.fillStyle = "white";
-                crc2.fill();
+                drawSnowflake({ x: x, y: y });
             }
         }
     }

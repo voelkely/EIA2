@@ -1,19 +1,12 @@
-namespace L08_Canvas_SkipisteNEU {
+namespace L09_Classes_Skipiste {
     interface Vector {
         x: number;
         y: number;
     }
 
-    window.addEventListener("load", handleLoad);
-    let crc2: CanvasRenderingContext2D;
-    let golden: number = 0.62; //Goldener Schnitt
+    export function drawCanvas(): void {
 
-    function handleLoad(_event: Event): void {
-        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-        if (!canvas)
-            return;
-        crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
-
+        let golden: number = 0.62; //Goldener Schnitt
         let horizon: number = crc2.canvas.height * golden;
 
         drawBackground();
@@ -21,12 +14,11 @@ namespace L08_Canvas_SkipisteNEU {
         drawCloud({x: 500, y: 225 }, {x: 450, y: 150});
         drawMountains({x: 0, y: horizon}, 75, 200, "lightgrey", "white");  //Das steht im AD im Kasten oben
         drawMountains({x: 0, y: horizon}, 50, 100, "#FFFAFA", "lightgrey"); 
-        drawHill();
-        drawPeople();     
-        drawLift({x: -10, y: -40}); //Position des 
+        drawHill(); 
+        drawLine();   
         drawHouse();
         drawTrees();
-        drawSnow();
+
 
         function drawBackground(): void {
             console.log("background");
@@ -145,89 +137,6 @@ namespace L08_Canvas_SkipisteNEU {
             crc2.restore(); 
         }
 
-        function drawLift(_position: Vector): void {
-            console.log("lift", _position);
-
-            //Wagon
-            crc2.beginPath();
-            crc2.rect(550, 340, 130, 90);
-            crc2.fillStyle = "#a9c9c9";
-            crc2.fill();
-            crc2.closePath();
-
-            crc2.fillStyle = "black";
-            crc2.font = "15px sans-serif";
-            crc2.fillText("SKI LIFT", 580, 415);
-
-            crc2.save();
-            crc2.restore();
-
-            // Verbindung 
-            crc2.beginPath();
-            crc2.rect(610, 300, 10, 40);
-            crc2.fillStyle = "grey";
-            crc2.fill();
-            crc2.closePath();
-
-            //LiftZug   
-            crc2.beginPath();
-            crc2.moveTo(250, 500);
-            crc2.lineTo(800, 200);
-            crc2.closePath();
-            crc2.lineWidth = 3;
-            crc2.strokeStyle = "black";
-            crc2.stroke();
-
-            //Rahmen
-            crc2.beginPath();
-            crc2.rect(570, 350, 30, 45);
-            crc2.fillStyle = "white";
-            crc2.fill();
-            crc2.closePath();
-
-            //Rahmen2
-            crc2.beginPath();
-            crc2.rect(610, 350, 30, 45);
-            crc2.fillStyle = "white";
-            crc2.fill();
-            crc2.closePath();
-
-            //Rahmen3
-            crc2.beginPath();
-            crc2.rect(558, 348, 114, 50);
-            crc2.lineWidth = 2;
-            crc2.fill();
-            crc2.closePath();
-
-            //Fenster1
-            crc2.beginPath();
-            crc2.rect(560, 350, 30, 45);
-            crc2.fillStyle = "lightgrey";
-            crc2.fill();
-            crc2.closePath();
-
-            //Fenster2
-            crc2.beginPath();
-            crc2.rect(600, 350, 30, 45);
-            crc2.fillStyle = "lightgrey";
-            crc2.fill();
-            crc2.closePath();
-
-             //Fenster3
-            crc2.beginPath();
-            crc2.rect(640, 350, 30, 45);
-            crc2.fillStyle = "lightgrey";
-            crc2.fill();
-            crc2.closePath();
-
-           
-
-            crc2.save();
-            crc2.restore();
-        }
-
-        
-    
         function drawTrees(): void {
             console.log("Trees");
     
@@ -239,17 +148,6 @@ namespace L08_Canvas_SkipisteNEU {
             crc2.closePath();
     
             crc2.fillStyle = "green";
-            crc2.fill();
-            crc2.save();
-    
-            //Großer Baum links
-            crc2.beginPath();
-            crc2.moveTo(100, 600);
-            crc2.lineTo(135, 425);
-            crc2.lineTo(170, 600);
-            crc2.closePath();
-    
-            crc2.fillStyle = "darkgreen";
             crc2.fill();
             crc2.save();
 
@@ -269,67 +167,15 @@ namespace L08_Canvas_SkipisteNEU {
     
         }
 
-        function drawPerson(_position: Vector): void {
-            console.log("single");
-        
-            let skin: string = "#fce6ac";
-            let color: string[] = ["#f4f72f", "#bf3519", "#0e85cf", "#ae48d4", "#d16696", "#1cbd5a"];
-            let randomColor: string = color[Math.floor(Math.random() * color.length)];
-
-            crc2.save();
-            crc2.translate(_position.x, _position.y);
-
-            //Head
+        function drawLine(): void {
+            
             crc2.beginPath();
-            crc2.arc(0, 0, 8, 0, 2 * Math.PI);
+            crc2.moveTo(250, 500);
+            crc2.lineTo(800, 200);
             crc2.closePath();
-            crc2.fillStyle = skin;
-            crc2.fill();
-            //Body
-            crc2.beginPath();
-            crc2.moveTo(-10, 25);
-            crc2.bezierCurveTo(-5, 0, 5, 0, 5, 25);
-            crc2.closePath();
-            crc2.fillStyle =  randomColor;
-            crc2.fill();
-            //Ski
-            crc2.lineWidth = 4;
-            crc2.lineCap = "round";
-            crc2.beginPath();
-            crc2.moveTo(-20, 35);
-            crc2.lineTo(4, 48);
-            crc2.moveTo(-11, 34);
-            crc2.lineTo(15, 48);
+            crc2.lineWidth = 3;
             crc2.strokeStyle = "black";
             crc2.stroke();
-            //Legs
-            crc2.beginPath();
-            crc2.moveTo(-6, 25);
-            crc2.lineTo(-4, 33);
-            crc2.lineTo(-11, 40);
-            crc2.moveTo(1, 25);
-            crc2.lineTo(3, 31);
-            crc2.lineTo(0, 39);
-            crc2.lineCap = "round";
-            crc2.lineWidth = 4;
-            crc2.strokeStyle = randomColor;
-            crc2.stroke();
-            crc2.closePath();
-
-            crc2.restore();
-            
-        }
-
-        function drawPeople(): void {
-            console.log("people");
-
-            for (let i: number = 0; i < 10; i++) {
-                let x: number =  Math.random() * 450 + 50;
-                let y: number = Math.random() * 200 + 350;
-                drawPerson({x: x, y: y});
-
-            }
-
         }
 
         function drawHouse(): void {
@@ -439,33 +285,6 @@ namespace L08_Canvas_SkipisteNEU {
 
         }
 
-        function drawSnowflake(_position: Vector): void {
-            console.log("draw single snowflake");
-            let radiusSnowflake: number = Math.random() * 2.5 + 1;
 
-            crc2.save();
-            crc2.translate(_position.x, _position.y);
-            crc2.beginPath();     
-            crc2.arc(0, 0, radiusSnowflake, 0, Math.PI * 2, false);
-            crc2.fillStyle = "white";
-            crc2.fill();
-
-            crc2.restore();
-
-
-        }
-
-        function drawSnow(): void {
-            console.log("let it snow");
-            
-            for (let i: number = 0; i < 600; i++) {
-                let x: number = Math.random() * window.innerWidth;
-                let y: number = Math.random() * window.innerHeight; 
-                drawSnowflake({x: x, y: y});            
-               
-            }
-        }
-    
-
-    
-    
+    }
+}
