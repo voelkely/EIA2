@@ -20,6 +20,7 @@ namespace L09_Classes_Skipiste {
             crc2.fillStyle = "darkgreen";
             crc2.fill();
             crc2.save();
+            crc2.restore();
         }
     }
 }

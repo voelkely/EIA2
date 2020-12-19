@@ -3,7 +3,7 @@ var L09_Classes_Skipiste;
 (function (L09_Classes_Skipiste) {
     class Skier {
         constructor(_size, _y) {
-            console.log("construct skier");
+            // console.log("construct skier");
             this.y = _y;
             this.position = new L09_Classes_Skipiste.Vector(0, _y); //Startposition 
             this.speed = new L09_Classes_Skipiste.Vector(110, 200);
@@ -53,7 +53,7 @@ var L09_Classes_Skipiste;
             L09_Classes_Skipiste.crc2.restore();
         }
         move(_timeslice) {
-            console.log("move fahrer");
+            //console.log("move fahrer");
             let offset = new L09_Classes_Skipiste.Vector(this.speed.x, this.speed.y); //Offset ist der Weg 
             offset.scale(_timeslice); // offset wird um den _timeslice skaliert, wir erhalten die verschiebung
             this.position.add(offset); //diese verscheibung wird auf die position addiert

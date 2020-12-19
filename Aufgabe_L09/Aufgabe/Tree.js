@@ -15,6 +15,7 @@ var L09_Classes_Skipiste;
             L09_Classes_Skipiste.crc2.fillStyle = "darkgreen";
             L09_Classes_Skipiste.crc2.fill();
             L09_Classes_Skipiste.crc2.save();
+            L09_Classes_Skipiste.crc2.restore();
         }
     }
     L09_Classes_Skipiste.Tree = Tree;

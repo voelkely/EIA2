@@ -8,7 +8,7 @@ namespace L09_Classes_Skipiste {
         y: number;
 
         constructor(_size: number, _y: number) {
-            console.log("construct skier");
+           // console.log("construct skier");
             this.y = _y;
             this.position = new Vector (0, _y); //Startposition 
             this.speed = new Vector (110, 200); 
@@ -64,7 +64,7 @@ namespace L09_Classes_Skipiste {
         }
 
         move(_timeslice: number): void {
-            console.log("move fahrer");
+           //console.log("move fahrer");
             let offset: Vector = new Vector(this.speed.x, this.speed.y); //Offset ist der Weg 
             offset.scale(_timeslice); // offset wird um den _timeslice skaliert, wir erhalten die verschiebung
             this.position.add(offset); //diese verscheibung wird auf die position addiert

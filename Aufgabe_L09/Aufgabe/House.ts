@@ -19,13 +19,13 @@ namespace L09_Classes_Skipiste {
      
              crc2.fillStyle = "#5c4411";
              crc2.fill();
-             crc2. save();
+             crc2.save();
      
              //Fenster
              
              crc2.fillStyle = "#d3e6e6";
              crc2.fillRect(225, 475 , 100, 60);
-             crc2. save();
+             crc2.save();
  
              crc2.fillStyle = "black";
              crc2.font = "10px sans-serif";

@@ -5,9 +5,8 @@ namespace L09_Classes_Skipiste {
         y: number;
         speed: number;
 
-
         draw(): void {
-            console.log("draw Snowflake");
+           // console.log("draw Snowflake");
             let radiusSnowflake: number = Math.random() * 2.5 + 1;
             crc2.save();
             crc2.translate(this.x, this.y);
@@ -20,10 +19,18 @@ namespace L09_Classes_Skipiste {
         }
 
         move(): void {
-            console.log("move Snowflake");
+           // console.log("move Snowflake");
 
-            this.y += this.speed * (2) ;
-    
+        if (this.y >= 800) {
+            this.y = 0;
         }
+
+        this.y += Math.random() * 1;
+     }
+   
+            // this.y += this.speed * (2);
     }
-} 
+
+}
+
+ //new position geben mit y bsp. -10  mit if schleife

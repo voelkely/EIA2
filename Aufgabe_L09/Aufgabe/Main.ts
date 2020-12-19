@@ -9,12 +9,10 @@ namespace L09_Classes_Skipiste {
     let skifahrer: Skier[] = [];
 
 
-    let lift: Lift = new Lift();
+    let lift: Lift;
+
     let baum: Tree = new Tree();
     let haus: House = new House();
-
-   // let up: boolean = true; 
-   // let down: boolean = true;
 
     function handleLoad(_event: Event): void {
         console.log("starting Animation");
@@ -27,29 +25,25 @@ namespace L09_Classes_Skipiste {
         drawCanvas();
         imgData = crc2.getImageData(0, 0, canvas.width, canvas.height); //implementierung meines Hintergrunds 
 
-        createSnowflakes(1000); //Anzahl der Schneeflocken in meinem Canvas
+        createSnowflakes(5000); //Anzahl der Schneeflocken in meinem Canvas
         createSkier(4);
         createLift();
-        animate();
-        moveLift();
-        moveUp();
-        moveDown();
-        
-
+        animate();      
+    }
 
     //Schneeflocken
-        function createSnowflakes(_nFlocken: number): void { 
+    function createSnowflakes(_nFlocken: number): void { 
         for (let i: number = 0; i < _nFlocken; i++) {
             let flocke: Snowflake = new Snowflake();  //Eine flocke soll erstellt werden
             flocke.x = Math.random() * window.innerWidth; 
             flocke.y = Math.random() * window.innerHeight;
-            flocke.speed = (Math.random() + 1) * 0.1; //Geschwindigkeit des fallens der Flocken
+          //  flocke.speed = (Math.random() + 1) * 0.1; //Geschwindigkeit des fallens der Flocken
             schneeflocken.push(flocke); // das array schneeflocken greift auf die einzelen Flocke zu und pusht diese
         }           
-        }
+    }
 
     //Skifahrer
-        function createSkier(_nSkier: number): void {
+    function createSkier(_nSkier: number): void {
         let y: number = 200;
         for (let i: number = 0; i < _nSkier; i++) {
             let oneSkier: Skier = new Skier(1, y);
@@ -59,19 +53,16 @@ namespace L09_Classes_Skipiste {
         }
 
     //Lift 
-        function createLift(): void {
+    function createLift(): void {
+        lift = new Lift(1);
         console.log("create Lift");
+        console.log(lift.position);
 
-        lift.x = 500;
-        lift.y = -125;
-        }
-
-    }//handleLoad zu
-
+    }
 
     //animation
     function animate(): void { 
-        window.setTimeout(animate, 20);
+        window.setTimeout(animate, 10);
         crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
         crc2.putImageData(imgData, 0, 0);
         
@@ -90,33 +81,29 @@ namespace L09_Classes_Skipiste {
 
         //Skifahrer
         for (let i: number = 0; i < skifahrer.length; i++) {
-            skifahrer[i].move(1 / 60);
+            skifahrer[i].move(1 / 80);
             
         }   
 
+        moveUp();
+        moveDown();
+
     }//moveObject zu
 
-    function moveLift(): void {
-        console.log("move the lift");
-    }
-
     function moveUp(): void {
-        lift.moveUp(1 / 50);
+       // lift.position.x += 1;
+        lift.moveUp(1 / 70);
     }
 
     function moveDown(): void {
-       // lift.moveDown();
+        //lift.position.x -= 1;     //1 ist die geschwindigkeit 
+      //  if (lift.position.x <= 610) {
+            //down = true; 
+      //  }   
     }
 
-
-
     function drawObjects(): void { 
-
-        //Schneeflocken
-        for (let i: number = 0; i < schneeflocken.length; i++) {
-            schneeflocken[i].draw();
-    
-        }
+           
         // Skifahrer
         for (let i: number = 0; i < skifahrer.length; i++) {
             skifahrer[i].draw();
@@ -130,11 +117,13 @@ namespace L09_Classes_Skipiste {
         // Lift
         lift.draw();
 
+        //Schneeflocken
+        for (let i: number = 0; i < schneeflocken.length; i++) {
+            schneeflocken[i].draw();
+        }
+
 
     }//drawObject zu
-
-
-
 
 } //namespace zu
   
