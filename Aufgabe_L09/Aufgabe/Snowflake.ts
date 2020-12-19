@@ -27,8 +27,7 @@ namespace L09_Classes_Skipiste {
 
         this.y += Math.random() * 1;
      }
-   
-            // this.y += this.speed * (2);
+
     }
 
 }
