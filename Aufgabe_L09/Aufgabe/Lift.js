@@ -21,8 +21,6 @@ var L09_Classes_Skipiste;
             L09_Classes_Skipiste.crc2.fillStyle = "black";
             L09_Classes_Skipiste.crc2.font = "15px sans-serif";
             L09_Classes_Skipiste.crc2.fillText("SKI LIFT", this.position.x - 30, this.position.y + 120);
-            //crc2.save();
-            //crc2.restore();
             // Verbindung 
             L09_Classes_Skipiste.crc2.beginPath();
             L09_Classes_Skipiste.crc2.rect(this.position.x, this.position.y, 10, 40);
@@ -80,10 +78,6 @@ var L09_Classes_Skipiste;
             let offset = new L09_Classes_Skipiste.Vector(this.speed.x, this.speed.y); //Offset ist der Weg 
             offset.scale(_timeslice); // offset wird um den _timeslice skaliert, wir erhalten die verschiebung
             this.position.add(offset);
-            if (this.position.y >= 600) {
-                this.position = new L09_Classes_Skipiste.Vector(0, this.y);
-            }
-            // für lift runter ab punkt 
         }
     }
     L09_Classes_Skipiste.Lift = Lift;

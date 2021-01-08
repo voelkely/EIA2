@@ -1,12 +1,13 @@
-namespace L09_Classes_Skipiste {
+namespace L10_Inheritance_Skipiste {
     window.addEventListener("load", handleLoad);
 
     export let crc2: CanvasRenderingContext2D;
     let imgData: ImageData;
 
 
-    let schneeflocken: Snowflake[] = []; //wenn ich mehrere brauche 
-    let skifahrer: Skier[] = [];
+    let schneeflocken: Moveable[] = []; //wenn ich mehrere brauche 
+    let skifahrer: Moveable[] = [];
+    let moveables: Moveable[] = [];
 
 
     let lift: Lift;
@@ -34,11 +35,11 @@ namespace L09_Classes_Skipiste {
     //Schneeflocken
     function createSnowflakes(_nFlocken: number): void { 
         for (let i: number = 0; i < _nFlocken; i++) {
-            let flocke: Snowflake = new Snowflake();  //Eine flocke soll erstellt werden
+            let flocke: Moveable = new Snowflake();  //Eine flocke soll erstellt werden
             flocke.x = Math.random() * window.innerWidth; 
             flocke.y = Math.random() * window.innerHeight;
-            flocke.speed = (Math.random() + 1) * 0.1; //Geschwindigkeit des fallens der Flocken
-            schneeflocken.push(flocke); // das array schneeflocken greift auf die einzelen Flocke zu und pusht diese
+            flocke.speed2 = (Math.random() + 1) * 0.1; //Geschwindigkeit des fallens der Flocken
+            schneeflocken.push(flocke); 
         }           
     }
 
@@ -46,7 +47,7 @@ namespace L09_Classes_Skipiste {
     function createSkier(_nSkier: number): void {
         let y: number = 200;
         for (let i: number = 0; i < _nSkier; i++) {
-            let oneSkier: Skier = new Skier(1, y);
+            let oneSkier: Moveable = new Skier(y);
             y += 50;
             skifahrer.push(oneSkier);
             }
@@ -54,7 +55,7 @@ namespace L09_Classes_Skipiste {
 
     //Lift 
     function createLift(): void {
-        lift = new Lift(1);
+        lift = new Lift();
         console.log("create Lift");
         console.log(lift.position);
 
@@ -76,17 +77,21 @@ namespace L09_Classes_Skipiste {
 
         //Schneeflocken
         for (let i: number = 0; i < schneeflocken.length; i++) {
-            schneeflocken[i].move();
+            schneeflocken[i].move(1);
         }
 
         //Skifahrer
         for (let i: number = 0; i < skifahrer.length; i++) {
             skifahrer[i].move(1 / 80);
             
-        }   
+        } 
+        
+        for (let moveable of moveables) {
+            moveable.move(1 / 50);
+            moveable.draw();
+        }
 
         moveUp();
-        moveDown();
 
     }//moveObject zu
 
@@ -95,12 +100,6 @@ namespace L09_Classes_Skipiste {
         lift.moveUp(1 / 70);
     }
 
-    function moveDown(): void {
-        //lift.position.x -= 1;     //1 ist die geschwindigkeit 
-      //  if (lift.position.x <= 610) {
-            //down = true; 
-      //  }   
-    }
 
     function drawObjects(): void { 
            

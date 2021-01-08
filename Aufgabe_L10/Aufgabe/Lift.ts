@@ -1,11 +1,12 @@
-namespace L09_Classes_Skipiste {
-    export class Lift {
+namespace L10_Inheritance_Skipiste {
+    export class Lift { 
 
         position: Vector;
         speed: Vector;
 
-        constructor(_y: number) {
-            console.log("construct Lift");
+        constructor() {
+            //console.log("construct Lift");
+
             this.position = new Vector (610, 300); //Da muss Punkt von der Verbindung zwischen Wagon und Linierein //300
             this.speed = new Vector (20, -11); //Ausrichtung an der Linie
         }
@@ -86,21 +87,12 @@ namespace L09_Classes_Skipiste {
             console.log("Lift is going up");
 
             let offset: Vector = new Vector(this.speed.x, this.speed.y); //Offset ist der Weg
-            console.log(offset);
-            offset.scale(_timeslice); // offset wird um den _timeslice skaliert, wir erhalten die verschiebung
-            this.position.add(offset); //diese verscheibung wird auf die position addiert
-            console.log(this.position);
+           // console.log(offset);
+            offset.scale(_timeslice); 
+            this.position.add(offset); 
+          //  console.log(this.position);
              
         }
-
-        moveDown(_timeslice: number): void {
-            let offset: Vector = new Vector(this.speed.x, this.speed.y); //Offset ist der Weg 
-            offset.scale(_timeslice); // offset wird um den _timeslice skaliert, wir erhalten die verschiebung
-            this.position.add(offset);
-
-        }
-
-// für lift runter ab punkt 
 
     }
 
