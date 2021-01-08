@@ -35,10 +35,10 @@ namespace L10_Inheritance_Skipiste {
     //Schneeflocken
     function createSnowflakes(_nFlocken: number): void { 
         for (let i: number = 0; i < _nFlocken; i++) {
-            let flocke: Moveable = new Snowflake();  //Eine flocke soll erstellt werden
+            let flocke: Moveable = new Snowflake();  
             flocke.x = Math.random() * window.innerWidth; 
             flocke.y = Math.random() * window.innerHeight;
-            flocke.speed2 = (Math.random() + 1) * 0.1; //Geschwindigkeit des fallens der Flocken
+            flocke.speed2 = (Math.random() + 1) * 0.1; 
             schneeflocken.push(flocke); 
         }           
     }
@@ -67,13 +67,13 @@ namespace L10_Inheritance_Skipiste {
         crc2.clearRect(0, 0, crc2.canvas.width, crc2.canvas.height);
         crc2.putImageData(imgData, 0, 0);
         
-        moveObjects();
-        drawObjects();
+        moveMoveables();
+        drawMoveables();
 
     }//animation zu
 
 
-    function moveObjects(): void { 
+    function moveMoveables(): void { 
 
         //Schneeflocken
         for (let i: number = 0; i < schneeflocken.length; i++) {
@@ -101,7 +101,7 @@ namespace L10_Inheritance_Skipiste {
     }
 
 
-    function drawObjects(): void { 
+    function drawMoveables(): void { 
            
         // Skifahrer
         for (let i: number = 0; i < skifahrer.length; i++) {

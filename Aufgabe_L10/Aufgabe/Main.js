@@ -25,10 +25,10 @@ var L10_Inheritance_Skipiste;
     //Schneeflocken
     function createSnowflakes(_nFlocken) {
         for (let i = 0; i < _nFlocken; i++) {
-            let flocke = new L10_Inheritance_Skipiste.Snowflake(); //Eine flocke soll erstellt werden
+            let flocke = new L10_Inheritance_Skipiste.Snowflake();
             flocke.x = Math.random() * window.innerWidth;
             flocke.y = Math.random() * window.innerHeight;
-            flocke.speed2 = (Math.random() + 1) * 0.1; //Geschwindigkeit des fallens der Flocken
+            flocke.speed2 = (Math.random() + 1) * 0.1;
             schneeflocken.push(flocke);
         }
     }
@@ -52,10 +52,10 @@ var L10_Inheritance_Skipiste;
         window.setTimeout(animate, 10);
         L10_Inheritance_Skipiste.crc2.clearRect(0, 0, L10_Inheritance_Skipiste.crc2.canvas.width, L10_Inheritance_Skipiste.crc2.canvas.height);
         L10_Inheritance_Skipiste.crc2.putImageData(imgData, 0, 0);
-        moveObjects();
-        drawObjects();
+        moveMoveables();
+        drawMoveables();
     } //animation zu
-    function moveObjects() {
+    function moveMoveables() {
         //Schneeflocken
         for (let i = 0; i < schneeflocken.length; i++) {
             schneeflocken[i].move(1);
@@ -74,7 +74,7 @@ var L10_Inheritance_Skipiste;
         // lift.position.x += 1;
         lift.moveUp(1 / 70);
     }
-    function drawObjects() {
+    function drawMoveables() {
         // Skifahrer
         for (let i = 0; i < skifahrer.length; i++) {
             skifahrer[i].draw();
