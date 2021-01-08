@@ -54,12 +54,12 @@ var L10_Inheritance_Skipiste;
         }
         move(_timeslice) {
             //console.log("move fahrer");
-            let offset = new L10_Inheritance_Skipiste.Vector(this.speed.x, this.speed.y); //Offset ist der Weg 
-            offset.scale(_timeslice); // offset wird um den _timeslice skaliert, wir erhalten die verschiebung
-            this.position.add(offset); //diese verscheibung wird auf die position addiert
+            let offset = new L10_Inheritance_Skipiste.Vector(this.speed.x, this.speed.y);
+            offset.scale(_timeslice);
+            this.position.add(offset);
             let x;
             if (this.position.x > 300 && this.position.y < 600) {
-                this.position.x = 90; //Startposition des Fahrers?
+                this.position.x = 90;
             }
             if (this.position.x < 15) {
                 x = 20 - this.position.x;

@@ -85,7 +85,6 @@ namespace L10_Inheritance_Skipiste {
 
         moveUp(_timeslice: number): void {
             console.log("Lift is going up");
-
             let offset: Vector = new Vector(this.speed.x, this.speed.y); //Offset ist der Weg
            // console.log(offset);
             offset.scale(_timeslice); 
