@@ -21,6 +21,8 @@ var L11_Skipiste;
             L11_Skipiste.crc2.fillStyle = "black";
             L11_Skipiste.crc2.font = "10px sans-serif";
             L11_Skipiste.crc2.fillText("KASSE SKI LIFT", 230, 485);
+            L11_Skipiste.crc2.fillText("Tagesticket 20€", 230, 500);
+            L11_Skipiste.crc2.fillText("Skipass 3 Tage 100€", 230, 510);
             //Dach
             L11_Skipiste.crc2.beginPath();
             L11_Skipiste.crc2.moveTo(200, 450);

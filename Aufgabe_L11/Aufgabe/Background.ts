@@ -21,6 +21,7 @@ namespace L11_Skipiste {
         drawStandingSkier1();
         drawStandingSkier2();
         drawStandingSkier3();
+      
         
 
 
@@ -206,7 +207,7 @@ namespace L11_Skipiste {
             crc2.fillStyle = "black";
             crc2.font = "10px sans-serif";
             crc2.fillText("KASSE SKI LIFT", 230, 485);
-            
+           
             //Dach
     
             crc2.beginPath();

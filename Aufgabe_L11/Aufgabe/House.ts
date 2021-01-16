@@ -30,6 +30,8 @@ namespace L11_Skipiste {
              crc2.fillStyle = "black";
              crc2.font = "10px sans-serif";
              crc2.fillText("KASSE SKI LIFT", 230, 485);
+             crc2.fillText("Tagesticket 20€", 230, 500);
+             crc2.fillText("Skipass 3 Tage 100€", 230, 510);
              
              //Dach
      
