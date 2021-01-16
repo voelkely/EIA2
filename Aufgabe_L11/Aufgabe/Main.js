@@ -25,11 +25,12 @@ var L11_Skipiste;
         imgData = L11_Skipiste.crc2.getImageData(0, 0, canvas.width, canvas.height); //implementierung meines Hintergrunds
         canvas.addEventListener("click", stopLift);
         canvas.addEventListener("click", hitSkier);
-        createSnowflakes(5000); //Anzahl der Schneeflocken in meinem Canvas
+        createSnowflakes(5000);
         createSkier(6);
         createLift();
         animate();
     }
+    //Funktion "hitSkier" --> klickt man auf den Skifahrer beginnt dieser wieder von seiner Startposition zu fahren!
     function hitSkier(_event) {
         let mousePosition = new L11_Skipiste.Vector(_event.clientX - L11_Skipiste.crc2.canvas.offsetLeft, _event.clientY - L11_Skipiste.crc2.canvas.offsetTop); //position meiner maus
         for (let oneSkier of skifahrer) {
@@ -40,6 +41,7 @@ var L11_Skipiste;
             }
         }
     }
+    //Funktion "stopLift" --> klickt man auf den Lift stoppt dieser für 5 sekunden und setzt sich danach von seiner aktuellen Position wieder in Bewegung!
     function stopLift(_event) {
         debugger;
         let mousePosition = new L11_Skipiste.Vector(_event.clientX - L11_Skipiste.crc2.canvas.offsetLeft, _event.clientY - L11_Skipiste.crc2.canvas.offsetTop);
@@ -51,7 +53,7 @@ var L11_Skipiste;
             }
         }
     }
-    //Funktion die nach den 5 sekunden pause aufgerufen wird --> hier setzt sich der lift wieder in bewegung 
+    //Funktion "startLift" --> wird nach den nach den 5 sekunden pause aufgerufen --> hier setzt sich der lift wieder in bewegung (allerdings fehlte mir hier der Ansatz)
     function startLift(_stopLift) {
         //
     }

@@ -4,8 +4,8 @@ var L11_Skipiste;
     class Lift {
         constructor() {
             //console.log("construct Lift");
-            this.position = new L11_Skipiste.Vector(610, 300); //Da muss Punkt von der Verbindung zwischen Wagon und Linierein //300
-            this.speed = new L11_Skipiste.Vector(20, -11); //Ausrichtung an der Linie
+            this.position = new L11_Skipiste.Vector(610, 300);
+            this.speed = new L11_Skipiste.Vector(20, -11);
             this.task = L11_Skipiste.TASK.STOPPING;
             this.hitRadius = 50;
         }
@@ -69,13 +69,13 @@ var L11_Skipiste;
             L11_Skipiste.crc2.restore();
         }
         moveUp(_timeslice) {
-            //if (this.task == TASK.MOVING) {
-            //wenn der Lift sich bewegt dann...
-            let offset = new L11_Skipiste.Vector(this.speed.x, this.speed.y); //Offset ist der Weg
+            // if (stop == false) {
+            //wenn der Lift sich bewegt ohne getroffen worden zu sein dann...
+            let offset = new L11_Skipiste.Vector(this.speed.x, this.speed.y);
             offset.scale(_timeslice);
             this.position.add(offset);
         }
-    }
+    } //class zu 
     L11_Skipiste.Lift = Lift;
-})(L11_Skipiste || (L11_Skipiste = {}));
+})(L11_Skipiste || (L11_Skipiste = {})); //namespace zu
 //# sourceMappingURL=Lift.js.map

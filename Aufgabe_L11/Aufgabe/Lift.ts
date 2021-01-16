@@ -12,8 +12,8 @@ namespace L11_Skipiste {
         constructor() {
             //console.log("construct Lift");
 
-            this.position = new Vector (610, 300); //Da muss Punkt von der Verbindung zwischen Wagon und Linierein //300
-            this.speed = new Vector (20, -11); //Ausrichtung an der Linie
+            this.position = new Vector (610, 300); 
+            this.speed = new Vector (20, -11); 
             this.task = TASK.STOPPING;
 
             this.hitRadius = 50;
@@ -93,30 +93,30 @@ namespace L11_Skipiste {
 
         public moveUp(_timeslice: number): void {
 
-            //if (this.task == TASK.MOVING) {
-               //wenn der Lift sich bewegt dann...
+           // if (stop == false) {
+               //wenn der Lift sich bewegt ohne getroffen worden zu sein dann...
 
-            let offset: Vector = new Vector(this.speed.x, this.speed.y); //Offset ist der Weg
+            let offset: Vector = new Vector(this.speed.x, this.speed.y); 
             offset.scale(_timeslice); 
             this.position.add(offset); 
+
             }
            
-           // if (this.task == TASK.STOPPING) {
+           //if (stop == true) {
                //falls der Lift getroffen wurde und stoppt dann...
 
-          //  let offset: Vector = new Vector(this.position.x, this.position.y);
-          //  offset.scale(_timeslice); 
-          //  this.position.add(offset);
+            //let newPosition: Vector = new Vector (this.position.x, this.position.y);
+            //let offset: Vector = new Vector(this.speed.x, this.speed.y);
+            //offset.scale(_timeslice); 
+            //this.position.add(offset);
             
-      //  }
+            //}
 
-    
-   // }
-            //Hier fehlt mir der Ansatz, keine ahnung was da rein muss? Der lift kann ins moving oder shaking rein
-           
-    }
+        
 
-}
+    } //class zu 
+
+}//namespace zu
       
        
 

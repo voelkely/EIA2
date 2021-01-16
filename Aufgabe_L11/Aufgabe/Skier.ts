@@ -85,7 +85,8 @@ namespace L11_Skipiste {
                 this.position = new Vector (0, this.y);
             }
 
-        } //public move zu 
+        }//public move zu 
 
     } //Class zu
+
 } //namesapce zu
