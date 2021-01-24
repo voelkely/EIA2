@@ -1,10 +1,5 @@
 namespace L11_Skipiste {
 
-    export enum TASK {
-        MOVING,
-        STOPPING   
-    }
-
     window.addEventListener("load", handleLoad);
 
     export let crc2: CanvasRenderingContext2D;
@@ -19,7 +14,7 @@ namespace L11_Skipiste {
 
     let baum: Tree = new Tree();
     let haus: House = new House();
-    let stop: boolean = true;
+    export let clickStop: boolean = true;
 
     function handleLoad(_event: Event): void {
         console.log("starting Animation");
@@ -60,18 +55,20 @@ namespace L11_Skipiste {
         debugger;
         let mousePosition: Vector = new Vector(_event.clientX - crc2.canvas.offsetLeft, _event.clientY - crc2.canvas.offsetTop);
         if (lift.position.x - lift.hitRadius < mousePosition.x && lift.position.x + lift.hitRadius > mousePosition.x) {
-            if (lift.position.y - lift.hitRadius < mousePosition.y && lift.position.y + lift.hitRadius > mousePosition.y)
-            stop = true; //Debugger geht nicht hier rein sondern springt gleich weiter   
-
-            if (stop == true) {
-                window.setTimeout(startLift, 5000); //Nach 5 sekunden soll der Lift wieder weiter fahren!
+            if (lift.position.y - lift.hitRadius < mousePosition.y && lift.position.y + lift.hitRadius > mousePosition.y) {
+                clickStop = true; //Debugger geht nicht hier rein sondern springt gleich weiter   
             }
+            
+            if (clickStop == true) {
+                window.setTimeout(startLift, 5000); //Nach 5 sekunden soll der Lift wieder weiter fahren!
+                
+            } 
         }
     }
 
     //Funktion "startLift" --> wird nach den nach den 5 sekunden pause aufgerufen --> hier setzt sich der lift wieder in bewegung (allerdings fehlte mir hier der Ansatz)
     function startLift(_stopLift: MouseEvent): void {
-        //
+        lift.position = new Vector(lift.position.x, lift.position.y);
     }
 
 

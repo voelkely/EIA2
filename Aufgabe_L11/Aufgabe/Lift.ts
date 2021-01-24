@@ -1,21 +1,16 @@
 namespace L11_Skipiste {
     export class Lift { 
 
-        public isShaken: boolean;
-        public task: TASK;
         public hitRadius: number;
         public position: Vector;  //mein Lift erbt nicht von Moveable dehalb müssen position und speed drin bleiben!
         private speed: Vector;
-
-        
 
         constructor() {
             //console.log("construct Lift");
 
             this.position = new Vector (610, 300); 
             this.speed = new Vector (20, -11); 
-            this.task = TASK.STOPPING;
-
+           
             this.hitRadius = 50;
         }
 
@@ -93,22 +88,23 @@ namespace L11_Skipiste {
 
         public moveUp(_timeslice: number): void {
 
-           // if (stop == false) {
+            if (clickStop == false) {
                //wenn der Lift sich bewegt ohne getroffen worden zu sein dann...
 
             let offset: Vector = new Vector(this.speed.x, this.speed.y); 
             offset.scale(_timeslice); 
-            this.position.add(offset); 
-
+            this.position.add(offset);
+       
             }
            
-           //if (stop == true) {
-               //falls der Lift getroffen wurde und stoppt dann...
+            if (clickStop == true) {
+               //falls der Lift getroffen wurde sollte er stoppen...
 
-            //let newPosition: Vector = new Vector (this.position.x, this.position.y);
+            this.position = new Vector (this.position.x, this.position.y);
             //let offset: Vector = new Vector(this.speed.x, this.speed.y);
-            //offset.scale(_timeslice); 
-            //this.position.add(offset);
+           // offset.scale(_timeslice); 
+           // this.position.add(offset && newPosition);
+        
             
             //}
 
