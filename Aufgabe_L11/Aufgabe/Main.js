@@ -74,7 +74,7 @@ var L11_Skipiste;
     }
     //Lift 
     function createLift() {
-        lift = new Lift();
+        lift = new L11_Skipiste.Lift();
         console.log("create Lift");
         console.log(lift.position);
     }
