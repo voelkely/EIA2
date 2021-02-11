@@ -1,0 +1,257 @@
+/*Fonts*/
+@font-face {
+    font-family:"Balbaleo";
+    src: url("fonts/Balbaleo.woff2");
+    src:
+    url("fonts/Balbaleo.woff") format("woff"),
+    url("fonts/Balbaleo.woff2") format("woff2"),
+}
+
+@font-face {
+    font-family:"KeepOn";
+    src: url("fonts/KeeponTruckin.woff");
+    src:
+    url("fonts/KeeponTruckin.woff") format("woff"),
+    url("fonts/KeeponTruckin.woff2") format("woff2"),
+}
+
+/*Header*/
+
+header {
+    grid-column: span 2;
+}
+
+.rectangle1 {
+    height: 20px;
+    width: 1300px;
+    background-color: #e4ad4a;
+    border-radius: 0%;
+    box-shadow: none;
+    margin-top: 5px;
+    
+}
+.rectangle2 {
+    height: 20px;
+    width: 1300px;
+    background-color: #f0823b;
+    border-radius: 0%;
+    box-shadow: none;
+    margin-top: -19px;
+}
+.rectangle3 {
+    height: 20px;
+    width: 1300px;
+    background-color: #de683a;
+    border-radius: 0%;
+    box-shadow: none;
+    margin-top: -19px;
+}
+
+/*Titel "Funky Firework Creator*/
+
+.head {
+    font-family: "Balbaleo";
+    color: #e0a646;
+    text-shadow: 10px 10px#cf5b2a;
+    font-size: 72pt;
+    text-align: center;  
+    margin: 20px;
+}
+
+/*Description of what to do*/
+
+.headline {
+    font-size: 14pt;
+    text-align: center;
+    color: black;
+    font-family: "KeepOn";
+    margin: 20px;
+}
+
+/*Creator Name*/
+
+.creator {
+    font-size: 14pt;
+    text-align: center;
+    color: black;
+    font-family: "KeepOn";
+    margin: 10px;
+    margin-left: 250px;
+}
+
+/*Body*/
+
+body {
+    background-color: #ebe3d8;
+    display: grid;
+    grid-template-columns: 40% auto;
+}
+
+/*Div Form 1*/
+
+div {
+    border: #f2d7b2;
+    border-radius: 30px;
+    margin: 1em;
+    background-color: #febc59;
+    font-family: "KeepOn";
+    font-size: 14pt;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 40px; 
+}
+
+h2 {
+    text-align: center;
+    color:#cf5b2a;
+    text-shadow: 2px 2px #ebe3d8;
+    font-family: "Balbaleo";
+    font-size: 24pt;
+}
+
+h3 {
+    text-align: center;
+    color:#ebe3d8;
+    font-family: "KeepOn";
+    font-size: 12pt;
+    margin-top: -20px;
+}
+
+fieldset {
+    color:#ebe3d8;
+    border-style: solid;
+    border-radius: 15px;
+    border-color:#893e1c;
+    border-width: 3px;
+}
+
+input {
+    padding: 1px;
+    margin: 1px;
+}
+
+legend {
+    font-family: "KeepOn";
+    font-size: 16pt;
+    color:#893e1c;
+    text-shadow: 2px 2px #ebe3d8;
+}
+
+/*Button*/
+
+button {
+    font-family: "Balbaleo";
+    text-align: center;
+    font-size: 25px;
+    border-radius: 30px;
+    border-style: solid;
+    border-color:#893e1c;
+    display: inline;
+    margin: 10px;
+    margin-top: -5px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    
+}
+
+.button1 {
+    background-color: #E07A5F; /* Red */
+    color: #F2CC8F;
+}
+
+.button2 {
+    background-color: #E07A5F; /* Red */
+    color: #F2CC8F;
+}
+
+/*Canvas*/
+
+.canvasMain {
+    margin-top: 25px; 
+    border-radius: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/*Div Form 2*/
+
+.allRockets {
+    margin-top: 10px; 
+    padding: 70px;
+    background-color:#ffa950;
+
+}
+
+.rocketCollection {
+    text-align: center;
+    color:#cf5b2a;
+    text-shadow: 2px 2px #ebe3d8;
+    font-family: "Balbaleo";
+    font-size: 24pt;
+    margin-top: -70px;
+
+}
+
+.anweisung {
+    font-size: 11pt;
+    text-align: center;
+    color: black;
+    font-family: "KeepOn";
+    margin: -20px;
+    margin-bottom: 40px;
+}
+
+.selectRocket {
+    display: inline-block;
+    margin-top: -300px;
+}
+
+/*Link*/
+
+a:link, a:visited {
+    background-color: #cf5b2a;
+    font-family: "KeepOn";
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    float: none;
+    position: absolute;
+    top: 39%;
+    left: 49%;
+    transform: translate(-50%, 70%);
+    border-radius: 20px;
+    
+  }
+  
+a:hover, a:active {
+    background-color:#cf5b2a;
+}
+
+.image {
+    background-color: #ebe3d8;
+    margin-top: -170px;
+    width: 200px;
+    height: 200px;
+    box-shadow: none;
+    float:left;
+}
+
+.image2 {
+    background-color: #ebe3d8;
+    margin-top: -170px;
+    float: right;
+    width: 210px;
+    height: 210px;
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+

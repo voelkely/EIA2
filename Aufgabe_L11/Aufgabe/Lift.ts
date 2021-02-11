@@ -1,4 +1,4 @@
-namespace L11_Skipiste {
+/* namespace L11_Skipiste {
     export class Lift { 
 
         public hitRadius: number;
@@ -112,7 +112,9 @@ namespace L11_Skipiste {
 
     } //class zu 
 
-}//namespace zu
+} //namespace zu
+
+
       
        
 

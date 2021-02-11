@@ -1,33 +1,31 @@
-namespace L08_Canvas_Alley {
-    interface Vector {
-        x: number;
-        y: number;
-    }
+//namespace L08_Canvas_Alley {
+   // interface Vector {
+      //  x: number;
+       // y: number;
+   // }
 
-    window.addEventListener("load", handleLoad);
-    let crc2: CanvasRenderingContext2D;
-    let golden: number = 0.62; //Goldener Schnitt
+  //  window.addEventListener("load", handleLoad);
+  //  let crc2: CanvasRenderingContext2D;
+  //  let golden: number = 0.62; //Goldener Schnitt
     
-    function handleLoad(_event: Event): void {
-        let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-        if (!canvas)
-            return;
-        crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
+   // function handleLoad(_event: Event): void {
+       // let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+      //  if (!canvas)
+          //  return;
+      //  let horizon: number = crc2.canvas.height * golden;
 
-        let horizon: number = crc2.canvas.height * golden;
+       // let streetWidthBack: number = 100;
+      //  let streetWidthFront: number = 600;
+      //  let posStreet: Vector = { x: crc2.canvas.width / 2, y: horizon };
 
-        let streetWidthBack: number = 100;
-        let streetWidthFront: number = 600;
-        let posStreet: Vector = { x: crc2.canvas.width / 2, y: horizon };
-
-        let treesOffsetBack: number = 10; // wie weit sind die Bäume von der Straße entfernt
-        let treesOffsetFront: number = 100;
+      //  let treesOffsetBack: number = 10; // wie weit sind die Bäume von der Straße entfernt
+      //  let treesOffsetFront: number = 100;
        
-        let posTreesStart: Vector = { x: posStreet.x - streetWidthBack / 2 - treesOffsetBack, y: horizon };
-        let posTreesEnd: Vector = { x: crc2.canvas.width / 2 - streetWidthFront / 2 - treesOffsetFront, y: crc2.canvas.height };
+      //  let posTreesStart: Vector = { x: posStreet.x - streetWidthBack / 2 - treesOffsetBack, y: horizon };
+       // let posTreesEnd: Vector = { x: crc2.canvas.width / 2 - streetWidthFront / 2 - treesOffsetFront, y: crc2.canvas.height };
 
 
-        drawBackground();
+      /* drawBackground();
         drawSun({x: 100, y: 75});
         drawCloud({x: 500, y: 225 }, {x: 450, y: 150});
         drawStreet({x: crc2.canvas.width / 2, y: horizon}, 100, 600 );

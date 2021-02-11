@@ -1,11 +1,6 @@
 "use strict";
 var L11_Skipiste;
 (function (L11_Skipiste) {
-    let TASK;
-    (function (TASK) {
-        TASK[TASK["MOVING"] = 0] = "MOVING";
-        TASK[TASK["STOPPING"] = 1] = "STOPPING";
-    })(TASK = L11_Skipiste.TASK || (L11_Skipiste.TASK = {}));
     window.addEventListener("load", handleLoad);
     let imgData;
     let schneeflocken = []; //wenn ich mehrere brauche 
@@ -14,7 +9,7 @@ var L11_Skipiste;
     let lift;
     let baum = new L11_Skipiste.Tree();
     let haus = new L11_Skipiste.House();
-    let stop = true;
+    L11_Skipiste.clickStop = true;
     function handleLoad(_event) {
         console.log("starting Animation");
         let canvas = document.querySelector("canvas");
@@ -46,16 +41,17 @@ var L11_Skipiste;
         debugger;
         let mousePosition = new L11_Skipiste.Vector(_event.clientX - L11_Skipiste.crc2.canvas.offsetLeft, _event.clientY - L11_Skipiste.crc2.canvas.offsetTop);
         if (lift.position.x - lift.hitRadius < mousePosition.x && lift.position.x + lift.hitRadius > mousePosition.x) {
-            if (lift.position.y - lift.hitRadius < mousePosition.y && lift.position.y + lift.hitRadius > mousePosition.y)
-                stop = true; //Debugger geht nicht hier rein sondern springt gleich weiter   
-            if (stop == true) {
+            if (lift.position.y - lift.hitRadius < mousePosition.y && lift.position.y + lift.hitRadius > mousePosition.y) {
+                L11_Skipiste.clickStop = true; //Debugger geht nicht hier rein sondern springt gleich weiter   
+            }
+            if (L11_Skipiste.clickStop == true) {
                 window.setTimeout(startLift, 5000); //Nach 5 sekunden soll der Lift wieder weiter fahren!
             }
         }
     }
     //Funktion "startLift" --> wird nach den nach den 5 sekunden pause aufgerufen --> hier setzt sich der lift wieder in bewegung (allerdings fehlte mir hier der Ansatz)
     function startLift(_stopLift) {
-        //
+        lift.position = new L11_Skipiste.Vector(lift.position.x, lift.position.y);
     }
     //Schneeflocken
     function createSnowflakes(_nFlocken) {
@@ -78,7 +74,7 @@ var L11_Skipiste;
     }
     //Lift 
     function createLift() {
-        lift = new L11_Skipiste.Lift();
+        lift = new Lift();
         console.log("create Lift");
         console.log(lift.position);
     }

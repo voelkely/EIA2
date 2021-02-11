@@ -1,4 +1,4 @@
-namespace L09_Classes_Asteroids {
+/*  namespace L09_Classes_Asteroids {
     window.addEventListener("load", handleLoad);
 
     export let crc2: CanvasRenderingContext2D;

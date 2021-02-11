@@ -1,0 +1,198 @@
+<!-- Endabgabe EIA 2 / Yvonne N. Voelkel / MKB 262629 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Feuerwerk Endabgabe WiSe 2020/21</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen" />
+    <script src="BackgroundCanvas.js"></script>
+    <script src="Particles.js"></script>
+    <script src="Vector.js"></script>
+    <script src="Main.js"></script>
+	
+</head>
+
+<body>
+
+    <header>
+
+        <div class="rectangle1"></div>
+        <div class="rectangle2"></div>
+        <div class="rectangle3"></div>
+
+        <h1 class="head">Funky Firework Creator</h1>
+
+        <div class="image">
+            <img src="disco.png" alt="Person" style="width:100%">
+        </div>
+
+        <div class="image2">
+            <img src="discoGirl.png" alt="Person" style="width:100%">
+        </div>
+		
+        <p class="headline">Create your own firework. Pick a name. Choose the size, lifetime and the amount of particles. Pick some nice colors and make your screen boom!</p> 
+
+        <p></p>
+    
+        <p class="creator">created by: Yvonne Nicole Voelkel / MKB / 262629</p>
+
+        <p></p>
+
+        <a href="../../ENDABGABE/Konzepte/Ablauf.pdf"target="_blank">Click here for Guideline</a></br>
+
+    </header>
+
+    <!--Adding a 1st Form for Rocket Creator -->
+    <form id="generator">
+        <div>
+            <h2>Rocket Creator Bar</h2>
+            <h3>Create your own rocket and click on save</h3>
+
+            <!--Name your Rocket -->
+			<fieldset id="nameRocket">
+                <legend>Pick a Name</legend>
+                <select name="nameFirework" id="nameFirework">
+                    <option value="Choose">Choose...</option>
+					<option value="Stardust" >Stardust</option>
+                    <option value="Space Buddy" >Space Buddy</option>
+                    <option value="Galaxy Shooter" >Glaxay Shooter</option>
+                    <option value="Firecracker" >Firecracker</option>
+                    <option value="Space Fighter" >Space Fighter</option>
+                </select>   
+            </fieldset>
+
+            <p></p>
+
+            <!--Choose the Explosion Size -->
+            <fieldset id="sizeExpl">
+                <legend>Explosion Size</legend>
+				<input type="radio" name="size" id="small" value="small" />
+                <label for="small">small</label>
+                <input type="radio" name="size" id="medium" value="medium" />
+                <label for="medium">medium</label>
+                <input type="radio" name="size" id="big" value="big" />
+                <label for="big">big</label>               
+            </fieldset>
+
+            <p></p>
+
+             <!--Choose a Shape -->
+             <fieldset id="shape">
+                <legend>Explosion Shape</legend>
+				<input type="radio" name="shape" id="circle" value="circle" />
+                <label for="circle">circle</label>
+                <input type="radio" name="shape" id="rectangle" value="rectangle" />
+                <label for="rectangle">Rectangle</label>
+                          
+            </fieldset>
+
+            <p></p>
+
+            <!--Choose the Lifetime -->
+            <fieldset id="life">
+                <legend>Firework Lifetime</legend>
+                    <span>
+                        0
+                        <input type="range" name="lifetime" id="lifetime" min="0" max="10" step="1" value="0" class="slider">
+                        10 (Sec.)
+                    </span>
+            </fieldset>
+
+            <p></p>
+
+            <!--Pick the Color (multiple possible) -->
+            <fieldset id="color">
+                <legend>Pick your Colors</legend>
+
+				<input type="checkbox" name="ColorBlue" id="blue" value="ColorBlue">
+                <label for="blue">blue</label>
+                
+                <input type="checkbox" name="ColorRed" id="red" value="ColorRed">
+                <label for="red">red</label>
+                
+                <input type="checkbox" name="ColorYellow" id="yellow" value="ColorYellow">
+                <label for="yellow">yellow</label>
+
+                <input type="checkbox" name="ColorHeadPink" id="pink" value="ColorHeadPink">
+                <label for="pink">pink</label>
+
+                <input type="checkbox" name="ColorWhite" id="white" value="ColorWhite">
+                <label for="white">white</label>
+
+                <input type="checkbox" name="ColorGreen" id="green" value="ColorGreen">
+                <label for="green">green</label>
+
+                <input type="checkbox" name="ColorOrange" id="orange" value="ColorOrange">
+                <label for="green">orange</label>
+
+                <input type="checkbox" name="ColorPurple" id="purple" value="ColorPurple">
+                <label for="green">purple</label>
+
+                <input type="checkbox" name="ColorTurquois" id="turquois" value="ColorTurquois">
+                <label for="green">turquois</label>
+            </fieldset>
+
+            <p></p>
+
+            <!--Set the Amount of Particles -->
+            <fieldset id="particles">
+                <legend>Amount of Particles</legend>
+                    <span>
+                        100
+                        <input type="range" name="particles" id="particles" min="100" max="10000" step="1" value="0">
+                        10.000 (Stk.)
+                    </span>
+            </fieldset>
+
+            <p></p>
+
+            <!--Adding 2 Buttons-->
+            <button type="button" class="button1" form="generator" id="add">Add</button>
+            <button type="reset" class="button2" form="generator" id="reset">Reset</button>
+
+        </div>   
+    </form>
+
+    <!--Adding a 2nd Form for Canvas -->
+    <form id="canvas">
+        <p></p>
+
+        <canvas class="canvasMain" width=800 height=600></canvas>
+    
+    </form>
+
+    <p></p>
+
+    <!--Adding a third Form for Rocket Collection -->
+    <form id="collection">
+        <div class="allRockets">
+            <h2 class="rocketCollection">Your Rocket Collection</h2>
+            <p class="anweisung">Pick your created Rocket and click on the black screen to see the amazing result!</p>
+
+            <p></p>
+
+            <!--Adding a select Element to choose your Rocket -->
+            <fieldset id="selectRocket">            
+                <select name="selectFirework" id="selectFirework">
+                    <option value="Choose">Choose...</option>
+					<option value="Stardust" >Stardust</option>
+                    <option value="Space Buddy" >Space Buddy</option>
+                    <option value="Galaxy Shooter" >Glaxay Shooter</option>
+                    <option value="Firecracker" >Firecracker</option>
+                    <option value="Space Fighter" >Space Fighter</option>
+                </select>   
+            </fieldset>
+           
+            <p></p>
+                
+        </div>
+    </form>
+
+    
+ 
+</body>    
+</html>
+        

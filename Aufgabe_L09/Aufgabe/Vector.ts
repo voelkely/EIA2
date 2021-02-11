@@ -1,4 +1,4 @@
-namespace L09_Classes_Skipiste {
+/* namespace L09_Classes_Skipiste {
     export class Vector {
         x: number;
         y: number;

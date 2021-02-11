@@ -1,4 +1,4 @@
-namespace L09_Classes_Asteroids {
+/* namespace L09_Classes_Asteroids {
 
     export class Asteroid {
     position: Vector;

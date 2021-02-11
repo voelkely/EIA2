@@ -1,4 +1,4 @@
-namespace L08_Canvas_SkipisteNEU {
+/* namespace L08_Canvas_SkipisteNEU {
     interface Vector {
         x: number;
         y: number;

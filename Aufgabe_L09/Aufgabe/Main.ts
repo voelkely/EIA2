@@ -1,4 +1,4 @@
-namespace L09_Classes_Skipiste {
+/* namespace L09_Classes_Skipiste {
     window.addEventListener("load", handleLoad);
 
     export let crc2: CanvasRenderingContext2D;

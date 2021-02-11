@@ -1,23 +1,28 @@
 "use strict";
-var L09_Classes_Skipiste;
-(function (L09_Classes_Skipiste) {
-    class Vector {
-        constructor(_x, _y) {
+/* namespace L09_Classes_Skipiste {
+    export class Vector {
+        x: number;
+        y: number;
+
+        constructor(_x: number, _y: number) {
             this.set(_x, _y);
         }
-        set(_x, _y) {
+
+        set(_x: number, _y: number): void {
             this.x = _x;
             this.y = _y;
         }
-        scale(_factor) {
+
+        scale(_factor: number): void {
             this.x *= _factor;
             this.y *= _factor;
         }
-        add(_addend) {
+
+        add(_addend: Vector): void {
             this.x += _addend.x;
             this.y += _addend.y;
         }
+        
     }
-    L09_Classes_Skipiste.Vector = Vector;
-})(L09_Classes_Skipiste || (L09_Classes_Skipiste = {}));
+} 
 //# sourceMappingURL=Vector.js.map
