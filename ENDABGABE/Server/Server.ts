@@ -9,7 +9,6 @@ export namespace Endabgabe_Feuerwerk {
 
     }//interface zu
 
-
     let rocketCollection: Mongo.Collection;
 
     let port: number | string | undefined = process.env.PORT;
@@ -17,13 +16,12 @@ export namespace Endabgabe_Feuerwerk {
         port = 5001;
 
     //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/firework?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Firework?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDataBase(databaseUrl);
 
    
-
     function startServer(_port: number | string): void {
 
     let server: Http.Server = Http.createServer();
