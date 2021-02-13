@@ -1,18 +1,18 @@
 /*Fonts*/
 @font-face {
     font-family:"Balbaleo";
-    src: url("fonts/Balbaleo.woff2");
+    src: url("Font/Balbaleo.woff2");
     src:
-    url("fonts/Balbaleo.woff") format("woff"),
-    url("fonts/Balbaleo.woff2") format("woff2"),
+    url("Font/Balbaleo.woff") format("woff"),
+    url("Font/Balbaleo.woff2") format("woff2"),
 }
 
 @font-face {
     font-family:"KeepOn";
-    src: url("fonts/KeeponTruckin.woff");
+    src: url("Font/KeeponTruckin.woff");
     src:
-    url("fonts/KeeponTruckin.woff") format("woff"),
-    url("fonts/KeeponTruckin.woff2") format("woff2"),
+    url("Font/KeeponTruckin.woff") format("woff"),
+    url("Font/KeeponTruckin.woff2") format("woff2"),
 }
 
 /*Header*/
