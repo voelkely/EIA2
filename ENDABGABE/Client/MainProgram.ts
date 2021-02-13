@@ -66,18 +66,19 @@ namespace Endabgabe_Feuerwerk {
     function chooseRocket(): void {
         console.log("is picked rocket filled?");
 
-        //HIER MÜSSEN NOCH DIE DATEN AUS DER DATENBANK ABGEFRAGT WERDEN!!!
+        //HIER MÜSSEN NOCH DIE DATEN AUS DER DATENBANK ABGEFRAGT WERDEN!!! ABER WIE???
 
         let formDataCollection: FormData = new FormData(document.forms[0]);
         let rocketcreated: Boolean = true; //Wurde die richtige Rakete ausgewählt?
 
         for (let entry of formDataCollection) {
-            let selector: HTMLSelectElement = <HTMLSelectElement>document.querySelector("[value='" +  entry[1] + "']");
-            console.log(selector, "jajaj");
-            console.log(entry[0]);
+            let selector: HTMLSelectElement = <HTMLSelectElement>document.querySelector("[value='" +  entry[0] + entry[1] + "']");
+          // console.log(selector);
+          //  console.log(entry[0],  "hier ist das entry0"); //Entry0 sind name, lifetime, particles??
+         //   console.log(entry [1],  "hier ist das entry1"); //Entry 1 sind color, shape, sekundenzahl und der amount??
 
             if (entry[1] == "Stardust" || entry[1] == "Space Buddy" || entry[1] == "Galaxy Shooter" || entry[1] == "Firecracker" || entry[1] == "Space Fighter") {
-                createFirework();
+                createFirework(1);
                
 
             } else {
@@ -106,13 +107,16 @@ namespace Endabgabe_Feuerwerk {
         let oneParticle: Rockets = new Rockets("green", 2, mousePosX, mousePosY, i, offset);
         rockets.push(oneParticle);
 
+       // let rocketshape: string = //VERSCHIEDENE TYPEN IM SWITCH CASE DARSTELLEN
+    
+
        }
        
     } //createFirework zu
 
     function update(): void {
       //  console.log("update");
-        crc2.fillStyle = "rgba(0, 0, 0, 0.06)";
+        crc2.fillStyle = "rgba(0, 0, 0, 0.05)";
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
 
         for (let rocketParticle of rockets) {

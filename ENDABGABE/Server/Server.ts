@@ -40,6 +40,7 @@ export namespace Endabgabe_Feuerwerk {
         await mongoClient.connect();
         rocketCollection = mongoClient.db("Firework").collection("RocketCollection");
         console.log("Database connection", rocketCollection != undefined);
+        console.log(rocketCollection, "JUHU");
 
     }//connectToDataBase zu
 
@@ -55,7 +56,7 @@ export namespace Endabgabe_Feuerwerk {
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let jsonString: string;
-            console.log("bin da");
+           // console.log("bin da");
     
 
             if (url.pathname == "/retrieve") {
@@ -69,7 +70,7 @@ export namespace Endabgabe_Feuerwerk {
             } else if ( url.pathname == "/send") {
                 console.log(_request.url);
                
-                //_response.write("Your Rocket: ");
+                _response.write("Your Rocket contains: ");
                 jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);
 
