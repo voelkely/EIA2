@@ -7,10 +7,8 @@ namespace Endabgabe_Feuerwerk {
 
     export let crc2: CanvasRenderingContext2D;
 
-    let rockets: Rocket[] = [];
-    let moveables: Moveable[] = [];
-
-    let _event: PointerEvent;
+    let rockets: Rockets[] = [];
+  //  let moveables: Moveable[] = [];
 
     function handleLoad(_event: Event): void {
 
@@ -35,7 +33,7 @@ namespace Endabgabe_Feuerwerk {
 
         
         drawBackground();
-        createRocketParticle(5);
+       // createRocketParticle(5);
 
         window.setInterval(update, 20);
 
@@ -96,49 +94,49 @@ namespace Endabgabe_Feuerwerk {
     
     } //chooseRocket zu
 
-    function createFirework(): void {
+    function createFirework(_event: MouseEvent): void {
         console.log("creating firework");
 
-       // let mousePosition: Vector = new Vector(_event.clientX - crc2.canvas.offsetLeft, _event.clientY - crc2.canvas.offsetTop);
-
         let mousePosX: number = _event.offsetX;
-        let mousePosY: number = _event.offsetY; 
+        let mousePosY: number = _event.offsetY;
 
-        for (let i: number = 0; i < 1; i++) {
-        let particles: Moveable = new Moveable("blue", 3,  mousePosX, mousePosY);
-        moveables.push(particles);
+        let amount: number = 100;
+        let offset: number = (Math.PI * 2) / amount;
 
-        for (let firework of moveables) {
-            firework.draw();
-        }
-
+        for (let i: number = 0; i < amount; i++) {
+        let oneParticle: Rockets = new Rockets("green", 2, mousePosX, mousePosY, i, offset);
+        rockets.push(oneParticle);
 
        }
        
-        
-
     } //createFirework zu
 
 
 
     function update(): void {
       //  console.log("update");
-        crc2.fillStyle = "rgba(0, 0, 0, 0.05)";
+        crc2.fillStyle = "rgba(0, 0, 0, 0.06)";
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
 
         for (let rocketParticle of rockets) {
             rocketParticle.move(1 / 10);
             rocketParticle.draw();
-        }
+         
+        } 
 
         deleteExpandables();
 
     }// update zu
 
     function deleteExpandables(): void {
-        console.log("delete");
+       // console.log("delete");
+       for (let i: number = rockets.length - 1; i >= 0; i--) {
+        if (rockets[i].expendable)
+            rockets.splice(i, 1);
 
     } // deleteExpandable zu
+
+}
 
 
   
@@ -158,14 +156,14 @@ namespace Endabgabe_Feuerwerk {
   
   
   
-    function createRocketParticle(_nParticles: number): void {
+   /*  function createRocketParticle(_nParticles: number): void {
         console.log("create RocketParticle");
         for (let i: number = 0; i < _nParticles; i++) {
             let rocketParticle: Rocket = new Rocket(1.0);
             rockets.push(rocketParticle);
 
         }
-    }
+    } */
 
   
  
