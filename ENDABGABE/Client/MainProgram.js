@@ -19,7 +19,6 @@ var Endabgabe_Feuerwerk;
         Endabgabe_Feuerwerk.crc2 = canvas.getContext("2d");
         canvas.addEventListener("click", createFirework);
         drawBackground();
-        // createRocketParticle(5);
         window.setInterval(update, 20);
     } //handleLoad zu
     async function sendRocketData(_event) {
@@ -83,20 +82,12 @@ var Endabgabe_Feuerwerk;
         for (let i = rockets.length - 1; i >= 0; i--) {
             if (rockets[i].expendable)
                 rockets.splice(i, 1);
-        } // deleteExpandable zu
-    }
+        }
+    } // deleteExpandable zu
     function drawBackground() {
         console.log("background drawn");
         Endabgabe_Feuerwerk.crc2.fillStyle = "rgba (0, 0, 0, 0.05)";
         Endabgabe_Feuerwerk.crc2.fillRect(0, 0, Endabgabe_Feuerwerk.crc2.canvas.width, Endabgabe_Feuerwerk.crc2.canvas.height);
     } //drawBackground zu
-    /*  function createRocketParticle(_nParticles: number): void {
-         console.log("create RocketParticle");
-         for (let i: number = 0; i < _nParticles; i++) {
-             let rocketParticle: Rocket = new Rocket(1.0);
-             rockets.push(rocketParticle);
- 
-         }
-     } */
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu
 //# sourceMappingURL=MainProgram.js.map

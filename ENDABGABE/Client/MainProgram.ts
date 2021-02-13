@@ -33,7 +33,6 @@ namespace Endabgabe_Feuerwerk {
 
         
         drawBackground();
-       // createRocketParticle(5);
 
         window.setInterval(update, 20);
 
@@ -111,8 +110,6 @@ namespace Endabgabe_Feuerwerk {
        
     } //createFirework zu
 
-
-
     function update(): void {
       //  console.log("update");
         crc2.fillStyle = "rgba(0, 0, 0, 0.06)";
@@ -134,15 +131,10 @@ namespace Endabgabe_Feuerwerk {
         if (rockets[i].expendable)
             rockets.splice(i, 1);
 
-    } // deleteExpandable zu
+        } 
 
-}
-
-
-  
-  
-  
-  
+    }// deleteExpandable zu
+ 
   
     function drawBackground(): void {
         console.log("background drawn");
@@ -153,26 +145,4 @@ namespace Endabgabe_Feuerwerk {
 
   
   
-  
-  
-  
-   /*  function createRocketParticle(_nParticles: number): void {
-        console.log("create RocketParticle");
-        for (let i: number = 0; i < _nParticles; i++) {
-            let rocketParticle: Rocket = new Rocket(1.0);
-            rockets.push(rocketParticle);
-
-        }
-    } */
-
-  
- 
-
-
-
-
-
-
-
-
 }//namespace zu
