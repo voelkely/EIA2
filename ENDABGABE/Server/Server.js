@@ -11,7 +11,7 @@ var Endabgabe_Feuerwerk;
     if (port == undefined)
         port = 5001;
     //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Firework?retryWrites=true&w=majority";
+    let databaseUrl = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/firework?retryWrites=true&w=majority";
     startServer(port);
     connectToDataBase(databaseUrl);
     function startServer(_port) {

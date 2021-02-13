@@ -2,13 +2,16 @@ namespace Endabgabe_Feuerwerk {
 
     export class Rockets { //SUPERKLASSE
 
+        //HIER MUSS ICH NOCH DIE FRABEN ENTFERNEN; SOLL JA DURCH USER GENERIERT WERDEN DURCH DATEN AUS DATENBANK!!
+
         position: Vector;
         speed: Vector;
         color: string[];
         randomColor: string;
         amount: number;
-        size: number;
+        shape: string;
         lifetime: number;
+        
         expendable: boolean;
         gravity: number = 1; 
         alpha: number = 0.3;
@@ -29,9 +32,8 @@ namespace Endabgabe_Feuerwerk {
             this.speed.x += this.gravity;
             this.color = [] = ["#f4f72f", "#bf3519", "#0e85cf", "#ae48d4", "#d16696", "#1cbd5a", "#f59931", "#8fc7b8", "#edbeea"];
             this.randomColor = this.color[Math.floor(Math.random() * this.color.length)];
-           //this.size = _size;
         
-        }
+        } //Interface + constructor zu
 
         public move(_timeslice: number): void {
 
@@ -43,9 +45,9 @@ namespace Endabgabe_Feuerwerk {
             if (this.lifetime < 0)
                 this.expendable = true;
  
-        }
+        } //move zu
 
-        draw(): void {
+        draw(): void { //draw wird nacher nach CircleParticle und HeartParticle verschoben, hier nur abstract draw()
 
             crc2.save();
             crc2.translate(this.position.x, this.position.y);
@@ -60,15 +62,11 @@ namespace Endabgabe_Feuerwerk {
 
             crc2.restore();
 
-        }
+        } //draw zu
         
-            
-
-
-    
-
-} // class zu
+        
+    } // class zu
 
 } //namespace zu
 
-}
+

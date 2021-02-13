@@ -17,7 +17,7 @@ export namespace Endabgabe_Feuerwerk {
         port = 5001;
 
     //let databaseUrl: string = "mongodb://localhost:27017";
-    let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/Firework?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://yvonne108:mn%2357955@eia2yvonne.32buz.mongodb.net/firework?retryWrites=true&w=majority";
 
     startServer(port);
     connectToDataBase(databaseUrl);

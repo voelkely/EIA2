@@ -17,8 +17,7 @@ var Endabgabe_Feuerwerk;
             this.speed.x += this.gravity;
             this.color = [] = ["#f4f72f", "#bf3519", "#0e85cf", "#ae48d4", "#d16696", "#1cbd5a", "#f59931", "#8fc7b8", "#edbeea"];
             this.randomColor = this.color[Math.floor(Math.random() * this.color.length)];
-            //this.size = _size;
-        }
+        } //Interface + constructor zu
         move(_timeslice) {
             let offset = new Endabgabe_Feuerwerk.Vector(this.speed.x, this.speed.y);
             offset.scale(_timeslice);
@@ -26,7 +25,7 @@ var Endabgabe_Feuerwerk;
             this.lifetime -= _timeslice;
             if (this.lifetime < 0)
                 this.expendable = true;
-        }
+        } //move zu
         draw() {
             Endabgabe_Feuerwerk.crc2.save();
             Endabgabe_Feuerwerk.crc2.translate(this.position.x, this.position.y);
@@ -37,7 +36,7 @@ var Endabgabe_Feuerwerk;
             Endabgabe_Feuerwerk.crc2.fillStyle = this.randomColor;
             Endabgabe_Feuerwerk.crc2.fill();
             Endabgabe_Feuerwerk.crc2.restore();
-        }
+        } //draw zu
     } // class zu
     Endabgabe_Feuerwerk.Rockets = Rockets;
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu
