@@ -140,6 +140,8 @@ namespace Endabgabe_Feuerwerk {
         moveables.push(particle);
         }
 
+        fireworkSound();
+
         /* for (let i: number = 0; i < amount; i++) {
             let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
             moveables.push(particles);
@@ -177,12 +179,20 @@ namespace Endabgabe_Feuerwerk {
     function playAudio(): void { 
         let sound: = document.getElementById("myAudio"); //WAS KÖNNTE DA REIN? ALSO ES FUNKTIONIERT AUCH SO
         sound.play(); 
-    } 
+
+    }//playAudio zu
 
     function pauseAudio(): void { 
         let sound: = document.getElementById("myAudio");
-        sound.pause(); 
-    } 
+        sound.pause();
+
+    }//pauseAudio zu
+
+    function fireworkSound(): void {
+        let sound: = document.getElementById("boom");
+        sound.play();
+
+    }//fireworkSound zu
  
   
     

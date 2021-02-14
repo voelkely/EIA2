@@ -145,7 +145,7 @@ button {
     text-align: center;
     font-size: 25px;
     border-radius: 30px;
-    border-style: solid;
+    border-style: none;
     border-color:#893e1c;
     display: inline;
     margin: 10px;
@@ -273,7 +273,7 @@ a:hover, a:active {
     text-align: center;
     color: black;
     font-family: "KeepOn";
-    margin-top: -250px;
+    margin-top: -230px;
 }
 
 

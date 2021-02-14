@@ -11,8 +11,8 @@ var Endabgabe_Feuerwerk;
             this.position.x = _positionX; //click on canvas
             this.position.y = _positionY;
             this.speed = new Endabgabe_Feuerwerk.Vector(0, 0);
-            this.speed.x = Math.cos(_radius * _i) * Math.floor(Math.random() * (20 - 10 + 1) + 10); //5 ist die schnelligkeit
-            this.speed.y = Math.sin(_radius * _i) * Math.floor(Math.random() * (10 - 5 + 1) + 10);
+            this.speed.x = Math.cos(_radius * _i) * Math.floor(Math.random() * (20 - 10) + 10); //10 ist die schnelligkeit
+            this.speed.y = Math.sin(_radius * _i) * Math.floor(Math.random() * (10 + 5) + 10);
             this.color = _color;
         }
         move(_timeslice) {
