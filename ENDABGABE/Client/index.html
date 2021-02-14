@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Feuerwerk Endabgabe WiSe 2020/21</title>
     <link rel="stylesheet" href="stylesheet.css" type="text/css" media="screen"/> 
-    <script src="Vector.js"></script>
-    <script src="Rocket.js"></script>
+    <script src="Vector.js"></script>   
+    <script src="Moveable.js"></script>
     <script src="CircleParticles.js"></script>
+    <script src="StarParticles.js"></script>
     <script src="MainProgram.js"></script>
      
 	
@@ -34,7 +35,7 @@
             <img src="Assets/discoGirl.png" alt="PersonGirl" style="width:100%">
         </div>
 		
-        <p class="headline">Create your own firework. Pick a name. Choose the size, lifetime and the amount of particles. Pick some nice colors and make your screen boom!</p> 
+        <p class="headline">Create your own firework. Pick a name. Choose the shape, lifetime and the amount of particles. Pick some nice colors and make your screen boom!</p> 
 
         <p></p>
     
@@ -50,7 +51,7 @@
     <form id="generator" method = "GET">
         <div>
             <h2>Rocket Creator Bar</h2>
-            <h3>Create your own rocket and click on save</h3>
+            <h3>Create your own rocket and click on add</h3>
 
             <!--Name your Rocket -->
 			<fieldset id="nameRocket">
@@ -72,8 +73,6 @@
                 <legend>Particle Shape</legend>
 				<input type="radio" name="shape" id="circle" value="circle" />
                 <label for="circle">Circle</label>
-                <input type="radio" name="shape" id="heart" value="heart" />
-                <label for="heart">Heart</label>
                 <input type="radio" name="shape" id="star" value="star" />
                 <label for="star">Star</label>               
             </fieldset>
@@ -84,9 +83,9 @@
             <fieldset id="life">
                 <legend>Firework Lifetime</legend>
                     <span>
-                        0
-                        <input type="range" name="lifetime" id="lifetime" min="0" max="10" step="1" value="0" class="slider">
-                        10 (Sec.)
+                        10
+                        <input type="range" name="lifetime" id="lifetime" min="10" max="30" step="1" value="0" class="slider">
+                        30 (Sec.)
                     </span>
             </fieldset>
 
@@ -105,7 +104,7 @@
                 <input type="checkbox" name="ColorYellow" id="yellow" value="ColorYellow">
                 <label for="yellow">yellow</label>
 
-                <input type="checkbox" name="ColorHeadPink" id="pink" value="ColorHeadPink">
+                <input type="checkbox" name="ColorPink" id="pink" value="ColorPink">
                 <label for="pink">pink</label>
 
                 <input type="checkbox" name="ColorWhite" id="white" value="ColorWhite">
@@ -115,13 +114,13 @@
                 <label for="green">green</label>
 
                 <input type="checkbox" name="ColorOrange" id="orange" value="ColorOrange">
-                <label for="green">orange</label>
+                <label for="orange">orange</label>
 
                 <input type="checkbox" name="ColorPurple" id="purple" value="ColorPurple">
-                <label for="green">purple</label>
+                <label for="purple">purple</label>
 
                 <input type="checkbox" name="ColorTurquois" id="turquois" value="ColorTurquois">
-                <label for="green">turquois</label>
+                <label for="turquois">turquois</label>
             </fieldset>
 
             <p></p>
@@ -131,7 +130,7 @@
                 <legend>Amount of Particles</legend>
                     <span>
                         100
-                        <input type="range" name="particles" id="particles" min="100" max="10000" step="1" value="0">
+                        <input type="range" name="particles" id="particles" min="100" max="1000" step="1" value="0">
                         1000 (Stk.)
                     </span>
             </fieldset>

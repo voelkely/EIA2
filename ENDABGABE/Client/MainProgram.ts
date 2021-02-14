@@ -7,8 +7,12 @@ namespace Endabgabe_Feuerwerk {
 
     export let crc2: CanvasRenderingContext2D;
 
-    let rockets: Rockets[] = [];
-  //  let moveables: Moveable[] = [];
+    let selector: HTMLSelectElement;
+
+   // let rockets: Rockets[] = []; //
+    let particles: Moveable [] = [];
+    let moveables: Moveable[] = [];
+    
 
     function handleLoad(_event: Event): void {
 
@@ -30,8 +34,7 @@ namespace Endabgabe_Feuerwerk {
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
         canvas.addEventListener("click", createFirework);
-
-        
+   
         drawBackground();
 
         window.setInterval(update, 20);
@@ -48,8 +51,9 @@ namespace Endabgabe_Feuerwerk {
         console.log(url + "/send" + "?" + query.toString());
         let response: Response = await fetch(url + "/send" + "?" + query.toString()); 
         let responseReply: string = await response.text();
+        console.log(responseReply);
 
-        alert("Rocket successfully sent!");
+        alert("Rocket successfully sent to a space Server!");
 
 
     }//sendRocketData zu
@@ -57,9 +61,9 @@ namespace Endabgabe_Feuerwerk {
     async function getRocketData(): Promise <void> {
 
         console.log("find Rockets");
-        let response: Response = await fetch(url + "?"); //was kommt da rein? theoretisch die URL der seite. Brauche ja keine Data.json oder?
+        let response: Response = await fetch(url + "?"); 
         let responseText: string = await response.text();
-        console.log(responseText);
+        console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR
 
     }//getRocketData zu
 
@@ -68,17 +72,40 @@ namespace Endabgabe_Feuerwerk {
 
         //HIER MÜSSEN NOCH DIE DATEN AUS DER DATENBANK ABGEFRAGT WERDEN!!! ABER WIE???
 
+        //let formData: FormData = new FormData(document.forms[0]);
+
+        /* for (let entry of formData) {
+
+            let rocketname: string = String(formData.get("nameRocket"));
+            let lifetime: number = Number(formData.get("lifetime"));
+            let color: string = String(formData.get("color"));
+            let amountParticles: number = Number(formData.get("particles"));
+            let shape: string = String(formData.get("shapePart"));
+            switch (entry[1]) {
+                case "circle":
+                  shape = "circle";
+                  break;
+                case "star":
+                  shape = "star";
+                  break;
+                case "triangle":
+                  shape = "triangle";
+                  break;
+
+            }
+
+       } */
         let formDataCollection: FormData = new FormData(document.forms[0]);
         let rocketcreated: Boolean = true; //Wurde die richtige Rakete ausgewählt?
 
         for (let entry of formDataCollection) {
-            let selector: HTMLSelectElement = <HTMLSelectElement>document.querySelector("[value='" +  entry[0] + entry[1] + "']");
-          // console.log(selector);
-          //  console.log(entry[0],  "hier ist das entry0"); //Entry0 sind name, lifetime, particles??
-         //   console.log(entry [1],  "hier ist das entry1"); //Entry 1 sind color, shape, sekundenzahl und der amount??
+            selector = <HTMLSelectElement>document.querySelector("[value='" +  entry[0] + entry[1] + "']");
+        
+          //  console.log(entry[0], "hier ist das entry0"); //Entry0 sind name, lifetime, particles??
+         //   console.log(entry [1], "hier ist das entry1"); //Entry 1 sind color, shape, sekundenzahl und der amount??
 
-            if (entry[1] == "Stardust" || entry[1] == "Space Buddy" || entry[1] == "Galaxy Shooter" || entry[1] == "Firecracker" || entry[1] == "Space Fighter") {
-                createFirework(1);
+            if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
+                createFirework(); //WARUM ROT? WAS SOLL DA REIN?
                
 
             } else {
@@ -99,31 +126,29 @@ namespace Endabgabe_Feuerwerk {
 
         let mousePosX: number = _event.offsetX;
         let mousePosY: number = _event.offsetY;
-
-        let amount: number = 100;
+        
+        let amount: number = 200; //sollte eigentlich durch User definiert werden
         let offset: number = (Math.PI * 2) / amount;
 
         for (let i: number = 0; i < amount; i++) {
-        let oneParticle: Rockets = new Rockets("green", 2, mousePosX, mousePosY, i, offset);
-        rockets.push(oneParticle);
-
-       // let rocketshape: string = //VERSCHIEDENE TYPEN IM SWITCH CASE DARSTELLEN
-    
-
-       }
+        let particle: Rockets = new CircleParticle("green", 2, mousePosX, mousePosY, i, offset);
+        moveables.push(particle);
+        }
        
     } //createFirework zu
 
     function update(): void {
       //  console.log("update");
-        crc2.fillStyle = "rgba(0, 0, 0, 0.05)";
+        crc2.fillStyle = "rgba(0, 0, 0, 0.07)";
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
 
-        for (let rocketParticle of rockets) {
-            rocketParticle.move(1 / 10);
-            rocketParticle.draw();
+        //drawRockets();
+
+        for (let firework of moveables) {
+            firework.move(1 / 10);
+            firework.draw();
          
-        } 
+        }  
 
         deleteExpandables();
 
@@ -131,9 +156,9 @@ namespace Endabgabe_Feuerwerk {
 
     function deleteExpandables(): void {
        // console.log("delete");
-       for (let i: number = rockets.length - 1; i >= 0; i--) {
-        if (rockets[i].expendable)
-            rockets.splice(i, 1);
+       for (let i: number = moveables.length - 1; i >= 0; i--) {
+        if (moveables[i].expendable)
+            moveables.splice(i, 1);
 
         } 
 

@@ -44,7 +44,7 @@ var Endabgabe_Feuerwerk;
             }
             else if (url.pathname == "/send") {
                 console.log(_request.url);
-                _response.write("Your Rocket contains: ");
+                _response.write("Your Rocket contains: "); //Wenn heroku link in console auftaucht, steht das da
                 jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);
                 storeRocketCollection(url.query);
