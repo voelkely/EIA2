@@ -26,7 +26,7 @@ var Endabgabe_Feuerwerk;
         await mongoClient.connect();
         rocketCollection = mongoClient.db("Firework").collection("RocketCollection");
         console.log("Database connection", rocketCollection != undefined);
-        console.log(rocketCollection, "JUHU");
+        console.log("JUHU ROCKETCOLLECTION:", rocketCollection);
     } //connectToDataBase zu
     async function handleRequest(_request, _response) {
         console.log("wie gehts");
@@ -34,13 +34,15 @@ var Endabgabe_Feuerwerk;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
+            let command = url.query["command"];
             let jsonString;
-            // console.log("bin da");
-            if (url.pathname == "/retrieve") {
-                let fullRocketCollection = rocketCollection.find();
-                console.log("Show full rocket collection", fullRocketCollection);
-                let fullRocketCollectionString = JSON.stringify(await rocketCollection.find().toArray());
-                _response.write(fullRocketCollectionString);
+            console.log("bin noch da");
+            if (command == "getAllRockets") {
+                let getAllRockets = rocketCollection.find();
+                console.log("Show full rocket collection", getAllRockets);
+                let getAllRocketsString = JSON.stringify(await rocketCollection.find().toArray());
+                _response.write(getAllRocketsString);
+                console.log(getAllRocketsString, "Hier ist die Rakete");
             }
             else if (url.pathname == "/send") {
                 console.log(_request.url);

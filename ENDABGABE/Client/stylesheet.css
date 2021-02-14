@@ -166,6 +166,25 @@ button {
     color: #F2CC8F;
 }
 
+.button3 {
+    
+    margin-top: -200px;
+    margin-bottom: 190px;  
+    background-color: #d2622e; /* Red */
+    color: #F2CC8F;
+    border-style: none;
+}
+
+.button4 {
+    margin-top: -120px;
+    margin-bottom: 110px;
+    margin-right: 810px;
+    margin-left: -525px;
+    background-color: #f18251;/* Red */
+    color: #F2CC8F;
+    border-style: none;
+}
+
 /*Canvas*/
 
 .canvasMain {
@@ -247,6 +266,17 @@ a:hover, a:active {
     height: 210px;
     box-shadow: none;
 }
+
+.music {
+
+    font-size: 14pt;
+    text-align: center;
+    color: black;
+    font-family: "KeepOn";
+    margin-top: -250px;
+}
+
+
 
 
 

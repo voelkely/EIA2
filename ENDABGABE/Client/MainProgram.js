@@ -5,12 +5,15 @@ var Endabgabe_Feuerwerk;
     //let url: string = "http://localhost:5001";
     let url = "https://mycodingapp97.herokuapp.com";
     let selector;
-    // let rockets: Rockets[] = []; //
-    let particles = [];
     let moveables = [];
+    //STARTING WITH FUNCTIONS:
     function handleLoad(_event) {
         let addBtn = document.querySelector("button#add");
         addBtn.addEventListener("click", sendRocketData);
+        let soundBtn = document.querySelector("button#BtnSound");
+        soundBtn.addEventListener("click", playAudio);
+        let pauseBtn = document.querySelector("button#BtnPause");
+        pauseBtn.addEventListener("click", pauseAudio);
         let clickOnSelect = document.querySelector("form#collection");
         clickOnSelect.addEventListener("change", chooseRocket);
         getRocketData();
@@ -19,9 +22,10 @@ var Endabgabe_Feuerwerk;
         if (!canvas)
             return;
         Endabgabe_Feuerwerk.crc2 = canvas.getContext("2d");
+        Endabgabe_Feuerwerk.crc2.fillStyle = "rgba (0, 0, 0, 0.05)";
+        Endabgabe_Feuerwerk.crc2.fillRect(0, 0, Endabgabe_Feuerwerk.crc2.canvas.width, Endabgabe_Feuerwerk.crc2.canvas.height);
         canvas.addEventListener("click", createFirework);
-        drawBackground();
-        window.setInterval(update, 20);
+        window.setInterval(update, 10);
     } //handleLoad zu
     async function sendRocketData(_event) {
         console.log("Rocket send to Server");
@@ -31,19 +35,21 @@ var Endabgabe_Feuerwerk;
         let response = await fetch(url + "/send" + "?" + query.toString());
         let responseReply = await response.text();
         console.log(responseReply);
-        alert("Rocket successfully sent to a space Server!");
+        alert("Your Rocket is successfully sent to a space Server!");
     } //sendRocketData zu
     async function getRocketData() {
-        console.log("find Rockets");
+        console.log("find my Rockets");
         let response = await fetch(url + "?");
         let responseText = await response.text();
+        // let fullData: Moveable [] = JSON.parse(responseText);
         console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR
     } //getRocketData zu
     function chooseRocket() {
         console.log("is picked rocket filled?");
         //HIER MÜSSEN NOCH DIE DATEN AUS DER DATENBANK ABGEFRAGT WERDEN!!! ABER WIE???
-        //let formData: FormData = new FormData(document.forms[0]);
-        /* for (let entry of formData) {
+        /* let formData: FormData = new FormData(document.forms[0]);
+
+        for (let entry of formData) {
 
             let rocketname: string = String(formData.get("nameRocket"));
             let lifetime: number = Number(formData.get("lifetime"));
@@ -57,10 +63,6 @@ var Endabgabe_Feuerwerk;
                 case "star":
                   shape = "star";
                   break;
-                case "triangle":
-                  shape = "triangle";
-                  break;
-
             }
 
        } */
@@ -85,35 +87,39 @@ var Endabgabe_Feuerwerk;
         console.log("creating firework");
         let mousePosX = _event.offsetX;
         let mousePosY = _event.offsetY;
-        let amount = 200; //sollte eigentlich durch User definiert werden
-        let offset = (Math.PI * 2) / amount;
+        let amount = 20; //sollte eigentlich durch User definiert werden
+        let radius = (Math.PI * 2) / amount;
         for (let i = 0; i < amount; i++) {
-            let particle = new Endabgabe_Feuerwerk.CircleParticle("green", 2, mousePosX, mousePosY, i, offset);
+            let particle = new Endabgabe_Feuerwerk.CircleParticle("orange", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
             moveables.push(particle);
         }
+        /* for (let i: number = 0; i < amount; i++) {
+            let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
+            moveables.push(particles);
+            } */
     } //createFirework zu
     function update() {
-        //  console.log("update");
-        Endabgabe_Feuerwerk.crc2.fillStyle = "rgba(0, 0, 0, 0.07)";
+        Endabgabe_Feuerwerk.crc2.fillStyle = "rgba(0, 0, 0, 0.06)";
         Endabgabe_Feuerwerk.crc2.fillRect(0, 0, Endabgabe_Feuerwerk.crc2.canvas.width, Endabgabe_Feuerwerk.crc2.canvas.height);
-        //drawRockets();
         for (let firework of moveables) {
-            firework.move(1 / 10);
+            firework.move(1 / 5);
             firework.draw();
         }
         deleteExpandables();
     } // update zu
     function deleteExpandables() {
-        // console.log("delete");
         for (let i = moveables.length - 1; i >= 0; i--) {
             if (moveables[i].expendable)
                 moveables.splice(i, 1);
         }
     } // deleteExpandable zu
-    function drawBackground() {
-        console.log("background drawn");
-        Endabgabe_Feuerwerk.crc2.fillStyle = "rgba (0, 0, 0, 0.05)";
-        Endabgabe_Feuerwerk.crc2.fillRect(0, 0, Endabgabe_Feuerwerk.crc2.canvas.width, Endabgabe_Feuerwerk.crc2.canvas.height);
-    } //drawBackground zu
+    function playAudio() {
+        let sound = document.getElementById("myAudio"); //WAS KÖNNTE DA REIN? ALSO ES FUNKTIONIERT AUCH SO
+        sound.play();
+    }
+    function pauseAudio() {
+        let sound = document.getElementById("myAudio");
+        sound.pause();
+    }
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu
 //# sourceMappingURL=MainProgram.js.map
