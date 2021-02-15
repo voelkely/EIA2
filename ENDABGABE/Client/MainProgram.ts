@@ -81,7 +81,7 @@ namespace Endabgabe_Feuerwerk {
     async function getRocketData(): Promise <void> {
 
         console.log("find my Rockets");
-        let response: Response = await fetch(url + "/retrieve?"); 
+        let response: Response = await fetch(url + "/retrieve"); 
         let responseText: string = await response.text();
 
         console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR
