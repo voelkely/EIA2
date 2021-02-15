@@ -16,7 +16,7 @@
     <audio id="myAudio">
         <source src="Sound/abba.m4a" type="audio/mpeg">
       </audio>
-      <audio id="boom">
+    <audio id="boom">
         <source src="Sound/firework_sound.mp3" type="audio/mpeg">
       </audio>
 	
@@ -33,11 +33,11 @@
         <h1 class="head">Funky Firework Creator</h1>
 
         <div class="image">
-            <img src="Assets/disco.png" alt="PersonBoy" style="width:100%">
+            <img src="Assets/disco.png" alt="PersonBoy" style="width:100%;height:auto;">
         </div>
 
         <div class="image2">
-            <img src="Assets/discoGirl.png" alt="PersonGirl" style="width:100%">
+            <img src="Assets/discoGirl.png" alt="PersonGirl" style="width:100%;height:auto;">
         </div>
 		
         <p class="headline">Create your own firework. Pick a name. Choose the shape, lifetime and the amount of particles. Pick some nice colors and make your screen boom!</p> 
@@ -100,31 +100,31 @@
             <fieldset id="color">
                 <legend>Pick your Colors</legend>
 
-				<input type="checkbox" name="ColorBlue" id="blue" value="ColorBlue">
+				<input type="checkbox" name="Color:Blue" id="blue" value="#0234e8">
                 <label for="blue">blue</label>
                 
-                <input type="checkbox" name="ColorRed" id="red" value="ColorRed">
+                <input type="checkbox" name="Color:Red" id="red" value="#f01a2c">
                 <label for="red">red</label>
                 
-                <input type="checkbox" name="ColorYellow" id="yellow" value="ColorYellow">
+                <input type="checkbox" name="Color:Yellow" id="yellow" value="#fcf33d">
                 <label for="yellow">yellow</label>
 
-                <input type="checkbox" name="ColorPink" id="pink" value="ColorPink">
+                <input type="checkbox" name="Color:Pink" id="pink" value="#fc3ab8>
                 <label for="pink">pink</label>
 
-                <input type="checkbox" name="ColorWhite" id="white" value="ColorWhite">
+                <input type="checkbox" name="Color:White" id="white" value="#ffffff">
                 <label for="white">white</label>
 
-                <input type="checkbox" name="ColorGreen" id="green" value="ColorGreen">
+                <input type="checkbox" name="Color:Green" id="green" value="#24ed67">
                 <label for="green">green</label>
 
-                <input type="checkbox" name="ColorOrange" id="orange" value="ColorOrange">
+                <input type="checkbox" name="Color:Orange" id="orange" value="#fac116">
                 <label for="orange">orange</label>
 
-                <input type="checkbox" name="ColorPurple" id="purple" value="ColorPurple">
+                <input type="checkbox" name="Color:Purple" id="purple" value="#8f18f0">
                 <label for="purple">purple</label>
 
-                <input type="checkbox" name="ColorTurquois" id="turquois" value="ColorTurquois">
+                <input type="checkbox" name="Color:Turquois" id="turquois" value="#18e5f0s">
                 <label for="turquois">turquois</label>
             </fieldset>
 
@@ -134,9 +134,9 @@
             <fieldset id="particles">
                 <legend>Amount of Particles</legend>
                     <span>
-                        100
+                        10
                         <input type="range" name="particles" id="particles" min="100" max="1000" step="1" value="0">
-                        1000 (Stk.)
+                        100 (Stk.)
                     </span>
             </fieldset>
 
@@ -165,7 +165,7 @@
     <form id="collection">
         <div class="allRockets">
             <h2 class="rocketCollection">Your Rocket Collection</h2>
-            <p class="anweisung">Pick your created Rocket and click on the black screen to see the amazing result!</p>
+            <p class="anweisung">Click on "Load Rockets" and pick your created Rocket and click on the black screen to see the amazing result!</p>
 
             <p></p>
 

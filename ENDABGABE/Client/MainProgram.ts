@@ -18,7 +18,7 @@ namespace Endabgabe_Feuerwerk {
     let selector: HTMLSelectElement;
 
     let moveables: Moveable[] = [];
-    let loadRocket: RocketCollection[] = [];  //bezihet sich auf mein Interface
+    let rocketInUse: RocketCollection[] = [];  //bezieht sich auf das Interface und enthält deren daten
 
 
     //STARTING WITH FUNCTIONS:
@@ -28,19 +28,17 @@ namespace Endabgabe_Feuerwerk {
         let addBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#add");
         addBtn.addEventListener("click", sendRocketData);
 
+        let loadBtn: HTMLSelectElement = <HTMLSelectElement>document.querySelector("Button#load");
+        loadBtn.addEventListener("click", getRocketData);
 
-        /* let soundBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnSound");
+        let clickOnSelect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("form#collection");
+        clickOnSelect.addEventListener("change", chooseRocket); 
+
+        let soundBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnSound");
         soundBtn.addEventListener("click", playAudio);
 
         let pauseBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnPause");
         pauseBtn.addEventListener("click", pauseAudio);
- */
-
-        let clickOnSelect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("form#collection");
-        clickOnSelect.addEventListener("change", chooseRocket);
-
-        let loadBtn: HTMLSelectElement = <HTMLSelectElement>document.querySelector("Button#load");
-        loadBtn.addEventListener("click", chooseRocket);
       
         getRocketData();
 
@@ -67,7 +65,7 @@ namespace Endabgabe_Feuerwerk {
     async function sendRocketData(_event: MouseEvent): Promise<void> {
 
         console.log("Rocket send to Server");
-        let formData: FormData = new FormData(document.forms[0]); //nimmt infos aus der Form "generator"
+        let formData: FormData = new FormData(document.forms[0]); 
         let query: URLSearchParams = new URLSearchParams(<any>formData);
       
         let response: Response = await fetch(url  + "/send" + "?" + query.toString()); 
@@ -84,19 +82,20 @@ namespace Endabgabe_Feuerwerk {
         let response: Response = await fetch(url + "/retrieve"); 
         let responseText: string = await response.text();
 
-        console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR
+        console.log(responseText);
+
+        createSelect(_allRockets);
 
     }//getRocketData zu
 
+    function createSelect(_allRockets: RocketCollection): void {
+        console.log("load my values");
 
-
-
-
-
-    function chooseRocket(): void {
-        console.log("is picked rocket filled?");
-
-        //HIER MÜSSEN NOCH DIE DATEN AUS DER DATENBANK ABGEFRAGT WERDEN!!! ABER WIE???
+        let name: string = _allRockets.name;
+        let color: string = _allRockets.color;
+        let lifetime: number = _allRockets.lifetime;
+        let shape: string = _allRockets.shape;
+        let amount: number = _allRockets.amount;
 
         /* let formData: FormData = new FormData(document.forms[0]);
 
@@ -118,14 +117,22 @@ namespace Endabgabe_Feuerwerk {
 
        } */
 
+     
+    }//createSelect zu
+
+
+    function chooseRocket(): void {
+        console.log("is picked rocket filled?");
+
+
         let formDataCollection: FormData = new FormData(document.forms[0]);
         let rocketcreated: Boolean = true; //Wurde die richtige Rakete ausgewählt?
 
         for (let entry of formDataCollection) {
             selector = <HTMLSelectElement>document.querySelector("[value='" +  entry[0] + entry[1] + "']");
         
-          //  console.log(entry[0], "hier ist das entry0"); //Entry0 sind name, lifetime, particles??
-         //   console.log(entry [1], "hier ist das entry1"); //Entry 1 sind color, shape, sekundenzahl und der amount??
+          //  console.log(entry[0]); //Entry0 sind name, lifetime, particles??
+         //   console.log(entry [1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
 
             if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
                 rocketcreated = true;
@@ -153,7 +160,7 @@ namespace Endabgabe_Feuerwerk {
         let radius: number = (Math.PI * 2) / amount;
 
         for (let i: number = 0; i < amount; i++) {
-        let particle: Moveable = new CircleParticle("orange", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
+        let particle: Moveable = new CircleParticle("#8f18f0", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
         moveables.push(particle);
         }
 
@@ -193,9 +200,9 @@ namespace Endabgabe_Feuerwerk {
     }// deleteExpandable zu
 
 
-   /*  function playAudio(): void { 
-        let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("myAudio"); //WAS KÖNNTE DA REIN? ALSO ES FUNKTIONIERT AUCH SO
-        sound.play(); 
+    function playAudio(): void { 
+        let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("myAudio");
+        sound.play();      
 
     }//playAudio zu
 
@@ -205,10 +212,10 @@ namespace Endabgabe_Feuerwerk {
 
     }//pauseAudio zu
 
-    function fireworkSound(): void {
+    /* function fireworkSound(): void {
         let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("boom");
-        sound.play();
- */
+        sound.play(); */
+ 
     //} *///fireworkSound zu
  
   

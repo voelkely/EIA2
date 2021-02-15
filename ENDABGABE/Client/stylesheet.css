@@ -81,12 +81,13 @@ header {
 
 /*Body*/
 
-body {
-    background-color: #ebe3d8;
-    display: grid;
-    grid-template-columns: 40% auto;
+    body {
+        background-color: #ebe3d8;
+        display: grid;
+        grid-template-columns: 40% auto;
+    
+    }
 
-}
 
 /*Div Form 1*/
 
@@ -173,6 +174,7 @@ button {
     background-color: #d2622e; /* Red */
     color: #F2CC8F;
     border-style: none;
+    display: inline;
 }
 
 .button4 {
@@ -183,11 +185,13 @@ button {
     background-color: #f18251;/* Red */
     color: #F2CC8F;
     border-style: none;
+    display: fixed;
 }
 
 .button5 {
     background-color: #E07A5F; /* Red */
     color: #F2CC8F;
+    
 }
 
 /*Canvas*/
@@ -214,7 +218,7 @@ button {
     text-shadow: 2px 2px #ebe3d8;
     font-family: "Balbaleo";
     font-size: 24pt;
-    margin-top: -70px;
+    margin-top: -50px;
 
 }
 
@@ -274,11 +278,11 @@ a:hover, a:active {
 
 .music {
 
-    font-size: 14pt;
+    font-size: 18pt;
     text-align: center;
     color: black;
     font-family: "KeepOn";
-    margin-top: -230px;
+    margin-top: -290px;
 }
 
 

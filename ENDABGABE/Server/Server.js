@@ -32,14 +32,12 @@ var Endabgabe_Feuerwerk;
         console.log("wie gehts");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
-        _response.write("This is your Rocket:   ");
+        _response.write("These are your Rockets:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             let jsonString;
             // console.log("bin da");
             if (url.pathname == "/retrieve") {
-                /* let fullRocketCollection: Mongo.Cursor = rocketCollection.find();
-                console.log("Show full rocket collection", fullRocketCollection); */
                 let fullRocketCollectionString = JSON.stringify(await rocketCollection.find().toArray());
                 _response.write(fullRocketCollectionString);
             }
