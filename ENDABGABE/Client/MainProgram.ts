@@ -2,7 +2,8 @@ namespace Endabgabe_Feuerwerk {
 
     window.addEventListener("load", handleLoad);
 
-    interface RocketCollection {
+    interface DataCollection {
+
         name: string;
         shape: string;
         lifetime: number;
@@ -18,7 +19,7 @@ namespace Endabgabe_Feuerwerk {
     let selector: HTMLSelectElement;
 
     let moveables: Moveable[] = [];
-    let rocketInUse: RocketCollection[] = [];  //bezieht sich auf das Interface und enthält deren daten
+    let rocketInUse: DataCollection[] = [];  //bezieht sich auf das Interface und enthält deren daten
 
 
     //STARTING WITH FUNCTIONS:
@@ -40,7 +41,7 @@ namespace Endabgabe_Feuerwerk {
         let pauseBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnPause");
         pauseBtn.addEventListener("click", pauseAudio);
       
-        getRocketData();
+        //getRocketData();
 
 
         //Canvas:
@@ -59,8 +60,6 @@ namespace Endabgabe_Feuerwerk {
 
         
     }//handleLoad zu
-
-
 
     async function sendRocketData(_event: MouseEvent): Promise<void> {
 
@@ -81,31 +80,40 @@ namespace Endabgabe_Feuerwerk {
         console.log("find my Rockets");
         let response: Response = await fetch(url + "/retrieve"); 
         let responseText: string = await response.text();
+        debugger;
+        let rocketArray: string[] = JSON.parse(responseText);
 
         console.log(responseText);
+        console.log(JSON.parse(responseText));
+        console.log(rocketArray);
 
-        createSelect(_allRockets);
+        //console.log(_allRockets);
+        createSelect(); //WARUM?
+    
 
+        
     }//getRocketData zu
 
-    function createSelect(_allRockets: RocketCollection): void {
+    function createSelect(_allRockets: DataCollection): void {
         console.log("load my values");
 
         let name: string = _allRockets.name;
+
         let color: string = _allRockets.color;
         let lifetime: number = _allRockets.lifetime;
         let shape: string = _allRockets.shape;
         let amount: number = _allRockets.amount;
 
-        /* let formData: FormData = new FormData(document.forms[0]);
+        let formData: FormData = new FormData(document.forms[0]);
+        console.log(formData);
 
         for (let entry of formData) {
 
-            let rocketname: string = String(formData.get("nameRocket"));
-            let lifetime: number = Number(formData.get("lifetime"));
-            let color: string = String(formData.get("color"));
-            let amountParticles: number = Number(formData.get("particles"));
-            let shape: string = String(formData.get("shapePart"));
+            name = String(formData.get("nameRocket"));
+            lifetime = Number(formData.get("lifetime"));
+            color = String(formData.get("color"));
+            amount = Number(formData.get("particles"));
+            shape = String(formData.get("shapePart"));
             switch (entry[1]) {
                 case "circle":
                   shape = "circle";
@@ -115,7 +123,7 @@ namespace Endabgabe_Feuerwerk {
                   break;
             }
 
-       } */
+       }
 
      
     }//createSelect zu
@@ -131,8 +139,10 @@ namespace Endabgabe_Feuerwerk {
         for (let entry of formDataCollection) {
             selector = <HTMLSelectElement>document.querySelector("[value='" +  entry[0] + entry[1] + "']");
         
-          //  console.log(entry[0]); //Entry0 sind name, lifetime, particles??
-         //   console.log(entry [1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
+           // console.log(formDataCollection);
+            console.log(entry[0]); //Entry0 sind name, lifetime, particles??
+            console.log(entry [1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
+           // 
 
             if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
                 rocketcreated = true;
@@ -159,10 +169,25 @@ namespace Endabgabe_Feuerwerk {
         let amount: number = 20; //sollte eigentlich durch User definiert werden
         let radius: number = (Math.PI * 2) / amount;
 
+       /*  for (let i: number = 0; i < amount; i ++) {
+            if (rocketInUse == null)
+            return;
+        } */
+
+        /* let particle: Moveable | null = null;
+        switch (rocketInUse.shape) {
+            case "circle":
+                particle = new CircleParticle(rocketInUse.color, rocketInUse.lifetime, mousePosX, mousePosY, i, radius);
+        }
+ */
+        //HIER MÜSSEN INHALTE MIT DATEN ÜBEREINSTIMMEN? WAS MUSS IN DIE KLAMMERN?
+
         for (let i: number = 0; i < amount; i++) {
         let particle: Moveable = new CircleParticle("#8f18f0", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
         moveables.push(particle);
-        }
+        } 
+
+
 
       //  fireworkSound();
 

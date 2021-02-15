@@ -19,7 +19,7 @@ var Endabgabe_Feuerwerk;
         soundBtn.addEventListener("click", playAudio);
         let pauseBtn = document.querySelector("button#BtnPause");
         pauseBtn.addEventListener("click", pauseAudio);
-        getRocketData();
+        //getRocketData();
         //Canvas:
         let canvas = document.querySelector("canvas");
         if (!canvas)
@@ -43,8 +43,13 @@ var Endabgabe_Feuerwerk;
         console.log("find my Rockets");
         let response = await fetch(url + "/retrieve");
         let responseText = await response.text();
+        debugger;
+        let rocketArray = JSON.parse(responseText);
         console.log(responseText);
-        createSelect(_allRockets);
+        console.log(JSON.parse(responseText));
+        console.log(rocketArray);
+        //console.log(_allRockets);
+        createSelect(); //WARUM?
     } //getRocketData zu
     function createSelect(_allRockets) {
         console.log("load my values");
@@ -53,25 +58,23 @@ var Endabgabe_Feuerwerk;
         let lifetime = _allRockets.lifetime;
         let shape = _allRockets.shape;
         let amount = _allRockets.amount;
-        /* let formData: FormData = new FormData(document.forms[0]);
-
+        let formData = new FormData(document.forms[0]);
+        console.log(formData);
         for (let entry of formData) {
-
-            let rocketname: string = String(formData.get("nameRocket"));
-            let lifetime: number = Number(formData.get("lifetime"));
-            let color: string = String(formData.get("color"));
-            let amountParticles: number = Number(formData.get("particles"));
-            let shape: string = String(formData.get("shapePart"));
+            name = String(formData.get("nameRocket"));
+            lifetime = Number(formData.get("lifetime"));
+            color = String(formData.get("color"));
+            amount = Number(formData.get("particles"));
+            shape = String(formData.get("shapePart"));
             switch (entry[1]) {
                 case "circle":
-                  shape = "circle";
-                  break;
+                    shape = "circle";
+                    break;
                 case "star":
-                  shape = "star";
-                  break;
+                    shape = "star";
+                    break;
             }
-
-       } */
+        }
     } //createSelect zu
     function chooseRocket() {
         console.log("is picked rocket filled?");
@@ -79,8 +82,10 @@ var Endabgabe_Feuerwerk;
         let rocketcreated = true; //Wurde die richtige Rakete ausgewählt?
         for (let entry of formDataCollection) {
             selector = document.querySelector("[value='" + entry[0] + entry[1] + "']");
-            //  console.log(entry[0]); //Entry0 sind name, lifetime, particles??
-            //   console.log(entry [1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
+            // console.log(formDataCollection);
+            console.log(entry[0]); //Entry0 sind name, lifetime, particles??
+            console.log(entry[1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
+            // 
             if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
                 rocketcreated = true;
             }
@@ -98,6 +103,17 @@ var Endabgabe_Feuerwerk;
         let mousePosY = _event.offsetY;
         let amount = 20; //sollte eigentlich durch User definiert werden
         let radius = (Math.PI * 2) / amount;
+        /*  for (let i: number = 0; i < amount; i ++) {
+             if (rocketInUse == null)
+             return;
+         } */
+        /* let particle: Moveable | null = null;
+        switch (rocketInUse.shape) {
+            case "circle":
+                particle = new CircleParticle(rocketInUse.color, rocketInUse.lifetime, mousePosX, mousePosY, i, radius);
+        }
+ */
+        //HIER MÜSSEN INHALTE MIT DATEN ÜBEREINSTIMMEN? WAS MUSS IN DIE KLAMMERN?
         for (let i = 0; i < amount; i++) {
             let particle = new Endabgabe_Feuerwerk.CircleParticle("#8f18f0", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
             moveables.push(particle);
