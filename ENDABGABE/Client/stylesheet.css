@@ -185,6 +185,11 @@ button {
     border-style: none;
 }
 
+.button5 {
+    background-color: #E07A5F; /* Red */
+    color: #F2CC8F;
+}
+
 /*Canvas*/
 
 .canvasMain {

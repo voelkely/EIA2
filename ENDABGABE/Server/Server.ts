@@ -40,7 +40,7 @@ export namespace Endabgabe_Feuerwerk {
         await mongoClient.connect();
         rocketCollection = mongoClient.db("Firework").collection("RocketCollection");
         console.log("Database connection", rocketCollection != undefined);
-        console.log("JUHU ROCKETCOLLECTION:" , rocketCollection );
+        console.log(rocketCollection, "JUHU");
 
     }//connectToDataBase zu
 
@@ -51,28 +51,25 @@ export namespace Endabgabe_Feuerwerk {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-      
+        _response.write("This is your Rocket:   ");
+
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-            let command: string | string[] | undefined = url.query["command"];
             let jsonString: string;
-            console.log("bin noch da");
+           // console.log("bin da");
     
+            if (url.pathname == "/retrieve") {
 
-            if (command == "getAllRockets") {
-                let getAllRockets: Mongo.Cursor = rocketCollection.find();
-                console.log("Show full rocket collection", getAllRockets);
+                /* let fullRocketCollection: Mongo.Cursor = rocketCollection.find();
+                console.log("Show full rocket collection", fullRocketCollection); */
 
-                let getAllRocketsString: string = JSON.stringify(await rocketCollection.find().toArray());
-                _response.write(getAllRocketsString);
-                console.log (getAllRocketsString, "Hier ist die Rakete");
-                
+                let fullRocketCollectionString: string = JSON.stringify(await rocketCollection.find().toArray());
+                _response.write(fullRocketCollectionString);              
 
             } else if ( url.pathname == "/send") {
                 console.log(_request.url);
                
-                _response.write("Your Rocket contains: "); //Wenn heroku link in console auftaucht, steht das da
                 jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);
 

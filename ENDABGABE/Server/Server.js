@@ -26,27 +26,25 @@ var Endabgabe_Feuerwerk;
         await mongoClient.connect();
         rocketCollection = mongoClient.db("Firework").collection("RocketCollection");
         console.log("Database connection", rocketCollection != undefined);
-        console.log("JUHU ROCKETCOLLECTION:", rocketCollection);
+        console.log(rocketCollection, "JUHU");
     } //connectToDataBase zu
     async function handleRequest(_request, _response) {
         console.log("wie gehts");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
+        _response.write("This is your Rocket:   ");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let command = url.query["command"];
             let jsonString;
-            console.log("bin noch da");
-            if (command == "getAllRockets") {
-                let getAllRockets = rocketCollection.find();
-                console.log("Show full rocket collection", getAllRockets);
-                let getAllRocketsString = JSON.stringify(await rocketCollection.find().toArray());
-                _response.write(getAllRocketsString);
-                console.log(getAllRocketsString, "Hier ist die Rakete");
+            // console.log("bin da");
+            if (url.pathname == "/retrieve") {
+                /* let fullRocketCollection: Mongo.Cursor = rocketCollection.find();
+                console.log("Show full rocket collection", fullRocketCollection); */
+                let fullRocketCollectionString = JSON.stringify(await rocketCollection.find().toArray());
+                _response.write(fullRocketCollectionString);
             }
             else if (url.pathname == "/send") {
                 console.log(_request.url);
-                _response.write("Your Rocket contains: "); //Wenn heroku link in console auftaucht, steht das da
                 jsonString = JSON.stringify(url.query);
                 _response.write(jsonString);
                 storeRocketCollection(url.query);

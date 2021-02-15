@@ -2,6 +2,14 @@ namespace Endabgabe_Feuerwerk {
 
     window.addEventListener("load", handleLoad);
 
+    interface RocketCollection {
+        name: string;
+        shape: string;
+        lifetime: number;
+        color: string;
+        amount: number;
+    }
+
     //let url: string = "http://localhost:5001";
     let url: string = "https://mycodingapp97.herokuapp.com";
 
@@ -10,6 +18,8 @@ namespace Endabgabe_Feuerwerk {
     let selector: HTMLSelectElement;
 
     let moveables: Moveable[] = [];
+    let loadRocket: RocketCollection[] = [];  //bezihet sich auf mein Interface
+
 
     //STARTING WITH FUNCTIONS:
 
@@ -19,15 +29,18 @@ namespace Endabgabe_Feuerwerk {
         addBtn.addEventListener("click", sendRocketData);
 
 
-        let soundBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnSound");
+        /* let soundBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnSound");
         soundBtn.addEventListener("click", playAudio);
 
         let pauseBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnPause");
         pauseBtn.addEventListener("click", pauseAudio);
-
+ */
 
         let clickOnSelect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("form#collection");
         clickOnSelect.addEventListener("change", chooseRocket);
+
+        let loadBtn: HTMLSelectElement = <HTMLSelectElement>document.querySelector("Button#load");
+        loadBtn.addEventListener("click", chooseRocket);
       
         getRocketData();
 
@@ -49,16 +62,17 @@ namespace Endabgabe_Feuerwerk {
         
     }//handleLoad zu
 
+
+
     async function sendRocketData(_event: MouseEvent): Promise<void> {
 
         console.log("Rocket send to Server");
         let formData: FormData = new FormData(document.forms[0]); //nimmt infos aus der Form "generator"
         let query: URLSearchParams = new URLSearchParams(<any>formData);
       
-        console.log(url + "/send" + "?" + query.toString());
-        let response: Response = await fetch(url + "/send" + "?" + query.toString()); 
+        let response: Response = await fetch(url + "?" + "/send" + query.toString()); 
         let responseReply: string = await response.text();
-        console.log(responseReply);
+        console.log(responseReply); //IM CONSOLE LEER
 
         alert("Your Rocket is successfully sent to a space Server!");
 
@@ -67,13 +81,17 @@ namespace Endabgabe_Feuerwerk {
     async function getRocketData(): Promise <void> {
 
         console.log("find my Rockets");
-        let response: Response = await fetch(url + "?"); 
+        let response: Response = await fetch(url + "?/retrieve"); 
         let responseText: string = await response.text();
-       // let fullData: Moveable [] = JSON.parse(responseText);
 
         console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR
 
     }//getRocketData zu
+
+
+
+
+
 
     function chooseRocket(): void {
         console.log("is picked rocket filled?");
@@ -110,8 +128,7 @@ namespace Endabgabe_Feuerwerk {
          //   console.log(entry [1], "hier ist das entry1"); //Entry 1 sind color, shape, sekundenzahl und der amount??
 
             if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
-                createFirework(); //WARUM ROT? WAS SOLL DA REIN?
-               
+                rocketcreated = true;
 
             } else {
                 rocketcreated = false;
@@ -140,7 +157,7 @@ namespace Endabgabe_Feuerwerk {
         moveables.push(particle);
         }
 
-        fireworkSound();
+      //  fireworkSound();
 
         /* for (let i: number = 0; i < amount; i++) {
             let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
@@ -176,23 +193,23 @@ namespace Endabgabe_Feuerwerk {
     }// deleteExpandable zu
 
 
-    function playAudio(): void { 
-        let sound: = document.getElementById("myAudio"); //WAS KÖNNTE DA REIN? ALSO ES FUNKTIONIERT AUCH SO
+   /*  function playAudio(): void { 
+        let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("myAudio"); //WAS KÖNNTE DA REIN? ALSO ES FUNKTIONIERT AUCH SO
         sound.play(); 
 
     }//playAudio zu
 
     function pauseAudio(): void { 
-        let sound: = document.getElementById("myAudio");
+        let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("myAudio");
         sound.pause();
 
     }//pauseAudio zu
 
     function fireworkSound(): void {
-        let sound: = document.getElementById("boom");
+        let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("boom");
         sound.play();
-
-    }//fireworkSound zu
+ */
+    //} *///fireworkSound zu
  
   
     
