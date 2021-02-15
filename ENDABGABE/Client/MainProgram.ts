@@ -70,7 +70,7 @@ namespace Endabgabe_Feuerwerk {
         let formData: FormData = new FormData(document.forms[0]); //nimmt infos aus der Form "generator"
         let query: URLSearchParams = new URLSearchParams(<any>formData);
       
-        let response: Response = await fetch(url + "?" + "/send" + query.toString()); 
+        let response: Response = await fetch(url  + "/send" + "?" + query.toString()); 
         let responseReply: string = await response.text();
         console.log(responseReply); //IM CONSOLE LEER
 
@@ -81,7 +81,7 @@ namespace Endabgabe_Feuerwerk {
     async function getRocketData(): Promise <void> {
 
         console.log("find my Rockets");
-        let response: Response = await fetch(url + "?/retrieve"); 
+        let response: Response = await fetch(url + "/retrieve?"); 
         let responseText: string = await response.text();
 
         console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR

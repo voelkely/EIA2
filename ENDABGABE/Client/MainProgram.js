@@ -36,14 +36,14 @@ var Endabgabe_Feuerwerk;
         console.log("Rocket send to Server");
         let formData = new FormData(document.forms[0]); //nimmt infos aus der Form "generator"
         let query = new URLSearchParams(formData);
-        let response = await fetch(url + "?" + "/send" + query.toString());
+        let response = await fetch(url + "/send" + "?" + query.toString());
         let responseReply = await response.text();
         console.log(responseReply); //IM CONSOLE LEER
         alert("Your Rocket is successfully sent to a space Server!");
     } //sendRocketData zu
     async function getRocketData() {
         console.log("find my Rockets");
-        let response = await fetch(url + "?/retrieve");
+        let response = await fetch(url + "/retrieve?");
         let responseText = await response.text();
         console.log(responseText); //IN DER CONOSLE LEER, IN HEROKU (App) STEHT AUCH NICHTS MEHR
     } //getRocketData zu
