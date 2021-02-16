@@ -20,6 +20,7 @@ namespace Endabgabe_Feuerwerk {
 
     let moveables: Moveable[] = [];
     let rocketInUse: DataCollection | null; // eine globale variable die sich auf das Interface bezieht und deren daten enthält 
+    let allRockets: DataCollection[] = [];
 
 
     //STARTING WITH FUNCTIONS:
@@ -83,21 +84,24 @@ namespace Endabgabe_Feuerwerk {
         //console.log((rocketArray[3] as unknown as DataCollection).nameFirework);
 
         createSelect(rocketArray);
-    
-
-        
+          
     }//getRocketData zu
 
     function createSelect(_allRockets: string[]): void {
         console.log("load my RocketData");
 
+        //debugger;
+
         let select: HTMLSelectElement = document.createElement("select"); //dynmaisch "select" erstellen
         let fieldset: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("fieldset#selectRocket");    
 
         fieldset.appendChild(select);
+        
+        allRockets = [];
 
         for (let i: number = 0; i < _allRockets.length; i ++) {
-            let currentRocket: DataCollection = _allRockets[i] as unknown as DataCollection;
+            let currentRocket: DataCollection = _allRockets[i] as unknown as DataCollection; //TypeCast 
+            allRockets.push(currentRocket);
 
             /* let rocketname: string = currentRocket.nameFirework;
             let color: string  = currentRocket.Color;
@@ -108,21 +112,31 @@ namespace Endabgabe_Feuerwerk {
             //radius anstelle von amount dynamisch übergebbar
              */
 
-            let optionName: HTMLOptionElement = document.createElement("option");
+            let optionName: HTMLOptionElement = document.createElement("option"); //dynamisch eine Option zu meinem Select hinzufügen 
             optionName.text = currentRocket.nameFirework;
             optionName.value = currentRocket.nameFirework;
 
             select.appendChild(optionName);
 
-            
             //rocketInUse = currentRocket;
            //console.log(rocketInUse);
 
-            select.addEventListener("change", () => {rocketInUse = currentRocket; });     
+            select.addEventListener("change", findRocket);     
 
         }
      
     }//createSelect zu
+
+    function findRocket(_event: Event): void {
+
+        for (let i: number = 0; i < allRockets.length; i ++) {
+            if (allRockets[i].nameFirework == (<HTMLInputElement>_event.target).value) {
+                rocketInUse = allRockets[i];
+            }
+
+        }
+
+    } //findRocket zu
 
     function createFirework(_event: MouseEvent): void {
         console.log("creating firework");
@@ -160,14 +174,8 @@ namespace Endabgabe_Feuerwerk {
             } 
 
             fireworkSound();
-
             
-        } 
-/* 
-        for (let i: number = 0; i < amount; i++) {
-            let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
-            moveables.push(particles);
-         } */
+        }
      
 
     } //createFirework zu
@@ -184,21 +192,7 @@ namespace Endabgabe_Feuerwerk {
          
         }  
 
-        deleteExpandables();
-
     }// update zu
-    
-
-    function deleteExpandables(): void {
-     
-       for (let i: number = moveables.length - 1; i >= 0; i--) {
-            if (moveables[i].expendable)
-                moveables.splice(i, 1);
-
-        } 
-
-    }// deleteExpandable zu
-
 
     function playAudio(): void { 
         let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("myAudio");

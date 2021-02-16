@@ -34,5 +34,9 @@ namespace Endabgabe_Feuerwerk {
                 this.set(Math.cos(direction), Math.sin(direction));
                 this.scale(length);
             }
-}
-}
+            
+    }//class zu
+
+}//namespace zu
+
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 / sound von Abba und www.FesliyanStudios.com */

@@ -24,4 +24,5 @@ var Endabgabe_Feuerwerk;
     } //class zu
     Endabgabe_Feuerwerk.CircleParticle = CircleParticle;
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu 
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 */
 //# sourceMappingURL=CircleParticles.js.map

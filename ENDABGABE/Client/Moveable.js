@@ -19,12 +19,10 @@ var Endabgabe_Feuerwerk;
             let offset = new Endabgabe_Feuerwerk.Vector(this.speed.x, this.speed.y);
             offset.scale(_timeslice);
             this.position.add(offset);
-            this.speed.y += this.gravity;
-            this.lifetime -= _timeslice;
-            if (this.lifetime < 0)
-                this.expendable = true;
+            this.speed.y += this.gravity; //damit sie im bogen runter fallen
         }
     } //class zu
     Endabgabe_Feuerwerk.Moveable = Moveable;
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 */ 
 //# sourceMappingURL=Moveable.js.map

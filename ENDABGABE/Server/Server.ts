@@ -51,13 +51,11 @@ export namespace Endabgabe_Feuerwerk {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-       // _response.write("This is your Rocket: ");
-
 
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let jsonString: string;
-           // console.log("bin da");
+        
     
             if (url.pathname == "/retrieve") {
 
@@ -86,9 +84,10 @@ export namespace Endabgabe_Feuerwerk {
         rocketCollection.insertOne(_rocketCollection);
 
     }//storeRocketCollection zu
-       
-  
+    
 
 }//namespace zu
+
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 / sound von Abba und www.FesliyanStudios.com */
 
     

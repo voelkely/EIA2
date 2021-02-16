@@ -4,7 +4,6 @@ var Endabgabe_Feuerwerk;
     class StarParticle extends Endabgabe_Feuerwerk.Moveable {
         constructor(_color, _speed, _positionX, _positionY, _amount, _radius, _shape) {
             super(_color, _speed, _positionX, _positionY, _amount, _radius, _shape);
-            // this.shape = _shape;
         }
         move(_timeslice) {
             // console.log("super move");
@@ -36,4 +35,5 @@ var Endabgabe_Feuerwerk;
     } // class zu  
     Endabgabe_Feuerwerk.StarParticle = StarParticle;
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629*/ 
 //# sourceMappingURL=StarParticles.js.map

@@ -5,12 +5,9 @@ namespace Endabgabe_Feuerwerk {
         public position: Vector;
         public speed: Vector;
         public color: string;
-        public amount: number;
-        public lifetime: number;
-        public size: number;
-        public alpha: number = 0.2;
-    
+        public size: number; //nutze ich bei scale in circleParticle
 
+        public alpha: number = 0.2;
         public expendable: boolean = false; 
         public gravity: number = 0.06;
         
@@ -37,12 +34,8 @@ namespace Endabgabe_Feuerwerk {
         offset.scale(_timeslice);
         this.position.add(offset);
 
-        this.speed.y += this.gravity;
+        this.speed.y += this.gravity; //damit sie im bogen runter fallen
 
-        this.lifetime -= _timeslice;
-        if (this.lifetime < 0)
-            this.expendable = true;
-        
     }
 
     public abstract draw(): void;
@@ -51,3 +44,5 @@ namespace Endabgabe_Feuerwerk {
     }//class zu
 
 }//namespace zu
+
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 */

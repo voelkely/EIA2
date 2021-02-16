@@ -2,9 +2,6 @@ namespace Endabgabe_Feuerwerk {
 
     export class CircleParticle extends Moveable  { 
 
-    
-        shape: string;
-  
 
         constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _amount: number, _radius: number, _shape: string) {
 
@@ -42,6 +39,8 @@ namespace Endabgabe_Feuerwerk {
 
 
 } //namespace zu 
+
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 */
 
 
 

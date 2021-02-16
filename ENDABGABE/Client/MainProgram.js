@@ -7,6 +7,7 @@ var Endabgabe_Feuerwerk;
     let selector;
     let moveables = [];
     let rocketInUse; // eine globale variable die sich auf das Interface bezieht und deren daten enthält 
+    let allRockets = [];
     //STARTING WITH FUNCTIONS:
     function handleLoad(_event) {
         let addBtn = document.querySelector("button#add");
@@ -48,11 +49,14 @@ var Endabgabe_Feuerwerk;
     } //getRocketData zu
     function createSelect(_allRockets) {
         console.log("load my RocketData");
+        //debugger;
         let select = document.createElement("select"); //dynmaisch "select" erstellen
         let fieldset = document.querySelector("fieldset#selectRocket");
         fieldset.appendChild(select);
+        allRockets = [];
         for (let i = 0; i < _allRockets.length; i++) {
-            let currentRocket = _allRockets[i];
+            let currentRocket = _allRockets[i]; //TypeCast 
+            allRockets.push(currentRocket);
             /* let rocketname: string = currentRocket.nameFirework;
             let color: string  = currentRocket.Color;
             let lifetime: number  = currentRocket.lifetime;
@@ -61,15 +65,22 @@ var Endabgabe_Feuerwerk;
             
             //radius anstelle von amount dynamisch übergebbar
              */
-            let optionName = document.createElement("option");
+            let optionName = document.createElement("option"); //dynamisch eine Option zu meinem Select hinzufügen 
             optionName.text = currentRocket.nameFirework;
             optionName.value = currentRocket.nameFirework;
             select.appendChild(optionName);
             //rocketInUse = currentRocket;
             //console.log(rocketInUse);
-            select.addEventListener("change", () => { rocketInUse = currentRocket; });
+            select.addEventListener("change", findRocket);
         }
     } //createSelect zu
+    function findRocket(_event) {
+        for (let i = 0; i < allRockets.length; i++) {
+            if (allRockets[i].nameFirework == _event.target.value) {
+                rocketInUse = allRockets[i];
+            }
+        }
+    } //findRocket zu
     function createFirework(_event) {
         console.log("creating firework");
         let mousePosX = _event.offsetX;
@@ -99,11 +110,6 @@ var Endabgabe_Feuerwerk;
             }
             fireworkSound();
         }
-        /*
-                for (let i: number = 0; i < amount; i++) {
-                    let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
-                    moveables.push(particles);
-                 } */
     } //createFirework zu
     function update() {
         // debugger;
@@ -113,14 +119,7 @@ var Endabgabe_Feuerwerk;
             firework.move(1 / 5);
             firework.draw();
         }
-        deleteExpandables();
     } // update zu
-    function deleteExpandables() {
-        for (let i = moveables.length - 1; i >= 0; i--) {
-            if (moveables[i].expendable)
-                moveables.splice(i, 1);
-        }
-    } // deleteExpandable zu
     function playAudio() {
         let sound = document.getElementById("myAudio");
         sound.play();
