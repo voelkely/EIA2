@@ -16,8 +16,6 @@ namespace Endabgabe_Feuerwerk {
 
     export let crc2: CanvasRenderingContext2D;
 
-    let selector: HTMLSelectElement;
-
     let moveables: Moveable[] = [];
     let rocketInUse: DataCollection | null; // eine globale variable die sich auf das Interface bezieht und deren daten enthält 
     let allRockets: DataCollection[] = [];
@@ -61,11 +59,11 @@ namespace Endabgabe_Feuerwerk {
 
         console.log("Rocket send to Server");
         let formData: FormData = new FormData(document.forms[0]); 
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        let query: URLSearchParams = new URLSearchParams(<any>formData); //Fehler von TypeScript
       
         let response: Response = await fetch(url  + "/send" + "?" + query.toString()); 
         let responseReply: string = await response.text();
-        console.log(responseReply); //IM CONSOLE LEER
+        console.log(responseReply); 
 
         alert("Your Rocket is successfully sent to a space Server!");
 
@@ -103,15 +101,6 @@ namespace Endabgabe_Feuerwerk {
             let currentRocket: DataCollection = _allRockets[i] as unknown as DataCollection; //TypeCast 
             allRockets.push(currentRocket);
 
-            /* let rocketname: string = currentRocket.nameFirework;
-            let color: string  = currentRocket.Color;
-            let lifetime: number  = currentRocket.lifetime;
-            let shape: string = currentRocket.shape;
-            let amount: number = currentRocket.amount; 
-            
-            //radius anstelle von amount dynamisch übergebbar
-             */
-
             let optionName: HTMLOptionElement = document.createElement("option"); //dynamisch eine Option zu meinem Select hinzufügen 
             optionName.text = currentRocket.nameFirework;
             optionName.value = currentRocket.nameFirework;
@@ -147,10 +136,6 @@ namespace Endabgabe_Feuerwerk {
         console.log(mousePosY);
         let amount: number = 40;
         let radius: number = (Math.PI * 2) / amount;
-
-        debugger;
-        console.log(rocketInUse?.amount);
-
 
         for (let i: number = 0; i < amount; i++) {
             if (rocketInUse == null) {                                 
@@ -215,3 +200,5 @@ namespace Endabgabe_Feuerwerk {
   
     
 }//namespace zu
+
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 / sound von Abba und www.FesliyanStudios.com */
