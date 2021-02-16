@@ -6,10 +6,11 @@ namespace Endabgabe_Feuerwerk {
         public speed: Vector;
         public color: string;
         public size: number; //nutze ich bei scale in circleParticle
+        public alpha: number = 0.2;  //opactity
 
-        public alpha: number = 0.2;
-        public expendable: boolean = false; 
-        public gravity: number = 0.06;
+    
+        protected expendable: boolean = false;     
+        private gravity: number = 0.06;
         
        
 

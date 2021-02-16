@@ -4,7 +4,7 @@ var Endabgabe_Feuerwerk;
     class Moveable {
         constructor(_color, _speed, _positionX, _positionY, _i, _radius, _shape) {
             // console.log("construct rocket");
-            this.alpha = 0.2;
+            this.alpha = 0.2; //opactity
             this.expendable = false;
             this.gravity = 0.06;
             this.position = new Endabgabe_Feuerwerk.Vector(0, 0);

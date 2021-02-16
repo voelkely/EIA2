@@ -52,4 +52,4 @@ namespace Endabgabe_Feuerwerk {
 
 }//namespace zu
 
-/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629*/
+/*Abschlussabgabe Yvonne N. Voelkel / MKB / 262629 */
