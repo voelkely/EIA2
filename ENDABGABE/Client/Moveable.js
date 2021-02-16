@@ -2,7 +2,7 @@
 var Endabgabe_Feuerwerk;
 (function (Endabgabe_Feuerwerk) {
     class Moveable {
-        constructor(_color, _speed, _positionX, _positionY, _i, _radius) {
+        constructor(_color, _speed, _positionX, _positionY, _i, _radius, _shape) {
             // console.log("construct rocket");
             this.alpha = 0.2;
             this.expendable = false;

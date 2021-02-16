@@ -2,9 +2,8 @@
 var Endabgabe_Feuerwerk;
 (function (Endabgabe_Feuerwerk) {
     class CircleParticle extends Endabgabe_Feuerwerk.Moveable {
-        constructor(_color, _speed, _positionX, _positionY, _i, _radius, _shape) {
-            super(_color, _speed, _positionX, _positionY, _i, _radius);
-            this.shape = _shape;
+        constructor(_color, _speed, _positionX, _positionY, _amount, _radius, _shape) {
+            super(_color, _speed, _positionX, _positionY, _amount, _radius, _shape);
         }
         move(_timeslice) {
             // console.log("super move");

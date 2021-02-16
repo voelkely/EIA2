@@ -16,7 +16,7 @@ namespace Endabgabe_Feuerwerk {
         
        
 
-        constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _i: number, _radius: number) {
+        constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _i: number,  _radius: number, _shape: string) {
 
            // console.log("construct rocket");
 

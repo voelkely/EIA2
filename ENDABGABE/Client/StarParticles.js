@@ -2,9 +2,9 @@
 var Endabgabe_Feuerwerk;
 (function (Endabgabe_Feuerwerk) {
     class StarParticle extends Endabgabe_Feuerwerk.Moveable {
-        constructor(_color, _speed, _positionX, _positionY, _i, _radius, _shape) {
-            super(_color, _speed, _positionX, _positionY, _i, _radius);
-            this.shape = _shape;
+        constructor(_color, _speed, _positionX, _positionY, _amount, _radius, _shape) {
+            super(_color, _speed, _positionX, _positionY, _amount, _radius, _shape);
+            // this.shape = _shape;
         }
         move(_timeslice) {
             // console.log("super move");
@@ -16,7 +16,7 @@ var Endabgabe_Feuerwerk;
             Endabgabe_Feuerwerk.crc2.beginPath();
             Endabgabe_Feuerwerk.crc2.translate(this.position.x, this.position.y);
             Endabgabe_Feuerwerk.crc2.globalAlpha = this.alpha;
-            Endabgabe_Feuerwerk.crc2.scale(0.1, 0.1);
+            Endabgabe_Feuerwerk.crc2.scale(0.3, 0.3);
             Endabgabe_Feuerwerk.crc2.moveTo(75, 30);
             Endabgabe_Feuerwerk.crc2.lineTo(90, 60);
             Endabgabe_Feuerwerk.crc2.lineTo(125, 75);

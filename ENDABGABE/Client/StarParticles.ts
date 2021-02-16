@@ -5,11 +5,11 @@ namespace Endabgabe_Feuerwerk {
         
     shape: string;
 
-    constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _i: number, _radius: number, _shape: string) {
+    constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _amount: number, _radius: number, _shape: string) {
 
-        super(_color, _speed, _positionX, _positionY, _i, _radius);
+        super(_color, _speed, _positionX, _positionY, _amount, _radius, _shape);
 
-        this.shape = _shape;
+       // this.shape = _shape;
 
     }
 
@@ -28,7 +28,7 @@ namespace Endabgabe_Feuerwerk {
         crc2.translate(this.position.x, this.position.y);
         crc2.globalAlpha = this.alpha;
 
-        crc2.scale(0.1, 0.1);
+        crc2.scale(0.3, 0.3);
         crc2.moveTo(75, 30);
         crc2.lineTo(90, 60);
         crc2.lineTo(125, 75);

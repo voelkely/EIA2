@@ -4,10 +4,10 @@ namespace Endabgabe_Feuerwerk {
 
     interface DataCollection {
 
-        name: string;
+        nameFirework: string;
         shape: string;
         lifetime: number;
-        color: string;
+        Color: string;
         amount: number;
     }
 
@@ -19,7 +19,7 @@ namespace Endabgabe_Feuerwerk {
     let selector: HTMLSelectElement;
 
     let moveables: Moveable[] = [];
-    let rocketInUse: DataCollection[] = [];  //bezieht sich auf das Interface und enthält deren daten
+    let rocketInUse: DataCollection | null; // eine globale variable die sich auf das Interface bezieht und deren daten enthält 
 
 
     //STARTING WITH FUNCTIONS:
@@ -30,10 +30,7 @@ namespace Endabgabe_Feuerwerk {
         addBtn.addEventListener("click", sendRocketData);
 
         let loadBtn: HTMLSelectElement = <HTMLSelectElement>document.querySelector("Button#load");
-        loadBtn.addEventListener("click", getRocketData);
-
-        let clickOnSelect: HTMLSelectElement = <HTMLSelectElement>document.querySelector("form#collection");
-        clickOnSelect.addEventListener("change", chooseRocket); 
+        loadBtn.addEventListener("click", getRocketData);   
 
         let soundBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnSound");
         soundBtn.addEventListener("click", playAudio);
@@ -41,8 +38,6 @@ namespace Endabgabe_Feuerwerk {
         let pauseBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button#BtnPause");
         pauseBtn.addEventListener("click", pauseAudio);
       
-        //getRocketData();
-
 
         //Canvas:
 
@@ -80,132 +75,112 @@ namespace Endabgabe_Feuerwerk {
         console.log("find my Rockets");
         let response: Response = await fetch(url + "/retrieve"); 
         let responseText: string = await response.text();
-        debugger;
-        let rocketArray: string[] = JSON.parse(responseText);
+       
+        let rocketArray: string[] = JSON.parse(responseText); //Array mit Daten
 
         console.log(responseText);
         console.log(JSON.parse(responseText));
-        console.log(rocketArray);
+        //console.log((rocketArray[3] as unknown as DataCollection).nameFirework);
 
-        //console.log(_allRockets);
-        createSelect(); //WARUM?
+        createSelect(rocketArray);
     
 
         
     }//getRocketData zu
 
-    function createSelect(_allRockets: DataCollection): void {
-        console.log("load my values");
+    function createSelect(_allRockets: string[]): void {
+        console.log("load my RocketData");
 
-        let name: string = _allRockets.name;
+        let select: HTMLSelectElement = document.createElement("select"); //dynmaisch "select" erstellen
+        let fieldset: HTMLFieldSetElement = <HTMLFieldSetElement>document.querySelector("fieldset#selectRocket");    
 
-        let color: string = _allRockets.color;
-        let lifetime: number = _allRockets.lifetime;
-        let shape: string = _allRockets.shape;
-        let amount: number = _allRockets.amount;
+        fieldset.appendChild(select);
 
-        let formData: FormData = new FormData(document.forms[0]);
-        console.log(formData);
+        for (let i: number = 0; i < _allRockets.length; i ++) {
+            let currentRocket: DataCollection = _allRockets[i] as unknown as DataCollection;
 
-        for (let entry of formData) {
+            /* let rocketname: string = currentRocket.nameFirework;
+            let color: string  = currentRocket.Color;
+            let lifetime: number  = currentRocket.lifetime;
+            let shape: string = currentRocket.shape;
+            let amount: number = currentRocket.amount; 
+            
+            //radius anstelle von amount dynamisch übergebbar
+             */
 
-            name = String(formData.get("nameRocket"));
-            lifetime = Number(formData.get("lifetime"));
-            color = String(formData.get("color"));
-            amount = Number(formData.get("particles"));
-            shape = String(formData.get("shapePart"));
-            switch (entry[1]) {
-                case "circle":
-                  shape = "circle";
-                  break;
-                case "star":
-                  shape = "star";
-                  break;
-            }
+            let optionName: HTMLOptionElement = document.createElement("option");
+            optionName.text = currentRocket.nameFirework;
+            optionName.value = currentRocket.nameFirework;
 
-       }
+            select.appendChild(optionName);
 
+            
+            //rocketInUse = currentRocket;
+           //console.log(rocketInUse);
+
+            select.addEventListener("change", () => {rocketInUse = currentRocket; });     
+
+        }
      
     }//createSelect zu
-
-
-    function chooseRocket(): void {
-        console.log("is picked rocket filled?");
-
-
-        let formDataCollection: FormData = new FormData(document.forms[0]);
-        let rocketcreated: Boolean = true; //Wurde die richtige Rakete ausgewählt?
-
-        for (let entry of formDataCollection) {
-            selector = <HTMLSelectElement>document.querySelector("[value='" +  entry[0] + entry[1] + "']");
-        
-           // console.log(formDataCollection);
-            console.log(entry[0]); //Entry0 sind name, lifetime, particles??
-            console.log(entry [1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
-           // 
-
-            if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
-                rocketcreated = true;
-
-            } else {
-                rocketcreated = false;
-                
-            }
-            
-        }
-        if (rocketcreated != true) {
-            alert("This Rocket ist empty. Please try another one");
-        }
-        
-    
-    } //chooseRocket zu
 
     function createFirework(_event: MouseEvent): void {
         console.log("creating firework");
 
         let mousePosX: number = _event.offsetX;
         let mousePosY: number = _event.offsetY;
-        
-        let amount: number = 20; //sollte eigentlich durch User definiert werden
+  
+        console.log(mousePosY);
+        let amount: number = 40;
         let radius: number = (Math.PI * 2) / amount;
 
-       /*  for (let i: number = 0; i < amount; i ++) {
-            if (rocketInUse == null)
-            return;
-        } */
+        debugger;
+        console.log(rocketInUse?.amount);
 
-        /* let particle: Moveable | null = null;
-        switch (rocketInUse.shape) {
-            case "circle":
-                particle = new CircleParticle(rocketInUse.color, rocketInUse.lifetime, mousePosX, mousePosY, i, radius);
-        }
- */
-        //HIER MÜSSEN INHALTE MIT DATEN ÜBEREINSTIMMEN? WAS MUSS IN DIE KLAMMERN?
 
         for (let i: number = 0; i < amount; i++) {
-        let particle: Moveable = new CircleParticle("#8f18f0", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
-        moveables.push(particle);
+            if (rocketInUse == null) {                                 
+                return;
+        }
+
+            let firework: Moveable;
+            switch (rocketInUse.shape) {
+                case "star":
+                    firework = new StarParticle(rocketInUse.Color, 15, mousePosX, mousePosY, i, radius, rocketInUse.shape);
+                    moveables.push(firework);
+                    break;
+                case "circle":
+                    firework = new CircleParticle(rocketInUse.Color, 15, mousePosX, mousePosY, i, radius, rocketInUse.shape);
+                    moveables.push(firework);
+                   // console.log(moveables);
+                    break;     
+                default:
+                    break;
+           
+            } 
+
+            fireworkSound();
+
+            
         } 
-
-
-
-      //  fireworkSound();
-
-        /* for (let i: number = 0; i < amount; i++) {
+/* 
+        for (let i: number = 0; i < amount; i++) {
             let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
             moveables.push(particles);
-            } */
-       
+         } */
+     
+
     } //createFirework zu
 
     function update(): void {
      
+       // debugger;
         crc2.fillStyle = "rgba(0, 0, 0, 0.06)";
         crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
-
+ 
         for (let firework of moveables) {
             firework.move(1 / 5);
-            firework.draw();
+            firework.draw();           
          
         }  
 
@@ -237,11 +212,11 @@ namespace Endabgabe_Feuerwerk {
 
     }//pauseAudio zu
 
-    /* function fireworkSound(): void {
+    function fireworkSound(): void {
         let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("boom");
-        sound.play(); */
+        sound.play();
  
-    //} *///fireworkSound zu
+    } //fireworkSound zu
  
   
     

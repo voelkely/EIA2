@@ -6,20 +6,17 @@ var Endabgabe_Feuerwerk;
     let url = "https://mycodingapp97.herokuapp.com";
     let selector;
     let moveables = [];
-    let rocketInUse = []; //bezieht sich auf das Interface und enthält deren daten
+    let rocketInUse; // eine globale variable die sich auf das Interface bezieht und deren daten enthält 
     //STARTING WITH FUNCTIONS:
     function handleLoad(_event) {
         let addBtn = document.querySelector("button#add");
         addBtn.addEventListener("click", sendRocketData);
         let loadBtn = document.querySelector("Button#load");
         loadBtn.addEventListener("click", getRocketData);
-        let clickOnSelect = document.querySelector("form#collection");
-        clickOnSelect.addEventListener("change", chooseRocket);
         let soundBtn = document.querySelector("button#BtnSound");
         soundBtn.addEventListener("click", playAudio);
         let pauseBtn = document.querySelector("button#BtnPause");
         pauseBtn.addEventListener("click", pauseAudio);
-        //getRocketData();
         //Canvas:
         let canvas = document.querySelector("canvas");
         if (!canvas)
@@ -43,88 +40,73 @@ var Endabgabe_Feuerwerk;
         console.log("find my Rockets");
         let response = await fetch(url + "/retrieve");
         let responseText = await response.text();
-        debugger;
-        let rocketArray = JSON.parse(responseText);
+        let rocketArray = JSON.parse(responseText); //Array mit Daten
         console.log(responseText);
         console.log(JSON.parse(responseText));
-        console.log(rocketArray);
-        //console.log(_allRockets);
-        createSelect(); //WARUM?
+        //console.log((rocketArray[3] as unknown as DataCollection).nameFirework);
+        createSelect(rocketArray);
     } //getRocketData zu
     function createSelect(_allRockets) {
-        console.log("load my values");
-        let name = _allRockets.name;
-        let color = _allRockets.color;
-        let lifetime = _allRockets.lifetime;
-        let shape = _allRockets.shape;
-        let amount = _allRockets.amount;
-        let formData = new FormData(document.forms[0]);
-        console.log(formData);
-        for (let entry of formData) {
-            name = String(formData.get("nameRocket"));
-            lifetime = Number(formData.get("lifetime"));
-            color = String(formData.get("color"));
-            amount = Number(formData.get("particles"));
-            shape = String(formData.get("shapePart"));
-            switch (entry[1]) {
-                case "circle":
-                    shape = "circle";
-                    break;
-                case "star":
-                    shape = "star";
-                    break;
-            }
+        console.log("load my RocketData");
+        let select = document.createElement("select"); //dynmaisch "select" erstellen
+        let fieldset = document.querySelector("fieldset#selectRocket");
+        fieldset.appendChild(select);
+        for (let i = 0; i < _allRockets.length; i++) {
+            let currentRocket = _allRockets[i];
+            /* let rocketname: string = currentRocket.nameFirework;
+            let color: string  = currentRocket.Color;
+            let lifetime: number  = currentRocket.lifetime;
+            let shape: string = currentRocket.shape;
+            let amount: number = currentRocket.amount;
+            
+            //radius anstelle von amount dynamisch übergebbar
+             */
+            let optionName = document.createElement("option");
+            optionName.text = currentRocket.nameFirework;
+            optionName.value = currentRocket.nameFirework;
+            select.appendChild(optionName);
+            //rocketInUse = currentRocket;
+            //console.log(rocketInUse);
+            select.addEventListener("change", () => { rocketInUse = currentRocket; });
         }
     } //createSelect zu
-    function chooseRocket() {
-        console.log("is picked rocket filled?");
-        let formDataCollection = new FormData(document.forms[0]);
-        let rocketcreated = true; //Wurde die richtige Rakete ausgewählt?
-        for (let entry of formDataCollection) {
-            selector = document.querySelector("[value='" + entry[0] + entry[1] + "']");
-            // console.log(formDataCollection);
-            console.log(entry[0]); //Entry0 sind name, lifetime, particles??
-            console.log(entry[1]); //Entry 1 sind color, shape, sekundenzahl und der amount??
-            // 
-            if (entry[0] == "Stardust" || entry[0] == "Space Buddy" || entry[0] == "Galaxy Shooter" || entry[0] == "Firecracker" || entry[0] == "Space Fighter") {
-                rocketcreated = true;
-            }
-            else {
-                rocketcreated = false;
-            }
-        }
-        if (rocketcreated != true) {
-            alert("This Rocket ist empty. Please try another one");
-        }
-    } //chooseRocket zu
     function createFirework(_event) {
         console.log("creating firework");
         let mousePosX = _event.offsetX;
         let mousePosY = _event.offsetY;
-        let amount = 20; //sollte eigentlich durch User definiert werden
+        console.log(mousePosY);
+        let amount = 40;
         let radius = (Math.PI * 2) / amount;
-        /*  for (let i: number = 0; i < amount; i ++) {
-             if (rocketInUse == null)
-             return;
-         } */
-        /* let particle: Moveable | null = null;
-        switch (rocketInUse.shape) {
-            case "circle":
-                particle = new CircleParticle(rocketInUse.color, rocketInUse.lifetime, mousePosX, mousePosY, i, radius);
-        }
- */
-        //HIER MÜSSEN INHALTE MIT DATEN ÜBEREINSTIMMEN? WAS MUSS IN DIE KLAMMERN?
+        debugger;
+        console.log(rocketInUse?.amount);
         for (let i = 0; i < amount; i++) {
-            let particle = new Endabgabe_Feuerwerk.CircleParticle("#8f18f0", 15, mousePosX, mousePosY, i, radius, "circle"); //color, speed, position, i, radius, shape
-            moveables.push(particle);
+            if (rocketInUse == null) {
+                return;
+            }
+            let firework;
+            switch (rocketInUse.shape) {
+                case "star":
+                    firework = new Endabgabe_Feuerwerk.StarParticle(rocketInUse.Color, 15, mousePosX, mousePosY, i, radius, rocketInUse.shape);
+                    moveables.push(firework);
+                    break;
+                case "circle":
+                    firework = new Endabgabe_Feuerwerk.CircleParticle(rocketInUse.Color, 15, mousePosX, mousePosY, i, radius, rocketInUse.shape);
+                    moveables.push(firework);
+                    // console.log(moveables);
+                    break;
+                default:
+                    break;
+            }
+            fireworkSound();
         }
-        //  fireworkSound();
-        /* for (let i: number = 0; i < amount; i++) {
-            let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
-            moveables.push(particles);
-            } */
+        /*
+                for (let i: number = 0; i < amount; i++) {
+                    let particles: Moveable = new StarParticle("yellow", 15, mousePosX, mousePosY, i, radius, "star");
+                    moveables.push(particles);
+                 } */
     } //createFirework zu
     function update() {
+        // debugger;
         Endabgabe_Feuerwerk.crc2.fillStyle = "rgba(0, 0, 0, 0.06)";
         Endabgabe_Feuerwerk.crc2.fillRect(0, 0, Endabgabe_Feuerwerk.crc2.canvas.width, Endabgabe_Feuerwerk.crc2.canvas.height);
         for (let firework of moveables) {
@@ -147,9 +129,9 @@ var Endabgabe_Feuerwerk;
         let sound = document.getElementById("myAudio");
         sound.pause();
     } //pauseAudio zu
-    /* function fireworkSound(): void {
-        let sound: HTMLAudioElement = <HTMLAudioElement>document.getElementById("boom");
-        sound.play(); */
-    //} *///fireworkSound zu
+    function fireworkSound() {
+        let sound = document.getElementById("boom");
+        sound.play();
+    } //fireworkSound zu
 })(Endabgabe_Feuerwerk || (Endabgabe_Feuerwerk = {})); //namespace zu
 //# sourceMappingURL=MainProgram.js.map

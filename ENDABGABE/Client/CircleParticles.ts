@@ -6,12 +6,9 @@ namespace Endabgabe_Feuerwerk {
         shape: string;
   
 
+        constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _amount: number, _radius: number, _shape: string) {
 
-        constructor(_color: string, _speed: number, _positionX: number, _positionY: number, _i: number, _radius: number, _shape: string) {
-
-          super(_color, _speed, _positionX, _positionY, _i, _radius);
-
-          this.shape = _shape;
+          super(_color, _speed, _positionX, _positionY, _amount, _radius, _shape);
          
         }
 
